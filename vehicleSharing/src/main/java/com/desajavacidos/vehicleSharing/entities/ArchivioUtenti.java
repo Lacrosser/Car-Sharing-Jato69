@@ -19,34 +19,34 @@ public class ArchivioUtenti {
 	private int id;
 	
 	
-	@Column(name = "Ultimamodifica")
+	@Column(name = "ultima_modifica")
 	private Timestamp ultimaModifica;
 	
-	@Column(name="UserId")
+	@Column(name="user_id")
 	private String userId;
 	
-	@Column(name="Password")
+	@Column(name="password")
 	private String password;
 	
-	@Column(name="Firma")
+	@Column(name="firma")
 	private String firma;
 	
-	@Column(name="Tipo")
+	@Column(name="tipo")
 	private String tipo;
 	
-	@Column(name="Nome")
+	@Column(name="nome")
 	private String nome;
 	
-	@Column(name="Cognome")
+	@Column(name="cognome")
 	private String cognome;
 	
-	@Column(name="Nascita")
+	@Column(name="nascita")
 	private String nascita;
 	
-	@Column(name="Email")
+	@Column(name="email")
 	private String email;
 	
-	@Column(name = "DataIscrizione")
+	@Column(name = "data_iscrizione")
 	private Timestamp dataIscrizione;
 	
 	public ArchivioUtenti() {
@@ -131,6 +131,14 @@ public class ArchivioUtenti {
 
 	public void setDataIscrizione(Timestamp dataIscrizione) {
 		this.dataIscrizione = dataIscrizione;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	
 	
