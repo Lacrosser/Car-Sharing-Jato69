@@ -22,27 +22,27 @@ public class ArchivioUtentiREST {
 	@Autowired
 	private ArchivioUtentiService service;
 	
-	@GetMapping("archivioutenti")
+	@GetMapping("utenti")
 	public List<ArchivioUtenti> getAll(){
 		return service.getAll();
 	}
 	
-	@GetMapping("archivioutenti/{id}")
+	@GetMapping("utenti/{id}")
 	public ArchivioUtenti getUtente(@PathVariable("id") int id) {
 		return service.getUtenteById(id);
 	}
 	
-	@PostMapping("archivioutenti")
+	@PostMapping("utenti")
 	public void addUtente(@RequestBody ArchivioUtenti u) {
 		service.addUtente(u);
 	}
 	
-	@PutMapping("archivioutenti")
+	@PutMapping("utenti")
 	public void updateUtente(@RequestBody ArchivioUtenti u) {
 		service.updateUtente(u);
 	}
 	
-	@DeleteMapping("archivioutenti/{id}")
+	@DeleteMapping("utenti/{id}")
 	public void deleteUtente(@PathVariable("id") int id) {
 		service.deleteUtenteById(id);
 	}
