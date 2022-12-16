@@ -1,4 +1,4 @@
-package com.desajavacidos.vehicleSharing.service.iService;
+package com.desajavacidos.vehicleSharing.services.iServices;
 
 import java.util.List;
 
