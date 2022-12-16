@@ -2,12 +2,14 @@ package com.desajavacidos.vehicleSharing.service;
 
 import java.util.List;
 
+import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
+
 public interface ArchivioUtenteService {
 
-	List<ArchivioUtente> getAll();
-	ArchivioUtente getUtenteById(int id);
+	List<ArchivioUtenti> getAll();
+	ArchivioUtenti getUtenteById(int id);
 	
-	void addUtente(ArchivioUtente u);
+	void addUtente(ArchivioUtenti u);
 	void deleteUtenteById(int id);
-	void updateUtente(ArchivioUtente u);
+	void updateUtente(ArchivioUtenti u);
 }
