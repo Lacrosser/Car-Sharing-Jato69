@@ -14,36 +14,39 @@ import jakarta.persistence.Table;
 @Table(name = "archivioutenti")
 public class ArchivioUtenti {
 	
-	@Column(name = "ultimaModifica")
-	private Timestamp ultimaModifica;
-	
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="password")
+	
+	@Column(name = "Ultimamodifica")
+	private Timestamp ultimaModifica;
+	
+	@Column(name="UserId")
+	private String userId;
+	
+	@Column(name="Password")
 	private String password;
 	
-	@Column(name="firma")
+	@Column(name="Firma")
 	private String firma;
 	
-	@Column(name="tipo")
+	@Column(name="Tipo")
 	private String tipo;
 	
-	@Column(name="nome")
+	@Column(name="Nome")
 	private String nome;
 	
-	@Column(name="cognome")
+	@Column(name="Cognome")
 	private String cognome;
 	
-	@Column(name="nascita")
+	@Column(name="Nascita")
 	private String nascita;
 	
-	@Column(name="email")
+	@Column(name="Email")
 	private String email;
 	
-	@Column(name = "dataIscrizione")
+	@Column(name = "DataIscrizione")
 	private Timestamp dataIscrizione;
 	
 	public ArchivioUtenti() {
