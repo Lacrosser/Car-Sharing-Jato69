@@ -9,12 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "archivioutenti")
 public class ArchivioUtenti {
 	
-	@Column(name = "UltimaModifica")
-	private Timestamp UltimaModifica;
+	@Column(name = "ultimaModifica")
+	private Timestamp ultimaModifica;
 	
 	
 	@Id
@@ -42,22 +43,19 @@ public class ArchivioUtenti {
 	@Column(name="email")
 	private String email;
 	
-	@Column(name = "DataIscrizione")
-	private Timestamp DataIscrizione;
+	@Column(name = "dataIscrizione")
+	private Timestamp dataIscrizione;
 	
 	public ArchivioUtenti() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
 
 	public Timestamp getUltimaModifica() {
-		return UltimaModifica;
+		return ultimaModifica;
 	}
 
 	public void setUltimaModifica(Timestamp ultimaModifica) {
-		UltimaModifica = ultimaModifica;
+		this.ultimaModifica = ultimaModifica;
 	}
 
 	public int getId() {
@@ -125,14 +123,16 @@ public class ArchivioUtenti {
 	}
 
 	public Timestamp getDataIscrizione() {
-		return DataIscrizione;
+		return dataIscrizione;
 	}
 
 	public void setDataIscrizione(Timestamp dataIscrizione) {
-		DataIscrizione = dataIscrizione;
+		this.dataIscrizione = dataIscrizione;
 	}
-	
 	
 	
 	
 }
+	
+
+	
