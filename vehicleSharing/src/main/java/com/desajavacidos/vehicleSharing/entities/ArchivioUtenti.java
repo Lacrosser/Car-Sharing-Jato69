@@ -22,6 +22,9 @@ public class ArchivioUtenti {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(name="userID")
+	private String userID;
+	
 	@Column(name="password")
 	private String password;
 	
