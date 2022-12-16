@@ -1,4 +1,4 @@
-package com.desajavacidos.entities;
+package com.desajavacidos.vehicleSharing.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,14 +8,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "archivioutenti")
-public class archivioutenti {
+@Table(name = "ArchivioUtenti")
+public class ArchivioUtenti {
 	
 	@Column(name = "UltimaModifica")
 	private java.sql.Timestamp UltimaModifica;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int userID;
+	private int id;
 	private String password;
 	private String firma;
 	private String tipo;
@@ -26,15 +26,21 @@ public class archivioutenti {
 	@Column(name = "DataIscrizione")
 	private java.sql.Timestamp DataIscrizione;
 	
-	
-	public int getUserID() {
-		return userID;
+	public ArchivioUtenti() {
+		// TODO Auto-generated constructor stub
 	}
 	
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
 	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	public String getPassword() {
 		return password;
 	}
