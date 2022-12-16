@@ -21,7 +21,7 @@ fetch(api_url)
     return data.json()
 })
 .then(response => {
-    console.log(typeof response)
+    console.log(response)
     mostraVeicoli(response)
 });
 // Prova Modifica
