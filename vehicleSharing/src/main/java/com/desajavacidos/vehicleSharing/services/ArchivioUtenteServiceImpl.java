@@ -1,13 +1,15 @@
-package com.desajavacidos.vehicleSharing.service;
+package com.desajavacidos.vehicleSharing.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.repo.ArchivioUtentiDao;
-import com.desajavacidos.vehicleSharing.service.iService.ArchivioUtentiService;
+import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService;
 
+@Service
 public class ArchivioUtenteServiceImpl implements ArchivioUtentiService {
 
 	@Autowired
