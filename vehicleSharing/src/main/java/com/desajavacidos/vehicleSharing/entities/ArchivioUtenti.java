@@ -1,4 +1,4 @@
-package com.desajavacidos.entities;
+package com.desajavacidos.vehicleSharing.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "archivioutenti")
-public class archivioutenti {
+public class ArchivioUtenti {
 	
 	@Column(name = "UltimaModifica")
 	private java.sql.Timestamp UltimaModifica;
