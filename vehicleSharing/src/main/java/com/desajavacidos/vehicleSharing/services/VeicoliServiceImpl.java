@@ -1,4 +1,4 @@
-package com.desajavacidos.vehicleSharing.services.iServices;
+package com.desajavacidos.vehicleSharing.services;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.repo.VeicoliDao;
+import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 
 public class VeicoliServiceImpl implements VeicoliService {
 	
