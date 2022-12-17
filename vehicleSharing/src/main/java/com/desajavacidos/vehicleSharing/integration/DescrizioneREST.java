@@ -1,5 +1,7 @@
 package com.desajavacidos.vehicleSharing.integration;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +22,12 @@ public class DescrizioneREST {
 	@Autowired
 	private DescrizioneService service;
 	
-	
+	@GetMapping("descrizione")
+	public List<Descrizione> getall() {
+		return service.getAll();
+	}
 	@GetMapping("descrizione/{id}")
-	public Descrizione getDescrizione(@PathVariable("id")int id) {
+	public Descrizione getDescrizioneById(@PathVariable("id")int id) {
 		return service.getDescrizioneById(id);
 	}
 	

@@ -29,7 +29,7 @@ public class ArchivioUtentiREST {
 	}
 		
 		@GetMapping("utenti/{id}")
-		public ArchivioUtenti getUtente(@PathVariable("id") int id) {
+		public ArchivioUtenti getUtenteById(@PathVariable("id") int id) {
 			return service.getUtenteById(id);
 		}
 		
