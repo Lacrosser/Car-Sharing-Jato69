@@ -3,11 +3,13 @@ package com.desajavacidos.vehicleSharing.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.repo.VeicoliDao;
 import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 
+@Service
 public class VeicoliServiceImpl implements VeicoliService {
 	
 	@Autowired
@@ -15,33 +17,30 @@ public class VeicoliServiceImpl implements VeicoliService {
 	
 	@Override
 	public List<Veicoli> getAll() {
-		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 	@Override
 	public Veicoli getVeicoliById(int id) {
-		// TODO Auto-generated method stub
 		return repo.findById(id).get();
 	}
 
 	@Override
 	public void addVeicoli(Veicoli v) {
-		// TODO Auto-generated method stub
 		repo.save(v);
 		
 	}
 
-	@Override
-	public void deleteVeicoli(int id) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void updateVeicoli(Veicoli v) {
-		// TODO Auto-generated method stub
 		repo.save(v);
+	}
+
+	@Override
+	public void deleteVeicoliByID(int id) {
+		repo.deleteById(id);
 	}
 
 }

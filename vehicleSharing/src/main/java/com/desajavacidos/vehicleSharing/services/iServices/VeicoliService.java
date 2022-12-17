@@ -10,6 +10,6 @@ public interface VeicoliService {
 	Veicoli getVeicoliById(int id);
 	
 	void addVeicoli(Veicoli v);
-	void deleteVeicoli(int id);
+	void deleteVeicoliByID(int id);
 	void updateVeicoli(Veicoli v);
 }
