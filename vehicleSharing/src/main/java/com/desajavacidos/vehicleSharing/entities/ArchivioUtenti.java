@@ -1,12 +1,16 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -22,32 +26,40 @@ public class ArchivioUtenti {
 	@Column(name = "ultima_modifica")
 	private Timestamp ultimaModifica;
 	
-	@Column(name="user_id")
+	@Column(name="user_id", length = 16,nullable = false,unique = false)
 	private String userId;
 	
-	@Column(name="password")
+	@Column(name="password",length = 50,nullable = false,unique = false)
 	private String password;
 	
-	@Column(name="firma")
+	@Column(name="firma",nullable = true,unique = false)
 	private String firma;
 	
-	@Column(name="tipo")
+	@Column(name="tipo",length = 1,nullable = false,unique = false)
 	private String tipo;
 	
-	@Column(name="nome")
+	@Column(name="nome",length = 40,nullable = true,unique = false)
 	private String nome;
 	
-	@Column(name="cognome")
+	@Column(name="cognome",length = 40,nullable = true,unique = false)
 	private String cognome;
 	
-	@Column(name="nascita")
+	@Column(name="nascita",length = 10,nullable = true,unique = false)
 	private String nascita;
 	
-	@Column(name="email")
+	@Column(name="email",length = 40,nullable = false,unique = false)
 	private String email;
 	
 	@Column(name = "data_iscrizione")
 	private Timestamp dataIscrizione;
+	
+	
+	//relazione con l'altra tabella
+	
+	 @OneToMany(mappedBy = "archivioutenti", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	    Set<Prenotazione> tazione;
+	
+	
 	
 	public ArchivioUtenti() {
 		// TODO Auto-generated constructor stub
@@ -139,6 +151,14 @@ public class ArchivioUtenti {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public Set<Prenotazione> getPrenotazione() {
+		return tazione;
+	}
+
+	public void setPrenotazione(Set<Prenotazione> prenotazione) {
+		this.tazione = prenotazione;
 	}
 	
 	
