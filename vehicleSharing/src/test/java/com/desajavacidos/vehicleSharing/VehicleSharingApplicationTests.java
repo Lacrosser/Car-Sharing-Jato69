@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.entities.Descrizione;
 import com.desajavacidos.vehicleSharing.entities.Prenotazione;
+import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService;
 import com.desajavacidos.vehicleSharing.services.iServices.DescrizioneService;
 import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
@@ -46,14 +47,27 @@ class VehicleSharingApplicationTests {
 		
 //		Descrizione d = new Descrizione();
 		
-		Prenotazione p = new Prenotazione();
+//		Prenotazione p = new Prenotazione();
+//		
+//		p.setArchivioUtenti(utente.getUtenteById(1));
+//		p.setVeicoli(veicolo.getVeicoliById(1));
+//		p.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
+//		
+//		prenotazione.addPresentazione(p);
+//		System.out.println("Prenotazione aggiunta");
 		
-		p.setArchivioUtenti(utente.getUtenteById(1));
-		p.setVeicoli(veicolo.getVeicoliById(1));
-		p.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
+//		Veicoli v = new Veicoli();
+//		v.setAlimentazione("il miglior editor");
+//		v.setDisponibilita(false);
+//		v.setPosizione("eclipse");
+//		
+//		veicolo.addVeicoli(v);
 		
-		prenotazione.addPresentazione(p);
-		System.out.println("Prenotazione aggiunta");
+		//veicolo.updateVeicoli(veicolo.getVeicoliById(7).setDisponibilita(true));
+		
+		Veicoli v = veicolo.getVeicoliById(7);
+		v.setDisponibilita(true);
+		veicolo.updateVeicoli(v);
 		
 	}
 
