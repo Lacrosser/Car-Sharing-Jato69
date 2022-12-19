@@ -8,6 +8,8 @@ import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,39 +19,85 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("api/utenti")
 public class ArchivioUtentiREST {
 
 	@Autowired
 	private ArchivioUtentiService service;
-	
-	@GetMapping("utenti")
-	public List<ArchivioUtenti>getall(){
+
+	// restituzione studenti
+	@GetMapping
+	public List<ArchivioUtenti> getall() {
 		return service.getAll();
 	}
-		
-		@GetMapping("utenti/{id}")
-		public ArchivioUtenti getUtenteById(@PathVariable("id") int id) {
-			return service.getUtenteById(id);
+
+	@GetMapping("/{id}")
+	public ResponseEntity<ArchivioUtenti> getUtenteById(@PathVariable("id") int id) {
+
+		// recupero lo studente tramite lo studente
+
+		ArchivioUtenti s = this.service.getUtenteById(id);
+
+		if (s != null) {
+			
+			
+			// se esiste posso restituire 2 cose, il codice di stato delle richiesta, e l'oggetto desiderato
+			
+			return new ResponseEntity<ArchivioUtenti>(s, HttpStatus.OK);
+		} else {
+
+			return new ResponseEntity<ArchivioUtenti>(new ArchivioUtenti(), HttpStatus.BAD_REQUEST);
 		}
+
+	}
+
+	@PostMapping
+	public  ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
 		
-		@PostMapping("utenti")
-		public void addUtente(@RequestBody ArchivioUtenti u) {
+		boolean userExist=this.service.userExists(u.getUserId());
+		boolean passExist=this.service.passwordExist(u.getPassword());
+		
+		if(userExist && passExist) {
+			
+			return new ResponseEntity<ArchivioUtenti>(u,HttpStatus.BAD_REQUEST);
+		}else {
+			//salvo e restituisco lo studente con il nuovo campo generato dal database(id)
 			service.addUtente(u);
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
+			
 		}
-		
-		@PutMapping("utenti")
-		public void updateUtente(@RequestBody ArchivioUtenti u) {
-			service.updateUtente(u);
-		}
-		
-		@DeleteMapping("utenti/{id}")
-		public void deleteUtente(@PathVariable("id") int id) {
-			service.deleteUtenteById(id);
-		}
-	
-		
+	}
+
+	@PutMapping
+	public ResponseEntity<ArchivioUtenti> putOne(@RequestBody ArchivioUtenti u) {
+		ArchivioUtenti archivioID = this.service.getUtenteById(u.getId());
+		if(archivioID == null)
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
+		ArchivioUtenti archivioUser = this.service.findByUser(u.getUserId());
+		ArchivioUtenti archivioPassword = this.service.findByPassword(u.getPassword());
+			if(archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId() && archivioUser != null) {
+				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
+			} else {
+				service.updateUtente(u);
+				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
+			}
+			
+
 		
 	}
-	
 
+	@DeleteMapping("/{id}")
+	public ResponseEntity<ArchivioUtenti> delOne(@PathVariable("id") int id) {
+		ArchivioUtenti archivioID = this.service.getUtenteById(id);
+		if(archivioID == null) {
+			return ResponseEntity.badRequest().build();
+			
+		}else {
+			
+			this.service.deleteUtenteById(id);
+			return ResponseEntity.ok().build();
+		}
+	}
+
+
+}

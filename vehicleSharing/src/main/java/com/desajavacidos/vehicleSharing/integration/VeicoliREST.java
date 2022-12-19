@@ -1,6 +1,5 @@
 package com.desajavacidos.vehicleSharing.integration;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,28 +15,34 @@ import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api/veicoli")
 public class VeicoliREST {
 
 	@Autowired
 	private VeicoliService service;
-	
-	
-	@GetMapping("veicoli")
-	public List<Veicoli>getall(){
+
+
+	@GetMapping
+	public List<Veicoli> getall() {
 		return service.getAll();
 	}
-		
-		@GetMapping("veicoli/{id}")
-		public Veicoli getVeicoli(@PathVariable("id") int id) {
+
+	@GetMapping("/{id}")
+	public Veicoli getVeicoli(@PathVariable("id") int id) {
+
+		if (id <= service.getAll().size()) {
+
 			return service.getVeicoliById(id);
+		} else {
+			return null;
 		}
-		
-		@GetMapping("veicoli/{disponibilita}")
-		public List<Veicoli> getVeicoliDisponibili(@PathVariable("disponibilita")boolean disponibilita) {
-			
-			
-			return service.getVeicoliByDisp(disponibilita);
+
+	}
+
+	@GetMapping("/status/{disponibilita}")
+	public List<Veicoli> getVeicoliDisponibili(@PathVariable("disponibilita") boolean disponibilita) {
+
+		return service.getVeicoliByDisp(disponibilita);
 //			List<Veicoli> veicoliByDisp= new ArrayList<>();
 //			for (Veicoli veicoli : service.getAll()) {
 //				
@@ -48,24 +53,22 @@ public class VeicoliREST {
 //					 
 //			}
 //			return veicoliByDisp;
-//		}
-		}
-		
-		@PostMapping("veicoli")
-		public void addVeicoli(@RequestBody Veicoli u) {
-			service.addVeicoli(u);
-		}
-		
-		@PutMapping("veicoli")
-		public void updateVeicoli(@RequestBody Veicoli u) {
-			service.updateVeicoli(u);
-		}
-		
-		@DeleteMapping("veicoli/{id}")
-		public void deleteUtente(@PathVariable("id") int id) {
-			service.deleteVeicoliByID(id);
-		}
-	
-		
-		
+
+	}
+
+	@PostMapping
+	public void addVeicoli(@RequestBody Veicoli u) {
+		service.addVeicoli(u);
+	}
+
+	@PutMapping
+	public void updateVeicoli(@RequestBody Veicoli u) {
+		service.updateVeicoli(u);
+	}
+
+	@DeleteMapping("/{id}")
+	public void deleteUtente(@PathVariable("id") int id) {
+		service.deleteVeicoliByID(id);
+	}
+
 }

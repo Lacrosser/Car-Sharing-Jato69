@@ -41,4 +41,42 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 		repo.save(u);
 	}
 
+	@Override
+	public boolean userExists(String userId) {
+		
+		ArchivioUtenti s= this.repo.findByUserIdIgnoreCase(userId);
+		
+		if(s!=null) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean passwordExist(String password) {
+		
+		ArchivioUtenti s= this.repo.findByPasswordIgnoreCase(password);
+		
+		if(s!=null) {
+			return true;
+		}
+		return false;
+		
+		
+	}
+
+	@Override
+	public ArchivioUtenti findByUser(String user) {
+		
+		return repo.findByUserIdIgnoreCase(user);
+	}
+
+	@Override
+	public ArchivioUtenti findByPassword(String password) {
+		
+		return repo.findByPasswordIgnoreCase(password);
+	}
+
+	
+
 }

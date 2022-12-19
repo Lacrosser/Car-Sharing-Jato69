@@ -51,7 +51,7 @@ public class ArchivioUtenti {
 	@Column(name="nascita",length = 10,nullable = true,unique = false)
 	private String nascita;
 	
-	@Column(name="email",length = 40,nullable = false,unique = false)
+	@Column(name="email",length = 40,nullable = false,unique = true)
 	private String email;
 	
 	@Column(name = "data_iscrizione")

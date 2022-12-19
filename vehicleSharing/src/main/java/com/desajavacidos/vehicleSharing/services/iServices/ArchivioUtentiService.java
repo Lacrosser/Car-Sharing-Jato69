@@ -15,5 +15,11 @@ public interface ArchivioUtentiService {
 	void addUtente(ArchivioUtenti u);
 	void deleteUtenteById(int id);
 	void updateUtente(ArchivioUtenti u);
+	boolean userExists(String userId);
+	boolean passwordExist(String password);
+	
+	ArchivioUtenti findByUser(String user);
+	ArchivioUtenti findByPassword(String password);
+	
 }
 
