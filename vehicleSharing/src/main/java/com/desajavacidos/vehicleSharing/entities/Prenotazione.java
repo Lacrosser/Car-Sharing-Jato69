@@ -2,6 +2,8 @@ package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,7 +30,7 @@ public class Prenotazione {
     @JoinColumn(name = "archivioutenti_id")
     private ArchivioUtenti archivioutenti;
     
-    @Column(name="oraprenotazione")
+    @Column(name="ora_prenotazione")
     private Timestamp timestamp;
 
 	public int getId() {
@@ -38,7 +40,7 @@ public class Prenotazione {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	@JsonIgnore
 	public Veicoli getVeicoli() {
 		return veicoli;
 	}
@@ -46,7 +48,7 @@ public class Prenotazione {
 	public void setVeicoli(Veicoli veicoli) {
 		this.veicoli = veicoli;
 	}
-
+	@JsonIgnore
 	public ArchivioUtenti getArchivioUtenti() {
 		return archivioutenti;
 	}
