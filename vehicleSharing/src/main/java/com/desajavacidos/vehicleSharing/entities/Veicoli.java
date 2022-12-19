@@ -2,7 +2,6 @@ package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
 import java.util.Set;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

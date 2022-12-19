@@ -1,8 +1,10 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Set;
-
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +14,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 
 @Entity
@@ -23,8 +27,11 @@ public class ArchivioUtenti {
 	private int id;
 	
 	
+	
+	@UpdateTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "ultima_modifica")
-	private Timestamp ultimaModifica;
+	private LocalDateTime ultimaModifica;
 	
 	@Column(name="user_id", length = 16,nullable = false,unique = false)
 	private String userId;
@@ -50,8 +57,21 @@ public class ArchivioUtenti {
 	@Column(name="email",length = 40,nullable = false,unique = false)
 	private String email;
 	
-	@Column(name = "data_iscrizione")
-	private Timestamp dataIscrizione;
+	
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name ="data_iscrizione")
+	private LocalDateTime dataIscrizione;
+	
+//	@CreationTimestamp
+//	@Temporal(TemporalType.TIMESTAMP)
+//	@Column(name = "create_date")
+//	private Date createDate;
+//
+//	@UpdateTimestamp
+//	@Temporal(TemporalType.TIMESTAMP)
+//	@Column(name = "modify_date")
+//	private Date modifyDate;
 	
 	
 	//relazione con l'altra tabella
@@ -65,105 +85,152 @@ public class ArchivioUtenti {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Timestamp getUltimaModifica() {
-		return ultimaModifica;
-	}
 
-	public void setUltimaModifica(Timestamp ultimaModifica) {
-		this.ultimaModifica = ultimaModifica;
-	}
 
 	public int getId() {
 		return id;
 	}
 
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getPassword() {
-		return password;
+
+
+	public LocalDateTime getUltimaModifica() {
+		return ultimaModifica;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+
+
+	public void setUltimaModifica(LocalDateTime ultimaModifica) {
+		this.ultimaModifica = ultimaModifica;
 	}
 
-	public String getFirma() {
-		return firma;
-	}
 
-	public void setFirma(String firma) {
-		this.firma = firma;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCognome() {
-		return cognome;
-	}
-
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
-	}
-
-	public String getNascita() {
-		return nascita;
-	}
-
-	public void setNascita(String nascita) {
-		this.nascita = nascita;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Timestamp getDataIscrizione() {
-		return dataIscrizione;
-	}
-
-	public void setDataIscrizione(Timestamp dataIscrizione) {
-		this.dataIscrizione = dataIscrizione;
-	}
 
 	public String getUserId() {
 		return userId;
 	}
 
+
+
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-	public Set<Prenotazione> getPrenotazione() {
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
+	public String getFirma() {
+		return firma;
+	}
+
+
+
+	public void setFirma(String firma) {
+		this.firma = firma;
+	}
+
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+
+	public String getCognome() {
+		return cognome;
+	}
+
+
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+
+
+	public String getNascita() {
+		return nascita;
+	}
+
+
+
+	public void setNascita(String nascita) {
+		this.nascita = nascita;
+	}
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+	public LocalDateTime getDataIscrizione() {
+		return dataIscrizione;
+	}
+
+
+
+	public void setDataIscrizione(LocalDateTime dataIscrizione) {
+		this.dataIscrizione = dataIscrizione;
+	}
+
+
+
+	public Set<Prenotazione> getTazione() {
 		return tazione;
 	}
 
-	public void setPrenotazione(Set<Prenotazione> prenotazione) {
-		this.tazione = prenotazione;
+
+
+	public void setTazione(Set<Prenotazione> tazione) {
+		this.tazione = tazione;
 	}
-	
-	
-	
-}
-	
+
+
 
 	
+
+}
