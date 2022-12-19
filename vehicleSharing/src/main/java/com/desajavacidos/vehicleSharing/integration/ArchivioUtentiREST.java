@@ -51,12 +51,22 @@ public class ArchivioUtentiREST {
 
 	}
 
-//	@PostMapping
-//	public  ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
-//		
-//		boolean emailExist=this.service.
-//		service.addUtente(u);
-//	}
+	@PostMapping
+	public  ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
+		
+		boolean userExist=this.service.userExists(u.getUserId());
+		boolean passExist=this.service.passwordExist(u.getPassword());
+		
+		if(userExist && passExist) {
+			
+			return new ResponseEntity<ArchivioUtenti>(u,HttpStatus.BAD_REQUEST);
+		}else {
+			//salvo e restituisco lo studente con il nuovo campo generato dal database(id)
+			service.addUtente(u);
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
+			
+		}
+	}
 
 	@PutMapping
 	public void updateUtente(@RequestBody ArchivioUtenti u) {
