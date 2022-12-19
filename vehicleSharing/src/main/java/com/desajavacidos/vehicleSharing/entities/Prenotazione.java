@@ -1,9 +1,6 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,9 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-
 
 @Entity
 @Table(name="prenotazione")
@@ -34,15 +28,8 @@ public class Prenotazione {
     @JoinColumn(name = "archivioutenti_id")
     private ArchivioUtenti archivioutenti;
     
-    
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "ora_prenotazione")
-    private LocalDateTime oraPrenotazione;
-
-    public Prenotazione() {
-		// TODO Auto-generated constructor stub
-	}
+    @Column(name="oraprenotazione")
+    private Timestamp timestamp;
 
 	public int getId() {
 		return id;
@@ -60,23 +47,20 @@ public class Prenotazione {
 		this.veicoli = veicoli;
 	}
 
-	public ArchivioUtenti getArchivioutenti() {
+	public ArchivioUtenti getArchivioUtenti() {
 		return archivioutenti;
 	}
 
-	public void setArchivioutenti(ArchivioUtenti archivioutenti) {
-		this.archivioutenti = archivioutenti;
+	public void setArchivioUtenti(ArchivioUtenti archivioUtenti) {
+		this.archivioutenti = archivioUtenti;
 	}
 
-	public LocalDateTime getOraPrenotazione() {
-		return oraPrenotazione;
+	public Timestamp getTimestamp() {
+		return timestamp;
 	}
 
-	public void setOraPrenotazione(LocalDateTime oraPrenotazione) {
-		this.oraPrenotazione = oraPrenotazione;
+	public void setTimestamp(Timestamp timestamp) {
+		this.timestamp = timestamp;
 	}
-
-	
-	
 
 }

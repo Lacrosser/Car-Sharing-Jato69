@@ -43,4 +43,11 @@ public class VeicoliServiceImpl implements VeicoliService {
 		repo.deleteById(id);
 	}
 
+	@Override
+	public List<Veicoli> getVeicoliByDisp(boolean disponibilita) {
+		
+		return repo.findByDisponibilita(disponibilita);
+		//return repo.findAll();
+	}
+
 }

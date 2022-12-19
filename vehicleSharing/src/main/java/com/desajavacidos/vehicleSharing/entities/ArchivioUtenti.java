@@ -1,10 +1,11 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.Set;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,8 +15,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 
 @Entity
@@ -27,11 +26,9 @@ public class ArchivioUtenti {
 	private int id;
 	
 	
-	
-	@UpdateTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "ultima_modifica")
-	private LocalDateTime ultimaModifica;
+	@UpdateTimestamp
+	private Timestamp ultimaModifica;
 	
 	@Column(name="user_id", length = 16,nullable = false,unique = false)
 	private String userId;
@@ -57,21 +54,9 @@ public class ArchivioUtenti {
 	@Column(name="email",length = 40,nullable = false,unique = false)
 	private String email;
 	
-	
+	@Column(name = "data_iscrizione")
 	@CreationTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name ="data_iscrizione")
-	private LocalDateTime dataIscrizione;
-	
-//	@CreationTimestamp
-//	@Temporal(TemporalType.TIMESTAMP)
-//	@Column(name = "create_date")
-//	private Date createDate;
-//
-//	@UpdateTimestamp
-//	@Temporal(TemporalType.TIMESTAMP)
-//	@Column(name = "modify_date")
-//	private Date modifyDate;
+	private Timestamp dataIscrizione;
 	
 	
 	//relazione con l'altra tabella
@@ -85,152 +70,105 @@ public class ArchivioUtenti {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Timestamp getUltimaModifica() {
+		return ultimaModifica;
+	}
 
+	public void setUltimaModifica(Timestamp ultimaModifica) {
+		this.ultimaModifica = ultimaModifica;
+	}
 
 	public int getId() {
 		return id;
 	}
 
-
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-
-	public LocalDateTime getUltimaModifica() {
-		return ultimaModifica;
-	}
-
-
-
-	public void setUltimaModifica(LocalDateTime ultimaModifica) {
-		this.ultimaModifica = ultimaModifica;
-	}
-
-
-
-	public String getUserId() {
-		return userId;
-	}
-
-
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-
 
 	public String getPassword() {
 		return password;
 	}
 
-
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-
 
 	public String getFirma() {
 		return firma;
 	}
 
-
-
 	public void setFirma(String firma) {
 		this.firma = firma;
 	}
-
-
 
 	public String getTipo() {
 		return tipo;
 	}
 
-
-
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
-
 
 	public String getNome() {
 		return nome;
 	}
 
-
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-
 
 	public String getCognome() {
 		return cognome;
 	}
 
-
-
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-
-
 
 	public String getNascita() {
 		return nascita;
 	}
 
-
-
 	public void setNascita(String nascita) {
 		this.nascita = nascita;
 	}
-
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-
-	public LocalDateTime getDataIscrizione() {
+	public Timestamp getDataIscrizione() {
 		return dataIscrizione;
 	}
 
-
-
-	public void setDataIscrizione(LocalDateTime dataIscrizione) {
+	public void setDataIscrizione(Timestamp dataIscrizione) {
 		this.dataIscrizione = dataIscrizione;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
 
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
-	public Set<Prenotazione> getTazione() {
+	public Set<Prenotazione> getPrenotazione() {
 		return tazione;
 	}
 
-
-
-	public void setTazione(Set<Prenotazione> tazione) {
-		this.tazione = tazione;
+	public void setPrenotazione(Set<Prenotazione> prenotazione) {
+		this.tazione = prenotazione;
 	}
-
-
-
+	
+	
+	
+}
 	
 
-}
+	

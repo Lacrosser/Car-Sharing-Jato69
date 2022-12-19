@@ -2,6 +2,8 @@ package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
 import java.util.Set;
+
+import org.hibernate.annotations.CreationTimestamp;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,7 +24,7 @@ public class Veicoli {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name="id",length = 40, nullable = false,unique = false)
 	private int id;
 	
 	@Enumerated(EnumType.STRING)
@@ -33,23 +35,24 @@ public class Veicoli {
 		AUTO,MONOPATTINO,BICICLETTA;
 	}
 	
-	@Column(name="alimentazione")
+	@Column(name="alimentazione",length = 40, nullable = false,unique = false)
 	private String alimentazione;
 	
 	//descrizione come oggetto, creare relazione tra tabella
 	
-	@Column(name="posizione",nullable = false,unique = false)
-	private String posizione;
 	
 	@Column(name="noleggio_disponibilita",nullable = false,unique = false)
-	private boolean disponibilita;
+	private Boolean disponibilita;
 	
-	@Column(name="noleggio_prolungato",nullable = true,unique = false)
-	private boolean prolungato;
 	
 	@Column(name="data_prenotazione")
+	@CreationTimestamp
 	private Timestamp dataPrenotazione;
 	
+	@Column(name="posizione",nullable = true,unique = false)
+	private String posizione;
+	@Column(name="noleggio_prolungato",nullable = true,unique = false)
+	private Boolean prolungato;
 	@Column(name="immagine",nullable = true,unique = false)
 	private String immagine;
 	
@@ -145,10 +148,7 @@ public class Veicoli {
 		this.preno = preno;
 	}
 
-	
-	
-	
-	
+
 	
 	
 }

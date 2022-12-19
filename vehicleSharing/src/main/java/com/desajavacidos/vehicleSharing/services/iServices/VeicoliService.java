@@ -12,4 +12,6 @@ public interface VeicoliService {
 	void addVeicoli(Veicoli v);
 	void deleteVeicoliByID(int id);
 	void updateVeicoli(Veicoli v);
+	
+	List<Veicoli> getVeicoliByDisp(boolean disponibilita);
 }
