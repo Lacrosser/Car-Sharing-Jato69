@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping("api/studenti")
+@RequestMapping("api/utenti")
 public class ArchivioUtentiREST {
 
 	@Autowired
@@ -52,12 +52,22 @@ public class ArchivioUtentiREST {
 
 	}
 
-//	@PostMapping
-//	public  ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
-//		
-//		boolean emailExist=this.service.
-//		service.addUtente(u);
-//	}
+	@PostMapping
+	public  ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
+		
+		boolean userExist=this.service.userExists(u.getUserId());
+		boolean passExist=this.service.passwordExist(u.getPassword());
+		
+		if(userExist && passExist) {
+			
+			return new ResponseEntity<ArchivioUtenti>(u,HttpStatus.BAD_REQUEST);
+		}else {
+			//salvo e restituisco lo studente con il nuovo campo generato dal database(id)
+			service.addUtente(u);
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
+			
+		}
+	}
 
 	@PutMapping
 	public ResponseEntity<ArchivioUtenti> putOne(@RequestBody ArchivioUtenti u) {
@@ -80,10 +90,14 @@ public class ArchivioUtentiREST {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ArchivioUtenti> delOne(@PathVariable("id") int id) {
 		ArchivioUtenti archivioID = this.service.getUtenteById(id);
-		if(archivioID == null)
+		if(archivioID == null) {
 			return ResponseEntity.badRequest().build();
-		this.service.deleteUtenteById(id);
-		return ResponseEntity.ok().build();
+			
+		}else {
+			
+			this.service.deleteUtenteById(id);
+			return ResponseEntity.ok().build();
+		}
 	}
 
 
