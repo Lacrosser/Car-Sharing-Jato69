@@ -66,10 +66,14 @@ public class ArchivioUtentiREST {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ArchivioUtenti> delOne(@PathVariable("id") int id) {
 		ArchivioUtenti archivioID = this.service.getUtenteById(id);
-		if(archivioID == null)
+		if(archivioID == null) {
 			return ResponseEntity.badRequest().build();
-		this.service.deleteUtenteById(id);
-		return ResponseEntity.ok().build();
+			
+		}else {
+			
+			this.service.deleteUtenteById(id);
+			return ResponseEntity.ok().build();
+		}
 	}
 
 
