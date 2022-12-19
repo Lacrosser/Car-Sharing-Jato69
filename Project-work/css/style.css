@@ -1,1 +1,24 @@
-/* css */
+/* COLORI */
+.first-color { 
+	background: #ecfeff; 
+}
+	
+.second-color { 
+	background: #00b7c2; 
+}
+
+.third-color { 
+	background: #128494; 
+}
+
+.fourth-color { 
+	background: #4ef037;
+}
+
+/* * {
+    box-sizing: border-box;
+} */
+
+.borderNav {
+    border: 0;
+}
