@@ -69,6 +69,14 @@ class VehicleSharingApplicationTests {
 		v.setDisponibilita(true);
 		veicolo.updateVeicoli(v);
 		
+		Descrizione d = new Descrizione();
+		d.setColore("rosso");
+		d.setCilindrata("...");
+		d.setModello("xyz");
+		d.setVeicoli(veicolo.getVeicoliById(1));
+		
+		descrizione.addDescrizione(d);
+		
 	}
 
 }
