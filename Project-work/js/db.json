@@ -1,0 +1,10 @@
+{
+  "Veicoli":[
+      {"mezzo": "bici",
+      "colore": "rosso",
+      "id": 1},
+      {"mezzo": "Monopattino",
+      "colore": "Nero",
+      "id": 2}
+  ]
+}
