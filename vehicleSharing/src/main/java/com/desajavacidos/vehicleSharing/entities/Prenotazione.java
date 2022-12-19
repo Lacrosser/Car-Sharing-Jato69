@@ -28,7 +28,7 @@ public class Prenotazione {
     @JoinColumn(name = "archivioutenti_id")
     private ArchivioUtenti archivioutenti;
     
-    @Column(name="oraprenotazione")
+    @Column(name="ora_prenotazione")
     private Timestamp timestamp;
 
 	public int getId() {
