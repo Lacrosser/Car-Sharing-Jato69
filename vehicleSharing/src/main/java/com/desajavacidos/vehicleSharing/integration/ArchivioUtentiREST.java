@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -59,8 +60,21 @@ public class ArchivioUtentiREST {
 //	}
 
 	@PutMapping
-	public void updateUtente(@RequestBody ArchivioUtenti u) {
-		service.updateUtente(u);
+	public ResponseEntity<ArchivioUtenti> putOne(@RequestBody ArchivioUtenti u) {
+		ArchivioUtenti archivioID = this.service.getUtenteById(u.getId());
+		if(archivioID == null)
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
+		ArchivioUtenti archivioUser = this.service.findByUser(u.getUserId());
+		ArchivioUtenti archivioPassword = this.service.findByPassword(u.getPassword());
+			if(archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId() && archivioUser != null) {
+				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
+			} else {
+				service.updateUtente(u);
+				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
+			}
+			
+
+		
 	}
 
 	@DeleteMapping("/{id}")
