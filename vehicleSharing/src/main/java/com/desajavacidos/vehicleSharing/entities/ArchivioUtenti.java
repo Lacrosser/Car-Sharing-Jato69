@@ -3,6 +3,9 @@ package com.desajavacidos.vehicleSharing.entities;
 import java.sql.Timestamp;
 import java.util.Set;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,6 +27,7 @@ public class ArchivioUtenti {
 	
 	
 	@Column(name = "ultima_modifica")
+	@UpdateTimestamp
 	private Timestamp ultimaModifica;
 	
 	@Column(name="user_id", length = 16,nullable = false,unique = false)
@@ -51,6 +55,7 @@ public class ArchivioUtenti {
 	private String email;
 	
 	@Column(name = "data_iscrizione")
+	@CreationTimestamp
 	private Timestamp dataIscrizione;
 	
 	
