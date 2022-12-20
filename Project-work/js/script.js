@@ -1,7 +1,7 @@
 // api url
 const api_url = "http://localhost:3000/Veicoli";
 
-var mezzoProva = document.querySelector('#mezzo1');
+var contenitore = document.querySelector('#contenitoreVeicoli');
 
 var contatore = 1;
 
@@ -11,11 +11,26 @@ function mostraVeicoli(listaVeicoli){
         var colore = veicolo.colore;
         // var id = veicolo.id;
         
-        mezzoProva.innerHTML += "<li>Veicolo " + contatore + ": "+ mezzo + " " + colore + '</li>';
-        contatore++;
+        var mezzoVeicolo = document.createElement('div');
+        mezzoVeicolo.setAttribute('class','mezzo');
+        var coloreVeicolo = document.createElement('div');
+        coloreVeicolo.setAttribute('class','colore');
+
+        mezzoVeicolo.textContent = mezzo;
+        coloreVeicolo.textContent = colore;
+        
+        var newDiv = document.createElement('div');
+        newDiv.setAttribute('class', 'veicoloCard col-12 col-md-5 col-lg-3 m-1');
+
+        newDiv.appendChild(mezzoVeicolo);
+        newDiv.appendChild(coloreVeicolo);
+
+        contenitore.appendChild(newDiv);
+
+    
     });
 }
-
+// '<div class="veicoloCard col-12 col-md-5 col-lg-3 m-1"><div class="mezzo">' + mezzo + '</div><div class="colore">' + colore +'</div></div>'
 fetch(api_url)
 .then(data => {
     return data.json()
