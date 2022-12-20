@@ -63,7 +63,7 @@ public class ArchivioUtenti {
 	//relazione con l'altra tabella
 	
 	 @OneToMany(mappedBy = "archivioutenti", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	    Set<Prenotazione> tazione = new HashSet<Prenotazione>();
+	    Set<Prenotazione> prenotazione = new HashSet<Prenotazione>();
 	
 	
 	
@@ -160,13 +160,12 @@ public class ArchivioUtenti {
 	}
 
 	public Set<Prenotazione> getPrenotazione() {
-		return tazione;
+		return prenotazione;
 	}
 
 	public void setPrenotazione(Set<Prenotazione> prenotazione) {
-		this.tazione = prenotazione;
+		this.prenotazione = prenotazione;
 	}
-	
 	
 	
 }
