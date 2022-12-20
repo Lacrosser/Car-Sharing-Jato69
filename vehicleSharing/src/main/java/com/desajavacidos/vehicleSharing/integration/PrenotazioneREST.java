@@ -1,5 +1,6 @@
 package com.desajavacidos.vehicleSharing.integration;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,22 @@ public class PrenotazioneREST {
 		service.addPrenotazione(idUtente, idVeicolo);
 	}
 	
+	
+	
+	///// da finire
+	
+	@PutMapping("/{id}")
+	public void modificaPrenotazione(@PathVariable int id, @RequestBody Prenotazione p) {
+		Prenotazione prenotazioneById = service.getPrenotazioneById(id);
+		
+		prenotazioneById.setVeicoli(p.getVeicoli());
+		prenotazioneById.setArchivioUtenti(p.getArchivioUtenti());
+		prenotazioneById.setTimestamp(p.getTimestamp());
+		
+		service.updatePrenotazione(prenotazioneById);
+		
+	}
+	
 	@PostMapping
 	public void addprenotazioneSingola(@RequestBody Prenotazione i) {
 		service.addPrenotazione(i);
@@ -66,6 +83,10 @@ public class PrenotazioneREST {
 	public void updateprenotazione(@RequestBody Prenotazione u) {
 		service.updatePrenotazione(u);
 	}
+	
+	// da controllare
+	
+	
 	@DeleteMapping("/{id}")
 	public void deletePrenotazioen(@PathVariable("id")int id) {
 		service.deletePrenotazioneById(id);

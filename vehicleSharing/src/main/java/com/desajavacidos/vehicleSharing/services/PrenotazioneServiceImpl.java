@@ -71,6 +71,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		return false;
 
 	}
+	
 
 	@Override
 	public List<ArchivioUtenti> getUtentiById(int idUtente) {
@@ -94,5 +95,6 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }

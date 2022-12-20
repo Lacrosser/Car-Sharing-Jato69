@@ -23,6 +23,8 @@ public interface PrenotazioneService {
 
 	void updatePrenotazione(Prenotazione u);
 	
+	
+	
 	List<ArchivioUtenti> getUtentiById(int idUtente);
 	List<Veicoli> getVeicoliById(int idVeicolo);
 }
