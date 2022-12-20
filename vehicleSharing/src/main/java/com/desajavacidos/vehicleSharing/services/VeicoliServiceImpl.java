@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
+import com.desajavacidos.vehicleSharing.entities.Veicoli.Veicolo;
 import com.desajavacidos.vehicleSharing.repo.VeicoliDao;
 import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 
@@ -50,5 +51,11 @@ public class VeicoliServiceImpl implements VeicoliService {
         return repo.findByDisponibilita(disponibilita);
         //return repo.findAll();
     }
+
+	@Override
+	public List<Veicoli> getByTipologia(Veicolo veicolo) {
+		// TODO Auto-generated method stub
+		return repo.findByVeicolo(veicolo);
+	}
 
 }

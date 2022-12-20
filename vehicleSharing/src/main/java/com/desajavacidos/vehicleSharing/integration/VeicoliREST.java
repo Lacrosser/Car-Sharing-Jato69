@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
+import com.desajavacidos.vehicleSharing.entities.Veicoli.Veicolo;
 import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 
 @RestController
@@ -49,6 +50,12 @@ public class VeicoliREST {
 		return service.getVeicoliByDisp(disponibilita);
 
 	}
+	
+	@GetMapping("/tipo/{tipo}")
+	public List<Veicoli>getTipologiaVeicoli(@PathVariable("tipo")Veicolo veicolo){
+		
+		return service.getByTipologia(veicolo);
+	}
 
 	@PostMapping
 	public void addVeicoli(@RequestBody Veicoli u) {
@@ -56,9 +63,21 @@ public class VeicoliREST {
 		service.addVeicoli(u);
 	}
 
-	@PutMapping
-	public void updateVeicoli(@RequestBody Veicoli u) {
-		service.updateVeicoli(u);
+	@PutMapping("/{id}")
+	public void updateVeicoli(@PathVariable("id")int id, @RequestBody Veicoli u) {
+		Veicoli veicoliById = service.getVeicoliById(id);
+		veicoliById.setVeicolo(u.getVeicolo());
+		veicoliById.setAlimentazione(u.getAlimentazione());
+		veicoliById.setDisponibilita(u.getDisponibilita());
+		veicoliById.setDataPrenotazione(u.getDataPrenotazione());
+		veicoliById.setPosizione(u.getPosizione());
+		veicoliById.setProlungato(u.getProlungato());
+		veicoliById.setDescrizione(u.getDescrizione());
+		veicoliById.setImmagine(u.getImmagine());
+		
+			
+		service.updateVeicoli(veicoliById);
+		
 	}
 
 	@DeleteMapping("/{id}")

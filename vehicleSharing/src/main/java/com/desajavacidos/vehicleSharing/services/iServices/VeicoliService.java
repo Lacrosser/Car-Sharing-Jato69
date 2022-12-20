@@ -3,6 +3,7 @@ package com.desajavacidos.vehicleSharing.services.iServices;
 import java.util.List;
 
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
+import com.desajavacidos.vehicleSharing.entities.Veicoli.Veicolo;
 
 public interface VeicoliService {
 	
@@ -14,4 +15,6 @@ public interface VeicoliService {
 	void updateVeicoli(Veicoli v);
 	
 	List<Veicoli> getVeicoliByDisp(boolean disponibilita);
+	
+	List<Veicoli>getByTipologia(Veicolo veicolo);
 }
