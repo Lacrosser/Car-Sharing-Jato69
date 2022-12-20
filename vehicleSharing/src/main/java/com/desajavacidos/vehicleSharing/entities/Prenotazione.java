@@ -3,8 +3,6 @@ package com.desajavacidos.vehicleSharing.entities;
 import java.sql.Timestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

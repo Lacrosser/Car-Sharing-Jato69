@@ -6,4 +6,9 @@ import com.desajavacidos.vehicleSharing.entities.Prenotazione;
 
 public interface PrenotazioneDao extends JpaRepository<Prenotazione, Integer> {
 
+	//Prenotazione findByArchivioutentiId(String archivioutenti);
+	//Prenotazione findByVeicoliId(String veicoli);
+	
+	//find by user
+	//find by veicolo
 }

@@ -9,4 +9,5 @@ public interface ArchivioUtentiDao extends JpaRepository<ArchivioUtenti, Integer
 	ArchivioUtenti findByUserIdIgnoreCase(String userId);
 	ArchivioUtenti findByPasswordIgnoreCase(String password);
 
+
 }

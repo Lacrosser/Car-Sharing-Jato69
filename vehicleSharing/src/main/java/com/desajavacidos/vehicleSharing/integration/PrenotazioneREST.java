@@ -16,30 +16,34 @@ import com.desajavacidos.vehicleSharing.entities.Prenotazione;
 import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("api/prenotazione")
 public class PrenotazioneREST {
 	
 	@Autowired
 	private PrenotazioneService service;
 	
-	@GetMapping("prenotazione")
+	@GetMapping
 	List<Prenotazione>getall(){
 		return service.getAll();
 	}
 	
-	@GetMapping("prenotazione/{id}")
+	@GetMapping("/{id}")
 	public Prenotazione getPrenotazione(@PathVariable("id")int id) {
-		return service.getDescrizioneById(id);
+		return service.getPrenotazioneById(id);
 	}
-	@PostMapping("prenotazione")
-	public void addprenotazione(@RequestBody Prenotazione u) {
-		service.addPresentazione(u);
+	@PostMapping("/utente{idUtente}/veicolo{idVeicolo}")
+	public void addprenotazione(@PathVariable(required = false) int idUtente, @RequestBody Prenotazione prenotazioni, @PathVariable(required = false) int idVeicolo) {
+		
+		service.addPrenotazione(idUtente, idVeicolo);
 	}
-	@PutMapping("prenotazione")
+	
+	
+	
+	@PutMapping
 	public void updateprenotazione(@RequestBody Prenotazione u) {
 		service.updatePresentazione(u);
 	}
-	@DeleteMapping("prenotazione/{id}")
+	@DeleteMapping("/{id}")
 	public void deletePrenotazioen(@PathVariable("id")int id) {
 		service.deletePresentazioneById(id);
 	}

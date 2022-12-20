@@ -8,11 +8,11 @@ public interface PrenotazioneService {
 
 	List<Prenotazione> getAll();
 
-	Prenotazione getDescrizioneById(int id);
+	Prenotazione getPrenotazioneById(int id);
 
 	void addPresentazione(Prenotazione u);
 	
-	void addPresentazione(int idUtente, int idVeicolo);
+	boolean addPrenotazione(int idUtente, int idVeicolo);
 
 	void deletePresentazioneById(int id);
 
