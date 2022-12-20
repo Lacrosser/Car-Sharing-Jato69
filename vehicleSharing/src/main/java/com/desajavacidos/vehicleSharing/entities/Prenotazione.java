@@ -2,6 +2,8 @@ package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,16 +24,17 @@ public class Prenotazione {
 	private int id;
 	
 	@JsonIgnore
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(optional = false)
     @JoinColumn(name = "veicoli_id")
     private Veicoli veicoliId;
 		
 	@JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "archivioutenti_id")
     private ArchivioUtenti archivioutentiId;
     
     @Column(name="ora_prenotazione")
+    @CreationTimestamp
     private Timestamp oraPrenotazione;
 
 	public int getId() {
@@ -41,7 +44,7 @@ public class Prenotazione {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+	@JsonIgnore
 	public Veicoli getVeicoli() {
 		return veicoliId;
 	}

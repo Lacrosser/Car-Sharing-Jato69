@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.entities.Prenotazione;
+import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 
 @RestController
@@ -31,6 +34,22 @@ public class PrenotazioneREST {
 	public Prenotazione getPrenotazione(@PathVariable("id")int id) {
 		return service.getPrenotazioneById(id);
 	}
+	
+	@GetMapping("/utenti/{id}")
+	public List<ArchivioUtenti> getUtentiById(@PathVariable("id") int id) {
+		
+		return service.getUtentiById(id);
+	}
+	
+	@GetMapping("/veicoli/{id}")
+	public List<Veicoli> getVeicoli(@PathVariable("id") int id) {
+		
+		return service.getVeicoliById(id);
+	}
+
+
+	
+	
 	@PostMapping("/utente/{idUtente}/veicolo/{idVeicolo}")
 	public void addprenotazione(@PathVariable int idUtente, @PathVariable int idVeicolo) {
 		
@@ -39,18 +58,18 @@ public class PrenotazioneREST {
 	
 	@PostMapping
 	public void addprenotazioneSingola(@RequestBody Prenotazione i) {
-		service.addPresentazione(i);
+		service.addPrenotazione(i);
 	}
 	
 	
 	
 	@PutMapping
 	public void updateprenotazione(@RequestBody Prenotazione u) {
-		service.updatePresentazione(u);
+		service.updatePrenotazione(u);
 	}
 	@DeleteMapping("/{id}")
 	public void deletePrenotazioen(@PathVariable("id")int id) {
-		service.deletePresentazioneById(id);
+		service.deletePrenotazioneById(id);
 	}
 
 }

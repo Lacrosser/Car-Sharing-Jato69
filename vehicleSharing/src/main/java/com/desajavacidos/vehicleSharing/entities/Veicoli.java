@@ -65,7 +65,7 @@ public class Veicoli {
 	//User Id dell'utente che ha inserito l'informazione
 	
 	
-	@OneToMany(mappedBy = "veicoliId",fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
+	@OneToMany(mappedBy = "veicoliId")
 	private Set<Prenotazione> prenotazione= new HashSet<Prenotazione>();
 	
 	public Veicoli() {
