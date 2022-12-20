@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.entities.Prenotazione;
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
-import com.desajavacidos.vehicleSharing.entities.Veicoli.Veicolo;
 import com.desajavacidos.vehicleSharing.repo.PrenotazioneDao;
 import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 
