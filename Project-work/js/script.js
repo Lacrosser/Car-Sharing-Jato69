@@ -1,5 +1,5 @@
 // api url
-const api_url = "http://localhost:5500/Veicoli";
+const api_url = "http://localhost:3000/Veicoli";
 
 var mezzoProva = document.querySelector('#mezzo1');
 
