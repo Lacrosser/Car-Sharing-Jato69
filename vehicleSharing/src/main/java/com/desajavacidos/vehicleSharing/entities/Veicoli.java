@@ -1,9 +1,13 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -56,13 +60,13 @@ public class Veicoli {
 	@Column(name="immagine",nullable = true,unique = false)
 	private String immagine;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "descrizione_id", referencedColumnName = "id")
-    private Descrizione descrizione;
+	@Column(name="descrizione",nullable=false,unique = false)
+    private String descrizione;
 	//User Id dell'utente che ha inserito l'informazione
 	
-	@OneToMany(mappedBy = "veicoli", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Set<Prenotazione> preno;
+	
+	@OneToMany(mappedBy = "veicoliId")
+	private Set<Prenotazione> prenotazione= new HashSet<Prenotazione>();
 	
 	public Veicoli() {
 		// TODO Auto-generated constructor stub
@@ -92,28 +96,12 @@ public class Veicoli {
 		this.alimentazione = alimentazione;
 	}
 
-	public String getPosizione() {
-		return posizione;
-	}
-
-	public void setPosizione(String posizione) {
-		this.posizione = posizione;
-	}
-
-	public boolean isDisponibilita() {
+	public Boolean getDisponibilita() {
 		return disponibilita;
 	}
 
-	public void setDisponibilita(boolean disponibilita) {
+	public void setDisponibilita(Boolean disponibilita) {
 		this.disponibilita = disponibilita;
-	}
-
-	public boolean isProlungato() {
-		return prolungato;
-	}
-
-	public void setProlungato(boolean prolungato) {
-		this.prolungato = prolungato;
 	}
 
 	public Timestamp getDataPrenotazione() {
@@ -124,6 +112,22 @@ public class Veicoli {
 		this.dataPrenotazione = dataPrenotazione;
 	}
 
+	public String getPosizione() {
+		return posizione;
+	}
+
+	public void setPosizione(String posizione) {
+		this.posizione = posizione;
+	}
+
+	public Boolean getProlungato() {
+		return prolungato;
+	}
+
+	public void setProlungato(Boolean prolungato) {
+		this.prolungato = prolungato;
+	}
+
 	public String getImmagine() {
 		return immagine;
 	}
@@ -132,23 +136,21 @@ public class Veicoli {
 		this.immagine = immagine;
 	}
 
-	public Descrizione getDescrizione() {
+	public String getDescrizione() {
 		return descrizione;
 	}
 
-	public void setDescrizione(Descrizione descrizione) {
+	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
 
-	public Set<Prenotazione> getPreno() {
-		return preno;
+	public Set<Prenotazione> getPrenotazione() {
+		return prenotazione;
 	}
 
-	public void setPreno(Set<Prenotazione> preno) {
-		this.preno = preno;
+	public void setPrenotazione(Set<Prenotazione> prenotazione) {
+		this.prenotazione = prenotazione;
 	}
 
-
-	
 	
 }

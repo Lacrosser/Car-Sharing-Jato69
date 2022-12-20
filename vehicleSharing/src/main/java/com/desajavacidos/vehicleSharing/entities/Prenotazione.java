@@ -2,8 +2,9 @@ package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,16 +23,19 @@ public class Prenotazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JsonIgnore
+	@ManyToOne(optional = false)
     @JoinColumn(name = "veicoli_id")
-    private Veicoli veicoli;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Veicoli veicoliId;
+		
+	@JsonIgnore
+    @ManyToOne(optional = false)
     @JoinColumn(name = "archivioutenti_id")
-    private ArchivioUtenti archivioutenti;
+    private ArchivioUtenti archivioutentiId;
     
     @Column(name="ora_prenotazione")
-    private Timestamp timestamp;
+    @CreationTimestamp
+    private Timestamp oraPrenotazione;
 
 	public int getId() {
 		return id;
@@ -42,27 +46,27 @@ public class Prenotazione {
 	}
 	@JsonIgnore
 	public Veicoli getVeicoli() {
-		return veicoli;
+		return veicoliId;
 	}
 
 	public void setVeicoli(Veicoli veicoli) {
-		this.veicoli = veicoli;
+		this.veicoliId = veicoli;
 	}
 	@JsonIgnore
 	public ArchivioUtenti getArchivioUtenti() {
-		return archivioutenti;
+		return archivioutentiId;
 	}
 
 	public void setArchivioUtenti(ArchivioUtenti archivioUtenti) {
-		this.archivioutenti = archivioUtenti;
+		this.archivioutentiId = archivioUtenti;
 	}
 
 	public Timestamp getTimestamp() {
-		return timestamp;
+		return oraPrenotazione;
 	}
 
 	public void setTimestamp(Timestamp timestamp) {
-		this.timestamp = timestamp;
+		this.oraPrenotazione = timestamp;
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -23,7 +24,7 @@ public class ArchivioUtenti {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
 	
 	@Column(name = "ultima_modifica")
@@ -61,8 +62,8 @@ public class ArchivioUtenti {
 	
 	//relazione con l'altra tabella
 	
-	 @OneToMany(mappedBy = "archivioutenti", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	    Set<Prenotazione> tazione;
+	 @OneToMany(mappedBy = "archivioutentiId")
+	    Set<Prenotazione> prenotazione = new HashSet<Prenotazione>();
 	
 	
 	
@@ -159,13 +160,12 @@ public class ArchivioUtenti {
 	}
 
 	public Set<Prenotazione> getPrenotazione() {
-		return tazione;
+		return prenotazione;
 	}
 
 	public void setPrenotazione(Set<Prenotazione> prenotazione) {
-		this.tazione = prenotazione;
+		this.prenotazione = prenotazione;
 	}
-	
 	
 	
 }

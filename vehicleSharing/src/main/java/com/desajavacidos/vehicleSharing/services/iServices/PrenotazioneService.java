@@ -2,17 +2,27 @@ package com.desajavacidos.vehicleSharing.services.iServices;
 
 import java.util.List;
 
+import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.entities.Prenotazione;
+import com.desajavacidos.vehicleSharing.entities.Veicoli;
+
 
 public interface PrenotazioneService {
 
+	
+	
 	List<Prenotazione> getAll();
 
-	Prenotazione getDescrizioneById(int id);
+	Prenotazione getPrenotazioneById(int id);
 
-	void addPresentazione(Prenotazione u);
+	void addPrenotazione(Prenotazione u);
+	
+	boolean addPrenotazione(int idUtente, int idVeicolo);
 
-	void deletePresentazioneById(int id);
+	void deletePrenotazioneById(int id);
 
-	void updatePresentazione(Prenotazione u);
+	void updatePrenotazione(Prenotazione u);
+	
+	List<ArchivioUtenti> getUtentiById(int idUtente);
+	List<Veicoli> getVeicoliById(int idVeicolo);
 }

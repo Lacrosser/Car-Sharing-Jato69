@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 
@@ -21,9 +22,12 @@ public class VeicoliREST {
 	@Autowired
 	private VeicoliService service;
 
+//	@Autowired
+//	private DescrizioneService deservice;
 
 	@GetMapping
 	public List<Veicoli> getall() {
+
 		return service.getAll();
 	}
 
@@ -43,21 +47,12 @@ public class VeicoliREST {
 	public List<Veicoli> getVeicoliDisponibili(@PathVariable("disponibilita") boolean disponibilita) {
 
 		return service.getVeicoliByDisp(disponibilita);
-//			List<Veicoli> veicoliByDisp= new ArrayList<>();
-//			for (Veicoli veicoli : service.getAll()) {
-//				
-//				if(veicoli.isDisponibilita()==disponibilita) {
-//					
-//					veicoliByDisp.add(service.getVeicoliById(veicoli.getId()));
-//				}
-//					 
-//			}
-//			return veicoliByDisp;
 
 	}
 
 	@PostMapping
 	public void addVeicoli(@RequestBody Veicoli u) {
+
 		service.addVeicoli(u);
 	}
 
