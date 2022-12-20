@@ -60,11 +60,8 @@ public class Veicoli {
 	@Column(name="immagine",nullable = true,unique = false)
 	private String immagine;
 	
-	
-	@JsonIgnore
-	@OneToOne( fetch = FetchType.LAZY, optional = false, cascade=CascadeType.ALL)
-	@JoinColumn(name = "descrizione_id", nullable = false)
-    private Descrizione descrizione;
+	@Column(name="descrizione",nullable=false,unique = false)
+    private String descrizione;
 	//User Id dell'utente che ha inserito l'informazione
 	
 	
@@ -99,28 +96,12 @@ public class Veicoli {
 		this.alimentazione = alimentazione;
 	}
 
-	public String getPosizione() {
-		return posizione;
-	}
-
-	public void setPosizione(String posizione) {
-		this.posizione = posizione;
-	}
-
-	public boolean isDisponibilita() {
+	public Boolean getDisponibilita() {
 		return disponibilita;
 	}
 
-	public void setDisponibilita(boolean disponibilita) {
+	public void setDisponibilita(Boolean disponibilita) {
 		this.disponibilita = disponibilita;
-	}
-
-	public boolean isProlungato() {
-		return prolungato;
-	}
-
-	public void setProlungato(boolean prolungato) {
-		this.prolungato = prolungato;
 	}
 
 	public Timestamp getDataPrenotazione() {
@@ -131,6 +112,22 @@ public class Veicoli {
 		this.dataPrenotazione = dataPrenotazione;
 	}
 
+	public String getPosizione() {
+		return posizione;
+	}
+
+	public void setPosizione(String posizione) {
+		this.posizione = posizione;
+	}
+
+	public Boolean getProlungato() {
+		return prolungato;
+	}
+
+	public void setProlungato(Boolean prolungato) {
+		this.prolungato = prolungato;
+	}
+
 	public String getImmagine() {
 		return immagine;
 	}
@@ -138,24 +135,22 @@ public class Veicoli {
 	public void setImmagine(String immagine) {
 		this.immagine = immagine;
 	}
-	
-	public Descrizione getDescrizione() {
+
+	public String getDescrizione() {
 		return descrizione;
 	}
 
-	public void setDescrizione(Descrizione descrizione) {
+	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	
-	public Set<Prenotazione> getPreno() {
+
+	public Set<Prenotazione> getPrenotazione() {
 		return prenotazione;
 	}
 
-	public void setPreno(Set<Prenotazione> preno) {
-		this.prenotazione = preno;
+	public void setPrenotazione(Set<Prenotazione> prenotazione) {
+		this.prenotazione = prenotazione;
 	}
 
-
-	
 	
 }

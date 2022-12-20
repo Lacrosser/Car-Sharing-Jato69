@@ -1,20 +1,15 @@
 package com.desajavacidos.vehicleSharing;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
-import com.desajavacidos.vehicleSharing.entities.Descrizione;
 import com.desajavacidos.vehicleSharing.entities.Prenotazione;
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService;
-import com.desajavacidos.vehicleSharing.services.iServices.DescrizioneService;
+
 import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 
@@ -23,8 +18,8 @@ class VehicleSharingApplicationTests {
 
 	@Autowired
 	ArchivioUtentiService utente;
-	@Autowired
-	DescrizioneService descrizione;
+//	@Autowired
+//	DescrizioneService descrizione;
 	@Autowired
 	PrenotazioneService prenotazione;
 	@Autowired
@@ -69,14 +64,14 @@ class VehicleSharingApplicationTests {
 		v.setDisponibilita(true);
 		veicolo.updateVeicoli(v);
 		
-		Descrizione d = new Descrizione();
-		d.setColore("rosso");
-		d.setCilindrata("...");
-		d.setModello("xyz");
-		d.setVeicoli(veicolo.getVeicoliById(1));
-		
-		descrizione.addDescrizione(d);
-		
+//		Descrizione d = new Descrizione();
+//		d.setColore("rosso");
+//		d.setCilindrata("...");
+//		d.setModello("xyz");
+//		d.setVeicoli(veicolo.getVeicoliById(1));
+//		
+//		descrizione.addDescrizione(d);
+//		
 	}
 
 }
