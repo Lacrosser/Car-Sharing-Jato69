@@ -14,12 +14,79 @@
 
     <!-- DIOBUDINO -->
 
-    <header class="bg-warning">
-        <h1>tariffe</h1>
+    <header class="">
+        <nav class="navbar navbar-expand-lg navbar-dark mt-2 pb-5  borderNav"> <!-- inizio navbar -->
+
+            <div class="container-lg"> <!-- inizio container navbar -->
+        
+                <a href="#">
+                    <svg height="48" width="95.04">
+                      <image href="img/logo.svg" src="img/logo.png" class="h-100" />
+                    </svg>
+                    <!-- logo a caso -->
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="offcanvas offcanvas-end bg-dark text-bg-dark" style="width: 15rem" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel"> <!-- inizio offcanvas -->
+        
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+        
+                <div class="offcanvas-body"> <!-- inizio offcanvas-body -->
+           
+                  <ul class="navbar-nav justify-content-end align-items-lg-center flex-grow-1 pe-3"> <!-- inizio elementi navbar -->
+                              
+                    <li class="nav-item ms-auto ms-lg-0">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <!-- possiamo togliere mettendo il logo diretto alla home -->
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                      <a class="nav-link" href="./pages/login.html">Login</a>
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                      <a class="nav-link" href="./pages/paginaVeicolo.html">Flotta</a>
+                      <!-- tipi diversi di veicoli disp -->
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                      <a class="nav-link" href="./pages/tariffe.html">Tariffe</a>
+                      <!-- libero profesionista, abbonamenti, parcheggi -->
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                      <a class="nav-link" href="./pages/mappaVeicoli.html">Copertura</a>
+                      <!-- mappa con veicoli disponibili, visibile a tutti -->
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                      <a class="nav-link" href="./pages/partner.html">Partner</a>
+                      <!-- mettere i loghi delle roba si soft skill -->
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                        <a class="nav-link" href="./pages/istruzioni.html">Istruzioni</a>
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                      <a class="nav-link" href="#">Scegli città</a>
+                      <!-- pop-up con scelta delle città (?) -->
+                    </li>
+                    <li class="nav-item ms-auto ms-lg-0">
+                        <a class="nav-link" href="#">EN</a>
+                        <!-- tasto per cambiare lingua (funzionante ?) -->
+                    </li>
+                    </div>
+        
+                  </ul> <!-- fine elementi navbar -->
+                </div> <!-- fine offcanvas-body -->
+              </div> <!-- fine offcanvas -->
+            </div> <!-- fine container navbar -->
+          </nav> <!-- fine navbar -->
     </header>
 
-
+    
+    
     <main class="bg-danger">
+        <h1>Admin</h1>
         <div>
             <h2>Contenuti riservati all'adm</h2>
         </div>
