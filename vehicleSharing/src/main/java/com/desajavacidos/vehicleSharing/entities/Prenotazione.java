@@ -24,11 +24,11 @@ public class Prenotazione {
 	private int id;
 	
 	@JsonIgnore
-	@ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "veicoli_id")
     private Veicoli veicoli;
 		
-    @ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "archivioutenti_id")
     @JsonIgnore
     private ArchivioUtenti archivioutenti;

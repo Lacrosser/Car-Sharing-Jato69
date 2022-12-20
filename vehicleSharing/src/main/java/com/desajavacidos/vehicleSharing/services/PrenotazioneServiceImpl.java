@@ -40,6 +40,20 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		
 		repo.save(u);
 	}
+
+	@Override
+	public void addPresentazione(int idUtente, int idVeicolo) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		//autowired per le 2 repository
+		//cambiare in boolean
+		//find by id 
+		//find by veicolo
+		//check per per id utente
+		//check per id veicolo
+	}
 	
 	
 }

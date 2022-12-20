@@ -11,6 +11,8 @@ public interface PrenotazioneService {
 	Prenotazione getDescrizioneById(int id);
 
 	void addPresentazione(Prenotazione u);
+	
+	void addPresentazione(int idUtente, int idVeicolo);
 
 	void deletePresentazioneById(int id);
 

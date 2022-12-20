@@ -27,6 +27,7 @@ public class VeicoliServiceImpl implements VeicoliService {
 
     @Override
     public void addVeicoli(Veicoli v) {
+    	
         repo.save(v);
         
     }
