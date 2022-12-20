@@ -1,9 +1,13 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -56,13 +60,16 @@ public class Veicoli {
 	@Column(name="immagine",nullable = true,unique = false)
 	private String immagine;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "descrizione_id", referencedColumnName = "id")
+	
+	@JsonIgnore
+	@OneToOne( fetch = FetchType.LAZY, optional = false, cascade=CascadeType.ALL)
+	@JoinColumn(name = "descrizione_id", nullable = false)
     private Descrizione descrizione;
 	//User Id dell'utente che ha inserito l'informazione
 	
-	@OneToMany(mappedBy = "veicoli", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Set<Prenotazione> preno;
+	
+	@OneToMany(mappedBy = "veicoli",fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
+	private Set<Prenotazione> prenotazione= new HashSet<Prenotazione>();
 	
 	public Veicoli() {
 		// TODO Auto-generated constructor stub
@@ -131,7 +138,7 @@ public class Veicoli {
 	public void setImmagine(String immagine) {
 		this.immagine = immagine;
 	}
-
+	
 	public Descrizione getDescrizione() {
 		return descrizione;
 	}
@@ -139,13 +146,13 @@ public class Veicoli {
 	public void setDescrizione(Descrizione descrizione) {
 		this.descrizione = descrizione;
 	}
-
+	
 	public Set<Prenotazione> getPreno() {
-		return preno;
+		return prenotazione;
 	}
 
 	public void setPreno(Set<Prenotazione> preno) {
-		this.preno = preno;
+		this.prenotazione = preno;
 	}
 
 

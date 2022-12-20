@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,16 +23,18 @@ public class Prenotazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.ALL)
     @JoinColumn(name = "veicoli_id")
     private Veicoli veicoli;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+		
+    @ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.ALL)
     @JoinColumn(name = "archivioutenti_id")
+    @JsonIgnore
     private ArchivioUtenti archivioutenti;
     
     @Column(name="ora_prenotazione")
-    private Timestamp timestamp;
+    private Timestamp oraPrenotazione;
 
 	public int getId() {
 		return id;
@@ -40,7 +43,7 @@ public class Prenotazione {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@JsonIgnore
+	
 	public Veicoli getVeicoli() {
 		return veicoli;
 	}
@@ -58,11 +61,11 @@ public class Prenotazione {
 	}
 
 	public Timestamp getTimestamp() {
-		return timestamp;
+		return oraPrenotazione;
 	}
 
 	public void setTimestamp(Timestamp timestamp) {
-		this.timestamp = timestamp;
+		this.oraPrenotazione = timestamp;
 	}
 
 }

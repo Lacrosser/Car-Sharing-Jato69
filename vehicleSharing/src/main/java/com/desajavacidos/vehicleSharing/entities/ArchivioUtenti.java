@@ -1,6 +1,7 @@
 package com.desajavacidos.vehicleSharing.entities;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -62,7 +63,7 @@ public class ArchivioUtenti {
 	//relazione con l'altra tabella
 	
 	 @OneToMany(mappedBy = "archivioutenti", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	    Set<Prenotazione> tazione;
+	    Set<Prenotazione> tazione = new HashSet<Prenotazione>();
 	
 	
 	
