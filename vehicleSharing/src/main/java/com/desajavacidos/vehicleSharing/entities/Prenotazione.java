@@ -24,12 +24,12 @@ public class Prenotazione {
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "veicoli_id")
-    private Veicoli veicoli;
+    private Veicoli veicoliId;
 		
+	@JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "archivioutenti_id")
-    @JsonIgnore
-    private ArchivioUtenti archivioutenti;
+    private ArchivioUtenti archivioutentiId;
     
     @Column(name="ora_prenotazione")
     private Timestamp oraPrenotazione;
@@ -43,19 +43,19 @@ public class Prenotazione {
 	}
 	
 	public Veicoli getVeicoli() {
-		return veicoli;
+		return veicoliId;
 	}
 
 	public void setVeicoli(Veicoli veicoli) {
-		this.veicoli = veicoli;
+		this.veicoliId = veicoli;
 	}
 	@JsonIgnore
 	public ArchivioUtenti getArchivioUtenti() {
-		return archivioutenti;
+		return archivioutentiId;
 	}
 
 	public void setArchivioUtenti(ArchivioUtenti archivioUtenti) {
-		this.archivioutenti = archivioUtenti;
+		this.archivioutentiId = archivioUtenti;
 	}
 
 	public Timestamp getTimestamp() {

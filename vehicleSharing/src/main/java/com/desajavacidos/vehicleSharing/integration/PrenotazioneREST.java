@@ -31,10 +31,15 @@ public class PrenotazioneREST {
 	public Prenotazione getPrenotazione(@PathVariable("id")int id) {
 		return service.getPrenotazioneById(id);
 	}
-	@PostMapping("/utente{idUtente}/veicolo{idVeicolo}")
-	public void addprenotazione(@PathVariable(required = false) int idUtente, @RequestBody Prenotazione prenotazioni, @PathVariable(required = false) int idVeicolo) {
+	@PostMapping("/utente/{idUtente}/veicolo/{idVeicolo}")
+	public void addprenotazione(@PathVariable int idUtente, @PathVariable int idVeicolo) {
 		
 		service.addPrenotazione(idUtente, idVeicolo);
+	}
+	
+	@PostMapping
+	public void addprenotazioneSingola(@RequestBody Prenotazione i) {
+		service.addPresentazione(i);
 	}
 	
 	

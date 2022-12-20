@@ -62,7 +62,7 @@ public class ArchivioUtenti {
 	
 	//relazione con l'altra tabella
 	
-	 @OneToMany(mappedBy = "archivioutenti", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	 @OneToMany(mappedBy = "archivioutentiId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	    Set<Prenotazione> prenotazione = new HashSet<Prenotazione>();
 	
 	

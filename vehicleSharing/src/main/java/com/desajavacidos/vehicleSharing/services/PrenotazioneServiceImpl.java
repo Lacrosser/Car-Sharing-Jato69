@@ -61,6 +61,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 			p.setArchivioUtenti(archivioId);
 			p.setVeicoli(veicoloId);
 			repo.save(p);
+			System.out.println("salvie");
 			return true;
 		}
 		//autowired per le 2 repository
