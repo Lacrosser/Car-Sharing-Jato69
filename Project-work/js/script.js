@@ -20,7 +20,7 @@ function mostraVeicoli(listaVeicoli){
         coloreVeicolo.textContent = colore;
         
         var newDiv = document.createElement('div');
-        newDiv.setAttribute('class', 'veicoloCard col-12 col-md-5 col-lg-3 m-1');
+        newDiv.setAttribute('class', 'veicoloCard col-12 col-md-5 col-lg-3 m-1 whiteText');
 
         newDiv.appendChild(mezzoVeicolo);
         newDiv.appendChild(coloreVeicolo);

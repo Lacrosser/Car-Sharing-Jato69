@@ -28,3 +28,33 @@
     height: 7rem;
     margin-top: 1rem;
 }
+
+.whiteText{
+    color: white;
+}
+
+.footerColor{
+    background: #252A41;
+}
+
+.appleImg{ 
+    margin: 0 0;
+    height: 4rem;
+    width: auto;
+}
+
+.googleImg{
+    height: 4rem;
+    width: auto;
+}
+
+.bannerPromo{
+    background: #00b7c2;
+    text-align: center;
+    padding: .10rem 0;
+}
+
+.bannerPromo h4{
+    text-shadow: 0px 0px .5px #000000;
+  
+}
