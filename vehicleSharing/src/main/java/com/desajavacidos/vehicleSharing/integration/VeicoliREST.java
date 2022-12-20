@@ -51,7 +51,7 @@ public class VeicoliREST {
 	}
 
 	@PostMapping
-	public void addVeicoli(@PathVariable Integer id, @RequestBody Veicoli u) {
+	public void addVeicoli(@RequestBody Veicoli u) {
 
 		service.addVeicoli(u);
 	}
