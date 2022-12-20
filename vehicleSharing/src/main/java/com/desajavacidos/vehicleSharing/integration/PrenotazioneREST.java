@@ -60,15 +60,10 @@ public class PrenotazioneREST {
 	
 	///// da finire
 	
-	@PutMapping("/{id}")
-	public void modificaPrenotazione(@PathVariable int id, @RequestBody Prenotazione p) {
-		Prenotazione prenotazioneById = service.getPrenotazioneById(id);
+	@PutMapping("/{id}/utente/{idUtente}/veicolo/{idVeicolo}")
+	public void modificaPrenotazione(@PathVariable int idUtente, @PathVariable int idVeicolo,@PathVariable int id) {
 		
-		prenotazioneById.setVeicoli(p.getVeicoli());
-		prenotazioneById.setArchivioUtenti(p.getArchivioUtenti());
-		prenotazioneById.setTimestamp(p.getTimestamp());
-		
-		service.updatePrenotazione(prenotazioneById);
+		service.putPrenotazione(idUtente, idVeicolo, id);
 		
 	}
 	
