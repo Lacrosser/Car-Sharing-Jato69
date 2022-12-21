@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.entities.Veicoli.Veicolo;
 import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
