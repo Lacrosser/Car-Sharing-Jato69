@@ -117,34 +117,46 @@
       <!-- ----------------------------------------------------------------------- -->
       <!--                            SEZIONE ALTA SITO                            -->
       <!-- ----------------------------------------------------------------------- -->
-      <div class="row d-flex justify-content-around align-content-center mt-5">
+      <div class="row mt-5">
         <div class="col-lg-6">
           <div class="primaryText">Perchè usare SharE?</div>
           <div class="secondaryText">SharE conviene e ha 0 impatto sull'emissioni di CO2</div>
           <div class="primaryText">Come funziona SharE?</div>
           <div class="secondaryText">Prenota un veicolo e goditi il viaggio!</div>
-          <div class="primaryText">Abbonarsi? Semplice!</div>
-          <div class="secondaryText">Ecco i nostri abbonamenti</div>
+          <div class="primaryText mt-4" style="font-size: 30px;">Abbonarsi? Semplice!</div>
+          <div class="secondaryText" style="font-size: 40px;">Ecco i nostri abbonamenti</div>
         </div>
-        <div class="col-lg-6 d-none d-lg-block monopattinoImg d-flex justify-content-center align-content-center">
-          <div class="immagineScooter">
-            <img class="" src="./img/EscooterStilizzato.png" alt="e-scooter">
-          </div>
+        <div class="col-lg-6 d-none d-lg-block monopattinoImg d-flex justify-content-end align-content-center">
+            <div class="immagineScooter">
+              <img class="" src="./img/Monopattino.png" alt="e-scooter">
+            </div>
         </div>
       </div>
       <!-- ----------------------------------------------------------------------- -->
       <!--                           ABBONAMENTI STATICI                           -->
       <!-- ----------------------------------------------------------------------- -->
-      <div class="d-none d-lg-inline d-flex jus">
-        <div id="abbonamentiPc" class="abbonamentiPc row whiteText d-flex justify-content-center">
+      <div class="d-none d-lg-inline d-flex justify-content-around">
+        <div id="abbonamentiPc" class="abbonamentiPc row whiteText d-flex justify-content-around mt-3">
+            <div class="abbonamento col-11 col-lg-3">
+              <div class="titoloAbbonamento pt-3">
+                <h3>Abbonamento Giornaliero</h3>
+              </div>
+              <div class="descrizione">
+                <p>2 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
+                  <h3 class="whiteText">A soli 5,90€</h3>
+                <div class="button d-flex justify-content-end align-items-end">
+                    <div class="pulsanteAbbonati "><a href="#" class="btn primaryBtn " type="button">Abbonati!</a></div>
+                </div>
+              </div>
+            </div>
           <div class="abbonamento col-11 col-lg-3">
             <div class="titoloAbbonamento pt-3">
-              <h3>Abbonamento 1</h3>
+              <h3>Abbonamento Settimanale</h3>
             </div>
             <div class="descrizione">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eaque voluptas optio vel modi quae eius beatae cum voluptatum animi.</p>
+              <p>14 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
         
-                <h3 class="whiteText">A soli 9,90€</h3>
+                <h3 class="whiteText">A soli 12,90€</h3>
         
               <div class="button d-flex justify-content-end">
                 <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
@@ -153,26 +165,12 @@
           </div>
           <div class="abbonamento col-11 col-lg-3">
             <div class="titoloAbbonamento pt-3">
-              <h3>Abbonamento 1</h3>
+              <h3>Abbonamento Mensile</h3>
             </div>
             <div class="descrizione">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eaque voluptas optio vel modi quae eius beatae cum voluptatum animi.</p>
+              <p>60 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
         
-                <h3 class="whiteText">A soli 9,90€</h3>
-        
-              <div class="button d-flex justify-content-end">
-                <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
-              </div>
-            </div>
-          </div>
-          <div class="abbonamento col-11 col-lg-3">
-            <div class="titoloAbbonamento pt-3">
-              <h3>Abbonamento 1</h3>
-            </div>
-            <div class="descrizione">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eaque voluptas optio vel modi quae eius beatae cum voluptatum animi.</p>
-        
-                <h3 class="whiteText">A soli 9,90€</h3>
+                <h3 class="whiteText">A soli 29,90€</h3>
         
               <div class="button d-flex justify-content-end">
                 <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
@@ -315,7 +313,7 @@
         spaceBetween: 0,
         centeredSlides: true,
         autoplay: {
-          delay: 4000,
+          delay: 8000,
           disableOnInteraction: false
         },
         pagination: {

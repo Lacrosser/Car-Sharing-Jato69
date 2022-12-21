@@ -74,8 +74,14 @@
 /* -------------------------------------------------------------------------- */
 
 .monopattinoImg img{
-    height: 5rem;
+    height: 16rem;
     width: auto;
+}
+
+.immagineScooter{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 9rem;
 }
 
 /* -------------------------------------------------------------------------- */
