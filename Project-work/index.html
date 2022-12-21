@@ -12,6 +12,7 @@
     <!--                                FOGLI CSS                                -->
     <!-- ----------------------------------------------------------------------- -->
     <link rel="stylesheet" href="./css/abbonamenti.css" type="text/css">
+    <link rel="stylesheet" href="./css/swiperHero.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mediaQueryStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,13 +102,22 @@
     <!--                                  HERO                                   -->
     <!-- ----------------------------------------------------------------------- -->
     <div id="hero">
-      hero
+      <div class="swiper heroSwipe">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url(./img/teslaRossa.jpg);"></div>
+          <div class="swiper-slide" style="background-image: url(./img/vwElettrica.jpg);"></div>
+          <div class="swiper-slide" style="background-image: url(./img/porscheElettrica.jpg); background-position: center center;"></div>
+          <!-- <div class="swiper-slide"><img src="../img/porscheElettrica.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="../img/vwElettrica.jpg" alt=""></div> -->
+          
+        </div>
+      </div>
     </div>
     <div class="container">
       <!-- ----------------------------------------------------------------------- -->
       <!--                            SEZIONE ALTA SITO                            -->
       <!-- ----------------------------------------------------------------------- -->
-      <div class="row d-flex justify-content-around align-content-center">
+      <div class="row d-flex justify-content-around align-content-center mt-5">
         <div class="col-lg-6">
           <div class="primaryText">Perchè usare SharE?</div>
           <div class="secondaryText">SharE conviene e ha 0 impatto sull'emissioni di CO2</div>
@@ -116,8 +126,10 @@
           <div class="primaryText">Abbonarsi? Semplice!</div>
           <div class="secondaryText">Ecco i nostri abbonamenti</div>
         </div>
-        <div class="col-lg-6 d-none d-lg-block monopattinoImg d-flex justify-content-center">
-          <img class="" src="./img/EscooterStilizzato.png" alt="e-scooter">
+        <div class="col-lg-6 d-none d-lg-block monopattinoImg d-flex justify-content-center align-content-center">
+          <div class="immagineScooter">
+            <img class="" src="./img/EscooterStilizzato.png" alt="e-scooter">
+          </div>
         </div>
       </div>
       <!-- ----------------------------------------------------------------------- -->
@@ -295,6 +307,25 @@
           el: ".swiper-scrollbar",
           hide: true,
         },
+      });
+    </script>
+    <script>
+      var swiper = new Swiper(".heroSwipe", {
+        loop: true,
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
       });
     </script>
 </body>
