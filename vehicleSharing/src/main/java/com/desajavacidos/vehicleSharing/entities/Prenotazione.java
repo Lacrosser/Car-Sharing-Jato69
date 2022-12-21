@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,14 +23,12 @@ public class Prenotazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	//@JsonIgnore
-	@JsonBackReference
+	@JsonIgnore
 	@ManyToOne(optional = false)
     @JoinColumn(name = "veicoli_id")
     private Veicoli veicoliId;
 		
-	//@JsonIgnore
-	@JsonBackReference
+	@JsonIgnore
     @ManyToOne(optional = false)
     @JoinColumn(name = "archivioutenti_id")
     private ArchivioUtenti archivioutentiId;
