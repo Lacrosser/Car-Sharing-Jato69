@@ -35,6 +35,12 @@
 
 .footerColor{
     background: #252A41;
+    padding: 1.5rem 0;
+}
+
+.footerApp{
+    /* display: flex;
+    align-items: center; */
 }
 
 .appleImg{ 
