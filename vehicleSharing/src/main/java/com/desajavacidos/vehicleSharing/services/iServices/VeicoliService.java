@@ -17,4 +17,6 @@ public interface VeicoliService {
 	List<Veicoli> getVeicoliByDisp(boolean disponibilita);
 	
 	List<Veicoli>getByTipologia(Veicolo veicolo);
+	
+	List<Veicoli>getByAlimentazione(String alimentazione);
 }

@@ -56,6 +56,12 @@ public class VeicoliREST {
 		
 		return service.getByTipologia(veicolo);
 	}
+	
+	@GetMapping("/alimentazione/{alimentazione}")
+	public List<Veicoli> getTipologiaVeicoli(@PathVariable("alimentazione") String alimentazione) {
+		
+		return service.getByAlimentazione(alimentazione);
+	}
 
 	@PostMapping
 	public void addVeicoli(@RequestBody Veicoli u) {

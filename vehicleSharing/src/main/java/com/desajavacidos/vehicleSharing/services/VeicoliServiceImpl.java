@@ -58,4 +58,10 @@ public class VeicoliServiceImpl implements VeicoliService {
 		return dao.findByVeicolo(veicolo);
 	}
 
+	@Override
+	public List<Veicoli> getByAlimentazione(String alimentazione) {
+		
+		return dao.findByAlimentazione(alimentazione);
+	}
+
 }
