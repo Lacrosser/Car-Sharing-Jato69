@@ -155,6 +155,7 @@
 /* -------------------------------------------------------------------------- */
 
 #spacer{
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
     margin-top: 4rem;
     margin-bottom: 4rem;
     background-image: url('../img/spacerIndex.jpg');
@@ -180,8 +181,19 @@
 /* -------------------------------------------------------------------------- */
 
 .sezioneLista{
-    height: 4rem;
+    font-size: 20px;
+    height: 6rem;
     background-color: #00B7C2;
     border: 4px solid #128594;
     margin: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    MAPPA                                   */
+/* -------------------------------------------------------------------------- */
+
+.mappa, #map{
+    margin-top: 3rem;
+    height: 20rem;
+    width: auto;
 }

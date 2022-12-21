@@ -3,17 +3,17 @@
         font-size: 12px;
         padding: 0 0;
     }
-}
-/* @media screen and (min-width: 991px) {
-    .monopattinoImg{
-        visibility: visible;
+
+    #spacer{
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        background-image: url('../img/spacerIndex.jpg');
+        height: 10rem;  
     }
-
-}  */
-
-
-@media (min-width: 1400px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: 1049px;
+    
 }
-}
+
+
+
+
