@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.entities.Prenotazione;
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
-import com.desajavacidos.vehicleSharing.entities.Veicoli.Veicolo;
 import com.desajavacidos.vehicleSharing.repo.PrenotazioneDao;
 import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 
@@ -81,12 +80,10 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 		a.setArchivioUtenti(archivioUtenti);
 		a.setVeicoli(veicolizzati);
-		if (idUtente == 0 && veicolo == 0 && id == 0) {
+		
 			repo.save(a);
 			return true;
-		}
-
-		return false;
+		
 	}
 
 	@Override
