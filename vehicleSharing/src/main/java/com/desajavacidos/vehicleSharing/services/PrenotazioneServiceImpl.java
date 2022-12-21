@@ -73,6 +73,23 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	}
 	
 
+	public boolean putPrenotazione(int idUtente, int veicolo, int id) {
+		
+		
+
+		ArchivioUtenti archivioUtenti = archivioprepo.getUtenteById(idUtente);
+		Veicoli veicolizzati = veirepo.getVeicoliById(veicolo);
+		Prenotazione a = getPrenotazioneById(id);
+		
+
+		a.setArchivioUtenti(archivioUtenti);
+		a.setVeicoli(veicolizzati);
+		
+			repo.save(a);
+			return true;
+		
+	}
+
 	@Override
 	public List<ArchivioUtenti> getUtentiById(int idUtente) {
 		// ArchivioUtenti a=archivioprepo.getUtenteById(idUtente);
