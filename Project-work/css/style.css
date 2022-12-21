@@ -33,6 +33,16 @@
     color: white;
 }
 
+.primaryText{
+    font-size: 14px;
+    color: #00B7C2;
+}
+
+.secondaryText{
+    font-size: 20px;
+    color:#128494;
+}
+
 .footerColor{
     background: #252A41;
 }
@@ -57,6 +67,15 @@
 .bannerPromo h4{
     text-shadow: 0px 0px .5px #000000;
   
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              SEZIONE ALTA SITO                             */
+/* -------------------------------------------------------------------------- */
+
+.monopattinoImg img{
+    height: 5rem;
+    width: auto;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -99,3 +118,58 @@
     width: 100%;
     height: 300px;
   }
+  /* -------------------------------------------------------------------------- */
+  /*                                  PULSANTI                                  */
+  /* -------------------------------------------------------------------------- */
+
+.primaryBtn{
+    font-size: 20px;
+    color: white;
+    background: #00B7C2;
+    /* blue1/100 */
+
+    border: 3px solid #ECFEFF;
+    border-radius: 4px;
+    transition: .15s;
+}
+
+.primaryBtn:hover{
+    background: white;
+    color: #128594;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   SPACER                                   */
+/* -------------------------------------------------------------------------- */
+
+#spacer{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-image: url('../img/spacerIndex.jpg');
+    height: 20rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacerText{
+    font-size: 4rem;
+    color: white;
+    
+    
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                SEZIONE LISTA                               */
+/* -------------------------------------------------------------------------- */
+
+.sezioneLista{
+    height: 4rem;
+    background-color: #00B7C2;
+    border: 4px solid #128594;
+    margin: 1rem;
+}
