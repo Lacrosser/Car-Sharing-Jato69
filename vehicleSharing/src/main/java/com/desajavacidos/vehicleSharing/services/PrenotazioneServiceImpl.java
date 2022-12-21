@@ -70,13 +70,17 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		return false;
 
 	}
+	
 
 	@Override
 	public boolean putPrenotazione(int idUtente, int veicolo, int id) {
+		
+		
 
 		ArchivioUtenti archivioUtenti = archivioprepo.getUtenteById(idUtente);
 		Veicoli veicolizzati = veirepo.getVeicoliById(veicolo);
 		Prenotazione a = getPrenotazioneById(id);
+		
 
 		a.setArchivioUtenti(archivioUtenti);
 		a.setVeicoli(veicolizzati);
@@ -108,5 +112,6 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }
