@@ -23,7 +23,7 @@ public interface PrenotazioneService {
 
 	void updatePrenotazione(Prenotazione u);
 	
-	
+	boolean  putPrenotazione(int idUtente, int veicolo, int id);
 	
 	List<ArchivioUtenti> getUtentiById(int idUtente);
 	List<Veicoli> getVeicoliById(int idVeicolo);
