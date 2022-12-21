@@ -85,8 +85,26 @@
   </header>
     <!-- stessa header ?? -->
 
-    <main class="">
-        <h1>Login</h1>
+    <main>
+        <div class="container d-flex pt-3 pb-3">
+          <div class="row" style="background-color: #00B7C2;">
+            <h1 class="pt-3 pb-3 text-center">Accedi</h1>
+            <form class="login" id="login">
+              <div class="form-floating pb-3">
+                  <input type="text" class="form-control" id="username" placeholder="name@example.com">
+                  <label for="floatingInput">Username</label>
+              </div>
+              <div class="form-floating pb-3">
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+              </div>
+              <div class="button d-flex justify-content-end pb-3">
+                <a href="" class="btn primaryBtn" type="button">Accedi</a>
+              </div>
+              <p class="text-white">Non sei registrato? Registrati!</p>
+            </form>
+          </div>
+        </div>
     </main>
 
     <footer class="footerColor">
