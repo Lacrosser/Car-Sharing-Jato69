@@ -6,6 +6,7 @@ import java.util.Set;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -59,7 +60,7 @@ public class Veicoli {
     private String descrizione;
 	//User Id dell'utente che ha inserito l'informazione
 	
-	
+	@JsonIgnore
 	@OneToMany(mappedBy = "veicoliId")
 	private Set<Prenotazione> prenotazione= new HashSet<Prenotazione>();
 	

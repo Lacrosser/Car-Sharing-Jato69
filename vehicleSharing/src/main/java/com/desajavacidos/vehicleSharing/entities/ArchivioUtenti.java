@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -61,7 +62,7 @@ public class ArchivioUtenti {
 	
 	//relazione con l'altra tabella
 	
-	 
+	@JsonIgnore
 	 @OneToMany(mappedBy = "archivioutentiId")
 	    Set<Prenotazione> prenotazione = new HashSet<Prenotazione>();
 	

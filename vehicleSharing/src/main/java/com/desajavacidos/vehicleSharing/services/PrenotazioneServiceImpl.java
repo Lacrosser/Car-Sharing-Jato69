@@ -13,7 +13,7 @@ import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	@Autowired
-	private PrenotazioneDao repo;
+	private PrenotazioneDao dao;
 
 	@Autowired
 	private VeicoliServiceImpl veirepo;
@@ -23,28 +23,28 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	@Override
 	public List<Prenotazione> getAll() {
-		return repo.findAll();
+		return dao.findAll();
 	}
 
 	@Override
 	public Prenotazione getPrenotazioneById(int id) {
-		return repo.findById(id).get();
+		return dao.findById(id).get();
 	}
 
 	@Override
 	public void addPrenotazione(Prenotazione u) {
-		repo.save(u);
+		dao.save(u);
 	}
 
 	@Override
 	public void deletePrenotazioneById(int id) {
-		repo.deleteById(id);
+		dao.deleteById(id);
 	}
 
 	@Override
 	public void updatePrenotazione(Prenotazione u) {
 
-		repo.save(u);
+		dao.save(u);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 			Prenotazione p = new Prenotazione();
 			p.setArchivioUtenti(archivioId);
 			p.setVeicoli(veicoloId);
-			repo.save(p);
+			dao.save(p);
 			System.out.println("salvie");
 			return true;
 		}
@@ -85,7 +85,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		a.setArchivioUtenti(archivioUtenti);
 		a.setVeicoli(veicolizzati);
 		
-			repo.save(a);
+			dao.save(a);
 			return true;
 		
 	}
@@ -93,7 +93,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	@Override
 	public List<ArchivioUtenti> getUtentiById(int idUtente) {
 		// ArchivioUtenti a=archivioprepo.getUtenteById(idUtente);
-		List<Prenotazione> gino = repo.findByArchivioutenti(idUtente);
+		List<Prenotazione> gino = dao.findByArchivioutenti(idUtente);
 
 		List<ArchivioUtenti> franca = gino.stream().map(g -> g.getArchivioUtenti()).toList();
 
@@ -103,7 +103,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	@Override
 	public List<Veicoli> getVeicoliById(int idVeicolo) {
 
-		List<Prenotazione> gino = repo.findByVeicoli(idVeicolo);
+		List<Prenotazione> gino = dao.findByVeicoli(idVeicolo);
 
 		List<Veicoli> franca = gino.stream().map(g -> g.getVeicoli()).toList();
 

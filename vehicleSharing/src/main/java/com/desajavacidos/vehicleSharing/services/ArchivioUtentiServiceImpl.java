@@ -13,16 +13,16 @@ import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService
 public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 	
 	@Autowired
-	private ArchivioUtentiDao repo;
+	private ArchivioUtentiDao dao;
 	
 	@Override
 	public List<ArchivioUtenti> getAll() {
-		return repo.findAll();
+		return dao.findAll();
 	}
 
 	@Override
 	public ArchivioUtenti getUtenteById(int id) {
-		return repo.findById(id).get();
+		return dao.findById(id).get();
 	}
 
 	@Override
@@ -30,24 +30,24 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 		
 		
 		
-		repo.save(u);
+		dao.save(u);
 	}
 
 	@Override
 	public void deleteUtenteById(int id) {
 
-		repo.deleteById(id);
+		dao.deleteById(id);
 	}
 
 	@Override
 	public void updateUtente(ArchivioUtenti u) {
-		repo.save(u);
+		dao.save(u);
 	}
 
 	@Override
 	public boolean userExists(String userId) {
 		
-		ArchivioUtenti s= this.repo.findByUserIdIgnoreCase(userId);
+		ArchivioUtenti s= this.dao.findByUserIdIgnoreCase(userId);
 		
 		if(s!=null) {
 			return true;
@@ -58,7 +58,7 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 	@Override
 	public boolean passwordExist(String password) {
 		
-		ArchivioUtenti s= this.repo.findByPasswordIgnoreCase(password);
+		ArchivioUtenti s= this.dao.findByPasswordIgnoreCase(password);
 		
 		if(s!=null) {
 			return true;
@@ -71,13 +71,13 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 	@Override
 	public ArchivioUtenti findByUser(String user) {
 		
-		return repo.findByUserIdIgnoreCase(user);
+		return dao.findByUserIdIgnoreCase(user);
 	}
 
 	@Override
 	public ArchivioUtenti findByPassword(String password) {
 		
-		return repo.findByPasswordIgnoreCase(password);
+		return dao.findByPasswordIgnoreCase(password);
 	}
 
 	

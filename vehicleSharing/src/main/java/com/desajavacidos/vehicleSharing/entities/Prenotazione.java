@@ -23,12 +23,12 @@ public class Prenotazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@JsonIgnore
+	//@JsonManagedReference
 	@ManyToOne(optional = false)
     @JoinColumn(name = "veicoli_id")
     private Veicoli veicoliId;
 		
-	@JsonIgnore
+	//@JsonManagedReference
     @ManyToOne(optional = false)
     @JoinColumn(name = "archivioutenti_id")
     private ArchivioUtenti archivioutentiId;
@@ -44,7 +44,7 @@ public class Prenotazione {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@JsonIgnore
+	//@JsonIgnore
 	public Veicoli getVeicoli() {
 		return veicoliId;
 	}
@@ -52,7 +52,7 @@ public class Prenotazione {
 	public void setVeicoli(Veicoli veicoli) {
 		this.veicoliId = veicoli;
 	}
-	@JsonIgnore
+	//@JsonIgnore
 	public ArchivioUtenti getArchivioUtenti() {
 		return archivioutentiId;
 	}
