@@ -1,5 +1,19 @@
-@media screen and (max-width: 900px) {
-    .monopattinoImg{
-        display: none;
+ @media screen and (max-width: 991px) {
+    .bannerPromo h4{
+        font-size: 12px;
+        padding: 0 0;
     }
+}
+/* @media screen and (min-width: 991px) {
+    .monopattinoImg{
+        visibility: visible;
+    }
+
+}  */
+
+
+@media (min-width: 1400px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1049px;
+}
 }

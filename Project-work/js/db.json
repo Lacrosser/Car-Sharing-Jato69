@@ -5,6 +5,9 @@
       "id": 1},
       {"mezzo": "Monopattino",
       "colore": "Nero",
-      "id": 2}
+      "id": 2},
+      {"mezzo": "Auto",
+      "colore": "bianca",
+      "id": 3}
   ]
 }
