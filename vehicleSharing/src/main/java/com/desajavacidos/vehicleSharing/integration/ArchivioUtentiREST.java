@@ -26,7 +26,7 @@ public class ArchivioUtentiREST {
 
 	@Autowired
 	private ArchivioUtentiService service;
-	
+
 //	@Autowired
 //	private PrenotazioneService pserv;
 
@@ -44,10 +44,10 @@ public class ArchivioUtentiREST {
 		ArchivioUtenti s = this.service.getUtenteById(id);
 
 		if (s != null) {
-			
-			
-			// se esiste posso restituire 2 cose, il codice di stato delle richiesta, e l'oggetto desiderato
-			
+
+			// se esiste posso restituire 2 cose, il codice di stato delle richiesta, e
+			// l'oggetto desiderato
+
 			return new ResponseEntity<ArchivioUtenti>(s, HttpStatus.OK);
 		} else {
 
@@ -57,59 +57,56 @@ public class ArchivioUtentiREST {
 	}
 
 	@PostMapping
-	public  ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
-		
-		boolean userExist=this.service.userExists(u.getUserId());
-		boolean passExist=this.service.passwordExist(u.getPassword());
-		
-		if(userExist && passExist) {
-			
-			return new ResponseEntity<ArchivioUtenti>(u,HttpStatus.BAD_REQUEST);
-		}else {
-			//salvo e restituisco lo studente con il nuovo campo generato dal database(id)
+	public ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
+
+		boolean userExist = this.service.userExists(u.getUserId());
+		boolean passExist = this.service.passwordExist(u.getPassword());
+
+		if (userExist && passExist) {
+
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
+		} else {
+			// salvo e restituisco lo studente con il nuovo campo generato dal database(id)
 			service.addUtente(u);
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
-			
+
 		}
 	}
-	
+
 	@PostMapping("/prenotazioni/{id}")
-	
-	
+
 //	@PatchMapping("{id}/prenotazioni")
 //	public Utente post
-	
 
 	@PutMapping
 	public ResponseEntity<ArchivioUtenti> putOne(@RequestBody ArchivioUtenti u) {
 		ArchivioUtenti archivioID = this.service.getUtenteById(u.getId());
-		if(archivioID == null)
+		if (archivioID == null)
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
 		ArchivioUtenti archivioUser = this.service.findByUser(u.getUserId());
 		ArchivioUtenti archivioPassword = this.service.findByPassword(u.getPassword());
-			if(archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId() && archivioUser != null) {
-				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
-			} else {
-				service.updateUtente(u);
-				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
-			}
-			
+		if (archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId()
+				&& archivioUser != null) {
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
+		} else {
+			service.updateUtente(u);
+			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
+		}
 
-		
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ArchivioUtenti> delOne(@PathVariable("id") int id) {
 		ArchivioUtenti archivioID = this.service.getUtenteById(id);
-		if(archivioID == null) {
+		if (archivioID == null) {
 			return ResponseEntity.badRequest().build();
-			
-		}else {
-			
+
+		} else {
+
 			this.service.deleteUtenteById(id);
 			return ResponseEntity.ok().build();
 		}
-	}
 
+	}
 
 }

@@ -50,9 +50,9 @@ public class VeicoliREST {
 		return service.getVeicoliByDisp(disponibilita);
 
 	}
-	
+
 	@GetMapping("/tipo/{tipo}")
-	public List<Veicoli>getTipologiaVeicoli(@PathVariable("tipo")Veicolo veicolo){
+	public List<Veicoli> getTipologiaVeicoli(@PathVariable("tipo") Veicolo veicolo) {
 		
 		return service.getByTipologia(veicolo);
 	}
@@ -64,7 +64,7 @@ public class VeicoliREST {
 	}
 
 	@PutMapping("/{id}")
-	public void updateVeicoli(@PathVariable("id")int id, @RequestBody Veicoli u) {
+	public void updateVeicoli(@PathVariable("id") int id, @RequestBody Veicoli u) {
 		Veicoli veicoliById = service.getVeicoliById(id);
 		veicoliById.setVeicolo(u.getVeicolo());
 		veicoliById.setAlimentazione(u.getAlimentazione());
@@ -74,15 +74,21 @@ public class VeicoliREST {
 		veicoliById.setProlungato(u.getProlungato());
 		veicoliById.setDescrizione(u.getDescrizione());
 		veicoliById.setImmagine(u.getImmagine());
-		
-			
-		service.updateVeicoli(veicoliById);
-		
+
+		if (id <= service.getAll().size()) {
+
+			service.updateVeicoli(veicoliById);
+
+		}
+
 	}
 
 	@DeleteMapping("/{id}")
 	public void deleteUtente(@PathVariable("id") int id) {
-		service.deleteVeicoliByID(id);
-	}
 
+		if (id <= service.getAll().size()) {
+
+			service.deleteVeicoliByID(id);
+		}
+	}
 }

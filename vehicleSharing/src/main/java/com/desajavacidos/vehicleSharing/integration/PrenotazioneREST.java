@@ -21,75 +21,91 @@ import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 @RestController
 @RequestMapping("api/prenotazione")
 public class PrenotazioneREST {
-	
+
 	@Autowired
 	private PrenotazioneService service;
-	
+
 	@GetMapping
-	List<Prenotazione>getall(){
+	List<Prenotazione> getall() {
 		return service.getAll();
 	}
-	
+
 	@GetMapping("/{id}")
-	public Prenotazione getPrenotazione(@PathVariable("id")int id) {
-		return service.getPrenotazioneById(id);
+	public Prenotazione getPrenotazione(@PathVariable("id") int id) {
+
+		if (id <= service.getAll().size()) {
+
+			return service.getPrenotazioneById(id);
+
+		} else {
+			return null;
+
+		}
 	}
-	
+
 	@GetMapping("/utenti/{id}")
 	public List<ArchivioUtenti> getUtentiById(@PathVariable("id") int id) {
-		
+
 		return service.getUtentiById(id);
 	}
-	
+
 	@GetMapping("/veicoli/{id}")
 	public List<Veicoli> getVeicoli(@PathVariable("id") int id) {
-		
-		return service.getVeicoliById(id);
+
+		if (id <= service.getAll().size()) {
+
+			return service.getVeicoliById(id);
+		} else {
+			return null;
+		}
 	}
 
-
-	
-	
 	@PostMapping("/utente/{idUtente}/veicolo/{idVeicolo}")
 	public void addprenotazione(@PathVariable int idUtente, @PathVariable int idVeicolo) {
+
+		if (idUtente <= service.getAll().size())
+			if (idUtente <= service.getAll().size()) {
 		
 		service.addPrenotazione(idUtente, idVeicolo);
 	}
-	
-	
-	
+	}
+
 	///// da finire
-	
+
 	@PutMapping("/{id}")
 	public void modificaPrenotazione(@PathVariable int id, @RequestBody Prenotazione p) {
 		Prenotazione prenotazioneById = service.getPrenotazioneById(id);
-		
+
 		prenotazioneById.setVeicoli(p.getVeicoli());
 		prenotazioneById.setArchivioUtenti(p.getArchivioUtenti());
 		prenotazioneById.setTimestamp(p.getTimestamp());
-		
-		service.updatePrenotazione(prenotazioneById);
-		
+
+		if (id <= service.getAll().size()) {
+
+			service.updatePrenotazione(prenotazioneById);
+		}
+
 	}
-	
+
 	@PostMapping
 	public void addprenotazioneSingola(@RequestBody Prenotazione i) {
 		service.addPrenotazione(i);
 	}
-	
-	
-	
+
 	@PutMapping
 	public void updateprenotazione(@RequestBody Prenotazione u) {
 		service.updatePrenotazione(u);
 	}
-	
+
 	// da controllare
-	
-	
+
 	@DeleteMapping("/{id}")
-	public void deletePrenotazioen(@PathVariable("id")int id) {
-		service.deletePrenotazioneById(id);
+	public void deletePrenotazioen(@PathVariable("id") int id) {
+
+		if (id <= service.getAll().size()) {
+
+			service.deletePrenotazioneById(id);
+		}
 	}
 
 }
