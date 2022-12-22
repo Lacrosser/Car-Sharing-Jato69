@@ -55,6 +55,20 @@ public class ArchivioUtentiREST {
 		}
 
 	}
+	@GetMapping("/login")
+	public ResponseEntity<Boolean>getLogin(@RequestBody String username,@RequestBody String password){
+		
+		ArchivioUtenti u=this.service.findByUser(username);
+		ArchivioUtenti p=this.service.findByPassword(password);
+		
+		if(u.getId()==p.getId()) {
+			 return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+		}
+		
+		
+	}
 
 	@PostMapping
 	public ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
@@ -73,7 +87,7 @@ public class ArchivioUtentiREST {
 		}
 	}
 
-	@PostMapping("/prenotazioni/{id}")
+	//@PostMapping("/prenotazioni/{id}")
 
 //	@PatchMapping("{id}/prenotazioni")
 //	public Utente post
