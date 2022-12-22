@@ -6,8 +6,8 @@ import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 
 public interface ArchivioUtentiDao extends JpaRepository<ArchivioUtenti, Integer> {
 	
-	ArchivioUtenti findByUserIdIgnoreCase(String userId);
-	ArchivioUtenti findByPasswordIgnoreCase(String password);
+	ArchivioUtenti findByUserId(String userId);
+	ArchivioUtenti findByPassword(String password);
 
 
 }
