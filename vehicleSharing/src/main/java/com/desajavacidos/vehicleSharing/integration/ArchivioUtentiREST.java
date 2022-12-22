@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -66,11 +67,16 @@ public class ArchivioUtentiREST {
 		ArchivioUtenti u=this.service.findByUser(objectNode.get("user").asText());
 		ArchivioUtenti p=this.service.findByPassword(objectNode.get("password").asText());
 		
-		if(u.getId()==p.getId()) {
-			 return new ResponseEntity<Boolean>(true, HttpStatus.OK);
-		}else {
-			return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+		if(u != null && p != null) {
+			
+			if(u.getId()==p.getId()) {
+				return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+			}else {
+				return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+			}
 		}
+		
+		return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
 	}
 
 	@PostMapping

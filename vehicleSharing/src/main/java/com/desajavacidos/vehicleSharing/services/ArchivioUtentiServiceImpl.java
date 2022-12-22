@@ -52,7 +52,7 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 	@Override
 	public boolean userExists(String userId) {
 		
-		ArchivioUtenti s= this.dao.findByUserIdIgnoreCase(userId);
+		ArchivioUtenti s= this.dao.findByUserId(userId);
 		
 		if(s!=null) {
 			return true;
@@ -63,7 +63,7 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 	@Override
 	public boolean passwordExist(String password) {
 		
-		ArchivioUtenti s= this.dao.findByPasswordIgnoreCase(password);
+		ArchivioUtenti s= this.dao.findByPassword(password);
 		
 		if(s!=null) {
 			return true;
@@ -75,14 +75,26 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 
 	@Override
 	public ArchivioUtenti findByUser(String user) {
+		System.out.println(dao.findByUserId(user).getUserId());
+		System.out.println("Username " + user);
 		
-		return dao.findByUserIdIgnoreCase(user);
+		if(dao.findByUserId(user).getUserId().equals(user)) {
+			System.out.println("Stringhe uguali");
+			return dao.findByUserId(user);
+		}
+		else {
+			System.out.println();
+			return null;
+		}
 	}
 
 	@Override
 	public ArchivioUtenti findByPassword(String password) {
 		
-		return dao.findByPasswordIgnoreCase(password);
+		if(dao.findByPassword(password).getPassword().equals(password))
+		return dao.findByPassword(password);
+		else
+			return null;
 	}
 
 	
