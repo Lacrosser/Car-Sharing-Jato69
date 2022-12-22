@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService;
 import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.util.List;
 
@@ -58,19 +59,18 @@ public class ArchivioUtentiREST {
 		}
 
 	}
+	
 	@GetMapping("/login")
-	public ResponseEntity<Boolean>getLogin(@RequestBody String username,@RequestBody String password){
+	public ResponseEntity<Boolean>getLogin(@RequestBody ObjectNode objectNode){
 		
-		ArchivioUtenti u=this.service.findByUser(username);
-		ArchivioUtenti p=this.service.findByPassword(password);
+		ArchivioUtenti u=this.service.findByUser(objectNode.get("user").asText());
+		ArchivioUtenti p=this.service.findByPassword(objectNode.get("password").asText());
 		
 		if(u.getId()==p.getId()) {
 			 return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 		}else {
 			return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
 		}
-		
-		
 	}
 
 	@PostMapping
