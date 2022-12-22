@@ -74,10 +74,12 @@ public class VeicoliREST {
 		veicoliById.setVeicolo(u.getVeicolo());
 		veicoliById.setAlimentazione(u.getAlimentazione());
 		veicoliById.setDisponibilita(u.getDisponibilita());
-		veicoliById.setDataPrenotazione(u.getDataPrenotazione());
+		veicoliById.setDataInserimento(u.getDataInserimento());
 		veicoliById.setPosizione(u.getPosizione());
 		veicoliById.setProlungato(u.getProlungato());
-		veicoliById.setDescrizione(u.getDescrizione());
+		veicoliById.setModello(u.getModello());
+		veicoliById.setColore(u.getColore());
+		veicoliById.setCilindrata(u.getCilindrata());
 		veicoliById.setImmagine(u.getImmagine());
 
 		if (id <= service.getAll().size()) {

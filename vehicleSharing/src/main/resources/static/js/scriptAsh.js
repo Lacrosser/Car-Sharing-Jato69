@@ -36,4 +36,140 @@ const DELETEPRENOTAZIONE="http://localhost:9069/api/prenotazione/"//inserire id 
 
 
 
-fetch()
+var idselector=document.querySelector("#id").value;
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                         Costruzione veicolo singolo                        */
+/* -------------------------------------------------------------------------- */
+
+
+//raccolta del valore di id dal sumbit form
+const PARENT = window.opener;
+
+  // Get a reference to the form element in the parent window
+  const form = parent.document.querySelector('#formIdVeicolo');
+
+  // Get the value of the input field
+  const value = form.elements.value.value;
+
+  // Use the value
+  console.log(`You entered: ${value}`);
+
+
+
+<div></div>
+function creaCardSingola(veicolo){
+    let colore=veicolo.colore;
+    let cilindrata=veicolo.cilindrata;
+
+    let immagine=veicolo.immagine;
+
+    let modello=veicolo.modello;
+    let alimentazione=veicolo.alimentazione;
+
+    creaTitolo(veicolo);
+
+    
+    
+/* -------------------------------------------------------------------------- */
+/*                          Creazione Scheda Veicolo                          */
+/* -------------------------------------------------------------------------- */
+
+
+    let div=document.createElement("div");
+    div.setAttribute("id","schedaVeicolo")
+    div.setAttribute("style","background-color: rgb(18,132,148);")
+    div.setAttribute("class","mt-0")
+
+
+    let div2=document.createElement("div");
+    div2.setAttribute("id","fotoVeicolo");
+    div2.setAttribute("class","mb-0");
+
+    let div3=document.createElement("div");
+    div3.setAttribute("class","m-5");
+
+    let div4=document.createElement("container");
+    div4.setAttribute("class","container");
+
+    let h3ul=document.createElement("h3");
+    h3ul.textContent="Descrizione Veicolo";
+
+    let ul=document.createElement("ul");
+
+    for (let index = 0; index < 2; index++) {
+        let li=document.createElement("li");
+        ul.appendChild(li)
+        
+        if(index=0){
+            li.textContent=cilindrata;
+        }else{
+            li.textContent=colore;
+        }
+        
+    }
+
+    let div5=document.createElement("div");
+    div5.setAttribute("id","prezzo");
+    div5.setAttribute("class","mt-5");
+    let h31=document.createElement("h3")
+    h31.innerHTML="Prezzo e tariffe: <strong>15€/g</strong>";
+
+    let div6=document.createElement("div")
+    div6.setAttribute("id","pulsantiScheda");
+    div6.classList.add("d-flex","justify-content-end","p-3");
+
+    let div7=document.createElement("div");
+    div7.setAttribute("class","m-1");
+    let a=document.createElement("a")
+    a.setAttribute("type","button")
+    a.classList.add("btn","primaryBtn","primaryBtnVerde");
+    a.textContent="Vedi su mappa"
+
+
+    
+    
+
+
+}
+
+
+function creaTitolo(veicolo){
+    let modello=veicolo.modello;
+    let alimentazione=veicolo.alimentazione;
+
+    let div=document.querySelector("#nomeVeicolo");
+    let h1=document.createElement("h1");
+    let h3=document.createElement("h3");
+    let i=document.createElement("i");
+
+    h1.textContent=modello;
+    i.textContent=alimentazione;
+
+    h1.setAttribute("style","color: #00b7c2;");
+    h3.setAttribute("id","tipoAuto");
+    h3.setAttribute("style","color: #4ef037;");
+    i.setAttribute("id","iconaElettrica")
+
+    i.classList.add("bi","bi-lightning-charge");
+
+    h3.appendChild(i);
+    div.appendChild(h1);
+    div.appendChild(h3);
+
+}
+
+
+
+//inserire id in qualche modo
+fetch(GETVEICOLIBYID+idselector)
+    .then (data=>{
+        return data.json()
+    })
+    .then(response =>{
+        console.log(response)
+        //inserire funzione per mostrare i veicoli
+    })
