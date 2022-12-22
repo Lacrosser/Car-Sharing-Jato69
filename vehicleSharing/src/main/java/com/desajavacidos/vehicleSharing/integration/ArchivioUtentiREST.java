@@ -57,22 +57,23 @@ public class ArchivioUtentiREST {
 	}
 	
 	@GetMapping("/login")
-	public ResponseEntity<Boolean>getLogin(@RequestBody ObjectNode objectNode){
+	public ResponseEntity<ArchivioUtenti>getLogin(@RequestBody ObjectNode objectNode){
 		
 		ArchivioUtenti u=this.service.findByUser(objectNode.get("user").asText());
-		ArchivioUtenti p=this.service.findByPassword(objectNode.get("password").asText());
+		//ArchivioUtenti p=this.service.findByPassword(objectNode.get("password").asText());
 		
-		if(u != null && p != null) {
+		if(u != null) {
 			
-			if(u.getId()==p.getId()) {
-				return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+			if(u.getPassword().equals(objectNode.get("password").asText()))  {
+				
+				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<ArchivioUtenti>(new ArchivioUtenti("","","C"),HttpStatus.BAD_REQUEST);
 			}
 		}
 		else {
 			System.out.println("user o password errata");
-			return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<ArchivioUtenti>(new ArchivioUtenti("","","C"),HttpStatus.BAD_REQUEST);
 		}
 		
 	}

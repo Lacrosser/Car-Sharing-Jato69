@@ -28,7 +28,7 @@ public class ArchivioUtenti {
 	@UpdateTimestamp
 	private Timestamp ultimaModifica;
 	
-	@Column(name="user_id", length = 16,nullable = false,unique = false)
+	@Column(name="user_id", length = 16,nullable = false,unique = true)
 	private String userId;
 	
 	@Column(name="password",length = 50,nullable = false,unique = false)
@@ -65,6 +65,13 @@ public class ArchivioUtenti {
 	
 	
 	
+	public ArchivioUtenti(String userId, String password, String tipo) {
+		super();
+		this.userId = userId;
+		this.password = password;
+		this.tipo = tipo;
+	}
+
 	public ArchivioUtenti() {
 		// TODO Auto-generated constructor stub
 	}
