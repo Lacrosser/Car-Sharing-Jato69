@@ -7,7 +7,6 @@ import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -107,8 +106,7 @@ public class ArchivioUtentiREST {
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
 		ArchivioUtenti archivioUser = this.service.findByUser(u.getUserId());
 		ArchivioUtenti archivioPassword = this.service.findByPassword(u.getPassword());
-		if (archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId()
-				&& archivioUser != null) {
+		if (archivioUser != null && archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId()) {
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
 		} else {
 			service.updateUtente(u);
