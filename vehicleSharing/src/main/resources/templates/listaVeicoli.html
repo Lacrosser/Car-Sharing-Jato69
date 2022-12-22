@@ -30,7 +30,7 @@
 
 
     <header class="">
-      <nav class="navbar navbar-expand-lg navbar-dark borderNav third-color"> <!-- inizio navbar -->
+      <nav class="navbar navbar-nav-scroll navbar-expand-lg navbar-dark borderNav third-color"> <!-- inizio navbar -->
 
           <div class="container-lg"> <!-- inizio container navbar -->
       
@@ -109,9 +109,9 @@
 
             <div class="row d-flex justify-content-around align-items-center mt-4">
               <div class="titolo col-lg-6 col-12">
-                <h1 class="secondaryText" style="font-size: 40px;">Ecco la nostra lista di veicoli disponibili</h1>
+                <h1 class="secondaryText" style="font-size: 40px;">Ecco la nostra lista di veicoli</h1>
               </div>
-              <div class="formSelect d-flex justify-content-center align-items-center col-12 col-lg-6">
+              <div class="formSelect d-flex justify-content-center align-items-center col-12 col-lg-6 mt-4">
                 <div class="select" style="margin-right: 2rem;">
                   <select name="tipologia" id="selectTipo" class="form-select" >
                       <option value="TUTTO">Tutti i veicoli</option>
@@ -126,11 +126,29 @@
                 </div>
               </div>
             </div>
-            <div id="contenitoreVeicoli" class="row justify-content-center">
 
-            
+            <!-- ----------------------------------------------------------------------- -->
+            <!--                           VEICOLI DISPONIBILI                           -->
+            <!-- ----------------------------------------------------------------------- -->
+            <div class="row d-flex justify-content-around">
+              <div class="sezioneDisponibile col-11 m-1 col-lg-5">
+                <div class="primaryText m-5">Veicoli disponibili</div>
+                <div id="contenitoreVeicoli" class="row">
+              
+                </div>
+              </div>
+                        <!-- ----------------------------------------------------------------------- -->
+                        <!--                         VEICOLI NON DISPONIBILI                         -->
+                        <!-- ----------------------------------------------------------------------- -->
+                        <div class="sezioneNoDisponibile col-11 m-1 col-lg-5">
+              <div class="primaryText m-5">Veicoli non disponibili</div>
+                <div id="contenitoreVeicoliNoDisponibili" class="row mt-4">
+              
+                </div>
+                        </div>
+            </div>
         </div>
-        </div>
+        <div id="demo"></div>
         <section id="spacer"></section>
 
     </main>
