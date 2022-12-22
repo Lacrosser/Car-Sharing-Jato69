@@ -75,26 +75,24 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 
 	@Override
 	public ArchivioUtenti findByUser(String user) {
-		System.out.println(dao.findByUserId(user).getUserId());
-		System.out.println("Username " + user);
-		
-		if(dao.findByUserId(user).getUserId().equals(user)) {
-			System.out.println("Stringhe uguali");
+		if(dao.findByUserId(user)!=null && dao.findByUserId(user).getUserId().equals(user)) {
 			return dao.findByUserId(user);
 		}
 		else {
-			System.out.println();
 			return null;
 		}
+			
 	}
 
 	@Override
 	public ArchivioUtenti findByPassword(String password) {
 		
-		if(dao.findByPassword(password).getPassword().equals(password))
-		return dao.findByPassword(password);
-		else
-			return null;
+		if(dao.findByPassword(password)!=null && dao.findByPassword(password).getPassword().equals(password)) {
+			return dao.findByPassword(password);			
+		}
+		else {
+			return null;			
+		}
 	}
 
 	

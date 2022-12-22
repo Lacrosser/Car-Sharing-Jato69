@@ -71,8 +71,11 @@ public class ArchivioUtentiREST {
 				return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
 			}
 		}
+		else {
+			System.out.println("user o password errata");
+			return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
+		}
 		
-		return new ResponseEntity<Boolean>(false,HttpStatus.BAD_REQUEST);
 	}
 
 	@PostMapping
