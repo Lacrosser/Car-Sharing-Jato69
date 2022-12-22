@@ -62,22 +62,30 @@ const PARENT = window.opener;
 
 <div></div>
 function creaCardSingola(veicolo){
-    let colore=veicolo.colore;
-    let cilindrata=veicolo.cilindrata;
-
-    let immagine=veicolo.immagine;
-
-    let modello=veicolo.modello;
-    let alimentazione=veicolo.alimentazione;
+    
+    
 
     creaTitolo(veicolo);
+    creaScheda(veicolo);
 
     
     
 /* -------------------------------------------------------------------------- */
 /*                          Creazione Scheda Veicolo                          */
 /* -------------------------------------------------------------------------- */
+    
+    
 
+
+}
+
+function creaScheda(veicolo){
+
+    let colore=veicolo.colore;
+    let cilindrata=veicolo.cilindrata;
+
+
+    let divor=document.querySelector("#sezioneAuto");
 
     let div=document.createElement("div");
     div.setAttribute("id","schedaVeicolo")
@@ -118,6 +126,7 @@ function creaCardSingola(veicolo){
     let h31=document.createElement("h3")
     h31.innerHTML="Prezzo e tariffe: <strong>15€/g</strong>";
 
+
     let div6=document.createElement("div")
     div6.setAttribute("id","pulsantiScheda");
     div6.classList.add("d-flex","justify-content-end","p-3");
@@ -125,17 +134,36 @@ function creaCardSingola(veicolo){
     let div7=document.createElement("div");
     div7.setAttribute("class","m-1");
     let a=document.createElement("a")
+    a.setAttribute("href","")
     a.setAttribute("type","button")
     a.classList.add("btn","primaryBtn","primaryBtnVerde");
     a.textContent="Vedi su mappa"
 
+    let div8=document.createElement("div");
+    div8.setAttribute("class","m-1");
+    let a2=document.createElement("a");
+    a2.setAttribute("href","");
+    a2.setAttribute("type","button");
+    a2.classList("btn","primaryBtn","primaryBtnVerde");
+    a2.textContent="Prenota Ora"
 
-    
-    
+    divor.appendChild(div);
 
+    div.appendChild(div2);
+
+    div.appendChild(div3);
+    div3.appendChild(div4);
+    div4.appendChild(h3ul);
+    div4.appendChild(ul);
+
+    div3.appendChild(div5);
+    div5.appendChild(h31);
+
+    div.appendChild(div6)
+    div6.appendChild(div7);
+    div6.appendChild(div8);
 
 }
-
 
 function creaTitolo(veicolo){
     let modello=veicolo.modello;
@@ -171,5 +199,6 @@ fetch(GETVEICOLIBYID+idselector)
     })
     .then(response =>{
         console.log(response)
+        creaCardSingola(response);
         //inserire funzione per mostrare i veicoli
     })
