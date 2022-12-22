@@ -145,10 +145,17 @@
     transition: .15s;
 }
 
-.primaryBtn:hover{
+/* .primaryBtn:hover{
     background: white;
     color: #128594;
+} */
+
+.primaryBtnVerde:hover{
+    background: rgb(78, 240, 55);
+    color: #ffffff;
 }
+
+
 
 /* -------------------------------------------------------------------------- */
 /*                                   SPACER                                   */
@@ -196,4 +203,20 @@
     margin-top: 3rem;
     height: 20rem;
     width: auto;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    PROVE                                   */
+/* -------------------------------------------------------------------------- */
+
+#fotoVeicolo{
+    background-image: url(../img/vwElettrica.jpg);
+    min-height: 30rem;
+    width: auto;
+    background-size: cover;
+    background-position: center center;
+    margin-top: 3%;
+    
+
 }
