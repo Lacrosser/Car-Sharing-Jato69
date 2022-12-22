@@ -29,6 +29,11 @@
     margin-top: 1rem;
     transition: 0.2s;
 }
+
+.noLink a{
+    text-decoration: none;
+}
+
 .veicoloCard:hover{
     color: #128494;
     background: white;

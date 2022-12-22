@@ -1,14 +1,13 @@
 // api url
-const api_url = "http://localhost:9069/api/veicoli/status/true";
+const api_url = "http://localhost:9069/api/veicoli";
 const api_url_false = "http://localhost:9069/api/veicoli/status/false";
 const api_auto = "http://localhost:9069/api/veicoli/tipo/AUTO"
 const api_monopattini = "http://localhost:9069/api/veicoli/tipo/MONOPATTINO"
 const api_bici = "http://localhost:9069/api/veicoli/tipo/BICICLETTA"
 
 var contenitore = document.querySelector('#contenitoreVeicoli');
-var contenitoreFalse = document.querySelector('#contenitoreVeicoliNoDisponibili')
+var contenitoreNoDisp = document.querySelector('#contenitoreVeicoliNoDisponibili');
 
-var contatore = 1;
 
 var btn = document.querySelector('#btn');
 
@@ -17,66 +16,47 @@ function mostraVeicoli(listaVeicoli){
         var veicolo = mezzo.veicolo;
         var alimentazione = mezzo.alimentazione;
         var disponibilita = mezzo.disponibilita;
+        var id = mezzo.id;
         // var id = veicolo.id;
         
-        // var mezzoVeicolo = document.createElement('div');
-        // mezzoVeicolo.setAttribute('class','veicolo');
-        // var coloreVeicolo = document.createElement('div');
-        // coloreVeicolo.setAttribute('class','alimentazione');
+        var mezzoVeicolo = document.createElement('div');
+        mezzoVeicolo.setAttribute('class','veicolo');
+        var coloreVeicolo = document.createElement('div');
+        coloreVeicolo.setAttribute('class','alimentazione');
         
         
 
-        // mezzoVeicolo.textContent = veicolo;
-        // coloreVeicolo.textContent = alimentazione;
-        
+        mezzoVeicolo.textContent = veicolo;
+        coloreVeicolo.textContent = alimentazione;
+        var aWrap = document.createElement('div');
+        var a = document.createElement('a');
         var newDiv = document.createElement('div');
-        newDiv.setAttribute('class', 'veicoloCard col-12 col-md-5 col-lg-3 m-1 whiteText');
+        aWrap.setAttribute('class','noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
+        newDiv.setAttribute('class', '');
         var disponibilitaMezzo = document.createElement('div');
         
         if(disponibilita == true){
-            var mezzoVeicolo = document.createElement('div');
-            mezzoVeicolo.setAttribute('class','veicolo');
-            var coloreVeicolo = document.createElement('div');
-            coloreVeicolo.setAttribute('class','alimentazione');
-
-            mezzoVeicolo.textContent = veicolo;
-            coloreVeicolo.textContent = alimentazione;
-
             disponibilitaMezzo.setAttribute('class','disponibile');
             disponibilitaMezzo.textContent = "Disponibile";
-
+            var link = "/paginaVeicolo?id=" + id;
+            a.setAttribute('href', link);
             newDiv.appendChild(mezzoVeicolo);
             newDiv.appendChild(coloreVeicolo);
             newDiv.appendChild(disponibilitaMezzo);
-
-            contenitore.appendChild(newDiv);
-
-            var demo = document.querySelector('#demo');
-            var form = document.createElement('form');
-            form.setAttribute('action','http://www.example.com');
-            var input = document.createElement('input');
-            input.setAttribute('value','2');
-            input.setAttribute('type','submit');
-
-            form.appendChild(input);
-            demo.appendChild(form);
-
-
+            a.appendChild(newDiv);
+            aWrap.appendChild(a);
+            contenitore.appendChild(aWrap);
         } else if (disponibilita == false){
             disponibilitaMezzo.setAttribute('class','noDisponibile');
             disponibilitaMezzo.textContent = "Non disponibile";
         }
 
-        // newDiv.appendChild(mezzoVeicolo);
-        // newDiv.appendChild(coloreVeicolo);
-        // newDiv.appendChild(disponibilitaMezzo);
-
-        // contenitore.appendChild(newDiv);
+        
 
     
     });
 }
-function mostraVeicoliNoDisponibili(listaVeicoli){
+function mostraVeicoliNoDisponibile(listaVeicoli){
     listaVeicoli.forEach(mezzo => {
         var veicolo = mezzo.veicolo;
         var alimentazione = mezzo.alimentazione;
@@ -96,21 +76,14 @@ function mostraVeicoliNoDisponibili(listaVeicoli){
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', 'veicoloCardNoDisp col-12 col-md-5 col-lg-3 m-1 whiteText');
         var disponibilitaMezzo = document.createElement('div');
+        disponibilitaMezzo.setAttribute('class','noDisponibile');
+        disponibilitaMezzo.textContent = "Non disponibile";
         
-        if(disponibilita == true){
-            disponibilitaMezzo.setAttribute('class','disponibile');
-            disponibilitaMezzo.textContent = "Disponibile";
-        } else if (disponibilita == false){
-            disponibilitaMezzo.setAttribute('class','noDisponibile');
-            disponibilitaMezzo.textContent = "Non disponibile";
-        }
-
         newDiv.appendChild(mezzoVeicolo);
         newDiv.appendChild(coloreVeicolo);
         newDiv.appendChild(disponibilitaMezzo);
 
-        contenitoreFalse.appendChild(newDiv);
-
+        contenitoreNoDisp.appendChild(newDiv);
     
     });
 }
@@ -132,7 +105,7 @@ function caricaDati(){
         });
         break;
       case "TUTTO":
-      contenitore.textContent = "";
+        contenitore.textContent = "";
       fetch(api_url)
       .then(data => {
       return data.json()
@@ -190,7 +163,7 @@ fetch(api_url_false)
 })
 .then(response => {
     console.log(response)
-    mostraVeicoliNoDisponibili(response)
+    mostraVeicoliNoDisponibile(response)
 });
 // Prova Modifica
 
@@ -215,5 +188,3 @@ var swiper = new Swiper(".heroSwipe", {
     prevEl: ".swiper-button-prev"
   }
 });
-
-
