@@ -34,33 +34,27 @@ const DELETEPRENOTAZIONE="http://localhost:9069/api/prenotazione/"//inserire id 
 
 //fetch api get per la lista veicoli
 
-
-
-var idselector=document.querySelector("#id").value;
-
-
-
-
 /* -------------------------------------------------------------------------- */
 /*                         Costruzione veicolo singolo                        */
 /* -------------------------------------------------------------------------- */
 
 
-//raccolta del valore di id dal sumbit form
-const PARENT = window.opener;
 
-  // Get a reference to the form element in the parent window
-  const form = parent.document.querySelector('#formIdVeicolo');
+// //raccolta del valore di id dal sumbit form
+// const PARENT = window.opener;
 
-  // Get the value of the input field
-  const value = form.elements.value.value;
+//   // Get a reference to the form element in the parent window
+//   const form = parent.document.querySelector('#formIdVeicolo');
 
-  // Use the value
-  console.log(`You entered: ${value}`);
+//   // Get the value of the input field
+//   const value = form.elements.value.value;
+
+//   // Use the value
+//   console.log(`You entered: ${value}`);
 
 
 
-<div></div>
+// <div></div>
 function creaCardSingola(veicolo){
     
     
@@ -68,16 +62,34 @@ function creaCardSingola(veicolo){
     creaTitolo(veicolo);
     creaScheda(veicolo);
 
-    
-    
+
+}
+/* -------------------------------------------------------------------------- */
+/*                          COME PRENDERE DATI DA URL                         */
+/* -------------------------------------------------------------------------- */
+// elenco di macchine
+//paginaVeicolo.html?id=1 si porta dietr
+
+//const PIPPO= new URLSearchParams(window.location.search)
+//PIPPO.get("id");
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                   FUNZIONE DA FAR PARTIRE A INIZIO PAGINA                  */
+/* -------------------------------------------------------------------------- */
+
+
+window.addEventListener("load",initPagina())
+
+
+
 /* -------------------------------------------------------------------------- */
 /*                          Creazione Scheda Veicolo                          */
 /* -------------------------------------------------------------------------- */
     
-    
 
-
-}
 
 function creaScheda(veicolo){
 
@@ -191,9 +203,26 @@ function creaTitolo(veicolo){
 }
 
 
+//inizio pagina caricamento con una funziona
 
 //inserire id in qualche modo
-fetch(GETVEICOLIBYID+idselector)
+// fetch(GETVEICOLIBYID+idselector)
+//     .then (data=>{
+//         return data.json()
+//     })
+//     .then(response =>{
+//         console.log(response)
+//         creaCardSingola(response);
+//         //inserire funzione per mostrare i veicoli
+//     })
+
+
+
+
+    function initPagina(){
+        const PIPPO= new URLSearchParams(window.location.search)
+        PIPPO.get("id");
+        fetch(GETVEICOLIBYID+PIPPO.get("id"))
     .then (data=>{
         return data.json()
     })
@@ -202,3 +231,4 @@ fetch(GETVEICOLIBYID+idselector)
         creaCardSingola(response);
         //inserire funzione per mostrare i veicoli
     })
+    }
