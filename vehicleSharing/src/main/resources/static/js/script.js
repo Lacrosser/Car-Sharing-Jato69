@@ -1,35 +1,114 @@
 // api url
-const api_url = "http://localhost:3000/Veicoli";
+const api_url = "http://localhost:9069/api/veicoli";
+const api_auto = "http://localhost:9069/api/veicoli/tipo/AUTO"
+const api_monopattini = "http://localhost:9069/api/veicoli/tipo/MONOPATTINO"
+const api_bici = "http://localhost:9069/api/veicoli/tipo/BICICLETTA"
 
 var contenitore = document.querySelector('#contenitoreVeicoli');
 
 var contatore = 1;
 
+var btn = document.querySelector('#btn');
+
 function mostraVeicoli(listaVeicoli){
-    listaVeicoli.forEach(veicolo => {
-        var mezzo = veicolo.mezzo;
-        var colore = veicolo.colore;
+    listaVeicoli.forEach(mezzo => {
+        var veicolo = mezzo.veicolo;
+        var alimentazione = mezzo.alimentazione;
+        var disponibilita = mezzo.disponibilita;
         // var id = veicolo.id;
         
         var mezzoVeicolo = document.createElement('div');
-        mezzoVeicolo.setAttribute('class','mezzo');
+        mezzoVeicolo.setAttribute('class','veicolo');
         var coloreVeicolo = document.createElement('div');
-        coloreVeicolo.setAttribute('class','colore');
+        coloreVeicolo.setAttribute('class','alimentazione');
+        
+        
 
-        mezzoVeicolo.textContent = mezzo;
-        coloreVeicolo.textContent = colore;
+        mezzoVeicolo.textContent = veicolo;
+        coloreVeicolo.textContent = alimentazione;
         
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', 'veicoloCard col-12 col-md-5 col-lg-3 m-1 whiteText');
+        var disponibilitaMezzo = document.createElement('div');
+        
+        if(disponibilita == true){
+            disponibilitaMezzo.setAttribute('class','disponibile');
+            disponibilitaMezzo.textContent = "Disponibile";
+        } else if (disponibilita == false){
+            disponibilitaMezzo.setAttribute('class','noDisponibile');
+            disponibilitaMezzo.textContent = "Non disponibile";
+        }
 
         newDiv.appendChild(mezzoVeicolo);
         newDiv.appendChild(coloreVeicolo);
+        newDiv.appendChild(disponibilitaMezzo);
 
         contenitore.appendChild(newDiv);
 
     
     });
 }
+
+function caricaDati(){
+
+    var form = document.querySelector('#selectTipo').value;
+
+    switch (form) {
+      case "AUTO":
+        contenitore.textContent = "";
+        fetch(api_auto)
+        .then(data => {
+          return data.json()
+        })
+        .then(response => {
+          console.log(response)
+          mostraVeicoli(response)
+        });
+        break;
+      case "TUTTO":
+        contenitore.textContent = "";
+      fetch(api_url)
+      .then(data => {
+      return data.json()
+      })
+.     then(response => {
+      console.log(response)
+      mostraVeicoli(response)
+      });
+      break;
+      case "MONOPATTINI":
+      contenitore.textContent = "";
+      fetch(api_monopattini)
+      .then(data => {
+      return data.json()
+      })
+.     then(response => {
+      console.log(response)
+      mostraVeicoli(response)
+      });
+      break;
+      case "BICICLETTE":
+      contenitore.textContent = "";
+      fetch(api_bici)
+      .then(data => {
+      return data.json()
+      })
+.     then(response => {
+      console.log(response)
+      mostraVeicoli(response)
+      });
+      break;
+          
+      default:
+        break;
+    }
+
+}
+
+btn.addEventListener('click', caricaDati);
+
+
+
 // '<div class="veicoloCard col-12 col-md-5 col-lg-3 m-1"><div class="mezzo">' + mezzo + '</div><div class="colore">' + colore +'</div></div>'
 fetch(api_url)
 .then(data => {
@@ -41,24 +120,24 @@ fetch(api_url)
 });
 // Prova Modifica
 
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+/* -------------------------------------------------------------------------- */
+/*                                   SWIPER                                   */
+/* -------------------------------------------------------------------------- */
+
+var swiper = new Swiper(".heroSwipe", {
+  loop: true,
+  spaceBetween: 0,
+  centeredSlides: true,
+  autoplay: {
+    delay: 8000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
