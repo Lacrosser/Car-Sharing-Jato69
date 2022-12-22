@@ -106,8 +106,7 @@ public class ArchivioUtentiREST {
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
 		ArchivioUtenti archivioUser = this.service.findByUser(u.getUserId());
 		ArchivioUtenti archivioPassword = this.service.findByPassword(u.getPassword());
-		if (archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId()
-				&& archivioUser != null) {
+		if (archivioUser != null && archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId()) {
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
 		} else {
 			service.updateUtente(u);
