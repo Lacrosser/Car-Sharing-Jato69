@@ -15,6 +15,11 @@ public class ArchivioUtentiServiceImpl implements ArchivioUtentiService {
 	@Autowired
 	private ArchivioUtentiDao dao;
 	
+//	public ArchivioUtentiServiceImpl(ArchivioUtentiDao dao) {
+//		this.dao=dao;
+//	}
+	// dare un costruttore alla classe con dipendenza, implementi un interfaccia basata su 
+	
 	@Override
 	public List<ArchivioUtenti> getAll() {
 		return dao.findAll();

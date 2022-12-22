@@ -27,9 +27,12 @@ public class ArchivioUtentiREST {
 
 	@Autowired
 	private ArchivioUtentiService service;
+	
+//	public ArchivioUtentiREST(ArchivioUtentiService service) {
+//		this.service=service;
+//	}
 
-//	@Autowired
-//	private PrenotazioneService pserv;
+
 
 	// restituzione studenti
 	@GetMapping
