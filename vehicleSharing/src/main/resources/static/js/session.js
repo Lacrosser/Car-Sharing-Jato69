@@ -4,8 +4,8 @@
 nascondiroba();
 
 function nascondiroba() {
-  if (sessionStorage.getItem("username") != null && sessionStorage.getItem("password") != null) {
-
+  if (sessionStorage.getItem("username") != null  || localStorage.getItem("username")!=null) {
+  
     areaUtenteBuilder();
     logOutButton();
 

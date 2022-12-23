@@ -30,9 +30,9 @@ public class HtmlPagesController {
 	public String tariffe() {
 		return "tariffe";
 	}
-	@GetMapping("userPanel")
-	public String userPanel() {
-		return "userPanel";
+	@GetMapping("adminView")
+	public String adminView() {
+		return "adminView";
 	}
 	@GetMapping("adminPanel")
 	public String adminPanel() {

@@ -2,7 +2,7 @@ const LOGIN = "http://localhost:9069/api/utenti/login";
 
 
 let bottone = document.querySelector("#loginButton");
-
+let check = document.querySelector("#check").value;
 
 
 // Invia la richiesta POST al server
@@ -30,9 +30,19 @@ function log2() {
 
                 console.log(tipo);
 
-                sessionStorage.setItem("username", username);
-                sessionStorage.setItem("password", password);
-                sessionStorage.setItem("tipo", tipo);
+                if (check === "yes") {
+
+                    localStorage.setItem("username", username);
+                    localStorage.setItem("password", password);
+                    localStorage.setItem("tipo", tipo);
+
+                } else {
+                    sessionStorage.setItem("username", username);
+                    sessionStorage.setItem("password", password);
+                    sessionStorage.setItem("tipo", tipo);
+                }
+
+
                 window.location.replace("/");
 
                 return true;
