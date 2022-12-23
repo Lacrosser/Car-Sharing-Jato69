@@ -1,5 +1,6 @@
 package com.desajavacidos.vehicleSharing.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,12 +60,18 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		if (idUtente != 0 && idVeicolo != 0) {
 			Prenotazione p = new Prenotazione();
 			p.setArchivioUtenti(archivioId);
-			p.setVeicoli(veicoloId);
-			p.getVeicoli().setDisponibilita(false);
-			dao.save(p);
-			System.out.println("salvie");
-			return true;
+
+			if (veicoloId.getDisponibilita()) {
+				p.setVeicoli(veicoloId);
+				dao.save(p);
+				System.out.println("salvie");
+				return true;
+			} else {
+				return false;
+			}
+
 		}
+
 		// autowired per le 2 repository
 		// cambiare in boolean
 		// find by id
@@ -74,24 +81,20 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		return false;
 
 	}
-	
 
 	@Override
 	public boolean putPrenotazione(int idUtente, int veicolo, int id) {
-		
-		
 
 		ArchivioUtenti archivioUtenti = archivioprepo.getUtenteById(idUtente);
 		Veicoli veicolizzati = veirepo.getVeicoliById(veicolo);
 		Prenotazione a = getPrenotazioneById(id);
-		
 
 		a.setArchivioUtenti(archivioUtenti);
 		a.setVeicoli(veicolizzati);
-		
-			dao.save(a);
-			return true;
-		
+
+		dao.save(a);
+		return true;
+
 	}
 
 	@Override
@@ -116,6 +119,23 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		// TODO Auto-generated method stub
 
 	}
-
+	/*
+	 * check per controllare se il veicolo era già disponibile (usando il boolean
+	 * falso? prendo get disponibilità del veiocolo? wtf)
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 
 }
