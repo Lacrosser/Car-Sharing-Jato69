@@ -119,23 +119,5 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		// TODO Auto-generated method stub
 
 	}
-	/*
-	 * check per controllare se il veicolo era già disponibile (usando il boolean
-	 * falso? prendo get disponibilità del veiocolo? wtf)
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 */
 
 }
