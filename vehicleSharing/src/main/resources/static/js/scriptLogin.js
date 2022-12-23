@@ -33,6 +33,7 @@ function log2() {
                 sessionStorage.setItem("username", username);
                 sessionStorage.setItem("password", password);
                 sessionStorage.setItem("tipo", tipo);
+                window.location.replace("/");
 
                 return true;
             } else {
