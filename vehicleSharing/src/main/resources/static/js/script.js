@@ -111,9 +111,24 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
   });
 }
 
+const PIPPO = new URLSearchParams(window.location.search)
+let tipologia = PIPPO.get("tipo");
+console.log(tipologia);
+
+if(tipologia != null){
+  contenitore.textContent = "";
+  contenitoreNoDisp.textContent = "";
+  caricaDati();
+}
+
 function caricaDati() {
 
-  var form = document.querySelector('#selectTipo').value;
+  if(tipologia == null){
+
+    var form = document.querySelector('#selectTipo').value;
+  } else {
+    var form = tipologia;
+  }
 
   switch (form) {
     case "TUTTO":
@@ -219,6 +234,7 @@ btn.addEventListener('click', caricaDati);
 function inizioPagina() {
   startMostraDisponibili();
   startMostraNonDisponibili();
+
 }
 
 
@@ -244,4 +260,8 @@ function startMostraNonDisponibili() {
     });
 }
 // Prova Modifica
+
+
+
+
 
