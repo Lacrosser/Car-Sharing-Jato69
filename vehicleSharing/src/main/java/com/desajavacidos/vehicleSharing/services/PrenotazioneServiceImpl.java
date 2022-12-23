@@ -38,6 +38,9 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	@Override
 	public void deletePrenotazioneById(int id) {
+		
+		Prenotazione p=getPrenotazioneById(id);
+		p.getVeicoli().setDisponibilita(true);
 		dao.deleteById(id);
 	}
 
@@ -57,6 +60,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 			Prenotazione p = new Prenotazione();
 			p.setArchivioUtenti(archivioId);
 			p.setVeicoli(veicoloId);
+			p.getVeicoli().setDisponibilita(false);
 			dao.save(p);
 			System.out.println("salvie");
 			return true;

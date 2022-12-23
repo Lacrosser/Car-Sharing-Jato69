@@ -7,24 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <!-- ----------------------------------------------------------------------- -->
-    <!--                                FOGLI CSS                                -->
-    <!-- ----------------------------------------------------------------------- -->
-    <link rel="stylesheet" href="css/abbonamenti.css" type="text/css">
-    <link rel="stylesheet" href="css/swiperHero.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mediaQueryStyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                FOGLI CSS                                -->
+  <!-- ----------------------------------------------------------------------- -->
+  <link rel="stylesheet" href="css/abbonamenti.css" type="text/css">
+  <link rel="stylesheet" href="css/swiperHero.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mediaQueryStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
   <title>Vehicle sharing</title>
   <link rel="icon" type="image/x-icon" href="/img/logo.png">
@@ -66,7 +64,7 @@
           <div class="offcanvas-body">
             <!-- inizio offcanvas-body -->
 
-            <ul class="navbar-nav justify-content-end align-items-lg-center flex-grow-1 pe-3">
+            <ul class="navbar-nav justify-content-end align-items-lg-center flex-grow-1 pe-3" id="navbar">
               <!-- inizio elementi navbar -->
 
               <li class="nav-item ms-auto ms-lg-0">
@@ -95,9 +93,9 @@
               <li class="nav-item ms-auto ms-lg-0">
                 <a class="nav-link" href="/login">Accedi</a>
               </li>
+            </ul> <!-- fine elementi navbar -->
           </div>
 
-          </ul> <!-- fine elementi navbar -->
         </div> <!-- fine offcanvas-body -->
       </div> <!-- fine offcanvas -->
       </div> <!-- fine container navbar -->
@@ -117,10 +115,11 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide" style="background-image: url(/img/teslaRossa.jpg);"></div>
           <div class="swiper-slide" style="background-image: url(/img/vwElettrica.jpg);"></div>
-          <div class="swiper-slide" style="background-image: url(/img/porscheElettrica.jpg); background-position: center center;"></div>
+          <div class="swiper-slide"
+            style="background-image: url(/img/porscheElettrica.jpg); background-position: center center;"></div>
           <!-- <div class="swiper-slide"><img src="../img/porscheElettrica.jpg" alt=""></div>
           <div class="swiper-slide"><img src="../img/vwElettrica.jpg" alt=""></div> -->
-          
+
         </div>
       </div>
     </div>
@@ -138,9 +137,9 @@
           <div class="secondaryText" style="font-size: 40px;">Ecco i nostri abbonamenti</div>
         </div>
         <div class="col-lg-6 d-none d-lg-block monopattinoImg d-flex justify-content-end align-content-center">
-            <div class="immagineScooter">
-              <img class="" src="/img/Monopattino.png" alt="e-scooter">
-            </div>
+          <div class="immagineScooter">
+            <img class="" src="/img/Monopattino.png" alt="e-scooter">
+          </div>
         </div>
       </div>
       <!-- ----------------------------------------------------------------------- -->
@@ -148,27 +147,27 @@
       <!-- ----------------------------------------------------------------------- -->
       <div class="d-none d-lg-inline d-flex justify-content-around">
         <div id="abbonamentiPc" class="abbonamentiPc row whiteText d-flex justify-content-around mt-3">
-            <div class="abbonamento col-11 col-lg-3">
-              <div class="titoloAbbonamento pt-3">
-                <h3>Abbonamento Giornaliero</h3>
-              </div>
-              <div class="descrizione">
-                <p>2 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
-                  <h3 class="whiteText">A soli 5,90€</h3>
-                <div class="button d-flex justify-content-end align-items-end">
-                    <div class="pulsanteAbbonati "><a href="#" class="btn primaryBtn " type="button">Abbonati!</a></div>
-                </div>
+          <div class="abbonamento col-11 col-lg-3">
+            <div class="titoloAbbonamento pt-3">
+              <h3>Abbonamento Giornaliero</h3>
+            </div>
+            <div class="descrizione">
+              <p>2 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
+              <h3 class="whiteText">A soli 5,90€</h3>
+              <div class="button d-flex justify-content-end align-items-end">
+                <div class="pulsanteAbbonati "><a href="#" class="btn primaryBtn " type="button">Abbonati!</a></div>
               </div>
             </div>
+          </div>
           <div class="abbonamento col-11 col-lg-3">
             <div class="titoloAbbonamento pt-3">
               <h3>Abbonamento Settimanale</h3>
             </div>
             <div class="descrizione">
               <p>14 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
-        
-                <h3 class="whiteText">A soli 12,90€</h3>
-        
+
+              <h3 class="whiteText">A soli 12,90€</h3>
+
               <div class="button d-flex justify-content-end">
                 <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
               </div>
@@ -180,9 +179,9 @@
             </div>
             <div class="descrizione">
               <p>60 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
-        
-                <h3 class="whiteText">A soli 29,90€</h3>
-        
+
+              <h3 class="whiteText">A soli 29,90€</h3>
+
               <div class="button d-flex justify-content-end">
                 <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
               </div>
@@ -202,9 +201,9 @@
               </div>
               <div class="descrizione">
                 <p>2 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
-          
-                  <h3 class="whiteText">A soli 9,90€</h3>
-          
+
+                <h3 class="whiteText">A soli 9,90€</h3>
+
                 <div class="button d-flex justify-content-center">
                   <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
                 </div>
@@ -218,9 +217,9 @@
               </div>
               <div class="descrizione">
                 <p>14 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
-          
-                  <h3 class="whiteText">A soli 12,90€</h3>
-          
+
+                <h3 class="whiteText">A soli 12,90€</h3>
+
                 <div class="button d-flex justify-content-center">
                   <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
                 </div>
@@ -234,9 +233,9 @@
               </div>
               <div class="descrizione">
                 <p>60 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
-          
-                  <h3 class="whiteText">A soli 29,90€</h3>
-          
+
+                <h3 class="whiteText">A soli 29,90€</h3>
+
                 <div class="button d-flex justify-content-center">
                   <a href="" class="btn primaryBtn" type="button">Abbonati!</a>
                 </div>
@@ -253,44 +252,44 @@
     <!-- SPACER -->
     <section id="spacer"></section>
     <div class="container">
-        <div class="row mb-3">
-          <div class=" col-12 col-lg-6">
-            <div class="primaryText">Lorem, ipsum?</div>
-            <div class="secondaryText" style="font-size: 40px;">Lorem, ipsum dolor.</div>
-            <div class="primaryText mb-4" style="font-size: 30px;">Lorem, ipsum dolor.</div>
-          </div>         
+      <div class="row mb-3">
+        <div class=" col-12 col-lg-6">
+          <div class="primaryText">Lorem, ipsum?</div>
+          <div class="secondaryText" style="font-size: 40px;">Lorem, ipsum dolor.</div>
+          <div class="primaryText mb-4" style="font-size: 30px;">Lorem, ipsum dolor.</div>
         </div>
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                         SEZIONE ELENCHI VEICOLI                         -->
-        <!-- ----------------------------------------------------------------------- -->
-        <div class="row d-flex justify-content-evenly whiteText">
-          <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
-              <div class="titleLista h4">Auto Elettriche</div>
-            </div>
-          <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
-              <div class="titleLista h4">Auto Ibride</div>
-            </div>
-          <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
-              <div class="titleLista h4">Monopattini Elettrici</div>
-            </div>
-          <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
-              <div class="titleLista h4">Bici Elettriche</div>
-            </div>
-
+      </div>
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                         SEZIONE ELENCHI VEICOLI                         -->
+      <!-- ----------------------------------------------------------------------- -->
+      <div class="row d-flex justify-content-evenly whiteText">
+        <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
+          <div class="titleLista h4">Auto Elettriche</div>
+        </div>
+        <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
+          <div class="titleLista h4">Auto Ibride</div>
+        </div>
+        <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
+          <div class="titleLista h4">Monopattini Elettrici</div>
+        </div>
+        <div class="sezioneLista col-11 col-md-5 m-1 mb-5">
+          <div class="titleLista h4">Bici Elettriche</div>
         </div>
 
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                           SEZIONE TESTO BASSA                           -->
-        <!-- ----------------------------------------------------------------------- -->
+      </div>
 
-        <div class="row mb-3">
-          <div class=" col-12 col-lg-6">
-            <div class="primaryText">Lorem, ipsum?</div>
-            <div class="secondaryText" style="font-size: 40px;">Lorem, ipsum dolor.</div>
-            <div class="primaryText mb-4" style="font-size: 30px;">Lorem, ipsum dolor.</div>
-            <div class="secondaryText" style="font-size: 40px;">Lorem, ipsum dolor.</div>
-          </div>         
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                           SEZIONE TESTO BASSA                           -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <div class="row mb-3">
+        <div class=" col-12 col-lg-6">
+          <div class="primaryText">Lorem, ipsum?</div>
+          <div class="secondaryText" style="font-size: 40px;">Lorem, ipsum dolor.</div>
+          <div class="primaryText mb-4" style="font-size: 30px;">Lorem, ipsum dolor.</div>
+          <div class="secondaryText" style="font-size: 40px;">Lorem, ipsum dolor.</div>
         </div>
+      </div>
 
     </div>
 
@@ -299,7 +298,7 @@
     <!-- ----------------------------------------------------------------------- -->
 
     <div class="mappa">
-        <div id="map"></div>
+      <div id="map"></div>
     </div>
 
 
@@ -308,9 +307,9 @@
     <!-- ----------------------------------------------------------------------- -->
 
 
-    
 
-</main>
+
+  </main>
 
   <footer class="footerColor">
     <!-- da aggiungere altre voci -->
@@ -360,46 +359,48 @@
     </div>
 
   </footer>
-  
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/js/indexScript.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <!-- SCRIPT BANNER ABBONAMENTI -->
-    <script> 
-      var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        scrollbar: {
-          el: ".swiper-scrollbar",
-          hide: true,
-        },
-      });
-    </script>
-    <script>
-      var swiper = new Swiper(".heroSwipe", {
-        loop: true,
-        spaceBetween: 0,
-        centeredSlides: true,
-        autoplay: {
-          delay: 8000,
-          disableOnInteraction: false
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      });
-    </script>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/indexScript.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- SCRIPT BANNER ABBONAMENTI -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+    });
+  </script>
+  <script>
+    var swiper = new Swiper(".heroSwipe", {
+      loop: true,
+      spaceBetween: 0,
+      centeredSlides: true,
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+  </script>
+  <script src="/js/logout.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="/js/mappa.js"></script>
+  <script src="/js/mappa.js"></script>
 </body>
 
 </html>
