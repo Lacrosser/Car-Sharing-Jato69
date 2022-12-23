@@ -13,7 +13,10 @@ var contenitoreNoDisp = document.querySelector('#contenitoreVeicoliNoDisponibili
 var btn = document.querySelector('#btn');
 
 //start ad inizio pagina
-window.addEventListener("load", inizioPagina);
+window.addEventListener("load", charmenderStarter);
+
+
+
 
 
 
@@ -111,24 +114,126 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
   });
 }
 
-const PIPPO = new URLSearchParams(window.location.search)
-let tipologia = PIPPO.get("tipo");
-console.log(tipologia);
 
-if(tipologia != null){
-  contenitore.textContent = "";
-  contenitoreNoDisp.textContent = "";
-  caricaDati();
+
+
+
+
+
+
+//check caricamento pagina
+//se va inizamo a controllare il tipo, 
+//se no facciamo partire la base
+
+function charmenderStarter() {
+
+  const PIPPO = new URLSearchParams(window.location.search)
+  let tipologia = PIPPO.get("tipo");
+  let alimentazione = PIPPO.get("alimentazione");
+  console.log(tipologia);
+  console.log(alimentazione);
+
+  if (tipologia != null || alimentazione != null) {
+
+    if (alimentazione == null) {
+      stampaTipo(tipologia);
+    } else {
+      stampAlimentazione(alimentazione);
+    };
+
+  } else {
+    inizioPagina();
+  }
+
 }
+
+
+
+
+function stampaTipo(tipologia) {
+  switch (tipologia) {
+    case "BICICLETTE":
+      contenitore.textContent = "";
+      contenitoreNoDisp.textContent = "";
+      fetch(GETVEICOLOTIPO + "BICICLETTA")
+        .then(data => {
+          return data.json()
+        })
+        .then(response => {
+
+          mostraVeicoli(response)
+          mostraVeicoliNoDisponibile(response)
+        });
+      break;
+    case "MONOPATTINI":
+      contenitore.textContent = "";
+      contenitoreNoDisp.textContent = "";
+      fetch(GETVEICOLOTIPO + "MONOPATTINO")
+        .then(data => {
+          return data.json()
+        })
+        .then(response => {
+
+          mostraVeicoli(response)
+          mostraVeicoliNoDisponibile(response)
+        });
+      break;
+
+  }
+
+};
+
+function stampAlimentazione(alimentazione) {
+  switch (alimentazione) {
+    case "ibride":
+      contenitore.textContent = "";
+      contenitoreNoDisp.textContent = "";
+      fetch(GETVEICOLOALIMENTAZIONE + "ibrida")
+        .then(data => {
+          return data.json()
+        })
+        .then(response => {
+
+
+          let variabiliAuto = response.filter(veicolo => veicolo.veicolo === "AUTO");
+
+          mostraVeicoli(variabiliAuto)
+          mostraVeicoliNoDisponibile(variabiliAuto)
+
+        });
+      break;
+    case "elettrica":
+      contenitore.textContent = "";
+      contenitoreNoDisp.textContent = "";
+      fetch(GETVEICOLOALIMENTAZIONE + "elettrica")
+        .then(data => {
+          return data.json()
+        })
+        .then(response => {
+
+          let variabiliAuto = response.filter(veicolo => veicolo.veicolo === "AUTO");
+
+
+          mostraVeicoli(variabiliAuto)
+          mostraVeicoliNoDisponibile(variabiliAuto)
+
+
+        });
+      break;
+  }
+};
+
+
+
+
+
+
 
 function caricaDati() {
 
-  if(tipologia == null){
 
-    var form = document.querySelector('#selectTipo').value;
-  } else {
-    var form = tipologia;
-  }
+  var form = document.querySelector('#selectTipo').value;
+
 
   switch (form) {
     case "TUTTO":
@@ -260,8 +365,3 @@ function startMostraNonDisponibili() {
     });
 }
 // Prova Modifica
-
-
-
-
-
