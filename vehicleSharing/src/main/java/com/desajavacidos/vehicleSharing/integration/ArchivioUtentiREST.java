@@ -56,10 +56,10 @@ public class ArchivioUtentiREST {
 
 	}
 	
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public ResponseEntity<ArchivioUtenti>getLogin(@RequestBody ObjectNode objectNode){
 		
-		ArchivioUtenti u=this.service.findByUser(objectNode.get("user").asText());
+		ArchivioUtenti u=this.service.findByUser(objectNode.get("userId").asText());
 		//ArchivioUtenti p=this.service.findByPassword(objectNode.get("password").asText());
 		
 		if(u != null) {

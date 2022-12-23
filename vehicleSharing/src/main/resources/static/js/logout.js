@@ -2,10 +2,27 @@
 logOutButton();
 
 
+
+function nascondiroba(){
+if(sessionStorage.getItem(username)!=null && sessionStorage.getItem(password)!=null){
+
+let logout=document.querySelector("#logOut");
+logout.setAttribute("hidden","hidden")
+
+}
+
+
+
+
+}
+
+
+
 function logOutButton() {
 
   let li = document.createElement('li');
   li.setAttribute("class", "nav-item ms-auto ms-lg-0");
+  li.setAttribute("id","logOut");
 
   let a = document.createElement("a");
   a.setAttribute("class", "nav-link");
