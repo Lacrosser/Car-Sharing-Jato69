@@ -47,3 +47,17 @@ function logOut() {
   //redirection alla home
   window.location.replace('/');
 }
+
+
+function areaUtenteBuilder(){
+
+  let li = document.createElement('li');
+  li.setAttribute('#areaUtente');
+  li.setAttribute("class", "nav-item ms-auto ms-lg-0");
+
+  let a = document.createElement("a");
+  a.setAttribute("class", "nav-link");
+  a.setAttribute("href", "/");
+  a.textContent = "Area Utente";
+
+}

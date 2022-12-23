@@ -30,7 +30,11 @@
 
 <body style="font-family:'Outfit', sans-serif;">
 
-  <!-- DIOBUDINO -->
+  <div id="loading-screen">
+    <img src="/img/bigLogo.png" alt="logo" height="100rem" width="100rem">
+  </div>
+
+
 
   <!-- roba per far finta di scaricare l'app, adrian sa! -->
 
@@ -56,7 +60,7 @@
           <!-- inizio offcanvas -->
 
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <h3 class="offcanvas-title" id="offcanvasNavbarLabel"></h3>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
               aria-label="Close"></button>
           </div>
@@ -101,7 +105,7 @@
       </div> <!-- fine container navbar -->
     </nav> <!-- fine navbar -->
   </header>
-  <section class="bannerPromo">
+  <section id="banner" class="bannerPromo">
     <h4 style="color: #128594;">Registrati oggi per avere 2 corse in omaggio!</h4>
   </section>
 
@@ -318,7 +322,7 @@
               culpa vel ipsum! Obcaecati, itaque alias. Quidem, consequatur fugiat!</p>
           </div>
           <div class="row">
-            <h5 class="mb-4">Scarica la nostra app</h5>
+            <h3 class="mb-4">Scarica la nostra app</h3>
 
             <div class="col-6"><img src="/img/Download_on_the_App_Store_Badge.svg" class="appleImg img-fluid "
                 alt="storeIphoneLogo"></div>
@@ -329,7 +333,7 @@
         <div class="col-lg-6 whiteText mt-5 mt-lg-0">
           <div class="d-flex flex-column h-100">
             <div class="social">
-              <h5 class="text-center mb-3">Social</h5>
+              <h3 class="text-center mb-3">Social</h3>
               <div class="d-flex justify-content-between">
                 <a class="" href="https://www.instagram.com"><i class="bi bi-instagram col-3">Instagram</i></a>
                 <a class="" href="https://www.twitter.com"><i class="bi bi-twitter">Twitter</i></a>
@@ -339,7 +343,7 @@
             </div>
             <hr class="my-lg-auto my-5">
             <div class="info">
-              <h5 class="text-center mb-3">Info</h5>
+              <h3 class="text-center mb-3">Info</h3>
               <div class="d-flex justify-content-between">
                 <a href="../aboutUs.html" class=" text-center">aboutUs</a>
                 <a href="../tariffe.html" class=" text-center">tariffe</a>
@@ -393,6 +397,12 @@
       }
     });
   </script>
+  <script>
+    window.addEventListener('load', () => {
+        const loadingScreen = document.querySelector('#loading-screen');
+        loadingScreen.style.display = 'none';
+    });
+  </script> 
   <script src="/js/logout.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
