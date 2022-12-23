@@ -44,9 +44,9 @@ public class HtmlPagesController {
 		return "contattaci";
 	}
 	
-	@GetMapping("dashbord")
-	public String dashbord() {
-		return "dashbord";
+	@GetMapping("dashboard")
+	public String dashboard() {
+		return "dashboard";
 	}
 	@GetMapping("paginaIns")
 	public String paginaIns() {
