@@ -62,6 +62,11 @@ public class HtmlPagesController {
 	public String istruzioni() {
 		return "istruzioni";
 	}
+	
+	@GetMapping("signup")
+	public String registrati() {
+		return "signup";
+	}
 
 
 
