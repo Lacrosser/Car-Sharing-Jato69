@@ -15,12 +15,12 @@ function checkConnection(){
 
 if(sessionStorage.getItem("username")==null && localStorage.getItem("username")==null){
 	console.log("caso1")
-    window.location.replace("/login");
+    window.location.assign("/login");
 
 
 }else if(sessionStorage.getItem("tipo")=="C"||localStorage.getItem("tipo")=="C"){
 	console.log("caso2")
-    window.location.replace("/");
+    window.location.assign("/");
     console.log("LOGGATI SCEMUNITO")
 
     //inserire pagina di errore
@@ -43,11 +43,11 @@ console.log("caso4")
 
 
 btnAggiunta.addEventListener("click",function(){
-window.location.replace("/paginaIns")
+window.location.assign("/paginaIns")
 
 })
 
 btnModifica.addEventListener("click",function(){
-    window.location.replace("/adminView")
+    window.location.assign("/adminView")
 })
 

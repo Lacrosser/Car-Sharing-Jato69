@@ -20,7 +20,7 @@ function logOut() {
   localStorage.clear();
   sessionStorage.clear();
   //redirection alla home
-  window.location.replace('/');
+  window.location.assign('/');
 }
 
 

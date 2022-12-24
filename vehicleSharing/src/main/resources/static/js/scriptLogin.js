@@ -43,7 +43,7 @@ function log2() {
                 }
 
 
-                window.location.replace("/");
+                window.location.assign("/");
 
                 return true;
             } else {
