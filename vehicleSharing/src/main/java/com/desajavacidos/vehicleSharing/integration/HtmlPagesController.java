@@ -14,7 +14,7 @@ public class HtmlPagesController {
 	}
 	
 	@GetMapping("aboutUs")
-	public String AboutUs() {
+	public String aboutus() {
 		return "aboutUs";
 	}
 	@GetMapping("login")

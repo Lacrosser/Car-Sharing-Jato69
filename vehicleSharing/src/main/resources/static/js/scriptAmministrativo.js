@@ -1,9 +1,10 @@
 //pagina di script per il check di utente
- 
+window.addEventListener("load",checkConnection());
+console.log("script caricato");
+
+
 let btnModifica=document.querySelector("#modificaVeicolo");
-
 let btnAggiunta=document.querySelector("#aggiuntaVeicolo ")
-
 
 
 
@@ -12,11 +13,13 @@ let btnAggiunta=document.querySelector("#aggiuntaVeicolo ")
 
 function checkConnection(){
 
-if(sessionStorage.getItem("username")==null || sessionStorage.getItem("password")==null){
+if(sessionStorage.getItem("username")==null && localStorage.getItem("username")==null){
+	console.log("caso1")
     window.location.replace("/login");
 
 
-}else if(sessionStorage.getItem("tipo")=="C"){
+}else if(sessionStorage.getItem("tipo")=="C"||localStorage.getItem("tipo")=="C"){
+	console.log("caso2")
     window.location.replace("/");
     console.log("LOGGATI SCEMUNITO")
 
@@ -24,17 +27,19 @@ if(sessionStorage.getItem("username")==null || sessionStorage.getItem("password"
     
     
 }
-else if(sessionStorage.getItem("tipo")=="B"){
+else if(sessionStorage.getItem("tipo")=="B"||localStorage.getItem("tipo")=="B"){
+	console.log("caso3")
     console.log("UTENTE SBAGLIATO DI TIPO B");
 
 }else{
-
+console.log("caso4")
 
 
 }
 
     
 }
+
 
 
 btnAggiunta.addEventListener("click",function(){
