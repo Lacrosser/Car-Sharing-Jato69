@@ -32,39 +32,76 @@
       .immagineDisponibile{
         height: 5rem;
         clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
-        background: #00b7c2;
+        background: #00b8c255;
       }
 
       .descrizione{
-        height: 5rem;
+        height: 9rem;
+        padding: .25rem 1rem;
         background: #79797967;
       }
       .descrizioneDisponibile{
         transition: 0.2s;
-        height: 5rem;
-        background: #00b8c240;
-      }
-
-      .cartaDisponibile{
-        
-      }
-
-      .immagineDisponibile:hover{
-        
-      }
-
-      .descrizioneDisponibile{
-        
+        height: 9rem;
+        background: linear-gradient(270deg, #128594, #00b7c2);
+        padding: .25rem 1rem;
       }
 
       .descrizioneDisponibile:hover{
         border: 4px solid #00b7c2;
-        background: white;
+        background: linear-gradient(90deg, #ffffff, #00b8c241);
       }
 
       .cartaNoDisponibile{
         cursor: not-allowed;
       }
+
+      .contenitoreDisponibile a{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        text-decoration: none;
+        color: #ffffff;
+        transition: .2s;
+      }
+
+      .contenitoreDisponibile a:hover{
+        color: #00b7c2;
+
+      }
+
+      .contenitoreNoDisponibili a{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        text-decoration: none;
+        color: #128594;
+        cursor: not-allowed;
+      }
+
+      .modello{
+        font-size: 30px;
+      }
+
+      .desc{
+        font-size: 15px;
+      }
+      
+
+      .tipo{
+        font-size: 15px;
+      }
+      
+
+      .disponibilitaSI{
+        font-size: 20px;
+        color: rgb(57, 212, 57);
+      }
+
+      .disponibilitaNO{
+        font-size: 20px;
+        color: red;
+      }
+
+
 
 
     </style>
@@ -175,19 +212,22 @@
                     <div class="titoloDisponibili" style="background-color: #00b8c240;">
                         <h3 class="secondaryText p-2 mt-2 mb-5" >Veicoli disponibili</h3>
                     </div>
-                    <div class="contenitoreDisponibile">
-                      <form action="...">
-                        <div class="cartaDisponibile col-11 col-lg-6 d-flex flex-column">
-                          <div class="immagineDisponibile" style="image-orientation:flip;">
+                    <div class="contenitoreDisponibile row">
+                      <div class="cartaDisponibile col-11 col-lg-6 d-flex flex-column">
+                          <a href="#">
+                          <!-- <div class="immagineDisponibile" style="image-orientation:flip;">
                               <img src="../static/img/AutoTEST.png" alt="" width="120px" ">
-                          </div>
-                          <div class="descrizioneDisponibile">
-                            <div class="titolo ps-2">Disponibile</div>
-                            <div class="titolo ps-2">Porsche</div>
-                            <div class="titolo ps-2">ELETTRICA</div>
-                          </div>
+                          </div> -->
+                          <!-- <div class="descrizioneDisponibile"> -->
+                            <!-- <div class="modello ps-2">Porsche</div> -->
+                            <!-- <div class="tipo ps-2">Porsche</div> -->
+                            <!-- <div class="desc ps-2">ELETTRICA</div> -->
+                            <!-- <div class="disponibilitaSI ps-2">Disponibile</div> -->
+                          </a>
                         </div>
-                      </form>
+                      </div>
+                      
+                      
                     </div>
                 </div>
                 <div class="col-12 col-lg-5" style="background-color: #ffffff70; min-height: 20rem; margin: .25rem;">
@@ -195,18 +235,54 @@
                         <h3 class="secondaryText p-2 mt-2 mb-5" >Veicoli non disponibili</h3>
                     </div>
                     <div class="contenitoreNoDisponibili">
-                      <form action="...">
-                        <div class="cartaNoDisponibile col-11 col-lg-6 d-flex flex-column">
+                      <div class="cartaNoDisponibile col-11 col-lg-6 d-flex flex-column">
+                          <a>
                           <div class="immagine">
-                              <img src="http://source.unsplash.com/300x100?porsche" alt="">
+                              <img src="../static/img/AutoTEST.png" alt="" width="120px">
+                          </div>
+                          <div class="descrizione">
+                            <div class="modello ps-2">Porsche</div>
+                            <div class="desc ps-2">ELETTRICA</div>
+                            <div class="disponibilitaNO ps-2">Non disponibile</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="cartaNoDisponibile col-11 col-lg-6 d-flex flex-column">
+                          <a>
+                          <div class="immagine">
+                              <img src="../static/img/AutoTEST.png" alt="" width="120px">
                           </div>
                           <div class="descrizione">
                             <div class="titolo ps-2">Disponibile</div>
                             <div class="titolo ps-2">Porsche</div>
                             <div class="titolo ps-2">ELETTRICA</div>
                           </div>
-                        </div>
-                      </form>
+                        </a>
+                      </div>
+                      <div class="cartaNoDisponibile col-11 col-lg-6 d-flex flex-column">
+                          <a>
+                          <div class="immagine">
+                              <img src="../static/img/AutoTEST.png" alt="" width="120px">
+                          </div>
+                          <div class="descrizione">
+                            <div class="titolo ps-2">Disponibile</div>
+                            <div class="titolo ps-2">Porsche</div>
+                            <div class="titolo ps-2">ELETTRICA</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="cartaNoDisponibile col-11 col-lg-6 d-flex flex-column">
+                          <a>
+                          <div class="immagine">
+                              <img src="../static/img/AutoTEST.png" alt="" width="120px">
+                          </div>
+                          <div class="descrizione">
+                            <div class="titolo ps-2">Disponibile</div>
+                            <div class="titolo ps-2">Porsche</div>
+                            <div class="titolo ps-2">ELETTRICA</div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                 </div>
             </div>

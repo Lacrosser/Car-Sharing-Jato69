@@ -1,4 +1,4 @@
- @media screen and (max-width: 991px) {
+ @media screen and (max-width: 768px) {
     .bannerPromo h4{
         font-size: 12px;
         padding: 0 0;
@@ -11,7 +11,38 @@
         background-image: url('../img/spacerIndex.jpg');
         height: 10rem;  
     }
+
+    .heroTitle, .heroTitle2, .heroTitle3{
+        font-size: 30px;
+        width: 10rem;
+    }
     
+    .heroSubtitle, .heroSubtitle2, .heroSubtitle3{
+        font-size: 20px;
+    }
+    
+}
+@media screen and (max-width: 991px) {
+
+    .heroTitle{
+        font-size: 60px;
+        width: 13rem;
+    }
+
+    .heroTitle2{
+        font-size: 60px;
+        width: 18rem;
+    }
+
+    .heroTitle3{
+        font-size: 60px;
+        width: 22rem;
+    }
+    
+    .heroSubtitle, .heroSubtitle2, .heroSubtitle3{
+        font-size: 55px;
+    }
+
 }
 
 

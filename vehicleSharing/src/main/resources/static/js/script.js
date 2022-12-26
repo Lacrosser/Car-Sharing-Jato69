@@ -6,8 +6,8 @@ const GETVEICOLOTIPO = "http://localhost:9069/api/veicoli/tipo/"
 const GETVEICOLIDISPONIBILITA = "http://localhost:9069/api/veicoli/status/"
 const GETVEICOLOALIMENTAZIONE = "http://localhost:9069/api/veicoli/alimentazione/" //inserire la stringa di alimentazione
 
-var contenitore = document.querySelector('#contenitoreVeicoli');
-var contenitoreNoDisp = document.querySelector('#contenitoreVeicoliNoDisponibili');
+var contenitore = document.querySelector('.contenitoreDisponibile');
+var contenitoreNoDisp = document.querySelector('.contenitoreNoDisponibili');
 
 
 var btn = document.querySelector('#btn');
@@ -29,47 +29,94 @@ function mostraVeicoli(listaVeicoli) {
     let modello = mezzo.modello;
     // var id = veicolo.id;
     var modelloVeicolo = document.createElement("div");
-    modelloVeicolo.setAttribute("class", "text-white");
+    modelloVeicolo.setAttribute("class", "modello");
+    modelloVeicolo.classList.add("ps-2");
+    modelloVeicolo.textContent = modello;
+
+    var tipoVeicolo = document.createElement('div');
+    tipoVeicolo.setAttribute('class','tipo');
+    tipoVeicolo.classList.add('ps-2');
+    tipoVeicolo.textContent = veicolo;
 
 
     var mezzoVeicolo = document.createElement('div');
-    mezzoVeicolo.setAttribute('class', 'veicolo');
+    mezzoVeicolo.setAttribute('class', 'tipo');
+    mezzoVeicolo.classList.add("ps-2");
+    mezzoVeicolo.textContent = alimentazione;
 
     var coloreVeicolo = document.createElement('div');
-    coloreVeicolo.setAttribute('class', 'alimentazione');
+    coloreVeicolo.setAttribute('class', 'desc');
+    coloreVeicolo.classList.add("ps-2");
 
+    if(disponibilita == true){
+      var descrizioneDisponibile = document.createElement('div');
+      descrizioneDisponibile.setAttribute('class','descrizioneDisponibile');
+      var disponibilitaSI = document.createElement('div');
+      disponibilitaSI.setAttribute('class','disponibilitaSI ps-2');
+      disponibilitaSI.textContent = "Disponibile";
+      descrizioneDisponibile.appendChild(modelloVeicolo);
+      descrizioneDisponibile.appendChild(tipoVeicolo);
+      descrizioneDisponibile.appendChild(mezzoVeicolo);
+      descrizioneDisponibile.appendChild(coloreVeicolo);
+      descrizioneDisponibile.appendChild(disponibilitaSI);
 
-    modelloVeicolo.textContent = modello;
+      var immagineDisponibile = document.createElement('div');
+      immagineDisponibile.setAttribute('class','immagineDisponibile');
+      immagineDisponibile.setAttribute('style','image-orientation:flip;');
 
-    mezzoVeicolo.textContent = veicolo;
-    coloreVeicolo.textContent = alimentazione;
-    var aWrap = document.createElement('div');
-    var a = document.createElement('a');
-    var newDiv = document.createElement('div');
-    aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
-    newDiv.setAttribute('class', '');
-    var disponibilitaMezzo = document.createElement('div');
+      var immagine = document.createElement('img');
+      immagine.setAttribute('src','#');
+      immagine.setAttribute('alt','null');
+      immagine.setAttribute('width','120px');
 
-    if (disponibilita == true) {
-      disponibilitaMezzo.setAttribute('class', 'disponibile');
-      disponibilitaMezzo.textContent = "Disponibile";
+      immagineDisponibile.appendChild(immagine);
+
       var link = "/paginaVeicolo?id=" + id;
+
+      var a = document.createElement('a');
       a.setAttribute('href', link);
-      newDiv.appendChild(modelloVeicolo);
-      newDiv.appendChild(mezzoVeicolo);
-      newDiv.appendChild(coloreVeicolo);
-      newDiv.appendChild(disponibilitaMezzo);
-      a.appendChild(newDiv);
-      aWrap.appendChild(a);
-      contenitore.appendChild(aWrap);
+
+      a.appendChild(immagineDisponibile);
+      a.appendChild(descrizioneDisponibile);
+
+      var cartaDisponibile = document.createElement('div');
+      cartaDisponibile.setAttribute('class','cartaDisponibile col-11 col-lg-6 d-flex flex-column');
+
+      cartaDisponibile.appendChild(a);
+
+      contenitore.appendChild(cartaDisponibile);
+    } 
+    });
+  }
+
+    // modelloVeicolo.textContent = modello;
+
+    // mezzoVeicolo.textContent = veicolo;
+    // coloreVeicolo.textContent = alimentazione;
+    // var aWrap = document.createElement('div');
+    // var a = document.createElement('a');
+    // var newDiv = document.createElement('div');
+    // aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
+    // newDiv.setAttribute('class', '');
+    // var disponibilitaMezzo = document.createElement('div');
+
+    // if (disponibilita == true) {
+    //   disponibilitaMezzo.setAttribute('class', 'disponibile');
+    //   disponibilitaMezzo.textContent = "Disponibile";
+    //   var link = "/paginaVeicolo?id=" + id;
+    //   a.setAttribute('href', link);
+    //   newDiv.appendChild(modelloVeicolo);
+    //   newDiv.appendChild(mezzoVeicolo);
+    //   newDiv.appendChild(coloreVeicolo);
+    //   newDiv.appendChild(disponibilitaMezzo);
+    //   a.appendChild(newDiv);
+    //   aWrap.appendChild(a);
+    //   contenitore.appendChild(aWrap);
 
       // } else if (disponibilita == false) {
       //   disponibilitaMezzo.setAttribute('class', 'noDisponibile');
       //   disponibilitaMezzo.textContent = "Non disponibile";
-    }
 
-  });
-}
 
 
 
@@ -79,37 +126,67 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
     var veicolo = mezzo.veicolo;
     var alimentazione = mezzo.alimentazione;
     var disponibilita = mezzo.disponibilita;
-    var modello = mezzo.modello;
-    // var id = veicolo.id;
 
+    let modello = mezzo.modello;
+    // var id = veicolo.id;
     var modelloVeicolo = document.createElement("div");
-    modelloVeicolo.setAttribute("class", "text-black"); //cambiare colore testo
+    modelloVeicolo.setAttribute("class", "modello");
+    modelloVeicolo.classList.add("ps-2");
+    modelloVeicolo.textContent = modello;
+
+    var tipoVeicolo = document.createElement('div');
+    tipoVeicolo.setAttribute('class','tipo');
+    tipoVeicolo.classList.add('ps-2');
+    tipoVeicolo.textContent = veicolo;
 
 
     var mezzoVeicolo = document.createElement('div');
-    mezzoVeicolo.setAttribute('class', 'veicolo');
+    mezzoVeicolo.setAttribute('class', 'tipo');
+    mezzoVeicolo.classList.add("ps-2");
+    mezzoVeicolo.textContent = alimentazione;
+
     var coloreVeicolo = document.createElement('div');
-    coloreVeicolo.setAttribute('class', 'alimentazione');
+    coloreVeicolo.setAttribute('class', 'desc');
+    coloreVeicolo.classList.add("ps-2");
 
+    if(disponibilita == false){
 
-    modelloVeicolo.textContent = modello;
+      var descrizione = document.createElement('div');
+      descrizione.setAttribute('class','descrizione');
+      var disponibilitaSI = document.createElement('div');
+      disponibilitaSI.setAttribute('class','disponibilitaNO ps-2');
+      disponibilitaSI.textContent = "Non Disponibile";
+      descrizione.appendChild(modelloVeicolo);
+      descrizione.appendChild(mezzoVeicolo);
+      descrizione.appendChild(coloreVeicolo);
+      descrizione.appendChild(disponibilitaSI);
 
-    mezzoVeicolo.textContent = veicolo;
-    coloreVeicolo.textContent = alimentazione;
+      var immagineNoDisp = document.createElement('div');
+      immagineNoDisp.setAttribute('class','immagine');
+      immagineNoDisp.setAttribute('style','image-orientation:flip;');
 
-    if (disponibilita == false) {
-      var newDiv = document.createElement('div');
-      newDiv.setAttribute('class', 'veicoloCardNoDisp col-12 col-md-5 col-lg-3 m-1 whiteText');
-      var disponibilitaMezzo = document.createElement('div');
-      disponibilitaMezzo.setAttribute('class', 'noDisponibile');
-      disponibilitaMezzo.textContent = "Non disponibile";
+      var immagine = document.createElement('img');
+      immagine.setAttribute('src','#');
+      immagine.setAttribute('alt','null');
+      immagine.setAttribute('width','120px');
 
-      newDiv.appendChild(modelloVeicolo);
-      newDiv.appendChild(mezzoVeicolo);
-      newDiv.appendChild(coloreVeicolo);
-      newDiv.appendChild(disponibilitaMezzo);
+      immagineNoDisp.appendChild(immagine);
 
-      contenitoreNoDisp.appendChild(newDiv);
+      var link = "";
+
+      var a = document.createElement('a');
+      a.setAttribute('href', link);
+
+      a.appendChild(immagineNoDisp);
+      a.appendChild(descrizione);
+
+      var cartaNoDisponibile = document.createElement('div');
+      cartaNoDisponibile.setAttribute('class','cartaNoDisponibile col-11 col-lg-6 d-flex flex-column');
+
+      cartaNoDisponibile.appendChild(a);
+
+      contenitoreNoDisp.appendChild(cartaNoDisponibile);
+    
     }
   });
 }

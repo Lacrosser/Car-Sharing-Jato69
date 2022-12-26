@@ -104,7 +104,7 @@ function creaScheda(veicolo) {
     div5.setAttribute("id", "prezzo");
     div5.setAttribute("class", "mt-5");
     let h31 = document.createElement("h3")
-    h31.innerHTML = "Prezzo e tariffe: <strong>15€/g</strong>";
+    h31.innerHTML = "Prezzo e tariffe: <strong>0,19€/min</strong>";
 
     div3.appendChild(div5);
     div5.appendChild(h31);
