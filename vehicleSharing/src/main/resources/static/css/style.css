@@ -426,16 +426,22 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                  PARAGRAFO                                 */
+/*                                  ABOUT US                                  */
 /* -------------------------------------------------------------------------- */
 
 .paragrafo{
     color: #128494;
     font-size: 25px;
     margin-top: 3rem;
+    margin: 2rem 0;
 }
 
 .paragrafoTx{
     color: #00B7C2;
     font-weight: 800;
+}
+
+.fotoSezione img{
+    width: 400px;
+    margin: 2rem 0;
 }
