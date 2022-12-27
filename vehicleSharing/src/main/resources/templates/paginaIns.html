@@ -32,7 +32,6 @@ body {
 
 <body>
 
-	<!-- DIOBUDINO -->
 
 	<header class="">
 		<nav class="navbar navbar-expand-lg navbar-dark borderNav third-color">
@@ -41,7 +40,7 @@ body {
 			<div class="container-lg">
 				<!-- inizio container navbar -->
 
-				<a class="navbar-brand" href="#"> <img src="/img/bigLogo.png"
+				<a class="navbar-brand" href="/"> <img src="/img/bigLogo.png"
 					alt="Logo" width="50" height="50">
 				</a>
 				<button class="navbar-toggler" type="button"
@@ -70,21 +69,21 @@ body {
 							<!-- inizio elementi navbar -->
 
 							<li class="nav-item ms-auto ms-lg-0"><a
-								class="nav-link active" aria-current="page" href="#">Home</a> <!-- possiamo togliere mettendo il logo diretto alla home -->
+								class="nav-link active" aria-current="page" href="/">Home</a> <!-- possiamo togliere mettendo il logo diretto alla home -->
 							</li>
 							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
-								href="/login.html">Tariffe</a></li>
+								href="/tariffe">Tariffe</a></li>
 							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
-								href="/paginaVeicolo.html">FAQ</a> <!-- tipi diversi di veicoli disp -->
+								href="/faq">FAQ</a> <!-- tipi diversi di veicoli disp -->
 							</li>
 							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
-								href="/tariffe.html">Abbonamenti</a> <!-- libero profesionista, abbonamenti, parcheggi -->
+								href="/abbonamenti">Abbonamenti</a> <!-- libero profesionista, abbonamenti, parcheggi -->
 							</li>
 							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
-								href="/mappaVeicoli.html">Chi siamo</a> <!-- mappa con veicoli disponibili, visibile a tutti -->
+								href="/aboutUs">Chi siamo</a> <!-- mappa con veicoli disponibili, visibile a tutti -->
 							</li>
 							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
-								href="/partner.html">Veicoli</a> <!-- mettere i loghi delle roba si soft skill -->
+								href="/listaVeicoli">Veicoli</a> <!-- mettere i loghi delle roba si soft skill -->
 							</li>
 
 						</ul>
@@ -101,6 +100,10 @@ body {
 		<!-- fine navbar -->
 	</header>
 	<!-- stessa header ?? -->
+
+	<div class="bannerAdmin d-flex justify-content-center align-items-center" style="height: 10rem; background: #00B7C2;">
+		<h1 class="secondaryText" style="font-size: 50px;">Sezione Admin</h1>
+	</div>
 
 	<main class="">
 		<div class="container">
@@ -197,9 +200,27 @@ body {
 								</div>
 								<div class="formChild mt-4 mb-4 secondaryText">
 									<div class="d-flex justify-content-center">
-										<button type="button" class="btn primaryBtn" id="aggiungi">Aggiungi</button>
+										<button type="button" class="btn primaryBtn" id="aggiungi" data-bs-toggle="modal" data-bs-target="#exampleModal">Aggiungi</button>
 									</div>
 								</div>
+				</div>
+			  </div>
+
+			  <!-- MODALE -->
+			  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h1 class="modal-title fs-5" id="titoloModal"></h1>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body" id="contenutoModal">
+					  
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+					</div>
+				  </div>
 				</div>
 			  </div>
 
@@ -334,7 +355,7 @@ body {
 		var tipo2 = sessionStorage.getItem("tipo");
 
 		if(tipo != "A" && tipo2 != "A"){
-			window.location.assign('/');
+			window.location.assign('/paginaErrore');
 		}
 
 	</script>

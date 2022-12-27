@@ -20,6 +20,11 @@
     .heroSubtitle, .heroSubtitle2, .heroSubtitle3{
         font-size: 20px;
     }
+
+    .imgError{
+        width: 200px;
+        height: 200px;
+    }
     
 }
 @media screen and (max-width: 991px) {

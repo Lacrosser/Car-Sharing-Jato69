@@ -7,6 +7,9 @@ var coloreForm = document.querySelector('#coloreForm');
 var fotoForm = document.querySelector('#fotoForm');
 var cilindrataForm = document.querySelector('#cilindrataForm');
 
+var contenutoModal = document.querySelector('#contenutoModal');
+var titoloModal = document.querySelector('#titoloModal');
+
 // Aggiungi veicolo
 
 var aggiungiBtn = document.querySelector('#aggiungi');
@@ -107,8 +110,41 @@ function aggiungiVeicolo(){
             }
 
             var auto = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato);
+            
+            if(modello != ""){
+                if(colore != ""){
+                    if(cilindrata != ""){
+                        if(posizione != ""){
 
-            fetchVeicolo(auto);
+                            titoloModal.textContent = "Fatto"
+
+                            contenutoModal.textContent = "Veicolo inserito con successo!"
+                            console.log(modello + colore + cilindrata);
+
+                            fetchVeicolo(auto);
+
+                        } else {
+                            titoloModal.textContent = "Errore"
+
+                            contenutoModal.textContent = "Posizione auto mancante"
+                        }
+                    } else {
+                        titoloModal.textContent = "Errore"
+
+                        contenutoModal.textContent = "Cilindrata auto mancante"
+                    }
+                } else {
+                    titoloModal.textContent = "Errore"
+
+                    contenutoModal.textContent = "Colore auto mancante"
+                }
+            } else {
+                titoloModal.textContent = "Errore"
+
+                contenutoModal.textContent = "Modello auto mancante"
+            }
+
+            
 
             break;
         case "MONOPATTINO":
@@ -138,7 +174,24 @@ function aggiungiVeicolo(){
 
             var monopattino = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato);
 
-            fetchVeicolo(monopattino);
+            
+
+                if(posizione != ""){
+
+                    titoloModal.textContent = "Fatto"
+
+                    contenutoModal.textContent = "Veicolo inserito con successo!"
+                    fetchVeicolo(monopattino);
+
+                } else {
+                    titoloModal.textContent = "Errore"
+
+                    contenutoModal.textContent = "Posizione monopattino mancante"
+                }
+
+        
+
+           
 
             break;
         case "BICICLETTA":
@@ -167,7 +220,20 @@ function aggiungiVeicolo(){
 
             var bici = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato);
 
-            fetchVeicolo(bici);
+            if(posizione != ""){
+
+                titoloModal.textContent = "Fatto"
+
+                contenutoModal.textContent = "Veicolo inserito con successo!"
+                fetchVeicolo(bici);
+
+            } else {
+                titoloModal.textContent = "Errore"
+
+                contenutoModal.textContent = "Posizione monopattino mancante"
+            }
+
+            
 
             break;
     

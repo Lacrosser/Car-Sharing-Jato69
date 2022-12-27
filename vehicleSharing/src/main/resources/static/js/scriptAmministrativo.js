@@ -11,6 +11,7 @@ let btnAggiunta=document.querySelector("#aggiuntaVeicolo ")
 
 
 
+
 function checkConnection(){
 
 if(sessionStorage.getItem("username")==null && localStorage.getItem("username")==null){

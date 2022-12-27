@@ -10,6 +10,11 @@ function nascondiroba() {
     
 
     areaUtenteBuilder();
+
+    if(sessionStorage.getItem("tipo") == "A"  || localStorage.getItem("tipo") == "A"){
+      adminBuilder();
+    }
+
     logOutButton();
 
 
@@ -17,6 +22,8 @@ function nascondiroba() {
     loginBuilder();
 
   }
+
+  
 
 }
 
@@ -63,6 +70,22 @@ function areaUtenteBuilder() {
   a.setAttribute("class", "nav-link");
   a.setAttribute("href", "dashboard");
   a.textContent = "Area Utente";
+  let navbarElement = document.querySelector("#navbar")
+
+  li.appendChild(a)
+  navbarElement.appendChild(li);
+
+}
+function adminBuilder() {
+
+  let li = document.createElement('li');
+  li.setAttribute("id",'areaAmministratore');
+  li.setAttribute("class", "nav-item ms-auto ms-lg-0");
+
+  let a = document.createElement("a");
+  a.setAttribute("class", "nav-link");
+  a.setAttribute("href", "dashboard");
+  a.textContent = "Area Admin";
   let navbarElement = document.querySelector("#navbar")
 
   li.appendChild(a)

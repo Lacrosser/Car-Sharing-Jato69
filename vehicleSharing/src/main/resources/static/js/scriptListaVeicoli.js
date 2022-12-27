@@ -22,7 +22,7 @@ window.addEventListener("load", charmenderStarter);
 
 function mostraVeicoli(listaVeicoli) {
 
-  creaMappa(listaVeicoli);
+  // creaMappa(listaVeicoli);
 
 
   listaVeicoli.forEach(mezzo => {
@@ -445,23 +445,23 @@ function startMostraNonDisponibili() {
 
 
 
-function creaMappa(veicoli) {
-  var map = L.map('map').setView([41.90249395052403, 12.495037617783234], 10);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
-  }).addTo(map);
+// function creaMappa(veicoli) {
+//   var map = L.map('map').setView([41.90249395052403, 12.495037617783234], 10);
+//   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
+//   }).addTo(map);
 
-  veicoli.forEach(element => {
-    let posizione = element.posizione;
-    let numPos = posizione.split(",");
+//   veicoli.forEach(element => {
+//     let posizione = element.posizione;
+//     let numPos = posizione.split(",");
 
-    let num1 = parseFloat(numPos[0]);
-    let num2 = parseFloat(numPos[1]);
+//     let num1 = parseFloat(numPos[0]);
+//     let num2 = parseFloat(numPos[1]);
 
-    L.marker([num1, num2]).addTo(map)
-      .bindPopup('Il posto migliore di sempre')
-      .openPopup();
+//     L.marker([num1, num2]).addTo(map)
+//       .bindPopup('Il posto migliore di sempre')
+//       .openPopup();
 
-  });
+//   });
 
-}
+// }
