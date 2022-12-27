@@ -1,0 +1,199 @@
+/* css */
+.sfondoChiaro{
+    background-color: #A3E8EC;
+}
+
+.sfondoMedio{
+    background-color: #ECFEFF;
+}
+
+.first-color { 
+    background: #ecfeff; 
+}
+
+.second-color { 
+    background: #00b7c2; 
+}
+
+.third-color { 
+    background: #128594; 
+}
+
+.fourth-color { 
+    background: #4ef037;
+}
+
+.veicoloCard {
+    background: #128594;
+    height: 7rem;
+    margin-top: 1rem;
+}
+
+.whiteText{
+    color: white;
+}
+
+.primaryText{
+    font-size: 14px;
+    color: #00B7C2;
+}
+
+.secondaryText{
+    font-size: 20px;
+    color:#128494;
+}
+
+.footerColor{
+    background: #252A41;
+    padding: 1.5rem 0;
+}
+
+.footerApp{
+    /* display: flex;
+    align-items: center; */
+}
+
+.appleImg{ 
+    margin: 0 0;
+    height: 4rem;
+    width: auto;
+}
+
+.googleImg{
+    height: 4rem;
+    width: auto;
+}
+
+.bannerPromo{
+    background: #00b7c2;
+    text-align: center;
+    padding: .10rem 0;
+}
+
+.bannerPromo h4{
+    text-shadow: 0px 0px .5px #000000;
+  
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              SEZIONE ALTA SITO                             */
+/* -------------------------------------------------------------------------- */
+
+.monopattinoImg img{
+    height: 16rem;
+    width: auto;
+}
+
+.immagineScooter{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 9rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             BANNER ABBONAMENTI                             */
+/* -------------------------------------------------------------------------- */
+ 
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+ 
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+ 
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+ 
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 300px;
+  }
+  /* -------------------------------------------------------------------------- */
+  /*                                  PULSANTI                                  */
+  /* -------------------------------------------------------------------------- */
+
+.primaryBtn{
+    font-size: 20px;
+    color: white;
+    background: #00B7C2;
+    /* blue1/100 */
+
+    border: 3px solid #ECFEFF;
+    border-radius: 4px;
+    transition: .15s;
+}
+
+.primaryBtn:hover{
+    background: white;
+    color: #128594;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   SPACER                                   */
+/* -------------------------------------------------------------------------- */
+
+#spacer{
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-image: url('../img/spacerIndex.jpg');
+    height: 20rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacerText{
+    font-size: 4rem;
+    color: white;
+    
+    
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                SEZIONE LISTA                               */
+/* -------------------------------------------------------------------------- */
+
+.sezioneLista{
+    font-size: 20px;
+    height: 6rem;
+    background-color: #00B7C2;
+    border: 4px solid #128594;
+    margin: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    MAPPA                                   */
+/* -------------------------------------------------------------------------- */
+
+.mappa, #map{
+    margin-top: 3rem;
+    height: 20rem;
+    width: auto;
+}

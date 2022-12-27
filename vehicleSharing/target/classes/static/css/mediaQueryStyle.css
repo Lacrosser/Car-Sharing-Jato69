@@ -1,0 +1,19 @@
+ @media screen and (max-width: 991px) {
+    .bannerPromo h4{
+        font-size: 12px;
+        padding: 0 0;
+    }
+
+    #spacer{
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        background-image: url('../img/spacerIndex.jpg');
+        height: 10rem;  
+    }
+    
+}
+
+
+
+
