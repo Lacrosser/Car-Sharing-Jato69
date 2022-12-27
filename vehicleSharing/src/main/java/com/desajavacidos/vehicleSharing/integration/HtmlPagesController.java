@@ -67,6 +67,16 @@ public class HtmlPagesController {
 	public String registrati() {
 		return "signup";
 	}
+	
+	@GetMapping("abbonamenti")
+	public String abbonamenti() {
+		return "abbonamenti";
+	}
+	
+	@GetMapping("faq")
+	public String faq() {
+		return "faq";
+	}
 
 
 
