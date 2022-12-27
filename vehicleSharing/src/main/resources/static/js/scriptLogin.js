@@ -2,7 +2,7 @@ const LOGIN = "http://localhost:9069/api/utenti/login";
 
 
 let bottone = document.querySelector("#loginButton");
-let check = document.querySelector("#check").value;
+let check = document.querySelector("#check");
 
 
 // Invia la richiesta POST al server
@@ -30,7 +30,7 @@ function log2() {
 
                 console.log(tipo);
 
-                if (check === "yes") {
+                if (check.checked) {
 
                     localStorage.setItem("username", username);
                     localStorage.setItem("password", password);

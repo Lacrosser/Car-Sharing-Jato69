@@ -358,6 +358,11 @@
 
   }
 
+  /* .contenitoreDisponibile a:hover{
+    color: #00b7c2;
+
+  } */
+
   .contenitoreNoDisponibili a{
     padding-top: 2rem;
     padding-bottom: 2rem;

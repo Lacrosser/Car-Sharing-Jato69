@@ -1,21 +1,21 @@
 //bottone logout
 //logOutButton();
 
-var banner = document.querySelector('#banner');
+
 
 nascondiroba();
 
 function nascondiroba() {
   if (sessionStorage.getItem("username") != null  || localStorage.getItem("username")!=null) {
     
-    banner.setAttribute('hidden','');
+
     areaUtenteBuilder();
     logOutButton();
 
 
   } else {
     loginBuilder();
-    banner.removeAttribute('hidden');
+
   }
 
 }
