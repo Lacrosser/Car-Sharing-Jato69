@@ -21,6 +21,10 @@ window.addEventListener("load", charmenderStarter);
 
 
 function mostraVeicoli(listaVeicoli) {
+
+  creaMappa(listaVeicoli);
+
+
   listaVeicoli.forEach(mezzo => {
     var veicolo = mezzo.veicolo;
     var alimentazione = mezzo.alimentazione;
@@ -34,7 +38,7 @@ function mostraVeicoli(listaVeicoli) {
     modelloVeicolo.textContent = modello;
 
     var tipoVeicolo = document.createElement('div');
-    tipoVeicolo.setAttribute('class','tipo');
+    tipoVeicolo.setAttribute('class', 'tipo');
     tipoVeicolo.classList.add('ps-2');
     tipoVeicolo.textContent = veicolo;
 
@@ -48,11 +52,11 @@ function mostraVeicoli(listaVeicoli) {
     coloreVeicolo.setAttribute('class', 'desc');
     coloreVeicolo.classList.add("ps-2");
 
-    if(disponibilita == true){
+    if (disponibilita == true) {
       var descrizioneDisponibile = document.createElement('div');
-      descrizioneDisponibile.setAttribute('class','descrizioneDisponibile');
+      descrizioneDisponibile.setAttribute('class', 'descrizioneDisponibile');
       var disponibilitaSI = document.createElement('div');
-      disponibilitaSI.setAttribute('class','disponibilitaSI ps-2');
+      disponibilitaSI.setAttribute('class', 'disponibilitaSI ps-2');
       disponibilitaSI.textContent = "Disponibile";
       descrizioneDisponibile.appendChild(modelloVeicolo);
       descrizioneDisponibile.appendChild(tipoVeicolo);
@@ -61,13 +65,13 @@ function mostraVeicoli(listaVeicoli) {
       descrizioneDisponibile.appendChild(disponibilitaSI);
 
       var immagineDisponibile = document.createElement('div');
-      immagineDisponibile.setAttribute('class','immagineDisponibile');
-      immagineDisponibile.setAttribute('style','image-orientation:flip;');
+      immagineDisponibile.setAttribute('class', 'immagineDisponibile');
+      immagineDisponibile.setAttribute('style', 'image-orientation:flip;');
 
       var immagine = document.createElement('img');
-      immagine.setAttribute('src','#');
-      immagine.setAttribute('alt','null');
-      immagine.setAttribute('width','120px');
+      immagine.setAttribute('src', '#');
+      immagine.setAttribute('alt', 'null');
+      immagine.setAttribute('width', '120px');
 
       immagineDisponibile.appendChild(immagine);
 
@@ -80,42 +84,42 @@ function mostraVeicoli(listaVeicoli) {
       a.appendChild(descrizioneDisponibile);
 
       var cartaDisponibile = document.createElement('div');
-      cartaDisponibile.setAttribute('class','cartaDisponibile col-11 col-lg-6 d-flex flex-column');
+      cartaDisponibile.setAttribute('class', 'cartaDisponibile col-11 col-lg-6 d-flex flex-column');
 
       cartaDisponibile.appendChild(a);
 
       contenitore.appendChild(cartaDisponibile);
-    } 
-    });
-  }
+    }
+  });
+}
 
-    // modelloVeicolo.textContent = modello;
+// modelloVeicolo.textContent = modello;
 
-    // mezzoVeicolo.textContent = veicolo;
-    // coloreVeicolo.textContent = alimentazione;
-    // var aWrap = document.createElement('div');
-    // var a = document.createElement('a');
-    // var newDiv = document.createElement('div');
-    // aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
-    // newDiv.setAttribute('class', '');
-    // var disponibilitaMezzo = document.createElement('div');
+// mezzoVeicolo.textContent = veicolo;
+// coloreVeicolo.textContent = alimentazione;
+// var aWrap = document.createElement('div');
+// var a = document.createElement('a');
+// var newDiv = document.createElement('div');
+// aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
+// newDiv.setAttribute('class', '');
+// var disponibilitaMezzo = document.createElement('div');
 
-    // if (disponibilita == true) {
-    //   disponibilitaMezzo.setAttribute('class', 'disponibile');
-    //   disponibilitaMezzo.textContent = "Disponibile";
-    //   var link = "/paginaVeicolo?id=" + id;
-    //   a.setAttribute('href', link);
-    //   newDiv.appendChild(modelloVeicolo);
-    //   newDiv.appendChild(mezzoVeicolo);
-    //   newDiv.appendChild(coloreVeicolo);
-    //   newDiv.appendChild(disponibilitaMezzo);
-    //   a.appendChild(newDiv);
-    //   aWrap.appendChild(a);
-    //   contenitore.appendChild(aWrap);
+// if (disponibilita == true) {
+//   disponibilitaMezzo.setAttribute('class', 'disponibile');
+//   disponibilitaMezzo.textContent = "Disponibile";
+//   var link = "/paginaVeicolo?id=" + id;
+//   a.setAttribute('href', link);
+//   newDiv.appendChild(modelloVeicolo);
+//   newDiv.appendChild(mezzoVeicolo);
+//   newDiv.appendChild(coloreVeicolo);
+//   newDiv.appendChild(disponibilitaMezzo);
+//   a.appendChild(newDiv);
+//   aWrap.appendChild(a);
+//   contenitore.appendChild(aWrap);
 
-      // } else if (disponibilita == false) {
-      //   disponibilitaMezzo.setAttribute('class', 'noDisponibile');
-      //   disponibilitaMezzo.textContent = "Non disponibile";
+// } else if (disponibilita == false) {
+//   disponibilitaMezzo.setAttribute('class', 'noDisponibile');
+//   disponibilitaMezzo.textContent = "Non disponibile";
 
 
 
@@ -135,7 +139,7 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
     modelloVeicolo.textContent = modello;
 
     var tipoVeicolo = document.createElement('div');
-    tipoVeicolo.setAttribute('class','tipo');
+    tipoVeicolo.setAttribute('class', 'tipo');
     tipoVeicolo.classList.add('ps-2');
     tipoVeicolo.textContent = veicolo;
 
@@ -149,12 +153,12 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
     coloreVeicolo.setAttribute('class', 'desc');
     coloreVeicolo.classList.add("ps-2");
 
-    if(disponibilita == false){
+    if (disponibilita == false) {
 
       var descrizione = document.createElement('div');
-      descrizione.setAttribute('class','descrizione');
+      descrizione.setAttribute('class', 'descrizione');
       var disponibilitaSI = document.createElement('div');
-      disponibilitaSI.setAttribute('class','disponibilitaNO ps-2');
+      disponibilitaSI.setAttribute('class', 'disponibilitaNO ps-2');
       disponibilitaSI.textContent = "Non Disponibile";
       descrizione.appendChild(modelloVeicolo);
       descrizione.appendChild(mezzoVeicolo);
@@ -162,13 +166,13 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
       descrizione.appendChild(disponibilitaSI);
 
       var immagineNoDisp = document.createElement('div');
-      immagineNoDisp.setAttribute('class','immagine');
-      immagineNoDisp.setAttribute('style','image-orientation:flip;');
+      immagineNoDisp.setAttribute('class', 'immagine');
+      immagineNoDisp.setAttribute('style', 'image-orientation:flip;');
 
       var immagine = document.createElement('img');
-      immagine.setAttribute('src','#');
-      immagine.setAttribute('alt','null');
-      immagine.setAttribute('width','120px');
+      immagine.setAttribute('src', '#');
+      immagine.setAttribute('alt', 'null');
+      immagine.setAttribute('width', '120px');
 
       immagineNoDisp.appendChild(immagine);
 
@@ -181,12 +185,12 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
       a.appendChild(descrizione);
 
       var cartaNoDisponibile = document.createElement('div');
-      cartaNoDisponibile.setAttribute('class','cartaNoDisponibile col-11 col-lg-6 d-flex flex-column');
+      cartaNoDisponibile.setAttribute('class', 'cartaNoDisponibile col-11 col-lg-6 d-flex flex-column');
 
       cartaNoDisponibile.appendChild(a);
 
       contenitoreNoDisp.appendChild(cartaNoDisponibile);
-    
+
     }
   });
 }
@@ -299,10 +303,6 @@ function stampAlimentazione(alimentazione) {
       break;
   }
 };
-
-
-
-
 
 
 
@@ -442,3 +442,26 @@ function startMostraNonDisponibili() {
     });
 }
 // Prova Modifica
+
+
+
+function creaMappa(veicoli) {
+  var map = L.map('map').setView([41.90249395052403, 12.495037617783234], 10);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
+  }).addTo(map);
+
+  veicoli.forEach(element => {
+    let posizione = element.posizione;
+    let numPos = posizione.split(",");
+
+    let num1 = parseFloat(numPos[0]);
+    let num2 = parseFloat(numPos[1]);
+
+    L.marker([num1, num2]).addTo(map)
+      .bindPopup('Il posto migliore di sempre')
+      .openPopup();
+
+  });
+
+}
