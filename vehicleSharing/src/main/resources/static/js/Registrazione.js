@@ -17,16 +17,16 @@ let email = document.querySelector("#email");
 let dataNascita = document.querySelector("#dataNascita");
 
 
-let btnReg=document.querySelector("#registrati")
+let btnReg = document.querySelector("#registrati")
 let errorMsg = document.querySelector("#errorIns");
 
 /* -------------------------------------------------------------------------- */
 /*                         AVVIO PAGINA/EVENT LISTENER                        */
 /* -------------------------------------------------------------------------- */
 
-window.addEventListener("load",checkLogin());
+window.addEventListener("load", checkLogin());
 
-btnReg.addEventListener("click",registrazione);
+btnReg.addEventListener("click", registrazione);
 
 
 
@@ -86,9 +86,8 @@ function registrazione() {
 
 }
 
-function checkLogin(){
-    if(sessionStorage.getItem("username") != null || localStorage.getItem("username") != null){
+function checkLogin() {
+    if (sessionStorage.getItem("username") != null || localStorage.getItem("username") != null) {
         window.location.assign('/');
-      }
+    }
 }
-
