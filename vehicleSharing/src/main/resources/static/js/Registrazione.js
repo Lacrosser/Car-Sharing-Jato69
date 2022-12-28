@@ -7,6 +7,9 @@ const REGUSER = /^[a-zA-Z\d]{1,12}$/;
 const REGPASS = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 
+// password di prova:h$WMP%O58Eic
+
+
 /* -------------------------------------------------------------------------- */
 /*                                  Variabili                                 */
 /* -------------------------------------------------------------------------- */
@@ -30,7 +33,7 @@ let errorPass = document.querySelector("#errorPass");
 /* -------------------------------------------------------------------------- */
 
 window.addEventListener("load",checkLogin);
-btnReg.addEventListener("click",controllaUser);
+btnReg.addEventListener("click",checherReg);
 
 
 
@@ -106,15 +109,21 @@ function checkLogin() {
 function checherReg() {
 
     ripristinoCampi();
+    console.log("campi ripristinati")
 
-    if (checkPassword) {
-        if (controllaUser && controllaPassword) {
+    if (checkPassword()) {
+        console.log("le password sono giuste?")
+        if (controllaUser() && controllaPassword()) {
+            //console.log("user e pass accettate");
             return true;
         } else {
+           // console.log("user e pass non accettate");
             return false
         }
 
-    } else return false;
+    } else 
+    //console.log("le password sono diverse")
+    return false;
 
 }
 
@@ -124,6 +133,7 @@ function checherReg() {
 function controllaUser() {
 
     let us=username.value;
+    
     console.log(us);
     if (!us.match(REGUSER)) {
 
@@ -149,18 +159,20 @@ function controllaUser() {
             }
 
         }
-        console.log("flaso user")
+        //console.log("flaso user")
         event.preventDefault();
         return false;
     } else {
-        console.log("user true")
+        //console.log("user true")
         return true;
     }
 
 }
 
 function controllaPassword() {
-    if (!pass1.value.match(REGPASS)) {
+    let password=pass1.value;
+    console.log(password);
+    if (!password.match(REGPASS)) {
         //almeno una maiuscola
         //almeno una minuscola
         //almeno un carattere speciale @$!%*?&
@@ -210,9 +222,11 @@ function controllaPassword() {
             }
 
         }
+        //console.log("password non accetata");
         event.preventDefault();
         return false;
     } else {
+        //console.log("password ok");
         return true;
     }
 
@@ -223,7 +237,6 @@ function ripristinoCampi() {
     var lu = document.querySelectorAll("ul#errorUser li");
     errorPass.textContent = "";
     errorUser.textContent = "";
-    errorLegoCity.textContent = "";
     li.forEach(element => {
 
         element.remove();
