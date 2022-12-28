@@ -30,7 +30,10 @@ function mostraVeicoli(listaVeicoli) {
     var alimentazione = mezzo.alimentazione;
     var disponibilita = mezzo.disponibilita;
     var id = mezzo.id;
+    var immagine = mezzo.immagine;
     let modello = mezzo.modello;
+    console.log(immagine);
+    console.log(typeof immagine);
     // var id = veicolo.id;
     var modelloVeicolo = document.createElement("div");
     modelloVeicolo.setAttribute("class", "modello");
@@ -68,12 +71,12 @@ function mostraVeicoli(listaVeicoli) {
       immagineDisponibile.setAttribute('class', 'immagineDisponibile');
       immagineDisponibile.setAttribute('style', 'image-orientation:flip;');
 
-      var immagine = document.createElement('img');
-      immagine.setAttribute('src', '#');
-      immagine.setAttribute('alt', 'null');
-      immagine.setAttribute('width', '120px');
+      var immagineSrc = document.createElement('img');
+      immagineSrc.setAttribute('src', immagine);
+      immagineSrc.setAttribute('alt', 'null');
+      immagineSrc.setAttribute('width', '120px');
 
-      immagineDisponibile.appendChild(immagine);
+      immagineDisponibile.appendChild(immagineSrc);
 
       var link = "/paginaVeicolo?id=" + id;
 
