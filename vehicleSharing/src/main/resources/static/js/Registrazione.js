@@ -26,7 +26,7 @@ let errorMsg = document.querySelector("#errorIns");
 
 window.addEventListener("load",checkLogin());
 
-btnReg.addEventListener("click",registrazione());
+btnReg.addEventListener("click",registrazione);
 
 
 
