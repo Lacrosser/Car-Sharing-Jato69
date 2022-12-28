@@ -636,6 +636,10 @@ h1, h2 {
 /* -------------------------------------------------------------------------- */
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-  background-color: #00b8c249;
+  background-color: #00b8c26e;
+  color: white;
+  
+  
 }
 
+/* #003f4e */
