@@ -243,6 +243,21 @@
     align-items: center;
 }
 
+#spacer2{
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-image: url('../img/spacer2.jpg');
+    height: 20rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .spacerText{
     font-size: 4rem;
     color: white;

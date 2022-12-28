@@ -11,6 +11,13 @@
         background-image: url('../img/spacerIndex.jpg');
         height: 10rem;  
     }
+    #spacer2{
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        background-image: url('../img/spacer2.jpg');
+        height: 10rem;  
+    }
 
     .heroTitle, .heroTitle2, .heroTitle3{
         font-size: 30px;
