@@ -57,7 +57,7 @@ function creaTabella(listaVeicoli) {
     tableBody.appendChild(tr);
 
   });
-
+  
   let datatable = new DataTable(table);
 
 }
