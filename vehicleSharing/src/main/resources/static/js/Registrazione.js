@@ -8,22 +8,25 @@ const TIPO = "B"
 /* -------------------------------------------------------------------------- */
 
 
-let username = document.querySelector("#username").value;
-let pass1 = document.querySelector("#password").value;
-let pass2 = document.querySelector("#password2").value;
-let nome = document.querySelector("#nome").value;
-let cognome = document.querySelector("#cognome").value;
-let email = document.querySelector("#email").value;
-let dataNascita = document.querySelector("#dataNascita").value;
+let username = document.querySelector("#username");
+let pass1 = document.querySelector("#password");
+let pass2 = document.querySelector("#password2");
+let nome = document.querySelector("#nome");
+let cognome = document.querySelector("#cognome");
+let email = document.querySelector("#email");
+let dataNascita = document.querySelector("#dataNascita");
 
 
+let btnReg=document.querySelector("#registrati")
 let errorMsg = document.querySelector("#errorIns");
 
 /* -------------------------------------------------------------------------- */
-/*                                Avvio pagina                                */
+/*                         AVVIO PAGINA/EVENT LISTENER                        */
 /* -------------------------------------------------------------------------- */
 
-window.addEventListener("load",checkLogin())
+window.addEventListener("load",checkLogin());
+
+btnReg.addEventListener("submit",registrazione());
 
 
 
@@ -60,7 +63,7 @@ function creaUtente(userId, password, firma, tipo, nome, cognome, nascita, email
 
 function registrazione() {
     if (checkPassword) {
-        let utente = new creaUtente(username, pass1, UTENTE, TIPO, nome, cognome, dataNascita, email)
+        let utente = new creaUtente(username.value, pass1.value, UTENTE, TIPO, nome.value, cognome.value, dataNascita.value, email.value)
 
         fetch(UTENTIMAPPING, {
                 method: "POST",
