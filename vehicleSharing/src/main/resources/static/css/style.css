@@ -464,7 +464,7 @@
 }
 
 .fotoSezione img{
-    width: 400px;
+    width: 500px;
     margin: 2rem 0;
 }
 
@@ -621,5 +621,13 @@ h1, h2 {
 }
 .accordion ul li input[type=checkbox]:checked ~ i:after {
   transform: translate(-2px, 0) rotate(-45deg);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   SIGNUP                                   */
+/* -------------------------------------------------------------------------- */
+
+.containerSignup{
+  height: 45rem;
 }
 
