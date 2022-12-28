@@ -29,9 +29,10 @@ let errorPass = document.querySelector("#errorPass");
 /*                         AVVIO PAGINA/EVENT LISTENER                        */
 /* -------------------------------------------------------------------------- */
 
-window.addEventListener("load", checkLogin());
+window.addEventListener("load",checkLogin);
+btnReg.addEventListener("click",registrazione);
 
-btnReg.addEventListener("click", registrazione);
+
 
 
 
