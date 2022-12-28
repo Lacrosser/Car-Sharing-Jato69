@@ -3,6 +3,11 @@ const LOGIN = "http://localhost:9069/api/utenti/login";
 
 let bottone = document.querySelector("#loginButton");
 let check = document.querySelector("#check");
+let errorMsg = document.querySelector("#errorIns");
+
+
+window.addEventListener("load",checkLogin());
+
 
 
 // Invia la richiesta POST al server
@@ -30,6 +35,8 @@ function log2() {
 
                 console.log(tipo);
 
+
+
                 if (check.checked) {
 
                     localStorage.setItem("username", username);
@@ -43,6 +50,7 @@ function log2() {
                 }
 
 
+
                 window.location.assign("/");
 
                 return true;
@@ -50,12 +58,24 @@ function log2() {
 
                 console.log("utente C")
                 sessionStorage.setItem("tipo", tipo);
+                errorMsg.textContent="Utente o password sbagliati, prego riprovare"
 
                 return false;
             }
 
 
         });
+}
+
+
+
+function checkLogin(){
+
+    if(sessionStorage.getItem("username") != null  || localStorage.getItem("username")!=null){
+        window.location.replace("/");
+
+    }
+    
 }
 
 
