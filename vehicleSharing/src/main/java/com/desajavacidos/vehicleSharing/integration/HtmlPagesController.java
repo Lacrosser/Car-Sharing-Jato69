@@ -68,7 +68,7 @@ public class HtmlPagesController {
 		return "signup";
 	}
 	
-<<<<<<< Updated upstream
+
 	@GetMapping("abbonamenti")
 	public String abbonamenti() {
 		return "abbonamenti";
@@ -78,13 +78,13 @@ public class HtmlPagesController {
 	public String faq() {
 		return "faq";
 	}
-=======
+
 	@GetMapping("paginaErrore")
 	public String errorPage() {
 		return "errorPage";
 	}
 	
->>>>>>> Stashed changes
+
 
 }
 
