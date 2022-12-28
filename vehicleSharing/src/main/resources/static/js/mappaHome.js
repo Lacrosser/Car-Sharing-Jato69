@@ -21,7 +21,7 @@ function stampaMappa() {
 }
 
 function creaMappa(veicoli) {
-  var map = L.map('map').setView([41.90249395052403, 12.495037617783234], 10);
+  var map = L.map('map').setView([45.07020969624025, 7.626442497677781], 10);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
   }).addTo(map);
@@ -34,7 +34,7 @@ function creaMappa(veicoli) {
     let num2 = parseFloat(numPos[1]);
 
     L.marker([num1, num2]).addTo(map)
-      .bindPopup('Il posto migliore di sempre')
+      .bindPopup(element.modello)
       .openPopup();
 
   });
@@ -77,12 +77,12 @@ const plugin = {
 fetch(VEICOLIMAPPING)
   .then(data => {
     return data.json();
-  }), then(response => {
+  }).then(response => {
 
-    const MONO = response.filter(item => item.tipologia === "MONOPATTINI");
-    const BICI = response.filter(item => item.tipologia === "BICICLETTA");
-    const ELE = response.filter(item => item.tipologia === "elettrica");
-    const IBRIDA = response.filter(item => item.tipologia === "ibrida");
+    const MONO = response.filter(item => item.veicolo === "MONOPATTINI");
+    const BICI = response.filter(item => item.veicolo === "BICICLETTA");
+    const ELE = response.filter(item => item.alimentazione === "elettrica");
+    const IBRIDA = response.filter(item => item.alimentazione === "ibrida");
 
     let mono = (MONO.length) * 0.95;
     let bici = (BICI.length);
