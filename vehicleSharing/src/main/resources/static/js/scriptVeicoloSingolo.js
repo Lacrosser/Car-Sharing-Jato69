@@ -24,6 +24,9 @@ function creaTitolo(veicolo) {
     let modello = veicolo.modello;
     let alimentazione = veicolo.alimentazione;
 
+    console.log(modello);
+    console.log(alimentazione);
+
     let div = document.querySelector("#nomeVeicolo");
     let h1 = document.createElement("h1");
     let h3 = document.createElement("h3");
@@ -145,6 +148,7 @@ function creaScheda(veicolo) {
 
 function initPagina() {
     const PIPPO = new URLSearchParams(window.location.search)
+    console.log(typeof (PIPPO.get("id")));
     PIPPO.get("id")
     fetch(GETVEICOLIBYID + PIPPO.get("id"))
         .then(data => {
