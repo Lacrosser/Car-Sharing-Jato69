@@ -442,6 +442,12 @@
 .cookie a{
     color: white;
 }
+.cookie {
+    padding: 1.5rem 0;
+}
+.cookie p {
+    margin-bottom: 0;
+}
 
 .cookie a:hover{
     color: #020d3e;
@@ -569,7 +575,10 @@ h1, h2 {
   margin: 0;
   padding-bottom: 4px;
   padding-top: 18px;
-  /* border-top: 1px dotted #128594; */
+  border-bottom: 1px solid rgba(18, 133, 148, 0.534);
+}
+.accordion ul li:first-child {
+  border-top: 1px solid rgba(18, 133, 148, 0.534);
 }
 .accordion ul li:nth-of-type(1) {
   animation-delay: 0.5s;
@@ -636,8 +645,8 @@ h1, h2 {
 /* -------------------------------------------------------------------------- */
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-  background-color: #00b8c26e;
-  color: white;
+  background-color: rgba(0, 184, 194, 0.158);
+  color: #003f4e;
   
   
 }
