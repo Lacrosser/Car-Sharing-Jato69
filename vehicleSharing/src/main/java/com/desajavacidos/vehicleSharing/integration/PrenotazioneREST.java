@@ -49,23 +49,15 @@ public class PrenotazioneREST {
 
 	@GetMapping("/veicoli/{id}")
 	public List<Veicoli> getVeicoli(@PathVariable("id") int id) {
-
-		if (id <= service.getAll().size()) {
-
 			return service.getVeicoliById(id);
-		} else {
-			return null;
-		}
+		
 	}
 
 	@PostMapping("/utente/{idUtente}/veicolo/{idVeicolo}")
 	public void addprenotazione(@PathVariable int idUtente, @PathVariable int idVeicolo) {
 
-		
-			if (idUtente <= service.getAll().size()) {
-		
 		service.addPrenotazione(idUtente, idVeicolo);
-	}
+	
 	}
 
 	
@@ -78,11 +70,8 @@ public class PrenotazioneREST {
 		prenotazioneById.setArchivioUtenti(p.getArchivioUtenti());
 		prenotazioneById.setTimestamp(p.getTimestamp());
 
-		if (id <= service.getAll().size()) {
-
 			service.updatePrenotazione(prenotazioneById);
-		}
-
+		
 	}
 
 	@PostMapping
@@ -100,10 +89,8 @@ public class PrenotazioneREST {
 	@DeleteMapping("/{id}")
 	public void deletePrenotazioen(@PathVariable("id") int id) {
 
-		if (id <= service.getAll().size()) {
 
 			service.deletePrenotazioneById(id);
-		}
 	}
 
 }

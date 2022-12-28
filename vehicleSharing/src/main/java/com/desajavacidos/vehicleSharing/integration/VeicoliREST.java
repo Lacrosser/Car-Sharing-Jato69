@@ -34,13 +34,8 @@ public class VeicoliREST {
 	@GetMapping("/{id}")
 	public Veicoli getVeicoli(@PathVariable("id") int id) {
 
-		if (id <= service.getAll().size()) {
-
 			return service.getVeicoliById(id);
-		} else {
-			return null;
-		}
-
+		
 	}
 
 	@GetMapping("/status/{disponibilita}")
@@ -93,9 +88,7 @@ public class VeicoliREST {
 	@DeleteMapping("/{id}")
 	public void deleteUtente(@PathVariable("id") int id) {
 
-		if (id <= service.getAll().size()) {
-
 			service.deleteVeicoliByID(id);
-		}
+		
 	}
 }
