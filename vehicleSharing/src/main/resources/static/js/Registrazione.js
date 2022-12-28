@@ -30,7 +30,7 @@ let errorPass = document.querySelector("#errorPass");
 /* -------------------------------------------------------------------------- */
 
 window.addEventListener("load",checkLogin);
-btnReg.addEventListener("click",registrazione);
+btnReg.addEventListener("click",controllaUser);
 
 
 
@@ -122,7 +122,10 @@ function checherReg() {
 
 
 function controllaUser() {
-    if (!username.value.match(REGUSER)) {
+
+    let us=username.value;
+    console.log(us);
+    if (!us.match(REGUSER)) {
 
         errorUser.textContent = "Per favore controlla il tuo Username:";
 
@@ -146,9 +149,11 @@ function controllaUser() {
             }
 
         }
+        console.log("flaso user")
         event.preventDefault();
         return false;
     } else {
+        console.log("user true")
         return true;
     }
 
