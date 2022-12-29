@@ -101,14 +101,18 @@
     <!-- TAbella con datatables, modale per la cancellazione e modifica degli elementi
     10 elementi per pagina, ciclarla
     funzione di delete e update(put) -->
-    <div class="bannerAdmin d-flex justify-content-center align-items-center" style="height: 10rem; background: #00B7C2;">
-			<h1 class="secondaryText" style="font-size: 50px;">Sezione Admin</h1>
-		</div>
+    <div class="bannerAdmin d-flex justify-content-center align-items-center"
+      style="height: 10rem; background: #00B7C2;">
+      <h1 class="secondaryText" style="font-size: 50px;">Sezione Admin</h1>
+    </div>
     <div class="container">
       <div class="text-wrap pb-3">
-        <h2 class="primaryText mt-4 d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-					<path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-				  </svg>Tabella amministrativa veicoli</h2>
+        <h2 class="primaryText mt-4 d-flex align-items-center" style="font-size: 30px;"><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+          </svg>Tabella amministrativa veicoli</h2>
       </div>
       <table id="tabella" class="table-striped" style="color: #128594;">
         <thead>
@@ -144,43 +148,124 @@
     </div>
 
 
-	  <!-- MODALE Modifica-->
+    <!-- MODALE Modifica-->
     <div class="modal fade" id="modificaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="titoloModal"></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="contenutoModal">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-        </div>
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="titoloModal">Form di Update</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="contenutoModal">Compila i seguenti campi:
+
+            <div class="formContainer" style="min-height: 20rem;">
+              <div class="formVeicolo mt-5" id="formVeicolo" hidden>
+                <div class="formChild row" id="alimentazioneForm">
+                  <div class="secondaryText col-4 d-flex justify-content-end">
+                    <h3>Alimentazione</h3>
+                  </div>
+                  <div class="selectForm col-6">
+                    <select name="tipoVeicolo" class="form-select" id="alimentazione">
+                      <option value="elettrica">Elettrica</option>
+                      <option value="ibrida">Ibrida</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="formChild row" id="modelloForm">
+                  <div class="secondaryText col-4 d-flex justify-content-end">
+                    <h3>Modello</h3>
+                  </div>
+                  <div class="inputForm col-6">
+                    <input type="text" class="form-control" id="modello">
+                  </div>
+                </div>
+                <div class="formChild row" id="coloreForm">
+                  <div class="secondaryText col-4 d-flex justify-content-end">
+                    <h3>Colore</h3>
+                  </div>
+                  <div class="inputForm col-6">
+                    <input type="text" class="form-control" id="colore">
+                  </div>
+                </div>
+                <div class="formChild row" id="cilindrataForm">
+                  <div class="secondaryText col-4 d-flex justify-content-end">
+                    <h3>Clinidrata</h3>
+                  </div>
+                  <div class="inputForm col-6">
+                    <input type="text" class="form-control" id="cilindrata">
+                  </div>
+                </div>
+                <div class="formChild d-flex justify-content-center mt-4 mb-4">
+                  <div class="d-flex align-items-center">
+                    <input class="form-check-input mt-0 ms-2" type="checkbox" value="yes"
+                      aria-label="Checkbox for following text input" id="disponibile">
+                    <label class="form-check-label ps-1" for="defaultCheck1">
+                      Disponibile
+                    </label>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <input class="form-check-input mt-0 ms-2" type="checkbox" value="yes"
+                      aria-label="Checkbox for following text input" id="prolungato">
+                    <label class="form-check-label ps-1" for="defaultCheck1">
+                      Noleggio Prolungato
+                    </label>
+                  </div>
+                </div>
+                <div class="formChild row">
+                  <div class="secondaryText col-4 d-flex justify-content-end">
+                    <h3>Posizione</h3>
+                  </div>
+                  <div class="inputForm col-6">
+                    <input type="text" class="form-control" id="posizione">
+                  </div>
+                </div>
+                <div class="formChild row mt-4 mb-4 secondaryText" id="fotoForm">
+                  <div class="secondaryText col-4 d-flex justify-content-end col-4">
+                    <h3>Foto auto</h3>
+                  </div>
+                  <div class="mb-3 col-6">
+                    <input class="form-control" type="file" id="foto">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <button id="salvaMod" type="button" class="btn btn-primary">Salva cambiamenti</button>
+          </div>
         </div>
       </div>
-      </div>
+    </div>
 
 
 
-	  <!-- MODALE Elimina-->
+    <!-- MODALE Elimina-->
     <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="titoloModale"></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="contenutoModale">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-        </div>
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="titoloModale">Form di cancellazione</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="contenutoModale">Sei sicuro di voler cancellare dal database questo veicolo?
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button id="eliminaMod" type="button" class="btn btn-primary">Elimina</button>
+          </div>
         </div>
       </div>
-      </div>
+    </div>
 
 
 
@@ -279,20 +364,18 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.13.1/r-2.4.0/datatables.min.js">
   </script>
   <script>
+    var tipo = localStorage.getItem("tipo");
+    var tipo2 = sessionStorage.getItem("tipo");
 
-		var tipo = localStorage.getItem("tipo");
-		var tipo2 = sessionStorage.getItem("tipo");
-	
-		if(tipo != "A" && tipo2 != "A"){
-			window.location.assign('/paginaErrore');
-		}
-	
-	</script>
+    if (tipo != "A" && tipo2 != "A") {
+      window.location.assign('/paginaErrore');
+    }
+  </script>
   <script src="/js/session.js"></script>
   <script src="/js/dataTable.js"></script>
 </body>
