@@ -89,6 +89,11 @@ public class HtmlPagesController {
 		return "SharEAndTheMysticEScooter";
 	}
 	
+	@GetMapping("areaUtente")
+	public String areaUtente() {
+		return "utenteView";
+	}
+	
 
 
 }

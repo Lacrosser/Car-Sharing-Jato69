@@ -1,107 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mediaQueryStyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <title>Error</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap"
+	rel="stylesheet">
+
+<title>Dashboard</title>
+<link rel="icon" type="image/x-icon" href="/img/logo.png">
+<style>
+body {
+	font-family: 'Outfit', sans-serif;
+}
+</style>
 </head>
+
 <body>
-    <header class="">
-        <nav class="navbar navbar-expand-lg navbar-dark borderNav third-color">
-          <!-- inizio navbar -->
-    
-          <div class="container-lg">
-            <!-- inizio container navbar -->
-    
-            <a class="navbar-brand" href="/">
-              <img src="/img/bigLogo.png" alt="logo" width="50" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon">
-    
-              </span>
-            </button>
-    
-            <div class="offcanvas offcanvas-end bg-dark text-bg-dark" style="width: 15rem" tabindex="-1"
-              id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <!-- inizio offcanvas -->
-    
-              <div class="offcanvas-header">
-                <h3 class="offcanvas-title" id="offcanvasNavbarLabel"></h3>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                  aria-label="Close"></button>
-              </div>
-    
-              <div class="offcanvas-body">
-                <!-- inizio offcanvas-body -->
-    
-                <ul class="navbar-nav justify-content-end align-items-lg-center flex-grow-1 pe-3" id="navbar">
-                  <!-- inizio elementi navbar -->
-    
-                  <li class="nav-item ms-auto ms-lg-0">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <!-- possiamo togliere mettendo il logo diretto alla home -->
-                  </li>
-                  <li class="nav-item ms-auto ms-lg-0">
-                    <a class="nav-link" href="/tariffe">Tariffe</a>
-                  </li>
-                  <li class="nav-item ms-auto ms-lg-0">
-                    <a class="nav-link" href="/faq">FAQ</a>
-                    <!-- tipi diversi di veicoli disp -->
-                  </li>
-                  <li class="nav-item ms-auto ms-lg-0">
-                    <a class="nav-link" href="/abbonamenti">Abbonamenti</a>
-                    <!-- libero profesionista, abbonamenti, parcheggi -->
-                  </li>
-                  <li class="nav-item ms-auto ms-lg-0">
-                    <a class="nav-link" href="/aboutUs">Chi siamo</a>
-                    <!-- mappa con veicoli disponibili, visibile a tutti -->
-                  </li>
-                  <li class="nav-item ms-auto ms-lg-0">
-                    <a class="nav-link" href="/listaVeicoli">Veicoli</a>
-                    <!-- mettere i loghi delle roba si soft skill -->
-                  </li>
-                  <!-- <li class="nav-item ms-auto ms-lg-0">
-                    <a class="nav-link" href="/login">Accedi</a>
-                  </li> -->
-                </ul> <!-- fine elementi navbar -->
-              </div>
-    
-            </div> <!-- fine offcanvas-body -->
-          </div> <!-- fine offcanvas -->
-          </div> <!-- fine container navbar -->
-        </nav> <!-- fine navbar -->
-      </header>
 
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 class="primaryText" style="font-size: 60px;">
-                        Impossibile visualizzare la pagina   
-                    </h1>
-                    <div class="pulsante" style="width: 15rem;">
-                      <a type="button" class="btn primaryBtn" href="/">Torna alla Home</a>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 d-flex justify-content-center">
-                    <img src="/img/error.png" alt="errorImage" class="imgError">
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <footer class="footerColor">
+	<header class="">
+		<nav class="navbar navbar-expand-lg navbar-dark borderNav third-color">
+			<!-- inizio navbar -->
+
+			<div class="container-lg">
+				<!-- inizio container navbar -->
+
+				<a class="navbar-brand" href="/"> <img src="/img/bigLogo.png"
+					alt="logo" width="50" height="50">
+				</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+					aria-controls="offcanvasNavbar">
+					<span class="navbar-toggler-icon"> </span>
+				</button>
+
+				<div class="offcanvas offcanvas-end bg-dark text-bg-dark"
+					style="width: 15rem" tabindex="-1" id="offcanvasNavbar"
+					aria-labelledby="offcanvasNavbarLabel">
+					<!-- inizio offcanvas -->
+
+					<div class="offcanvas-header">
+						<h3 class="offcanvas-title" id="offcanvasNavbarLabel"></h3>
+						<button type="button" class="btn-close btn-close-white"
+							data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+
+					<div class="offcanvas-body">
+						<!-- inizio offcanvas-body -->
+
+						<ul
+							class="navbar-nav justify-content-end align-items-lg-center flex-grow-1 pe-3"
+							id="navbar">
+							<!-- inizio elementi navbar -->
+
+							<li class="nav-item ms-auto ms-lg-0"><a
+								class="nav-link" href="/">Home</a> <!-- possiamo togliere mettendo il logo diretto alla home -->
+							</li>
+							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
+								href="/tariffe">Tariffe</a></li>
+							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
+								href="/faq">FAQ</a> <!-- tipi diversi di veicoli disp -->
+							</li>
+							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
+								href="/abbonamenti">Abbonamenti</a> <!-- libero profesionista, abbonamenti, parcheggi -->
+							</li>
+							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
+								href="/aboutUs">Chi siamo</a> <!-- mappa con veicoli disponibili, visibile a tutti -->
+							</li>
+							<li class="nav-item ms-auto ms-lg-0"><a class="nav-link"
+								href="/listaVeicoli">Veicoli</a> <!-- mettere i loghi delle roba si soft skill -->
+							</li>
+
+						</ul>
+						<!-- fine elementi navbar -->
+					</div>
+
+				</div>
+				<!-- fine offcanvas-body -->
+			</div>
+			<!-- fine offcanvas -->
+			</div>
+			<!-- fine container navbar -->
+		</nav>
+		<!-- fine navbar -->
+	</header>
+
+
+
+	<main>
+		<div class="bannerAdmin d-flex flex-column justify-content-center align-items-center" style="height: 10rem; background: #00B7C2;">
+			<h1 class="secondaryText" style="font-size: 50px;">Ciao <span id="utente"></span></h1>
+            <h2 class="secondaryText mt-4 d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>Benvenuto nella tua area personale!</h2>
+		</div>
+			<div class="container mt-0">
+				<div class="row">
+					<div class="col-lg-6 col-12" style="background: #00b8c241;">
+						<h2 class="secondaryText d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                          </svg>Dati personali</h2>
+                          <div class="zonaPersonale">
+                            <div class="secondaryText">Nome: <span class="primaryText" id="nome"></span></div>
+                            <div class="secondaryText">Cognome: <span class="primaryText" id="cognome"></span></div>
+                            <div class="secondaryText">Data di Nascita: <span class="primaryText" id="nascita"></span></div>
+                            <div class="secondaryText">Email: <span class="primaryText" id="email"></span></div>
+                            <div class="secondaryText">Data iscrizione:<span class="primaryText" id="dataIscrizione"></span></div>
+                            <div class="secondaryText"><span class="primaryText" id="tipo"></span></div>
+                            <div class="secondaryText"><span class="primaryText" id="firma"></span></div>
+                            <div class="secondaryText">Numero Prenotazioni:<span class="primaryText" id="prenotazioniTot"></span></div>
+                          </div>
+					</div>
+					<div class="col-12 col-lg-6" style="background: #05494d23;">
+						<h2 class="secondaryText d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                          </svg>Le tue prenotazioni</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="footerColor">
 		<!-- da aggiungere altre voci -->
 		<div class="container">
 		  <div class="row gx-5">
@@ -189,9 +223,24 @@
 			</div>
 		</div>
 
-    <script src="/js/session.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
+
+	<script>
+
+		if(localStorage.getItem("username") == null && sessionStorage.getItem('username') == null){
+            window.location.replace('/login');
+        }
+	
+	</script>
+	<script src="/js/session.js"></script>
+	<script src="/js/scriptAmministrativo.js"></script>
+    <script src="/js/utenteView.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous">
+		
+	</script>
+	
 </body>
+
 </html>

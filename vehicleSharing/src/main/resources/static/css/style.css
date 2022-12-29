@@ -211,8 +211,24 @@
     border-radius: 4px;
     transition: .15s;
 }
+.redBtn{
+    font-size: 20px;
+    color: white;
+    background: #810101;
+    /* blue1/100 */
 
+    border: 3px solid #ECFEFF;
+    border-radius: 4px;
+    transition: .15s;
+}
+
+.redBtn:hover{
+    border: 3px solid #810101;
+    background: white;
+    color: #000000;
+}
 .primaryBtn:hover{
+    border: 3px solid #128494;
     background: white;
     color: #128594;
 }

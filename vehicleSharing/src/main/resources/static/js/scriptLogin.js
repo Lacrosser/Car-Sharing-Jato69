@@ -42,11 +42,13 @@ function log2() {
                     localStorage.setItem("username", username);
                     localStorage.setItem("password", password);
                     localStorage.setItem("tipo", tipo);
+                    localStorage.setItem('id', data.id); 
 
                 } else {
                     sessionStorage.setItem("username", username);
                     sessionStorage.setItem("password", password);
                     sessionStorage.setItem("tipo", tipo);
+                    sessionStorage.setItem('id', data.id);
                 }
 
 

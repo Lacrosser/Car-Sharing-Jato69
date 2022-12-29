@@ -68,7 +68,7 @@ function areaUtenteBuilder() {
 
   let a = document.createElement("a");
   a.setAttribute("class", "nav-link");
-  a.setAttribute("href", "dashboard");
+  a.setAttribute("href", "areaUtente");
   a.textContent = "Area Utente";
   let navbarElement = document.querySelector("#navbar")
 

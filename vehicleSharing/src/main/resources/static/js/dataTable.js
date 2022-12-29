@@ -62,6 +62,8 @@ function creaTabella(listaVeicoli) {
     btnElimina.setAttribute('class', 'btn primaryBtn');
     btnElimina.setAttribute("data-bs-toggle", "modal");
     btnElimina.setAttribute("data-bs-target", "eliminaModal");
+    btnElimina.setAttribute('id', veicolo.id);
+    btnElimina.setAttribute('class','btn redBtn');
     btnElimina.textContent = "Elimina";
 
 
