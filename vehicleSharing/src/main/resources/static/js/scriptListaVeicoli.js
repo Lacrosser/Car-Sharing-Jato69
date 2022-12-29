@@ -165,6 +165,7 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
       disponibilitaSI.setAttribute('class', 'disponibilitaNO ps-2');
       disponibilitaSI.textContent = "Non Disponibile";
       descrizione.appendChild(modelloVeicolo);
+      descrizione.appendChild(tipoVeicolo);
       descrizione.appendChild(mezzoVeicolo);
       descrizione.appendChild(coloreVeicolo);
       descrizione.appendChild(disponibilitaSI);
