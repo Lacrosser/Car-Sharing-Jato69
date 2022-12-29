@@ -151,8 +151,8 @@
 
 
     <!-- MODALE Modifica-->
-    <div class="modal fade" id="modificaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+    <div class="modal fade" id="modificaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: absolute;">
+      <div class="modal-dialog" style="height: 800px; width: 800px;">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="titoloModal">Form di Update</h1>
@@ -162,6 +162,14 @@
 
             <div class="formContainer" style="min-height: 20rem;">
               <div class="formVeicolo mt-5" id="formVeicolo">
+                <div class="formChild row" id="modelloForm">
+                  <div class="secondaryText col-4 d-flex justify-content-end">
+                    <h3>Id</h3>
+                  </div>
+                  <div class="inputForm col-6">
+                    <input type="text" class="form-control" id="id" readonly>
+                  </div>
+                </div>
                 <div class="formChild row" id="alimentazioneForm">
                   <div class="secondaryText col-4 d-flex justify-content-end">
                     <h3>Alimentazione</h3>
@@ -173,10 +181,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="formChild row" id="modelloForm">
-                  <div class="secondaryText col-4 d-flex justify-content-end">
-                    <h3>Id</h3>
-                  </div>
+                
                 <div class="formChild row" id="modelloForm">
                   <div class="secondaryText col-4 d-flex justify-content-end">
                     <h3>Modello</h3>
