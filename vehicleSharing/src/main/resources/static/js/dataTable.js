@@ -12,6 +12,10 @@ var table = document.querySelector("#tabella");
 let tableBody = document.querySelector("#tabella tbody");
 
 
+var modal1 = bootstrap.Modal.getOrCreateInstance('#modificaModal');
+var modal2 = bootstrap.Modal.getOrCreateInstance('#eliminaModal');
+
+
 
 window.addEventListener("load", fetchVeicoli);
 
@@ -51,14 +55,14 @@ function creaTabella(listaVeicoli) {
     tdNoleggioP.textContent = veicolo.prolungato;
 
 
-    btnModifica.setAttribute('id',"bottoneMOD");
+    btnModifica.setAttribute('id', "bottoneMOD");
     btnModifica.setAttribute('class', 'btn primaryBtn');
     btnModifica.setAttribute("data-bs-toggle", "modal");
     btnModifica.setAttribute("data-bs-target", "#modificaModal");
     btnModifica.textContent = "Modifica";
 
 
-    btnElimina.setAttribute('id',"bottoneELI");
+    btnElimina.setAttribute('id', "bottoneELI");
     btnElimina.setAttribute('class', 'btn primaryBtn');
     btnElimina.setAttribute("data-bs-toggle", "modal");
     btnElimina.setAttribute("data-bs-target", "#eliminaModal");
@@ -87,7 +91,7 @@ function creaTabella(listaVeicoli) {
     tableBody.appendChild(tr);
 
 
-    
+
     let modaleModifica = document.querySelector("#modificaModal");
 
     btnModifica.addEventListener("click", function () {
@@ -95,7 +99,7 @@ function creaTabella(listaVeicoli) {
     });
 
 
-    
+
     let modaleDelete = document.querySelector("#eliminaModal");
 
     btnElimina.addEventListener("click", function () {
