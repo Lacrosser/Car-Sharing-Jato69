@@ -31,6 +31,12 @@ function creaTabella(listaVeicoli) {
     let tdDataInserimento = document.createElement("td");
     let tdNoleggio = document.createElement("td");
     let tdNoleggioP = document.createElement("td");
+    let tdModifica = document.createElement('td');
+    let tdElimina = document.createElement('td');
+    let btnModifica = document.createElement('button');
+    let btnElimina = document.createElement('button');
+
+
 
     tdId.textContent = veicolo.id;
     tdModello.textContent = veicolo.modello;
@@ -41,7 +47,15 @@ function creaTabella(listaVeicoli) {
     tdDataInserimento.textContent = veicolo.dataInserimento;
     tdNoleggio.textContent = veicolo.disponibilita;
     tdNoleggioP.textContent = veicolo.prolungato;
-
+    btnModifica.setAttribute('id', veicolo.id);
+    btnModifica.setAttribute('class','btn primaryBtn');
+    btnModifica.textContent = "Modifica";
+    btnElimina.setAttribute('id', veicolo.id);
+    btnElimina.setAttribute('class','btn primaryBtn');
+    btnElimina.textContent = "Elimina";
+    tdModifica.appendChild(btnModifica);
+    tdElimina.appendChild(btnElimina);
+    
     tr.appendChild(tdId);
     tr.appendChild(tdModello);
     tr.appendChild(tdTipologia);
@@ -51,6 +65,8 @@ function creaTabella(listaVeicoli) {
     tr.appendChild(tdDataInserimento);
     tr.appendChild(tdNoleggio);
     tr.appendChild(tdNoleggioP);
+    tr.appendChild(tdModifica);
+    tr.appendChild(tdElimina);
 
     
 
