@@ -121,6 +121,20 @@ function creaTabella(listaVeicoli) {
 
 }
 
+function scriviCampi(){
+  let id=document.querySelector("#id")
+  let modello
+  let tipologia
+  let alimentazione
+  let cilindrata
+  let colore
+  let datains
+  let noleggio
+  let noleggioP
+
+
+
+};
 
 
 function fetchVeicoli() {
