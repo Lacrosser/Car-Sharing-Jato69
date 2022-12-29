@@ -34,6 +34,7 @@ function update() {
     // se sì, invertiamo la direzione del personaggio
     speed *= -1;
 }
+console.log(x);
 
 if(x == 0){
     img.src = "/vehicleSharing/src/main/resources/static/img/Monopattino2.png";

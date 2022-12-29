@@ -95,47 +95,45 @@
 
 
 
-  <main class="">
+  <main>
 
 
     <!-- TAbella con datatables, modale per la cancellazione e modifica degli elementi
     10 elementi per pagina, ciclarla
     funzione di delete e update(put) -->
     
-    <div class="text-wrap pb-3">
-      <h1 class="mb-0">Admin</h1>
-      <h2>Contenuti riservati all'adm</h2>
-    </div>
-
-    <table id="tabella">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Modello</th>
-          <th>Tipologia</th>
-          <th>Alimentazione</th>
-          <th>Cilindrata</th>
-          <th>Colore</th>
-          <th>Data Inserimento</th>
-          <th>Disponibilta Noleggio</th>
-          <th>Noleggio Prolungato</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-
-
-    <div class="container d-flex">
-      <div class="row col-sm-12 text-center justify-content-md-even">
-        <div class="pb-3 pt-1 col-md-4">
-          <a href="" type="button" class="btn primaryBtn">Prenota Veicolo</a>
-        </div>
-        <div class="pb-3 col-md-4">
-          <a href="" type="button" class="btn primaryBtn">Calendario</a>
-        </div>
-        <div class="pb-3 col-md-4">
-          <a href="" type="button" class="btn primaryBtn">Modifica Prenotazione</a>
+    <div class="container">
+      <div class="text-wrap pb-3">
+        <h1 class="mb-0">Admin</h1>
+        <h2>Contenuti riservati all'adm</h2>
+      </div>
+      <table id="tabella">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Modello</th>
+            <th>Tipologia</th>
+            <th>Alimentazione</th>
+            <th>Cilindrata</th>
+            <th>Colore</th>
+            <th>Data Inserimento</th>
+            <th>Disponibilta Noleggio</th>
+            <th>Noleggio Prolungato</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="container d-flex">
+        <div class="row col-sm-12 text-center justify-content-md-even">
+          <div class="pb-3 pt-1 col-md-4">
+            <a href="" type="button" class="btn primaryBtn">Prenota Veicolo</a>
+          </div>
+          <div class="pb-3 col-md-4">
+            <a href="" type="button" class="btn primaryBtn">Calendario</a>
+          </div>
+          <div class="pb-3 col-md-4">
+            <a href="" type="button" class="btn primaryBtn">Modifica Prenotazione</a>
+          </div>
         </div>
       </div>
     </div>
@@ -235,7 +233,16 @@
 
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.13.1/r-2.4.0/datatables.min.js">
   </script>
+  <script>
 
+		var tipo = localStorage.getItem("tipo");
+		var tipo2 = sessionStorage.getItem("tipo");
+	
+		if(tipo != "A" && tipo2 != "A"){
+			window.location.assign('/paginaErrore');
+		}
+	
+	</script>
   <script src="/js/dataTable.js"></script>
   <script src="/js/session.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

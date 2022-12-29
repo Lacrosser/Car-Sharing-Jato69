@@ -84,6 +84,11 @@ public class HtmlPagesController {
 		return "errorPage";
 	}
 	
+	@GetMapping("SharEAndTheMysticEScooter")
+	public String easterEgg() {
+		return "SharEAndTheMysticEScooter";
+	}
+	
 
 
 }

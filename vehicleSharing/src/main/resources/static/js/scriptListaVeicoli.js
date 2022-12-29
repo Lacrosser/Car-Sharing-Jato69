@@ -75,6 +75,7 @@ function mostraVeicoli(listaVeicoli) {
       immagineSrc.setAttribute('src', immagine);
       immagineSrc.setAttribute('alt', 'null');
       immagineSrc.setAttribute('width', '120px');
+      immagineSrc.setAttribute('height', '90px');
 
       immagineDisponibile.appendChild(immagineSrc);
 
@@ -172,12 +173,14 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
       immagineNoDisp.setAttribute('class', 'immagine');
       immagineNoDisp.setAttribute('style', 'image-orientation:flip;');
 
-      var immagine = document.createElement('img');
-      immagine.setAttribute('src', '#');
-      immagine.setAttribute('alt', 'null');
-      immagine.setAttribute('width', '120px');
+      var immagineSrc = document.createElement('img');
+      immagineSrc.setAttribute('src', mezzo.immagine);
+      immagineSrc.setAttribute('alt', 'null');
+      immagineSrc.setAttribute('height', '90px');
+      immagineSrc.setAttribute('width', '120px');
 
-      immagineNoDisp.appendChild(immagine);
+      immagineNoDisp.appendChild(immagineSrc);
+      console.log(mezzo.immagine);
 
       var link = "";
 
