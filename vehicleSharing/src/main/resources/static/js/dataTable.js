@@ -54,14 +54,14 @@ function creaTabella(listaVeicoli) {
     btnModifica.setAttribute('id',"bottoneMOD");
     btnModifica.setAttribute('class', 'btn primaryBtn');
     btnModifica.setAttribute("data-bs-toggle", "modal");
-    btnModifica.setAttribute("data-bs-target", "modificaModal");
+    btnModifica.setAttribute("data-bs-target", "#modificaModal");
     btnModifica.textContent = "Modifica";
 
 
     btnElimina.setAttribute('id',"bottoneELI");
     btnElimina.setAttribute('class', 'btn primaryBtn');
     btnElimina.setAttribute("data-bs-toggle", "modal");
-    btnElimina.setAttribute("data-bs-target", "eliminaModal");
+    btnElimina.setAttribute("data-bs-target", "#eliminaModal");
     btnElimina.setAttribute('id', veicolo.id);
     btnElimina.setAttribute('class','btn redBtn');
     btnElimina.textContent = "Elimina";

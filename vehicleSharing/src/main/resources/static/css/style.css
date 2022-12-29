@@ -214,7 +214,7 @@
 .redBtn{
     font-size: 20px;
     color: white;
-    background: #810101;
+    background: #535353;
     /* blue1/100 */
 
     border: 3px solid #ECFEFF;
@@ -223,9 +223,9 @@
 }
 
 .redBtn:hover{
-    border: 3px solid #810101;
+    border: 3px solid #535353;
     background: white;
-    color: #000000;
+    color: #535353;
 }
 .primaryBtn:hover{
     border: 3px solid #128494;
