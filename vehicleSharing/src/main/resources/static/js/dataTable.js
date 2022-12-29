@@ -13,11 +13,13 @@ let tableBody = document.querySelector("#tabella tbody");
 
 
 
-window.addEventListener("load",fetchVeicoli);
+window.addEventListener("load", fetchVeicoli);
 
 
 function creaTabella(listaVeicoli) {
   listaVeicoli.forEach(veicolo => {
+
+    let vid = veicolo.id;
 
 
     let tr = document.createElement("tr");
@@ -47,15 +49,25 @@ function creaTabella(listaVeicoli) {
     tdDataInserimento.textContent = veicolo.dataInserimento;
     tdNoleggio.textContent = veicolo.disponibilita;
     tdNoleggioP.textContent = veicolo.prolungato;
-    btnModifica.setAttribute('id', veicolo.id);
-    btnModifica.setAttribute('class','btn primaryBtn');
+
+
+    btnModifica.setAttribute('id',"bottoneMOD");
+    btnModifica.setAttribute('class', 'btn primaryBtn');
+    btnModifica.setAttribute("data-bs-toggle", "modal");
+    btnModifica.setAttribute("data-bs-target", "modificaModal");
     btnModifica.textContent = "Modifica";
-    btnElimina.setAttribute('id', veicolo.id);
-    btnElimina.setAttribute('class','btn primaryBtn');
+
+
+    btnElimina.setAttribute('id',"bottoneELI");
+    btnElimina.setAttribute('class', 'btn primaryBtn');
+    btnElimina.setAttribute("data-bs-toggle", "modal");
+    btnElimina.setAttribute("data-bs-target", "eliminaModal");
     btnElimina.textContent = "Elimina";
+
+
     tdModifica.appendChild(btnModifica);
     tdElimina.appendChild(btnElimina);
-    
+
     tr.appendChild(tdId);
     tr.appendChild(tdModello);
     tr.appendChild(tdTipologia);
@@ -68,12 +80,37 @@ function creaTabella(listaVeicoli) {
     tr.appendChild(tdModifica);
     tr.appendChild(tdElimina);
 
-    
+
 
     tableBody.appendChild(tr);
 
+
+    
+    let modaleModifica = document.querySelector("#modificaModal");
+
+    btnModifica.addEventListener("click", function () {
+      modaleModifica.style.display = 'block'
+    });
+
+
+    
+    let modaleDelete = document.querySelector("#eliminaModal");
+
+    btnElimina.addEventListener("click", function () {
+      modaleDelete.style.display = 'block'
+    });
+
+    var closeButtons = document.querySelectorAll('.btn-close');
+
+    for (let i = 0; i < closeButtons.length; i++) {
+      closeButtons[i].addEventListener('click', function () {
+        modaleModifica.style.display = 'none';
+        modaleDelete.style.display = "none;"
+      });
+    }
+
   });
-  
+
   let datatable = new DataTable(table);
 
 }
