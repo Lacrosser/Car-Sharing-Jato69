@@ -8,22 +8,36 @@ const DELETEVEICOLO = "http://localhost:9069/api/veicoli/" //inserire id per com
 
 
 
-var table = document.querySelector("#tabella");
+let table = document.querySelector("#tabella");
 let tableBody = document.querySelector("#tabella tbody");
 
 
-var modal1 = bootstrap.Modal.getOrCreateInstance('#modificaModal');
-var modal2 = bootstrap.Modal.getOrCreateInstance('#eliminaModal');
+// var modal1 = bootstrap.Modal.getOrCreateInstance('#modificaModal');
+// var modal2 = bootstrap.Modal.getOrCreateInstance('#eliminaModal');
+
+let id = document.querySelector("#id");
+let tipologia = document.querySelector("#tipo");
+let alimentazione = document.querySelector("#alimentazione");
+let modello = document.querySelector("#modello");
+let colore = document.querySelector("#colore");
+let cilindrata = document.querySelector("#cilindrata");
+let disponibilita = document.querySelector("#disponibile");
+let prolungato = document.querySelector("#prolungato");
+let posizione = document.querySelector("#posizione");
+let foto = document.querySelector("#foto");
 
 
 
 window.addEventListener("load", fetchVeicoli);
 
-
+/* -------------------------------------------------------------------------- */
+/*                              Creazione tabella                             */
+/* -------------------------------------------------------------------------- */
 function creaTabella(listaVeicoli) {
   listaVeicoli.forEach(veicolo => {
 
     let vid = veicolo.id;
+
 
 
     let tr = document.createElement("tr");
@@ -67,7 +81,7 @@ function creaTabella(listaVeicoli) {
     btnElimina.setAttribute("data-bs-toggle", "modal");
     btnElimina.setAttribute("data-bs-target", "#eliminaModal");
     btnElimina.setAttribute('id', veicolo.id);
-    btnElimina.setAttribute('class','btn redBtn');
+    btnElimina.setAttribute('class', 'btn redBtn');
     btnElimina.textContent = "Elimina";
 
 
@@ -90,12 +104,21 @@ function creaTabella(listaVeicoli) {
 
     tableBody.appendChild(tr);
 
-
-
     let modaleModifica = document.querySelector("#modificaModal");
 
+    //Aggiungi un'id univoca ad ogni bottone di modifica. Ad esempio, puoi utilizzare l'id del veicolo come id del bottone:
+    btnModifica.setAttribute('id', `${veicolo.id}`);
+
+    btnElimina.setAttribute('id', `${veicolo.id}`);
+
+
+
     btnModifica.addEventListener("click", function () {
-      modaleModifica.style.display = 'block'
+
+      sessionStorage.setItem('idBottoneModifica', this.id);
+
+      modaleModifica.style.display = 'block';
+      scriviCampi(veicolo);
     });
 
 
@@ -103,7 +126,8 @@ function creaTabella(listaVeicoli) {
     let modaleDelete = document.querySelector("#eliminaModal");
 
     btnElimina.addEventListener("click", function () {
-      modaleDelete.style.display = 'block'
+      modaleDelete.style.display = 'block';
+      sessionStorage.setItem('idBottoneElimina', this.id);
     });
 
     var closeButtons = document.querySelectorAll('.btn-close');
@@ -117,22 +141,196 @@ function creaTabella(listaVeicoli) {
 
   });
 
+  /* -------------------------------------------------------------------------- */
+  /*                             costruzione tabella                            */
+  /* -------------------------------------------------------------------------- */
+
   let datatable = new DataTable(table);
+  /* -------------------------------------------------------------------------- */
+  /*                              costruzione reset                             */
+  /* -------------------------------------------------------------------------- */
+
+  let reset = document.querySelector("#reset")
+  reset.addEventListener("click", function () {
+    let idBottoneModifica = sessionStorage.getItem('idBottoneModifica');
+    let veicolos = listaVeicoli.find(v => v.id == idBottoneModifica);
+    scriviCampi(veicolos);
+  });
+  /* -------------------------------------------------------------------------- */
+  /*                              costruzione salva                             */
+  /* -------------------------------------------------------------------------- */
+
+  let salva = document.querySelector("#salvaMod");
+  salva.addEventListener("click", function () {
+    //sta();
+    let idBottoneModifica = sessionStorage.getItem('idBottoneModifica');
+
+
+    putVeicoli(idBottoneModifica);
+  });
+
+
+  /* -------------------------------------------------------------------------- */
+  /*                                Eliminazione                                */
+  /* -------------------------------------------------------------------------- */
+  let deleting = document.querySelector("#eliminaMod");
+
+  deleting.addEventListener("click", function () {
+
+    let idBottoneElimina = sessionStorage.getItem("idBottoneElimina");
+
+    eliminaveicoli(idBottoneElimina);
+  })
+
+
+
+
+
+
 
 }
 
-function scriviCampi(){
-  let id=document.querySelector("#id")
-  let modello
-  let tipologia
-  let alimentazione
-  let cilindrata
-  let colore
-  let datains
-  let noleggio
-  let noleggioP
+
+/* -------------------------------------------------------------------------- */
+/*                         Funzione di scrittura dati                         */
+/* -------------------------------------------------------------------------- */
+
+function scriviCampi(data) {
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    campi                                   */
+  /* -------------------------------------------------------------------------- */
+
+  // let id = document.querySelector("#id");
+  // let tipologia = document.querySelector("#tipo");
+  // let alimentazione = document.querySelector("#alimentazione");
+  // let modello = document.querySelector("#modello");
+  // let colore = document.querySelector("#colore");
+  // let cilindrata = document.querySelector("#cilindrata");
+  // let noleggio = document.querySelector("#disponibile");
+  // let noleggioP = document.querySelector("#prolungato");
+  // let posizione = document.querySelector("#posizione");
+  // let foto = document.querySelector("#foto");
+
+  /* -------------------------------------------------------------------------- */
+  /*                             form per nascondere                            */
+  /* -------------------------------------------------------------------------- */
+
+  let tipform = document.querySelector("#tipoForm");
+  let aliform = document.querySelector("#alimentazioneForm");
+  let modForm = document.querySelector("#modelloForm");
+  let coloreForm = document.querySelector("#coloreForm");
+  let cilForm = document.querySelector("#cilindrataForm");
+  let fotoForm = document.querySelector("#fotoForm");
+
+  // modello.removeAttribute("value");
+  // colore.removeAttribute("value");
+  // cilindrata.removeAttribute("value");
+  // id.removeAttribute("value");
+  // alimentazione.removeAttribute("value");
+  // posizione.removeAttribute("value");
+
+  //id.setAttribute("value", data.id);
+  // tipologia.setAttribute("value", data.veicolo);
+  //alimentazione.setAttribute("value", data.alimentazione);
+  //modello.setAttribute("value", data.modello);
+  //colore.setAttribute("value", data.colore);
+  //cilindrata.setAttribute("value", data.cilindrata);
+  //posizione.setAttribute("value", data.posizione);
+
+  id.value = data.id;
+  tipologia.value = data.veicolo;
+  alimentazione.value = data.alimentazione;
+  modello.value = data.modello;
+  colore.value = data.colore;
+  cilindrata.value = data.cilindrata;
+  disponibilita.checked = data.disponibilita;
+  prolungato.checked = data.prolungato;
+  posizione.value = data.posizione;
 
 
+  if (data.veicolo == "AUTO") {
+
+    tipform.removeAttribute("hidden", "hidden");
+    aliform.removeAttribute("hidden", "hidden");
+    modForm.removeAttribute("hidden", "hidden");
+    coloreForm.removeAttribute("hidden", "hidden");
+    cilForm.removeAttribute("hidden", "hidden");
+    fotoForm.removeAttribute("hidden", "hidden");
+
+
+  } else if (data.veicolo == "MONOPATTINO" || data.veicolo == "BICICLETTA") {
+
+
+
+    tipform.setAttribute("hidden", "hidden");
+    aliform.setAttribute("hidden", "hidden");
+    modForm.setAttribute("hidden", "hidden");
+    coloreForm.setAttribute("hidden", "hidden");
+    cilForm.setAttribute("hidden", "hidden");
+    fotoForm.setAttribute("hidden", "hidden");
+
+
+  }
+
+
+
+
+
+};
+
+/* -------------------------------------------------------------------------- */
+/*                              costruttore auto                              */
+/* -------------------------------------------------------------------------- */
+
+
+function Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato, immagine) {
+  this.veicolo = veicolo;
+  this.modello = modello;
+  this.colore = colore;
+  this.cilindrata = cilindrata;
+  this.alimentazione = alimentazione;
+  this.disponibilita = disponibilita;
+  this.posizione = posizione;
+  this.prolungato = prolungato;
+  this.immagine = immagine;
+
+};
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Fetch                                   */
+/* -------------------------------------------------------------------------- */
+
+function putVeicoli(id) {
+
+
+  var url = VEICOLIMAPPING + "/" + id;
+
+
+  let shazam = new Auto(tipologia.value, modello.value, colore.value, cilindrata.value, alimentazione.value, disponibilita.checked, posizione.value, prolungato.checked, foto.value);
+
+
+  fetch(url, {
+      method: 'PUT', // Imposta il metodo su put
+      headers: {
+
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(shazam)
+    })
+    //.then(data => data.json())
+    .then(response => {
+      console.log(response);
+      console.log("Veicolo modificato");
+
+
+
+
+
+      fetchVeicoli();
+
+    });
 
 };
 
@@ -141,11 +339,56 @@ function fetchVeicoli() {
   fetch(VEICOLIMAPPING)
     .then(response => response.json())
     .then(data => {
+
+
+
+      while (tableBody.firstChild) {
+        deleteVecchio();
+      }
+
+      function deleteVecchio() {
+        while (tableBody.firstChild) {
+          tableBody.removeChild(tableBody.firstChild);
+        }
+      }
+
       creaTabella(data);
+
+
       //funzione di creazione elementi
 
     })
 
-
-
 }
+
+function eliminaveicoli(id) {
+  var url = VEICOLIMAPPING + "/" + id;
+  let error=document.querySelector("#error");
+
+
+//eseguire il delete solo se il veicolo è prenotabile
+
+  if(disponibilita.checked){
+    error.innerHTML="";
+    fetch(url, {
+        method: 'DELETE', // Imposta il metodo su put
+  
+      })
+  
+      .then(response => {
+        console.log(response);
+        console.log("Veicolo Eliminato");
+  
+  
+        fetchVeicoli();
+  
+      }).catch(error => {
+        console.error(error)
+      });
+
+  }else{
+    error.innerHTML="Non puoi cancellare un veicolo quando è prenotato"
+  }
+
+
+};

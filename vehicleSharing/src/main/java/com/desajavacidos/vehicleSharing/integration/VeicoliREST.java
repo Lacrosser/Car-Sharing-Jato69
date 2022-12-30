@@ -69,7 +69,7 @@ public class VeicoliREST {
 		veicoliById.setVeicolo(u.getVeicolo());
 		veicoliById.setAlimentazione(u.getAlimentazione());
 		veicoliById.setDisponibilita(u.getDisponibilita());
-		veicoliById.setDataInserimento(u.getDataInserimento());
+//		veicoliById.setDataInserimento(u.getDataInserimento());
 		veicoliById.setPosizione(u.getPosizione());
 		veicoliById.setProlungato(u.getProlungato());
 		veicoliById.setModello(u.getModello());
@@ -77,12 +77,9 @@ public class VeicoliREST {
 		veicoliById.setCilindrata(u.getCilindrata());
 		veicoliById.setImmagine(u.getImmagine());
 
-		if (id <= service.getAll().size()) {
-
 			service.updateVeicoli(veicoliById);
 
-		}
-
+		
 	}
 
 	@DeleteMapping("/{id}")

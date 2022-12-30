@@ -32,8 +32,8 @@ let errorPass = document.querySelector("#errorPass");
 /*                         AVVIO PAGINA/EVENT LISTENER                        */
 /* -------------------------------------------------------------------------- */
 
-window.addEventListener("load",checkLogin);
-btnReg.addEventListener("click",checherReg);
+window.addEventListener("load", checkLogin);
+btnReg.addEventListener("click", checherReg);
 
 
 
@@ -49,8 +49,8 @@ function checkPassword() {
 
         return true;
     } else {
-        
-         errorPass.textContent = "Le due password non coincidono"
+
+        errorPass.textContent = "Le due password non coincidono"
         return false;
     }
 
@@ -117,13 +117,13 @@ function checherReg() {
             //console.log("user e pass accettate");
             return true;
         } else {
-           // console.log("user e pass non accettate");
+            // console.log("user e pass non accettate");
             return false
         }
 
-    } else 
-    //console.log("le password sono diverse")
-    return false;
+    } else
+        //console.log("le password sono diverse")
+        return false;
 
 }
 
@@ -132,8 +132,8 @@ function checherReg() {
 
 function controllaUser() {
 
-    let us=username.value;
-    
+    let us = username.value;
+
     console.log(us);
     if (!us.match(REGUSER)) {
 
@@ -170,7 +170,7 @@ function controllaUser() {
 }
 
 function controllaPassword() {
-    let password=pass1.value;
+    let password = pass1.value;
     console.log(password);
     if (!password.match(REGPASS)) {
         //almeno una maiuscola
