@@ -31,14 +31,8 @@ public class PrenotazioneREST {
 	@GetMapping("/{id}")
 	public Prenotazione getPrenotazione(@PathVariable("id") int id) {
 
-		if (id <= service.getAll().size()) {
-
 			return service.getPrenotazioneById(id);
 
-		} else {
-			return null;
-
-		}
 	}
 
 	@GetMapping("/utenti/{id}")
