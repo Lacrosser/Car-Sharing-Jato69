@@ -40,7 +40,15 @@ function stampaUtente(utente){
     nascita.textContent = utente.nascita;
     email.textContent = utente.email;
     dataIscrizione.textContent = utente.dataIscrizione;
-    tipo.textContent = utente.tipo;
+
+    if(utente.tipo == "A"){
+        tipo.textContent = "Admin";
+
+    } else if (utente.tipo == "B"){
+        tipo.textContent = "Utente"
+    }
+
+    console.log(typeof utente.dataIscrizione);
     firma.textContent = utente.firma;
     prenotazioniTot.textContent = utente.prenotazioniTot;
 }
