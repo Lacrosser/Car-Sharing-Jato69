@@ -20,7 +20,7 @@
 	href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap"
 	rel="stylesheet">
 
-<title>Dashboard</title>
+<title>Area Utente</title>
 <link rel="icon" type="image/x-icon" href="/img/logo.png">
 <style>
 body {
@@ -102,13 +102,20 @@ body {
 
 
 	<main>
-		<div class="bannerAdmin d-flex flex-column justify-content-center align-items-center" style="height: 10rem; background: #00B7C2;">
-			<h1 class="secondaryText" style="font-size: 50px;">Ciao <span id="utente"></span></h1>
-            <h2 class="secondaryText mt-4 d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg>Benvenuto nella tua area personale!</h2>
-		</div>
+		<!-- <div class="bannerAdmin d-flex flex-column justify-content-center align-items-center" style="height: 6rem; background: #00B7C2;">
+            <h1 class="secondaryText mt-4 d-flex align-items-center" style="font-size: 30px;">Benvenuto nella tua area personale!</h1>
+		</div> -->
 			<div class="container mt-0">
+				<div class="utentegen row mt-4 d-flex justify-content-center">
+					<div class="col-4 d-flex justify-content-center">
+						<div class="imgcontainer" style="width: 10rem; height: 10rem; border-radius: 50%; background: #00b8c249;">
+							<img src="/img/utente.png" alt="utentebanner" style="width: 10rem; height: 10rem; border-radius: 50%;">
+						</div>
+					</div>
+					<div class="col-6 d-flex align-items-center justify-content-start">
+						<h1 class="primaryText" style="font-size: 40px;">Benvenuto <span id="utente"></span></h1>
+					</div>
+				</div>
 				<div class="row ">
 					<div class="col-lg-6 col-12 m-3 p-2" style="background: #00b8c241;">
 						<div>
@@ -128,6 +135,9 @@ body {
 									</div>
 								</div>
 						</div>
+					</div>
+					<div class="col-lg-5 d-flex justify-content-center">
+						<img src="/img/imgVeicoli/toyotaHybrida.png" alt="utenteToyota" style="width: 100%;">
 					</div>
 					<div class="col-12 col-lg-6 m-3" style="background: #05494d23;">
 						<h2 class="secondaryText d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">

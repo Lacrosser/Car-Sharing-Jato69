@@ -39,7 +39,12 @@ function stampaUtente(utente){
     cognome.textContent = utente.cognome;
     nascita.textContent = utente.nascita;
     email.textContent = utente.email;
-    dataIscrizione.textContent = utente.dataIscrizione;
+    let data = utente.dataIscrizione.substring(0,10);
+    let anno = data.substring(0,4);
+    let mese = data.substring(5,7);
+    let giorno = data.substring(8,10);
+
+    dataIscrizione.textContent = giorno + "/" + mese + "/" + anno;
 
     if(utente.tipo == "A"){
         tipo.textContent = "Admin";
@@ -48,7 +53,6 @@ function stampaUtente(utente){
         tipo.textContent = "Utente"
     }
 
-    console.log(typeof utente.dataIscrizione);
     firma.textContent = utente.firma;
     prenotazioniTot.textContent = utente.prenotazioniTot;
 }

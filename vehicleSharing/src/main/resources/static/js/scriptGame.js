@@ -1,3 +1,9 @@
+let audio = document.querySelector('#audio');
+
+audio.volume = 0.05;
+
+audio.play();
+
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
 
