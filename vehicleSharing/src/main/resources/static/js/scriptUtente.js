@@ -3,15 +3,6 @@ window.addEventListener("load", checkConnection());
 console.log("script caricato");
 
 
-let btnModifica = document.querySelector("#modificaVeicolo");
-let btnAggiunta = document.querySelector("#aggiuntaVeicolo ")
-
-
-
-
-
-
-
 function checkConnection() {
 
     if (sessionStorage.getItem("username") == null && localStorage.getItem("username") == null) {
@@ -39,14 +30,3 @@ function checkConnection() {
 
 
 }
-
-
-
-btnAggiunta.addEventListener("click", function () {
-    window.location.assign("/paginaIns")
-
-})
-
-btnModifica.addEventListener("click", function () {
-    window.location.assign("/adminView")
-})

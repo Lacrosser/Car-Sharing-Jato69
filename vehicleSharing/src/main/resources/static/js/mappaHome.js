@@ -79,7 +79,7 @@ fetch(VEICOLIMAPPING)
     return data.json();
   }).then(response => {
 
-    const MONO = response.filter(item => item.veicolo === "MONOPATTINI");
+    const MONO = response.filter(item => item.veicolo === "MONOPATTINO");
     const BICI = response.filter(item => item.veicolo === "BICICLETTA");
     const ELE = response.filter(item => item.alimentazione === "elettrica");
     const IBRIDA = response.filter(item => item.alimentazione === "ibrida");

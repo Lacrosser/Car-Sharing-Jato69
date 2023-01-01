@@ -32,8 +32,8 @@ function mostraVeicoli(listaVeicoli) {
     var id = mezzo.id;
     var immagine = mezzo.immagine;
     let modello = mezzo.modello;
-    console.log(immagine);
-    console.log(typeof immagine);
+    // console.log(immagine);
+    // console.log(typeof immagine);
     // var id = veicolo.id;
     var modelloVeicolo = document.createElement("div");
     modelloVeicolo.setAttribute("class", "modello");
@@ -181,7 +181,7 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
       immagineSrc.setAttribute('width', '120px');
 
       immagineNoDisp.appendChild(immagineSrc);
-      console.log(mezzo.immagine);
+      // console.log(mezzo.immagine);
 
       var link = "";
 
@@ -218,8 +218,8 @@ function charmenderStarter() {
   const PIPPO = new URLSearchParams(window.location.search)
   let tipologia = PIPPO.get("tipo");
   let alimentazione = PIPPO.get("alimentazione");
-  console.log(tipologia);
-  console.log(alimentazione);
+  // console.log(tipologia);
+  // console.log(alimentazione);
 
   if (tipologia != null || alimentazione != null) {
 

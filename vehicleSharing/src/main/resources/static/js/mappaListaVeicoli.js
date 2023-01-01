@@ -9,7 +9,7 @@ function stampaMappa() {
       return data.json()
     }).then(response => {
       creaMappa(response);
-      console.log(response);
+      // console.log(response);
     });
 }
 
@@ -20,7 +20,7 @@ function creaMappa(veicoli) {
   }).addTo(map);
 
   veicoli.forEach(element => {
-    console.log(element.posizione);
+    // console.log(element.posizione);
     let posizione = element.posizione;
     let numPos = posizione.split(",");
 

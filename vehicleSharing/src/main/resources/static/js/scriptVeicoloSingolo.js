@@ -148,14 +148,14 @@ window.addEventListener("load", initPagina)
 
 function initPagina() {
     const PIPPO = new URLSearchParams(window.location.search)
-    console.log(typeof (PIPPO.get("id")));
+    // console.log(typeof (PIPPO.get("id")));
     PIPPO.get("id")
     fetch(GETVEICOLIBYID + PIPPO.get("id"))
         .then(data => {
             return data.json()
         })
         .then(response => {
-            console.log(response)
+            // console.log(response)
             stampaVeicolo(response);
             //inserire funzione per mostrare i veicoli
         })
