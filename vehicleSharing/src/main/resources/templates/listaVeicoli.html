@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/swiperHero.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link
@@ -93,15 +94,19 @@
       <!-- ----------------------------------------------------------------------- -->
       <!--                                  HERO                                   -->
       <!-- ----------------------------------------------------------------------- -->
-      <div id="hero">
+      <div>
         <div class="swiper heroSwipe">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url(/img/teslaRossa.jpg);"></div>
-            <div class="swiper-slide" style="background-image: url(/img/vwElettrica.jpg);"></div>
-            <div class="swiper-slide" style="background-image: url(/img/porscheElettrica.jpg); background-position: center center;"></div>
+            <div class="swiper-slide"
+              style="background-image: url(/img/porscheElettrica.jpg); background-position: center center;">
+              <div class="heroText">
+                <h3 class="heroTitle3">Veicoli</h3>
+                <h3 class="heroSubtitle3">Guarda subito i veicoli <span style="color: #00B7C2;"> disponibili</span> e scegli il tuo! </h3>
+              </div>
+            </div>
             <!-- <div class="swiper-slide"><img src="../img/porscheElettrica.jpg" alt=""></div>
             <div class="swiper-slide"><img src="../img/vwElettrica.jpg" alt=""></div> -->
-            
+  
           </div>
         </div>
       </div>
@@ -109,9 +114,7 @@
 
             <div class="row d-flex justify-content-around align-items-center mt-4">
               <div class="titolo col-lg-6 col-12">
-                <h2 class="primaryText mt-4 d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                </svg>Ecco la nostra lista di veicoli</h2>
+                <div class="secondaryText" style="font-size: 40px;">Ecco la nostra lista di veicoli</div>
               </div>
               <div class="formSelect d-flex justify-content-center align-items-center col-12 col-lg-6 mt-4">
                 <div class="select" style="margin-right: 2rem;">
@@ -134,7 +137,7 @@
             <!--                           VEICOLI DISPONIBILI                           -->
             <!-- ----------------------------------------------------------------------- -->
             <div class="row mt-5 d-flex justify-content-around">
-              <div class="col-12 col-lg-5" style="background-color: #ffffff70; min-height: 20rem; margin: .25rem;">
+              <div class="col-12" style="background-color: #ffffff70; min-height: 20rem; margin: .25rem;">
                 <div class="titoloDisponibili" style="background-color: #00b8c240;">
                   <h3 class="secondaryText p-2 mt-2 mb-5" >Veicoli disponibili</h3>
                 </div>
@@ -145,7 +148,7 @@
             <!-- ----------------------------------------------------------------------- -->
 
 
-            <div class="col-12 col-lg-5" style="background-color: #ffffff70; min-height: 20rem; margin: .25rem;">
+            <div class="col-12" style="background-color: #ffffff70; min-height: 20rem; margin: .25rem;">
               <div class="titoloNoDisponibili" style="background-color: #00b8c240;">
                 <h3 class="secondaryText p-2 mt-2 mb-5" >Veicoli non disponibili</h3>
             </div>
@@ -160,9 +163,7 @@
         <div class="container">
 
           <div class="mappa" style="height: 100%;">
-            <h2 class="primaryText mt-4 d-flex align-items-center" style="font-size: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-            </svg>Posizione dei veicoli attualmente disponibili</h2>
+            <div class="secondaryText" style="font-size: 40px;">Ecco le posizioni dei veicoli disponibili</div>
             <div id="map" style="height: 40rem;"></div>
           </div>
         </div>
@@ -271,9 +272,13 @@
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="/js/scriptListaVeicoli.js"></script>
-    <script src="/js/heroSwiper.js"></script>
     <script src="/js/session.js"></script>
     <script src="/js/mappaListaVeicoli.js"></script>
-
+    <script>
+      var swiper = new Swiper(".heroSwipe", {
+      spaceBetween: 0,
+      centeredSlides: true
+    });
+    </script>
 </body>
 </html>

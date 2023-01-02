@@ -31,7 +31,11 @@
 <body style="font-family:'Outfit', sans-serif;">
 
   <div id="loading-screen">
-    <img src="/img/bigLogo.png" alt="logo" height="100rem" width="100rem">
+    <div class="d-flex flex-column justify-content-around">
+      <div>
+        <img src="/img/bigLogo.png" alt="logo" height="100rem" width="100rem">
+      </div>
+    </div>
   </div>
 
 
@@ -531,8 +535,8 @@
   <!-- Lo script per il loading è nella mappa home -->
   <script src="/js/session.js"></script>
   <script>
-    const loadingScreen = document.querySelector('#loading-screen');
-    loadingScreen.style.display = 'none';
+    // const loadingScreen = document.querySelector('#loading-screen');
+    // loadingScreen.style.display = 'none';
 
     if(sessionStorage.getItem("username") != null || localStorage.getItem("username") != null){
       var banner = document.querySelector('#banner');
