@@ -1,148 +1,24 @@
 const GETVEICOLIBYID = "http://localhost:9069/api/veicoli/";
 
+const POSTPRENOTAZIONE = "http://localhost:9069/api/utente/" //{idUtente}/veicolo/{idVeicolo}"
+
+let btnPren = document.querySelector("#prenota");
 
 
+window.addEventListener("load", initPagina);
 
-window.addEventListener("load", initPagina)
+btnPren.addEventListener("click", function() {
 
-// initPagina();
+    if (checkLogin == true) {
 
+        prenota;
+        window.location.replace("/utenteView");
+    }else{
 
-// function creaCardSingola(veicolo) {
+        event.preventDefault();
+    }
+});
 
-    
-
-//     creaTitolo(veicolo);
-//     creaScheda(veicolo);
-
-
-// }
-
-
-
-// function creaTitolo(veicolo) {
-//     let modello = veicolo.modello;
-//     let alimentazione = veicolo.alimentazione;
-
-//     console.log(modello);
-//     console.log(alimentazione);
-
-//     let div = document.querySelector("#nomeVeicolo");
-//     let h1 = document.createElement("h1");
-//     let h3 = document.createElement("h3");
-//     let i = document.createElement("i");
-
-//     h1.textContent = modello;
-//     i.textContent = alimentazione;
-
-//     h1.setAttribute("style", "color: #00b7c2;");
-//     h3.setAttribute("id", "tipoAuto");
-//     h3.setAttribute("style", "color: #4ef037;");
-//     i.setAttribute("id", "iconaElettrica")
-
-//     i.classList.add("bi", "bi-lightning-charge");
-
-//     h3.appendChild(i);
-//     div.appendChild(h1);
-//     div.appendChild(h3);
-
-// }
-
-
-// function creaScheda(veicolo) {
-//     let colore = veicolo.colore;
-//     let cilindrata = veicolo.cilindrata;
-//     console.log(colore);
-//     console.log(cilindrata);
-
-//     let divor = document.querySelector("#sezioneAuto");
-
-//     let div = document.createElement("div");
-//     div.setAttribute("id", "schedaVeicolo")
-//     div.setAttribute("style", "background-color: rgb(18,132,148);")
-//     div.setAttribute("class", "mt-0")
-
-//     divor.appendChild(div);
-
-//     let div2 = document.createElement("div");
-//     div2.setAttribute("id", "fotoVeicolo");
-//     div2.setAttribute("class", "mb-0");
-
-//     div.appendChild(div2);
-
-
-//     let div3 = document.createElement("div");
-//     div3.setAttribute("class", "m-5");
-
-//     div.appendChild(div3);
-
-//     let div4 = document.createElement("container");
-//     div4.setAttribute("class", "container");
-
-//     div3.appendChild(div4);
-
-//     let h3ul = document.createElement("h3");
-//     h3ul.textContent = "Descrizione Veicolo";
-
-//     div4.appendChild(h3ul);
-
-//     let ul = document.createElement("ul");
-
-//     div4.appendChild(ul);
-
-//     ul.setAttribute("class", "list-group list-group-flush");
-//     let li = document.createElement("li");
-//     let li2 = document.createElement("li");
-
-//     li.setAttribute("class", "list-group-item");
-//     li2.setAttribute("class", "list-group-item");
-//     li.textContent = "Potenza: " + cilindrata;
-//     li2.textContent = "Colore: " + colore;
-
-//     ul.appendChild(li);
-//     ul.appendChild(li2);
-
-
-//     let div5 = document.createElement("div");
-//     div5.setAttribute("id", "prezzo");
-//     div5.setAttribute("class", "mt-5");
-//     let h31 = document.createElement("h3")
-//     h31.innerHTML = "Prezzo e tariffe: <strong>0,19€/min</strong>";
-
-//     div3.appendChild(div5);
-//     div5.appendChild(h31);
-
-
-
-
-//     let div6 = document.createElement("div")
-//     div6.setAttribute("id", "pulsantiScheda");
-//     div6.classList.add("d-flex", "justify-content-end", "p-3");
-
-//     let div7 = document.createElement("div");
-//     div7.setAttribute("class", "m-1");
-//     let a = document.createElement("a")
-//     a.setAttribute("href", "")
-//     a.setAttribute("type", "button")
-//     a.classList.add("btn", "primaryBtn", "primaryBtnVerde");
-//     a.textContent = "Vedi su mappa"
-
-//     let div8 = document.createElement("div");
-//     div8.setAttribute("class", "m-1");
-//     let a2 = document.createElement("a");
-//     a2.setAttribute("href", "");
-//     a2.setAttribute("type", "button");
-//     a2.classList.add("btn", "primaryBtn", "primaryBtnVerde");
-//     a2.textContent = "Prenota Ora"
-
-//     div7.appendChild(a);
-//     div8.appendChild(a2);
-//     div6.appendChild(div7);
-//     div6.appendChild(div8);
-//     div.appendChild(div6)
-
-
-// }
 
 
 
@@ -161,7 +37,40 @@ function initPagina() {
         })
 };
 
-function stampaVeicolo(veicolo){
+
+
+
+function prenota() {
+    const VEICOLO = new URLSearchParams(window.location.search)
+    let vId = VEICOLO.get("id")
+    if (localStorage.getItem("id")) {
+        let id = localStorage.getItem("id");
+
+        postpren(id, vId);
+    } else {
+        let id = sessionStorage.getItem("id");
+        postpren(id, vId);
+    }
+
+
+
+}
+
+function checkLogin() {
+
+    if (sessionStorage.getItem("username") != null || localStorage.getItem("username") != null) {
+
+        return true;
+
+    } else
+
+        return false;
+
+}
+
+
+
+function stampaVeicolo(veicolo) {
     var nomeVeicolo = document.querySelector('#nomeVeicolo');
     var iconaElettrica = document.querySelector('#iconaElettrica');
     var colore = document.querySelector('#coloreAuto');
@@ -175,15 +84,15 @@ function stampaVeicolo(veicolo){
     colore.textContent = veicolo.colore;
     potenza.textContent = veicolo.cilindrata;
 
-    if(veicolo.disponibilita){
+    if (veicolo.disponibilita) {
         disponibile.textContent = "Disponibile"
-        disponibile.setAttribute('class','disponibile');
+        disponibile.setAttribute('class', 'disponibile');
     } else {
         disponibile.textContent = "Non Disponibile";
-        disponibile.setAttribute('class','noDisponibile');
+        disponibile.setAttribute('class', 'noDisponibile');
     }
 
-    img.setAttribute('src', veicolo.immagine);  
+    img.setAttribute('src', veicolo.immagine);
 
     creaMappa(veicolo.posizione);
 }
@@ -191,23 +100,38 @@ function stampaVeicolo(veicolo){
 
 
 
-function creaMappa(posizione){
-var pos = posizione
+function postpren(id, vId) {
 
-let numPos=pos.split(",");
+    fetch(POSTPRENOTAZIONE + id + "/veicolo/" + vId, {
+            method: "POST",
+            headers: {
+                // Imposta l'intestazione Content-Type su application/json
+                'Content-Type': 'application/json'
+            },
+        }).then(response => response.json()) // Estrai il JSON dalla risposta
+        .then(data => console.log(data)) // Esegui qualcosa con i dati estratti
+        .catch(error => console.error(error)); // Gestisci eventuali errori
+}
 
-let num1=parseFloat(numPos[0]);
-let num2=parseFloat(numPos[1]);
-
-var map = L.map('map').setView([num1,num2], 16);
 
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
-}).addTo(map);
+function creaMappa(posizione) {
+    var pos = posizione
 
-L.marker([num1, num2]).addTo(map)
-    .bindPopup('Posizione attuale del veicolo')
-    .openPopup();
+    let numPos = pos.split(",");
+
+    let num1 = parseFloat(numPos[0]);
+    let num2 = parseFloat(numPos[1]);
+
+    var map = L.map('map').setView([num1, num2], 16);
+
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
+    }).addTo(map);
+
+    L.marker([num1, num2]).addTo(map)
+        .bindPopup('Posizione attuale del veicolo')
+        .openPopup();
 
 }
