@@ -13,7 +13,7 @@ function getPrenotazione(prenotazioni) {
         console.log("Sono qui");
         console.log(singlePrenotaObjects);
 
-        console.log(singlePrenotaObjects.veicolo.marca);
+        console.log(singlePrenotaObjects.veicolo.modello);
 
 
         htmlCode =
@@ -30,9 +30,10 @@ function getPrenotazione(prenotazioni) {
                     <div class="col-8 d-flex flex-column justify-content-center">
                         <h3 class="fw-bold">Dettagli prenotazione: </h3>
                         <div class="caratt">
-                            <div>${singlePrenotaObjects.veicolo.marca}</div>
                             <div>${singlePrenotaObjects.veicolo.modello}</div>
                             <div>${singlePrenotaObjects.veicolo.alimentazione}</div>
+                            <div>${singlePrenotaObjects.veicolo.cilindrata}</div>
+                            <div>${singlePrenotaObjects.veicolo.colore}</div>
                             <div>${singlePrenotaObjects.data}</div>
                             <div>${singlePrenotaObjects.oraConsegna}</div>
                         </div>
@@ -59,7 +60,7 @@ function getPrenotazione(prenotazioni) {
         // divel.appendChild(btn);
 
         let elimina = document.querySelector('#eliminaPreno}');
-        elimina.addEventListener('click', function () {
+        elimina.addEventListener('click', function() {
             let id = singlePrenotaObjects.id;
             sessionStorage.setItem("idPrenotazione", this.singlePrenotaObjects.id);
             let veicoli = prenotazioni.find(v => v.id == sessionStorage.getItem("idPrenotazione"));
@@ -111,3 +112,17 @@ function fetchdelete(id) {
 
         });
 }
+
+
+
+
+
+/*area personale utente
+
+col-6 dati utente -dati abbonamento
+col 12 prenotazioni 
+alternate con bg light
+1 evidenziata, in corso
+le altre meno evideziata, usate
+
+*/

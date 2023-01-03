@@ -13,6 +13,13 @@
     z-index: 9999;
 }
 
+*{
+  font-family: 'Outfit', sans-serif;
+}
+.colorino{
+  color: #00B7C2;
+}
+
 /* css */
 .sfondoChiaro{
     background-color: #A3E8EC;
@@ -201,6 +208,10 @@
   /*                                  PULSANTI                                  */
   /* -------------------------------------------------------------------------- */
 
+  .btn{
+    font-size: 20px;
+    border-radius: 4px;
+  }
 .primaryBtn{
     font-size: 20px;
     color: white;

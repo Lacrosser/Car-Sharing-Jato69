@@ -15,11 +15,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.13.1/r-2.4.0/datatables.min.css" />
     <title>Admin Page</title>
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <style>
-        body {
-            font-family: 'Outfit', sans-serif;
-        }
-    </style>
 </head>
 
 <body>
@@ -83,7 +78,7 @@
                     </div>
 
                 </div> <!-- fine offcanvas-body -->
-             <!-- fine offcanvas -->
+                <!-- fine offcanvas -->
             </div> <!-- fine container navbar -->
         </nav> <!-- fine navbar -->
     </header>
@@ -143,10 +138,10 @@
 
         <!-- MODALE Modifica-->
         <div class="modal fade" id="modificaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: absolute;">
-            <div class="modal-dialog">
-                <div class="modal-content" style="height: 800px; width: 800px; right: 30%;">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="titoloModal">Form di Update</h1>
+                        <h2 class="h1 modal-title fs-5" id="titoloModal">Form di Update</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="contenutoModal">Compila i seguenti campi:
@@ -243,17 +238,11 @@
                             </div>
                         </div>
 
-
-
-
-
-
-
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="reset" class="btn btn-secondary">Reset</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                        <button id="salvaMod" type="button" class="btn btn-primary">Salva cambiamenti</button>
+                        <button type="button" id="reset" class="btn">Reset</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        <button id="salvaMod" type="button" class="btn primaryBtn">Salva cambiamenti</button>
                     </div>
                 </div>
             </div>
@@ -263,18 +252,20 @@
 
         <!-- MODALE Elimina-->
         <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="titoloModale">Form di cancellazione</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header bg-danger">
+                        <h2 class="h1 modal-title fs-5 text-white text-bg-danger" id="titoloModale">ATTENZIONE! Stai per eliminare questo veicolo!</h2>
+                        <button type="button" class="btn-close text-bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body" id="contenutoModale">Sei sicuro di voler cancellare dal database questo veicolo?
-                        <p id="error"></p>
+                    <div class="modal-body" id="contenutoModale">
+                        <p class="lead">Sei sicuro di voler eliminare dal database questo veicolo?</p>
+
+                        <p id="error" class="lead text-danger"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button id="eliminaMod" type="button" class="btn btn-primary">Elimina</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">ScusaNonVolevo</button>
+                        <button id="eliminaMod" type="button" class="btn btn-danger">Elimina</button>
                     </div>
                 </div>
             </div>
