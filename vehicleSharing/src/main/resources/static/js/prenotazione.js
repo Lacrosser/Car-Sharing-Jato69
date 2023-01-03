@@ -1,6 +1,6 @@
 window.addEventListener('load', fetchprenotazione);
 
-const URL = "http://localhost:9045/api/utentiveicoli";
+const URL = "http://localhost:9045/api/prenotazione";
 
 let htmlCode = ``;
 const prenotazione = document.querySelector("#prenotazione");
