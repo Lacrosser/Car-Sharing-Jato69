@@ -52,9 +52,12 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	@Override
 	public boolean addPrenotazione(int idUtente, int idVeicolo) {
-
-		Veicoli veicoloId = veirepo.getVeicoliById(idVeicolo);
+		System.out.println(idUtente);
+		System.out.println(idVeicolo);
+		
 		ArchivioUtenti archivioId = archivioprepo.getUtenteById(idUtente);
+		Veicoli veicoloId = veirepo.getVeicoliById(idVeicolo);
+		
 
 		if (idUtente != 0 && idVeicolo != 0) {
 			Prenotazione p = new Prenotazione();
@@ -63,6 +66,8 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 			if (veicoloId.getDisponibilita()) {
 				veicoloId.setDisponibilita(false);
 				p.setVeicoli(veicoloId);
+				
+				System.out.println(p);
 				dao.save(p);
 				System.out.println("salvie");
 				return true;

@@ -1,6 +1,6 @@
 const GETVEICOLIBYID = "http://localhost:9069/api/veicoli/";
 
-const POSTPRENOTAZIONE = "http://localhost:9069/api/utente/" //{idUtente}/veicolo/{idVeicolo}"
+const POSTPRENOTAZIONE = "http://localhost:9069/api/prenotazione/utente/" //{idUtente}/veicolo/{idVeicolo}"
 
 let btnPren = document.querySelector("#prenota");
 
@@ -8,13 +8,14 @@ let btnPren = document.querySelector("#prenota");
 window.addEventListener("load", initPagina);
 
 btnPren.addEventListener("click", function() {
+    console.log(checkLogin());
 
-    if (checkLogin == true) {
+    if (checkLogin() === true) {
 
-        prenota;
-        window.location.replace("/utenteView");
+        prenota();
+        window.location.replace("/areaUtente");
     }else{
-
+        console.log("nope")
         event.preventDefault();
     }
 });
@@ -57,13 +58,17 @@ function prenota() {
 }
 
 function checkLogin() {
+    let ss=sessionStorage.getItem("username");
+    let ls=localStorage.getItem("username");
+    console.log(ls);
+    console.log(ss);
 
-    if (sessionStorage.getItem("username") != null || localStorage.getItem("username") != null) {
-
+    if (ss != null || ls != null) {
+        console.log("entrato");
         return true;
 
     } else
-
+    console.log("noentrato");
         return false;
 
 }
@@ -101,6 +106,9 @@ function stampaVeicolo(veicolo) {
 
 
 function postpren(id, vId) {
+    console.log(id);
+    console.log(vId);
+    console.log(POSTPRENOTAZIONE + id + "/veicolo/" + vId);
 
     fetch(POSTPRENOTAZIONE + id + "/veicolo/" + vId, {
             method: "POST",
@@ -109,8 +117,8 @@ function postpren(id, vId) {
                 'Content-Type': 'application/json'
             },
         }).then(response => response.json()) // Estrai il JSON dalla risposta
-        .then(data => console.log(data)) // Esegui qualcosa con i dati estratti
-        .catch(error => console.error(error)); // Gestisci eventuali errori
+        .then(data => {console.log(data)}) // Esegui qualcosa con i dati estratti
+        
 }
 
 
