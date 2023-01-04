@@ -8,40 +8,40 @@ let prenotazione = document.querySelector("#prenotazione");
 function getPrenotazione(prenotazioni) {
     let htmlCode = '';
     prenotazioni.forEach(singlePrenotaObjects => {
-        console.log("Sono qui");
-        console.log(singlePrenotaObjects);
+        // console.log("Sono qui");
+        // console.log(singlePrenotaObjects);
 
-        console.log(singlePrenotaObjects.veicoli.modello);
+        // console.log(singlePrenotaObjects.veicoli.modello);
 
         htmlCode +=
             `
-        <div class="col-md-8 col-lg-10 d-lg-flex py-3">
-          <div class="d-flex flex-column justify-content-center col-lg-6 card border-0">
-            <div class="p-3 set-bg">
-              <div class="col-8 d-flex flex-column justify-content-center">
-                <h3 class="fw-bold">Dettagli prenotazione: </h3>
-                <div class="caratt">
-                  <div>Modello: ${singlePrenotaObjects.veicoli.modello}</div>
-                  <div>Alimentazione: ${singlePrenotaObjects.veicoli.alimentazione}</div>
-                  <div>Cilindrata: ${singlePrenotaObjects.veicoli.cilindrata}</div>
-                  <div>Colore: ${singlePrenotaObjects.veicoli.colore}</div>
-                  <div>Ora prenotazione: ${singlePrenotaObjects.oraPrenotazione}</div>
-                  <div>Id Utente:${singlePrenotaObjects.archivioUtenti.userId}</div>
-                  <div>Id Veicolo:${singlePrenotaObjects.veicoli.id}</div>
+        <div class="col-md-6 d-flex justify-content-center py-3">
+            <div class="d-flex flex-column justify-content-center card border-0">
+                <div class="p-3 set-bg">
+                    <div class="col-12 d-flex flex-column justify-content-center">
+                        <h3 class="fw-bold">Dettagli prenotazione: </h3>
+                        <div class="caratt">
+                            <div>Modello: ${singlePrenotaObjects.veicoli.modello}</div>
+                            <div>Alimentazione: ${singlePrenotaObjects.veicoli.alimentazione}</div>
+                            <div>Cilindrata: ${singlePrenotaObjects.veicoli.cilindrata}</div>
+                            <div>Colore: ${singlePrenotaObjects.veicoli.colore}</div>
+                            <div>Ora prenotazione: ${singlePrenotaObjects.oraPrenotazione}</div>
+                            <div>Id Utente:${singlePrenotaObjects.archivioUtenti.userId}</div>
+                            <div>Id Veicolo:${singlePrenotaObjects.veicoli.id}</div>
+                        </div>
+                    </div>
+                        <div id="eliminazione" class="col-8 d-flex flex-column justify-content-start py-3">
+                        <button class="btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn">ELIMINAAAAAAA</button>
+                    </div>
                 </div>
-              </div>
-              <div id="eliminazione" class="col-8 d-flex flex-column justify-content-start py-3">
-                <button id="bottoneEli" class="btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn">ELIMINAAAAAAA</button>
-              </div>
             </div>
-          </div>
         </div>
         `;
     });
 
     prenotazione.innerHTML = htmlCode;
 
-    let btn = document.querySelectorAll("#bottoneEli");
+    let btn = document.querySelectorAll("button");
     let eliminaModale = document.querySelector("#eliminaModal");
 
     btn.forEach(button => {
@@ -63,12 +63,13 @@ function getPrenotazione(prenotazioni) {
 
     deleting.addEventListener("click", function() {
         let idBottoneElimina = sessionStorage.getItem("idPrenotazione");
-        fetchdelete(idBottoneElimina);
+        console.log(idBottoneElimina);
+        //fetchdelete(idBottoneElimina);
     });
 
 
 
-}
+};
 
 
 /* -------------------------------------------------------------------------- */
