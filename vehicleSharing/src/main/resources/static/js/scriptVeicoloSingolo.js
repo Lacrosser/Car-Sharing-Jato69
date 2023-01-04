@@ -8,13 +8,13 @@ let btnPren = document.querySelector("#prenota");
 window.addEventListener("load", initPagina);
 
 btnPren.addEventListener("click", function() {
-    console.log(checkLogin());
+    // console.log(checkLogin());
 
     if (checkLogin() === true) {
 
         prenota();
         window.location.replace("/areaUtente");
-    }else{
+    } else {
         console.log("nope")
         event.preventDefault();
     }
@@ -58,18 +58,18 @@ function prenota() {
 }
 
 function checkLogin() {
-    let ss=sessionStorage.getItem("username");
-    let ls=localStorage.getItem("username");
-    console.log(ls);
-    console.log(ss);
+    let ss = sessionStorage.getItem("username");
+    let ls = localStorage.getItem("username");
+    // console.log(ls);
+    // console.log(ss);
 
     if (ss != null || ls != null) {
         console.log("entrato");
         return true;
 
     } else
-    console.log("noentrato");
-        return false;
+        console.log("noentrato");
+    return false;
 
 }
 
@@ -106,9 +106,9 @@ function stampaVeicolo(veicolo) {
 
 
 function postpren(id, vId) {
-    console.log(id);
-    console.log(vId);
-    console.log(POSTPRENOTAZIONE + id + "/veicolo/" + vId);
+    // console.log(id);
+    // console.log(vId);
+    // console.log(POSTPRENOTAZIONE + id + "/veicolo/" + vId);
 
     fetch(POSTPRENOTAZIONE + id + "/veicolo/" + vId, {
             method: "POST",
@@ -116,9 +116,11 @@ function postpren(id, vId) {
                 // Imposta l'intestazione Content-Type su application/json
                 'Content-Type': 'application/json'
             },
-        }).then(response => response.json()) // Estrai il JSON dalla risposta
-        .then(data => {console.log(data)}) // Esegui qualcosa con i dati estratti
-        
+        }).then(data => data.json()) // Estrai il JSON dalla risposta
+        .then(response => {
+            response.log(data)
+        }) // Esegui qualcosa con i dati estratti
+
 }
 
 

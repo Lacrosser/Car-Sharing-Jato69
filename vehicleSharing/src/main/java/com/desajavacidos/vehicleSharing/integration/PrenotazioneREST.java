@@ -62,7 +62,7 @@ public class PrenotazioneREST {
 
 		prenotazioneById.setVeicoli(p.getVeicoli());
 		prenotazioneById.setArchivioUtenti(p.getArchivioUtenti());
-		prenotazioneById.setTimestamp(p.getTimestamp());
+		prenotazioneById.setOraPrenotazione(p.getOraPrenotazione());
 
 			service.updatePrenotazione(prenotazioneById);
 		

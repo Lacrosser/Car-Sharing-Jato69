@@ -12,26 +12,24 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="prenotazione")
+@Table(name = "prenotazione")
 public class Prenotazione {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	//@JsonManagedReference
+
 	@ManyToOne(optional = false)
-    @JoinColumn(name = "veicoli_id")
-    private Veicoli veicoliId;
-		
-	//@JsonManagedReference
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "archivioutenti_id")
-    private ArchivioUtenti archivioutentiId;
-    
-    @Column(name="ora_prenotazione")
-    @CreationTimestamp
-    private Timestamp oraPrenotazione;
+	@JoinColumn(name = "veicoli_id")
+	private Veicoli veicoliId;
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "archivioutenti_id")
+	private ArchivioUtenti archivioutentiId;
+
+	@Column(name = "ora_prenotazione")
+	@CreationTimestamp
+	private Timestamp oraPrenotazione;
 
 	public int getId() {
 		return id;
@@ -40,7 +38,7 @@ public class Prenotazione {
 	public void setId(int id) {
 		this.id = id;
 	}
-	//@JsonIgnore
+
 	public Veicoli getVeicoli() {
 		return veicoliId;
 	}
@@ -48,7 +46,7 @@ public class Prenotazione {
 	public void setVeicoli(Veicoli veicoli) {
 		this.veicoliId = veicoli;
 	}
-	//@JsonIgnore
+
 	public ArchivioUtenti getArchivioUtenti() {
 		return archivioutentiId;
 	}
@@ -57,12 +55,14 @@ public class Prenotazione {
 		this.archivioutentiId = archivioUtenti;
 	}
 
-	public Timestamp getTimestamp() {
+	public Timestamp getOraPrenotazione() {
 		return oraPrenotazione;
 	}
 
-	public void setTimestamp(Timestamp timestamp) {
-		this.oraPrenotazione = timestamp;
+	public void setOraPrenotazione(Timestamp oraPrenotazione) {
+		this.oraPrenotazione = oraPrenotazione;
 	}
+
+	
 
 }

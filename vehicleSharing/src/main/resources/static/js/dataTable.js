@@ -10,6 +10,7 @@ const DELETEVEICOLO = "http://localhost:9069/api/veicoli/" //inserire id per com
 
 let table = document.querySelector("#tabella");
 let tableBody = document.querySelector("#tabella tbody");
+let error=document.querySelector("#error");
 
 
 // var modal1 = bootstrap.Modal.getOrCreateInstance('#modificaModal');
@@ -80,7 +81,7 @@ function creaTabella(listaVeicoli) {
     btnElimina.setAttribute('class', 'btn primaryBtn');
     btnElimina.setAttribute("data-bs-toggle", "modal");
     btnElimina.setAttribute("data-bs-target", "#eliminaModal");
-    btnElimina.setAttribute('id', veicolo.id);
+    // btnElimina.setAttribute('id', veicolo.id);
     btnElimina.setAttribute('class', 'btn redBtn');
     btnElimina.textContent = "Elimina";
 
@@ -126,6 +127,7 @@ function creaTabella(listaVeicoli) {
     let modaleDelete = document.querySelector("#eliminaModal");
 
     btnElimina.addEventListener("click", function () {
+      error.innerHTML="";
       modaleDelete.style.display = 'block';
       sessionStorage.setItem('idBottoneElimina', this.id);
     });
@@ -363,13 +365,13 @@ function fetchVeicoli() {
 
 function eliminaveicoli(id) {
   var url = VEICOLIMAPPING + "/" + id;
-  let error=document.querySelector("#error");
+  
 
 
 //eseguire il delete solo se il veicolo è prenotabile
 
   if(disponibilita.checked){
-    error.innerHTML="";
+    
     fetch(url, {
         method: 'DELETE', // Imposta il metodo su put
   

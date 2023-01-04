@@ -91,7 +91,7 @@ public class HtmlPagesController {
 	
 	@GetMapping("areaUtente")
 	public String areaUtente() {
-		return "utenteView";
+		return "areaUtente";
 	}
 
 	@GetMapping("pagamento")
