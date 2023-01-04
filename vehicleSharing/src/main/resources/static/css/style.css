@@ -19,15 +19,13 @@
     font-family: 'Outfit', sans-serif;
 }
 
-* {
-    font-family: 'Outfit', sans-serif;
-}
+
 
 
 /* -------------------------------------------------------------------------- */
 /*                                     CSS                                    */
 /* -------------------------------------------------------------------------- */
-.sfondoChiaro{
+.sfondoChiaro {
 
     background-color: #A3E8EC;
 }
@@ -87,30 +85,38 @@
 /*                                    TESTI                                   */
 /* -------------------------------------------------------------------------- */
 
-.primaryText{
+.primaryText {
     font-size: 36px;
     color: #00B7C2;
 }
 
 
-.secondaryText{
+.secondaryText {
     font-size: 24px;
-    color:#128494;
+    color: #128494;
 
 }
 
-.tertiaryText{
+.tertiaryText {
     font-size: 20px;
-    color:#128494;
+    color: #128494;
 }
 
-.commonText{
+.commonText {
     font-size: 16px;
-    color:#128494;
+    color: #128494;
 }
 
+.bannerColor {
+    color: #094149;
+    font-size: 50px !important;
+}
 
+.bannerAdmin {
+    background: #00b7c2;
 
+    padding: 3.2rem;
+}
 
 .bannerPromo {
     background: #00b7c2;
@@ -285,6 +291,16 @@
 }
 
 
+/* -------------------------------------------------------------------------- */
+/*                                 ABBONAMENTO                                */
+/* -------------------------------------------------------------------------- */
+.abbonamento {
+    height: 20rem;
+    background-color: #00B7C2;
+    border: 4px solid #128594;
+    margin: 1rem;
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                   SPACER                                   */
@@ -407,6 +423,7 @@
     height: 9rem;
     padding: .25rem 1rem;
     background: #00b8c21a;
+    /* background: #00B7C2; */
 }
 
 .descrizioneDisponibile {
@@ -526,8 +543,8 @@
     color: #020d3e;
 }
 
-footer li{
-  margin-bottom: 0.5rem;
+footer li {
+    margin-bottom: 0.5rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -690,8 +707,8 @@ h2 {
     right: 0;
 }
 
-.accordion li i:before, .accordion
-ul li i:after {
+.accordion li i:before,
+.accordion ul li i:after {
     content: "";
     position: absolute;
     background-color: #128594;
@@ -699,8 +716,8 @@ ul li i:after {
     height: 9px;
 }
 
-.accordion li i:before, .accordion
-ul li i:after {
+.accordion li i:before,
+.accordion ul li i:after {
     content: "";
     position: absolute;
     background-color: #128594;
@@ -798,98 +815,107 @@ ul li i:after {
 /*                                 Area utente                                */
 /* -------------------------------------------------------------------------- */
 
-.colBg{
-  background: #00b8c241;
+.colBg {
+    background: #00b8c241;
 }
-.fs-2-5{
-  font-size: 2.5rem;
-};
 
 
- /* -------------------------------------------------------------------------- */
- /*                                 BozzaLista                                 */
- /* -------------------------------------------------------------------------- */
 
- body{font-family:'Outfit', sans-serif;}
+.fs-2-5 {
+    font-size: 2.5rem;
+}
 
-      .immagine{
-        height: 5rem;
-        clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
-        background: #79797967;
-      }
-      .immagineDisponibile{
-        height: 5rem;
-        clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
-        background: #00b8c255;
-      }
 
-      .descrizione{
-        height: 9rem;
-        padding: .25rem 1rem;
-        background: #79797967;
-        margin-top: 1rem;
-        padding-bottom: 2rem;
-      }
-      .descrizioneDisponibile{
-        transition: 0.2s;
-        height: 9rem;
-        background: linear-gradient(270deg, #128594, #00b7c2);
-        padding: .25rem 1rem;
-      }
 
-      .descrizioneDisponibile:hover{
-        border: 4px solid #00b7c2;
-        background: linear-gradient(90deg, #ffffff, #00b8c241);
-      }
 
-      .cartaNoDisponibile{
-        cursor: not-allowed;
-      }
 
-      .contenitoreDisponibile a{
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        text-decoration: none;
-        color: #ffffff;
-        transition: .2s;
-      }
 
-      .contenitoreDisponibile a:hover{
-        color: #00b7c2;
+/* -------------------------------------------------------------------------- */
+/*                                 BozzaLista                                 */
+/* -------------------------------------------------------------------------- */
 
-      }
 
-      .contenitoreNoDisponibili a{
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        text-decoration: none;
-        color: #128594;
-        cursor: not-allowed;
-      }
 
-      .modello{
-        font-size: 30px;
-      }
+/* .immagine {
+    height: 5rem;
+    clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
+    background: #79797967;
+}
 
-      .desc{
-        font-size: 15px;
-      }
-      
+.immagineDisponibile {
+    height: 5rem;
+    clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
+    background: #00b8c255;
+}
 
-      .tipo{
-        font-size: 15px;
-      }
-      
+.descrizioneAbbonamento {
+    height: 9rem;
+    padding: .25rem 1rem;
+    background: #79797967;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
 
-      .disponibilitaSI{
-        font-size: 20px;
-        color: rgb(57, 212, 57);
-      }
+.descrizioneDisponibile {
+    transition: 0.2s;
+    height: 9rem;
+    background: linear-gradient(270deg, #128594, #00b7c2);
+    padding: .25rem 1rem;
+}
 
-      .disponibilitaNO{
-        font-size: 20px;
-        color: red;
-      }
+.descrizioneDisponibile:hover {
+    border: 4px solid #00b7c2;
+    background: linear-gradient(90deg, #ffffff, #00b8c241);
+}
+
+.cartaNoDisponibile {
+    cursor: not-allowed;
+}
+
+.contenitoreDisponibile a {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: .2s;
+}
+
+.contenitoreDisponibile a:hover {
+    color: #00b7c2;
+
+}
+
+.contenitoreNoDisponibili a {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-decoration: none;
+    color: #128594;
+    cursor: not-allowed;
+}
+
+.modello {
+    font-size: 30px;
+}
+
+.desc {
+    font-size: 15px;
+}
+
+
+.tipo {
+    font-size: 15px;
+}
+
+
+.disponibilitaSI {
+    font-size: 20px;
+    color: rgb(57, 212, 57);
+}
+
+.disponibilitaNO {
+    font-size: 20px;
+    color: red;
+} */
 
 /* -------------------------------------------------------------------------- */
 /*                                 footer.html                                */
@@ -897,52 +923,52 @@ ul li i:after {
 
 
 
-.footerColor{
-  background: #252A41;
-  padding: 1.5rem 0;
+/* .footerColor {
+    background: #252A41;
+    padding: 1.5rem 0;
 }
 
 
-  .whiteText{
-      color: white;
-  }
-  .appleImg{ 
-      margin: 0 0;
-      height: 4rem;
-      width: auto;
-  }
+.whiteText {
+    color: white;
+}
 
-  .googleImg{
-      height: 4rem;
-      width: auto;
-  }
+.appleImg {
+    margin: 0 0;
+    height: 4rem;
+    width: auto;
+}
 
-  /* Nuove classi */
+.googleImg {
+    height: 4rem;
+    width: auto;
+} */
 
-  .social a{
-      text-decoration: none;
-  }
+/* Nuove classi */
 
-  .cookie a{
-      color: white;
-  }
+/* .social a {
+    text-decoration: none;
+}
 
-  .cookie a:hover{
-      color: #020d3e;
-  }
+.cookie a {
+    color: white;
+}
+
+.cookie a:hover {
+    color: #020d3e;
+} */
+
+/* -------------------------------------------------------------------------- */
+/*                              provaCardSingola                              */
+/* -------------------------------------------------------------------------- */
 
 
-  /* -------------------------------------------------------------------------- */
-  /*                              provaCardSingola                              */
-  /* -------------------------------------------------------------------------- */
 
-  
-      
-  #map{
+/* #map{
     width: 100%;
 }
 
-body{font-family:'Outfit', sans-serif;}
+
 
 
 /* -------------------------------------------------------------------------- */
@@ -950,15 +976,15 @@ body{font-family:'Outfit', sans-serif;}
 /* -------------------------------------------------------------------------- */
 
 
-#loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #00b7c2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
+/* #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00b7c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+} */
