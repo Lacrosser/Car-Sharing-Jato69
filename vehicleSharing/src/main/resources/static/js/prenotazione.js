@@ -59,7 +59,7 @@ function getPrenotazione(prenotazioni) {
         closeButtons[i].addEventListener('click', function() {
             eliminaModale.style.display = "none";
         });
-    }
+    };
 
     let deleting = document.querySelector("#eliminaModal");
 
