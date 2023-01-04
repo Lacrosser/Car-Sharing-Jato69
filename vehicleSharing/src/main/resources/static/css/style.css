@@ -827,6 +827,8 @@ ul li i:after {
         height: 9rem;
         padding: .25rem 1rem;
         background: #79797967;
+        margin-top: 1rem;
+        padding-bottom: 2rem;
       }
       .descrizioneDisponibile{
         transition: 0.2s;
