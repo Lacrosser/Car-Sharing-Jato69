@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 
@@ -113,13 +114,65 @@
                 <div class="offset-1 col-lg-5 col-12 m-3 p-2  abbonamento h-100 lead descrizione">
                     <!-- style="height: 15rem; color: white;" -->
 
-                    <h3 class="titoloAbbonamento pt-3">Abbonamento Giornaliero</h3>
+                    <!-- <h3 class="titoloAbbonamento pt-3">Abbonamento Giornaliero</h3>
                     <p>2 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
 
                     <p class="lead text-center">A soli 5,90€</p>
 
                     <div class="button d-flex justify-content-center">
                         <a href="/pagamento?id=1" class="btn primaryBtn" type="button">Abbonati!</a>
+                    </div> -->
+                    <div class="swiper mySwiper d-block mt-4 mb-4">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="abbonamento col-11 h-15 text-white conColore">
+                                    <div class="titoloAbbonamento pt-3">
+                                        <h3>Abbonamento Giornaliero</h3>
+                                    </div>
+                                    <div class="descrizioneAbbonamento">
+                                        <p>2 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
+        
+                                        <h3 class="whiteText">A soli 5,90€</h3>
+        
+                                        <div class="button d-flex justify-content-center">
+                                            <a href="/pagamento?id=1" class="btn primaryBtn" type="button">Abbonati!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="abbonamento col-11 h-15 text-white conColore">
+                                    <div class="titoloAbbonamento pt-3">
+                                        <h3>Abbonamento Settimanale</h3>
+                                    </div>
+                                    <div class="descrizioneAbbonamento">
+                                        <p>14 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
+        
+                                        <h3 class="whiteText">A soli 9,90€</h3>
+        
+                                        <div class="button d-flex justify-content-center">
+                                            <a href="/pagamento?id=2" class="btn primaryBtn" type="button">Abbonati!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="abbonamento col-11 h-15 text-white conColore">
+                                    <div class="titoloAbbonamento pt-3">
+                                        <h3>Abbonamento Mensile</h3>
+                                    </div>
+                                    <div class="descrizioneAbbonamento">
+                                        <p>60 corse con qualsiasi mezzo di 30 minuti ciascuna</p>
+        
+                                        <h3 class="whiteText">A soli 29,90€</h3>
+        
+                                        <div class="button d-flex justify-content-center">
+                                            <a href="/pagamento?id=3" class="btn primaryBtn" type="button">Abbonati!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -280,6 +333,16 @@
         <script src="/js/scriptUtente.js"></script>
         <script src="/js/utenteView.js"></script>
         <script src="/js/prenotazione.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    hide: true,
+                },
+            });
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
 
         </script>

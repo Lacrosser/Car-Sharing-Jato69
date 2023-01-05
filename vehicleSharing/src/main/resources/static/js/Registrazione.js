@@ -33,7 +33,7 @@ let errorPass = document.querySelector("#errorPass");
 /* -------------------------------------------------------------------------- */
 
 window.addEventListener("load", checkLogin);
-btnReg.addEventListener("click", checherReg);
+btnReg.addEventListener("click", registrazione);
 
 
 
@@ -71,7 +71,8 @@ function creaUtente(userId, password, firma, tipo, nome, cognome, nascita, email
 
 
 function registrazione() {
-    if (checherReg) {
+    if (checherReg()) {
+        console.log("entrato in registrazione");
         let utente = new creaUtente(username.value, pass1.value, UTENTE, TIPO, nome.value, cognome.value, dataNascita.value, email.value)
 
         fetch(UTENTIMAPPING, {
@@ -87,8 +88,11 @@ function registrazione() {
                 data.json();
             })
         console.log("Utente aggiunto")
+        window.location.replace("/login");
 
 
+    } else {
+        console.log("Registrazione no");
     }
 
 
@@ -114,16 +118,16 @@ function checherReg() {
     if (checkPassword()) {
         console.log("le password sono giuste?")
         if (controllaUser() && controllaPassword()) {
-            //console.log("user e pass accettate");
+            console.log("user e pass accettate");
             return true;
         } else {
-            // console.log("user e pass non accettate");
+            console.log("user e pass non accettate");
             return false
         }
 
     } else
-        //console.log("le password sono diverse")
-        return false;
+        console.log("le password sono diverse")
+    return false;
 
 }
 

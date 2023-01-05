@@ -497,24 +497,12 @@
                 }
             });
         </script>
-        <!-- SCRIPT GRAFICO -->
 
-
-        <!-- Lo script del grafico è in mappa home -->
-        <!-- Lo script per il loading è nella mappa home -->
         <script src="/js/session.js"></script>
-        <script>
-            const loadingScreen = document.querySelector('#loading-screen');
-            loadingScreen.style.display = 'none';
-
-            if (sessionStorage.getItem("username") != null || localStorage.getItem("username") != null) {
-                var banner = document.querySelector('#banner');
-                banner.setAttribute('hidden', '');
-            }
-        </script>
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-        <!-- <script src="/js/mappa.js"></script> -->
         <script src="js/mappaHome.js"></script>
+
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
         <script src="/js/indexEg.js"></script>
 
 </body>
