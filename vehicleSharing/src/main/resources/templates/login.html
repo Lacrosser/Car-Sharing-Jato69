@@ -18,211 +18,188 @@
 </head>
 
 <body class="imgBgLogin">
-
-    <!-- DIOBUDINO -->
-
-    <header class="">
-        <nav class="navbar navbar-expand-lg navbar-dark borderNav third-color">
-            <!-- inizio navbar -->
-
-            <div class="container-lg">
-                <!-- inizio container navbar -->
-
-                <a class="navbar-brand" href="/">
-                    <img src="/img/bigLogo.png" alt="Bootstrap" width="50" height="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon">
-
-                    </span>
-                </button>
-
-                <div class="offcanvas offcanvas-end bg-dark text-bg-dark w-50" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <!-- inizio offcanvas -->
-
-                    <div class="offcanvas-header">
-                        <h3 class="offcanvas-title" id="offcanvasNavbarLabel"></h3>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-
-                    <div class="offcanvas-body">
-                        <!-- inizio offcanvas-body -->
-
-                        <ul class="navbar-nav justify-content-end align-items-lg-center flex-grow-1 pe-3" id="navbar">
-                            <!-- inizio elementi navbar -->
-
-                            <li class="nav-item ms-auto ms-lg-0">
-                                <a class="nav-link" href="/">Home</a>
-                                <!-- possiamo togliere mettendo il logo diretto alla home -->
-                            </li>
-                            <li class="nav-item ms-auto ms-lg-0">
-                                <a class="nav-link" href="/tariffe">Tariffe</a>
-                            </li>
-                            <li class="nav-item ms-auto ms-lg-0">
-                                <a class="nav-link" href="/faq">FAQ</a>
-                                <!-- tipi diversi di veicoli disp -->
-                            </li>
-                            <li class="nav-item ms-auto ms-lg-0">
-                                <a class="nav-link" href="/abbonamenti">Abbonamenti</a>
-                                <!-- libero profesionista, abbonamenti, parcheggi -->
-                            </li>
-                            <li class="nav-item ms-auto ms-lg-0">
-                                <a class="nav-link" href="/aboutUS">Chi siamo</a>
-                                <!-- mappa con veicoli disponibili, visibile a tutti -->
-                            </li>
-                            <li class="nav-item ms-auto ms-lg-0">
-                                <a class="nav-link" href="/listaVeicoli">Veicoli</a>
-                                <!-- mettere i loghi delle roba si soft skill -->
-                            </li>
-
-                    </div>
-
-                    </ul> <!-- fine elementi navbar -->
-                </div> <!-- fine offcanvas-body -->
-                <!-- fine offcanvas -->
-            </div> <!-- fine container navbar -->
-        </nav> <!-- fine navbar -->
-    </header>
-    <!-- stessa header ?? -->
-
-    <main>
-        <div class="containerMio m-5 mb-5">
-            <div class="container d-flex justify-content-center pt-3 pb-3 dimLogin">
-                <div class="row mt-5 mb-5 conColore">
-                    <h1 class="pt-5 pb-5 text-center whiteText fs-2-5">Accedi</h1>
-                    <form class="login" id="login">
-                        <div class="form-floating pb-3">
-                            <input type="text" class="form-control" id="username" placeholder="name@example.com">
-                            <label for="floatingInput">Username</label>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark borderNav third-color">
+                <!-- inizio navbar -->
+                <div class="container-lg">
+                    <!-- inizio container navbar -->
+                    <a class="navbar-brand" href="/">
+                        <img src="/img/bigLogo.png" alt="Bootstrap" width="50" height="50">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </button>
+                    <div class="offcanvas offcanvas-end bg-dark text-bg-dark w-50" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <!-- inizio offcanvas -->
+                        <div class="offcanvas-header">
+                            <h3 class="offcanvas-title" id="offcanvasNavbarLabel"></h3>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
-                        <div class="form-floating pb-3">
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
+                        <div class="offcanvas-body">
+                            <!-- inizio offcanvas-body -->
+                            <ul class="navbar-nav justify-content-end align-items-lg-center flex-grow-1 pe-3" id="navbar">
+                                <!-- inizio elementi navbar -->
+                                <li class="nav-item ms-auto ms-lg-0">
+                                    <a class="nav-link" href="/">Home</a>
+                                    <!-- possiamo togliere mettendo il logo diretto alla home -->
+                                </li>
+                                <li class="nav-item ms-auto ms-lg-0">
+                                    <a class="nav-link" href="/tariffe">Tariffe</a>
+                                </li>
+                                <li class="nav-item ms-auto ms-lg-0">
+                                    <a class="nav-link" href="/faq">FAQ</a>
+                                    <!-- tipi diversi di veicoli disp -->
+                                </li>
+                                <li class="nav-item ms-auto ms-lg-0">
+                                    <a class="nav-link" href="/abbonamenti">Abbonamenti</a>
+                                    <!-- libero profesionista, abbonamenti, parcheggi -->
+                                </li>
+                                <li class="nav-item ms-auto ms-lg-0">
+                                    <a class="nav-link" href="/aboutUS">Chi siamo</a>
+                                    <!-- mappa con veicoli disponibili, visibile a tutti -->
+                                </li>
+                                <li class="nav-item ms-auto ms-lg-0">
+                                    <a class="nav-link" href="/listaVeicoli">Veicoli</a>
+                                    <!-- mettere i loghi delle roba si soft skill -->
+                                </li>
                         </div>
-                        <div id="errorIns" class="text-danger"></div>
-                        <div class="button d-flex justify-content-start pb-3">
-                            <div class=" mb-3 d-flex justify-content-start">
-                                <div class="d-flex align-items-center">
-                                    <input class="form-check-input mt-0 ms-2" type="checkbox" value="yes" aria-label="Checkbox for following text input" id="check">
-                                    <label class="form-check-label ps-1" for="defaultCheck1">
-                                        Ricordami
-                                    </label>
+                        </ul> <!-- fine elementi navbar -->
+                    </div> <!-- fine offcanvas-body -->
+                    <!-- fine offcanvas -->
+                </div> <!-- fine container navbar -->
+            </nav> <!-- fine navbar -->
+        </header>
+        <!-- stessa header ?? -->
+        <main>
+            <div class="containerMio m-5 mb-5">
+                <div class="container d-flex justify-content-center pt-3 pb-3 dimLogin">
+                    <div class="row mt-5 mb-5 conColore">
+                        <h1 class="pt-5 pb-5 text-center whiteText fs-2-5">Accedi</h1>
+                        <form class="login" id="login">
+                            <div class="form-floating pb-3">
+                                <input type="text" class="form-control" id="username" placeholder="name@example.com">
+                                <label for="floatingInput">Username</label>
+                            </div>
+                            <div class="form-floating pb-3">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <div id="errorIns" class="text-danger"></div>
+                            <div class="button d-flex justify-content-start pb-3">
+                                <div class=" mb-3 d-flex justify-content-start">
+                                    <div class="d-flex align-items-center">
+                                        <input class="form-check-input mt-0 ms-2" type="checkbox" value="yes" aria-label="Checkbox for following text input" id="check">
+                                        <label class="form-check-label ps-1" for="defaultCheck1">
+                                            Ricordami
+                                        </label>
+                                    </div>
                                 </div>
-
+                            </div>
+                            <div class="accediBTN mb-4 d-flex justify-content-end">
+                                <button class="btn primaryBtn" id="loginButton" type="button">Accedi</button>
+                            </div>
+                            <div class="linkSignup d-flex">
+                                <p class="text-white pe-1">Non sei registrato?</p>
+                                <a href="/signup" style="text-decoration: underline;">Registrati!</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footerColor">
+            <!-- da aggiungere altre voci -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 text-white">
+                        <h3 class="mb-3">Scarica la nostra app</h3>
+                        <hr>
+                        <div class="row mb-3">
+                            <div class="col-6 "><img src="/img/Download_on_the_App_Store_Badge.svg" class="appleImg img-fluid " alt="storeIphoneLogo"></div>
+                            <div class="col-6"><img src="/img/Google_Play_Store_badge_EN.svg" class="googleImg img-fluid " alt="storeAndroidLogo"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-white">
+                        <div class="row ">
+                            <div class="col-6 ">
+                                <h3 class="">Informazioni</h3>
+                                <hr>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="/aboutUs.html" class=" text-center">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/tariffe.html" class=" text-center">Tariffe</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" text-center">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class=" text-center">Condizioni d'uso</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 ">
+                                <h3 class="mb-3">Social</h3>
+                                <hr>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="" href="https://www.instagram.com">
+                                            <i class="bi bi-instagram"></i> Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="" href="https://www.twitter.com">
+                                            <i class="bi bi-twitter"></i> Twitter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="" href="https://www.facebook.com">
+                                            <i class="bi bi-meta"></i> Meta
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="" href="https://www.telegram.com">
+                                            <i class="bi bi-telegram"></i> Telegram
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="accediBTN mb-4 d-flex justify-content-end">
-                            <button class="btn primaryBtn" id="loginButton" type="button">Accedi</button>
-                        </div>
-
-
-
-
-                        <div class="linkSignup d-flex">
-                            <p class="text-white pe-1">Non sei registrato?</p>
-                            <a href="/signup" style="text-decoration: underline;">Registrati!</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footerColor">
-        <!-- da aggiungere altre voci -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-white">
-                    <h3 class="mb-3">Scarica la nostra app</h3>
-                    <hr>
-                    <div class="row mb-3">
-                        <div class="col-6 "><img src="/img/Download_on_the_App_Store_Badge.svg" class="appleImg img-fluid " alt="storeIphoneLogo"></div>
-                        <div class="col-6"><img src="/img/Google_Play_Store_badge_EN.svg" class="googleImg img-fluid " alt="storeAndroidLogo"></div>
-                    </div>
-
-                </div>
-                <div class="col-lg-6 text-white">
-                    <div class="row ">
-                        <div class="col-6 ">
-                            <h3 class="">Informazioni</h3>
-                            <hr>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="/aboutUs.html" class=" text-center">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="/tariffe.html" class=" text-center">Tariffe</a>
-                                </li>
-                                <li>
-                                    <a href="#" class=" text-center">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#" class=" text-center">Condizioni d'uso</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-6 ">
-                            <h3 class="mb-3">Social</h3>
-                            <hr>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="" href="https://www.instagram.com">
-                                        <i class="bi bi-instagram"></i> Instagram
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="" href="https://www.twitter.com">
-                                        <i class="bi bi-twitter"></i> Twitter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="" href="https://www.facebook.com">
-                                        <i class="bi bi-meta"></i> Meta
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="" href="https://www.telegram.com">
-                                        <i class="bi bi-telegram"></i> Telegram
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <!-- da mettere tutto in div separati, elemento per elemento -->
-                </div>
-            </div>
-            <div class="row text-white mt-4">
-                <div class="col-lg-6">
-                    <h3>Contattaci</h3>
-                    <hr>
-                    <div class=" mb-4">
-                        <p>Numeri Utili</p>
-                        <p>Numero sede italiana: <a href="">0114562378</a></p>
-                        <p>Numero verde: <a href=""> 800 400 736</a></p>
-                        <p>Numero sede: <a href=""> +420-607860660</a></p>
+                        <!-- da mettere tutto in div separati, elemento per elemento -->
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <h3>Dove Trovarci</h3>
-                    <hr>
-                    <div>
-                        <p>Sedi e indirizzi</p>
-                        <p>Sede Italiana: <a href="">Corso Vittorio Emanuele II 157/d Torino (TO)</a></p>
-                        <p>Sede Centrale: <a href="">Thàmova 116 Karlin, Cechia</a></p>
+                <div class="row text-white mt-4">
+                    <div class="col-lg-6">
+                        <h3>Contattaci</h3>
+                        <hr>
+                        <div class=" mb-4">
+                            <p>Numeri Utili</p>
+                            <p>Numero sede italiana: <a href="">0114562378</a></p>
+                            <p>Numero verde: <a href=""> 800 400 736</a></p>
+                            <p>Numero sede: <a href=""> +420-607860660</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Dove Trovarci</h3>
+                        <hr>
+                        <div>
+                            <p>Sedi e indirizzi</p>
+                            <p>Sede Italiana: <a href="">Corso Vittorio Emanuele II 157/d Torino (TO)</a></p>
+                            <p>Sede Centrale: <a href="">Thàmova 116 Karlin, Cechia</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+   
     <div class="cookie d-flex justify-content-center fCol">
         <div class="text-white">
             <p><a href="">Cookie</a> | <a href="">Privacy Policy</a> | <a href="">Condizioni d'uso</a></p>
         </div>
 
-
-
+    </div>
 
         <script src="/js/scriptLogin.js"></script>
         <script src="/js/session.js"></script>

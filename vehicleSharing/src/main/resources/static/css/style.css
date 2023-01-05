@@ -398,10 +398,19 @@
     background: #00b8c21a;
 }
 
+.image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+  }
+
 .immagineDisponibile {
     height: 5rem;
     clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
     background: #00b8c255;
+    position: relative;
 }
 
 .descrizione {
@@ -834,8 +843,20 @@ h2 {
 
 .imgBgLogin{
     background: url('/img/vwElettrica.jpg');
-    backdrop-filter: blur(8px);
-     background-repeat: no-repeat;
+    position: relative;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.imgBgLogin::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(8px); 
+    z-index: -1;
 }
 
 .conColore{

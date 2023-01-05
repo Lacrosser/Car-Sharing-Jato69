@@ -74,8 +74,11 @@ function mostraVeicoli(listaVeicoli) {
       var immagineSrc = document.createElement('img');
       immagineSrc.setAttribute('src', immagine);
       immagineSrc.setAttribute('alt', 'null');
-      immagineSrc.setAttribute('width', '120px');
-      immagineSrc.setAttribute('height', '90px');
+      // immagineSrc.setAttribute('width', '120px');
+      // immagineSrc.setAttribute('height', '90px');
+      immagineSrc.setAttribute('width', '200px');
+      immagineSrc.setAttribute('height', 'auto');
+      immagineSrc.setAttribute('class','image');
 
       immagineDisponibile.appendChild(immagineSrc);
 
