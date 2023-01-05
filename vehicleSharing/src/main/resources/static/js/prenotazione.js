@@ -15,26 +15,23 @@ function getPrenotazione(prenotazioni) {
 
         htmlCode +=
             `
-        <div class="col-md-6 d-flex justify-content-center py-3">
-        <div class="d-flex flex-column justify-content-center card border-0">
-        <div class="p-3 set-bg">
-        <div class="col-12 d-flex flex-column justify-content-center">
-        <h3 class="fw-bold">Dettagli prenotazione: </h3>
-        <div class="caratt">
-        <div>Modello: ${singlePrenotaObjects.veicoli.modello}</div>
-                            <div>Alimentazione: ${singlePrenotaObjects.veicoli.alimentazione}</div>
-                            <div>Cilindrata: ${singlePrenotaObjects.veicoli.cilindrata}</div>
-                            <div>Colore: ${singlePrenotaObjects.veicoli.colore}</div>
-                            <div>Data prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(0,10)}</div>
-                            <div>Ora prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(11,16)}</div>
-                            </div>
-                            </div>
-                            <div id="eliminazione" class="col-8 d-flex flex-column justify-content-start py-3">
-                            <button class="btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn btn-close">Elimina</button>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+        <div class="col-md-6 py-3 d-flex flex-column">
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center p-3 set-bg card border-0">
+                <div class="d-flex align-items-center col-md-6">
+                    <img src="${singlePrenotaObjects.veicoli.immagine}" alt="" class="img-fluid">
+                </div>
+                <div class="d-flex flex-column justify-content-center col-md-6">
+                    <h3 class="fw-bold">Dettagli prenotazione: </h3>
+                    <div>Modello: ${singlePrenotaObjects.veicoli.modello}</div>
+                    <div>Alimentazione: ${singlePrenotaObjects.veicoli.alimentazione}</div>
+                    <div>Cilindrata: ${singlePrenotaObjects.veicoli.cilindrata}</div>
+                    <div>Colore: ${singlePrenotaObjects.veicoli.colore}</div>
+                    <div>Data prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(0,10)}</div>
+                    <div>Ora prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(11,16)}</div>
+                    <button class="mt-3 btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn btn-close">Elimina</button>
+                </div>
+            </div>         
+        </div>
                             `;
     });
 
