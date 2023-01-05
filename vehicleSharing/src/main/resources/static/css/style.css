@@ -149,7 +149,9 @@
 
 .heroSubtitle {
     font-size: 70px;
+    padding: 1rem 1rem;
     color: white;
+    height: auto;
 }
 
 .heroSubtitle2 {
@@ -161,6 +163,10 @@
     font-size: 70px;
     color: white;
 }
+
+
+
+
 
 /* -------------------------------------------------------------------------- */
 /*                              SEZIONE ALTA SITO                             */
