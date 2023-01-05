@@ -148,26 +148,7 @@
 
 
 
-        <!-- MODALE Elimina-->
-        <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger">
-                        <h2 class="h1 modal-title fs-5 text-white text-bg-danger" id="titoloModale">ATTENZIONE! Stai per eliminare questa prenotazione!</h2>
-                        <button type="button" class="btn-close text-bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="contenutoModale">
-                        <p class="lead">Sei sicuro di voler eliminare dal database questo prenotazione?</p>
 
-                        <p id="error" class="lead text-danger"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">ScusaNonVolevo</button>
-                        <a id="eliminaMod" type="button" class="btn btn-danger">Elimina</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
     </main>
@@ -260,7 +241,31 @@
             </div>
         </div>
     </footer>
-    <div class="cookie d-flex justify-content-center" style="background-color: #40424b;">
+
+    <!-- MODALE Elimina-->
+    <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger">
+                    <h2 class="h1 modal-title fs-5 text-white text-bg-danger" id="titoloModale">ATTENZIONE! Stai per eliminare questa prenotazione!</h2>
+                    <button type="button" class="btn-close text-bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="contenutoModale">
+                    <p class="lead">Sei sicuro di voler eliminare dal database questo prenotazione?</p>
+
+                    <p id="error" class="lead text-danger"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Scusami non volevo</button>
+                    <input id="eliminaMod" type="submit" class="btn btn-danger" data-bs-dismiss="modal" value="Elimina">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cookie d-flex justify-content-center fCol">
         <div class="text-white">
             <p><a href="">Cookie</a> | <a href="">Privacy Policy</a> | <a href="">Condizioni d'uso</a></p>
         </div>
