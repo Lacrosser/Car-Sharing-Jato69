@@ -4,7 +4,7 @@ var formVeicolo = document.querySelector('#formVeicolo');
 var alimentazioneForm = document.querySelector('#alimentazioneForm');
 var modelloForm = document.querySelector('#modelloForm');
 var coloreForm = document.querySelector('#coloreForm');
-var fotoForm = document.querySelector('#fotoForm');
+// var fotoForm = document.querySelector('#fotoForm');
 var cilindrataForm = document.querySelector('#cilindrataForm');
 
 var contenutoModal = document.querySelector('#contenutoModal');
@@ -34,7 +34,7 @@ function verificaSelect(){
         alimentazioneForm.removeAttribute('hidden');
         modelloForm.removeAttribute('hidden');
         coloreForm.removeAttribute('hidden');
-        fotoForm.removeAttribute('hidden');
+        // fotoForm.removeAttribute('hidden');
         cilindrataForm.removeAttribute('hidden');
 
     } else if (selectTipo == "MONOPATTINO"){
@@ -45,7 +45,7 @@ function verificaSelect(){
         alimentazioneForm.setAttribute('hidden','');
         modelloForm.setAttribute('hidden','');
         coloreForm.setAttribute('hidden','');
-        fotoForm.setAttribute('hidden','');
+        // fotoForm.setAttribute('hidden','');
         cilindrataForm.setAttribute('hidden','');
 
 
@@ -57,7 +57,7 @@ function verificaSelect(){
         alimentazioneForm.setAttribute('hidden','');
         modelloForm.setAttribute('hidden','');
         coloreForm.setAttribute('hidden','');
-        fotoForm.setAttribute('hidden','');
+        // fotoForm.setAttribute('hidden','');
         cilindrataForm.setAttribute('hidden','');
 
     }
