@@ -33,7 +33,7 @@ function stampaUtente(utente){
     let dataIscrizione = document.querySelector('#dataIscrizione');
     let tipo = document.querySelector('#tipo');
     let firma = document.querySelector('#firma');
-    let prenotazioniTot = document.querySelector('#prenotazioniTot');
+    // let prenotazioniTot = document.querySelector('#prenotazioniTot');
 
     nome.textContent = utente.nome;
     cognome.textContent = utente.cognome;
@@ -54,5 +54,5 @@ function stampaUtente(utente){
     }
 
     firma.textContent = utente.firma;
-    prenotazioniTot.textContent = utente.prenotazioniTot;
+    // prenotazioniTot.textContent = utente.prenotazioniTot;
 }

@@ -50,14 +50,15 @@ function creaMappa(veicoli) {
         let num1 = parseFloat(numPos[0]);
         let num2 = parseFloat(numPos[1]);
 
-        let gino = L.marker([num1, num2]).addTo(map)
-        .bindPopup(element.modello)
-        .openPopup();
+        L.marker([num1, num2]).addTo(map)
+            .bindPopup(element.modello)
+            .openPopup()
+            .on('dblclick', function() {
+                let vId = element.id;
+                window.location.assign("http://localhost:9069/paginaVeicolo?id=" + vId);
+            });
 
-      gino.addEventListener("click",function(){
-        let vId=element.id;
-        window.location.assign("http://localhost:9069/paginaVeicolo?id="+vId);
-      })
+
 
     });
 

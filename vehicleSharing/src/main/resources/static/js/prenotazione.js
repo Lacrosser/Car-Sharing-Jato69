@@ -1,8 +1,12 @@
 window.addEventListener('load', fetchprenotazione);
 
+
+
 const URL = "http://localhost:9069/api/prenotazione";
 
 let prenotazione = document.querySelector("#prenotazione");
+
+
 
 
 function getPrenotazione(prenotazioni) {
@@ -15,7 +19,7 @@ function getPrenotazione(prenotazioni) {
 
         htmlCode +=
             `
-        <div class="col-md-6 py-3 d-flex flex-column">
+        <div id="cardina" class="col-md-6 py-3 d-flex flex-column">
             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center p-3 set-bg card border-0">
                 <div class="d-flex align-items-center col-md-6">
                     <img src="${singlePrenotaObjects.veicoli.immagine}" alt="" class="img-fluid">
@@ -32,7 +36,7 @@ function getPrenotazione(prenotazioni) {
                 </div>
             </div>         
         </div>
-                            `;
+            `;
     });
 
     // <div>Id Utente:${singlePrenotaObjects.archivioUtenti.userId}</div>
@@ -108,6 +112,28 @@ function fetchprenotazione() {
             // console.log(prenotazioniFiltrate);
             prenotazione.innerHTML = "";
             getPrenotazione(prenotazioniFiltrate);
+            // var ultimaPren=document.querySelector("#cardina");
+            // var last  = document.querySelector('[#cardina]:last-child');
+
+
+            /* -------------------------------------------------------------------------- */
+            /*              FUNZIONE PER METTERE L'ULTIMO ELEMENTO COME PRIMO             */
+            /* -------------------------------------------------------------------------- */
+            let nodeList = document.querySelectorAll("#cardina")
+
+            if (nodeList.length != 0) {
+                var array = Array.prototype.slice.call(nodeList);
+                var last = array.pop();
+                last.classList.add("class", "colPrimaPrenotazione");
+                array.unshift(last);
+
+            }
+
+            let parent = nodeList[0].parentNode;
+            array.forEach(element => {
+                parent.appendChild(element);
+            });
+
             //cancellazione tabella
             //funzione di creazione tabella
 
