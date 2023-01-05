@@ -83,8 +83,18 @@ function getPrenotazione(prenotazioni) {
 
 function fetchprenotazione() {
 
-    let id = localStorage.getItem('id');
-    console.log(id);
+    var id;
+    
+    if(localStorage.getItem('id') == null){
+        
+        id= sessionStorage.getItem('id');
+       
+        
+    } else {
+        id = localStorage.getItem('id');
+    }
+
+
     fetch(URL)
         .then(data => {
             return data.json()

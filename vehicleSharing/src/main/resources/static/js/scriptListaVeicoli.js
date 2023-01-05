@@ -6,8 +6,8 @@ const GETVEICOLOTIPO = "http://localhost:9069/api/veicoli/tipo/"
 const GETVEICOLIDISPONIBILITA = "http://localhost:9069/api/veicoli/status/"
 const GETVEICOLOALIMENTAZIONE = "http://localhost:9069/api/veicoli/alimentazione/" //inserire la stringa di alimentazione
 
-var contenitore = document.querySelector('.contenitoreDisponibile');
-var contenitoreNoDisp = document.querySelector('.contenitoreNoDisponibili');
+var contenitore = document.querySelector('#contenitoreDisponibile');
+var contenitoreNoDisp = document.querySelector('#contenitoreNoDisponibili');
 
 
 var btn = document.querySelector('#btn');
@@ -96,36 +96,6 @@ function mostraVeicoli(listaVeicoli) {
     }
   });
 }
-
-// modelloVeicolo.textContent = modello;
-
-// mezzoVeicolo.textContent = veicolo;
-// coloreVeicolo.textContent = alimentazione;
-// var aWrap = document.createElement('div');
-// var a = document.createElement('a');
-// var newDiv = document.createElement('div');
-// aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
-// newDiv.setAttribute('class', '');
-// var disponibilitaMezzo = document.createElement('div');
-
-// if (disponibilita == true) {
-//   disponibilitaMezzo.setAttribute('class', 'disponibile');
-//   disponibilitaMezzo.textContent = "Disponibile";
-//   var link = "/paginaVeicolo?id=" + id;
-//   a.setAttribute('href', link);
-//   newDiv.appendChild(modelloVeicolo);
-//   newDiv.appendChild(mezzoVeicolo);
-//   newDiv.appendChild(coloreVeicolo);
-//   newDiv.appendChild(disponibilitaMezzo);
-//   a.appendChild(newDiv);
-//   aWrap.appendChild(a);
-//   contenitore.appendChild(aWrap);
-
-// } else if (disponibilita == false) {
-//   disponibilitaMezzo.setAttribute('class', 'noDisponibile');
-//   disponibilitaMezzo.textContent = "Non disponibile";
-
-
 
 
 
