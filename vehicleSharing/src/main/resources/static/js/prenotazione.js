@@ -25,13 +25,12 @@ function getPrenotazione(prenotazioni) {
                             <div>Alimentazione: ${singlePrenotaObjects.veicoli.alimentazione}</div>
                             <div>Cilindrata: ${singlePrenotaObjects.veicoli.cilindrata}</div>
                             <div>Colore: ${singlePrenotaObjects.veicoli.colore}</div>
-                            <div>Ora prenotazione: ${singlePrenotaObjects.oraPrenotazione}</div>
-                            <div>Id Utente:${singlePrenotaObjects.archivioUtenti.userId}</div>
-                            <div>Id Veicolo:${singlePrenotaObjects.veicoli.id}</div>
+                            <div>Data prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(0,10)}</div>
+                            <div>Ora prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(11,16)}</div>
                             </div>
                             </div>
                             <div id="eliminazione" class="col-8 d-flex flex-column justify-content-start py-3">
-                            <button class="btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn btn-close">ELIMINAAAAAAA</button>
+                            <button class="btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn btn-close">Elimina</button>
                             </div>
                             </div>
                             </div>
@@ -39,6 +38,8 @@ function getPrenotazione(prenotazioni) {
                             `;
     });
 
+    // <div>Id Utente:${singlePrenotaObjects.archivioUtenti.userId}</div>
+    // <div>Id Veicolo:${singlePrenotaObjects.veicoli.id}</div>
     prenotazione.innerHTML = htmlCode;
 
     let eliminaModale = document.querySelector("#eliminaModal");
@@ -84,12 +85,12 @@ function getPrenotazione(prenotazioni) {
 function fetchprenotazione() {
 
     var id;
-    
-    if(localStorage.getItem('id') == null){
-        
-        id= sessionStorage.getItem('id');
-       
-        
+
+    if (localStorage.getItem('id') == null) {
+
+        id = sessionStorage.getItem('id');
+
+
     } else {
         id = localStorage.getItem('id');
     }
@@ -118,7 +119,7 @@ function fetchprenotazione() {
 
 
 function fetchdelete(id) {
-    console.log("ho cancellato"+id);
+    console.log("ho cancellato" + id);
 
     fetch(URL + '/' + id, {
             method: 'DELETE',
