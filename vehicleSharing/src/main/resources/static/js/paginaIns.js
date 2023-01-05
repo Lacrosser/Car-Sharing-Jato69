@@ -110,11 +110,15 @@ function aggiungiVeicolo(){
                 }
 
             }else{
-                let randomNumber = Math.floor(Math.random() * 2) + 1;
+                let randomNumber = Math.floor(Math.random() * 3) + 1;
                 if(randomNumber===1){
                     immagine="/img/imgVeicoli/bmwElettrica.png";
 
-                }else{
+                }else if(randomNumber===2)
+                {
+                    immagine="/img/imgVeicoli/smartElettrica.png";
+                }
+                else{
                     immagine="/img/imgVeicoli/golfElettrica.png";
                 }
                 
