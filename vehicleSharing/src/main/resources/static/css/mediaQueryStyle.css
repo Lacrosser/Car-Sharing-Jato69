@@ -10,6 +10,24 @@
     background-color: #00B7C2;
     height: auto;
   }
+
+  .heroTitle2 {
+    font-size: 45px;
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 7.5rem;
+    height: auto;
+  }
+
+  .heroTitle3 {
+    font-size: 45px;
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 8.5rem;
+    height: auto;
+  }
  
   .heroSubtitle {
     font-size: 20px;
@@ -27,6 +45,23 @@
     padding: 0.75rem 0.75rem;
     color: white;
     background-color: #00B7C2;
+    height: auto;
+  }
+  .heroTitle2 {
+    font-size: 45px;
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 7.5rem;
+    height: auto;
+  }
+
+  .heroTitle3 {
+    font-size: 45px;
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 8.5rem;
     height: auto;
   }
   
@@ -49,6 +84,24 @@
     background-color: #00B7C2;
     height: auto;
   }
+
+  .heroTitle2 {
+    font-size: 45px;
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 7.5rem;
+    height: auto;
+  }
+
+  .heroTitle3 {
+    font-size: 45px;
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 8.5rem;
+    height: auto;
+  }
   
   .heroSubtitle {
     font-size: 65px;
@@ -66,6 +119,24 @@
     padding: 1rem 1rem;
     color: white;
     background-color: #00B7C2;
+    height: auto;
+  }
+
+  .heroTitle2 {
+    font-size: 80px;
+    padding: 1rem 1rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 23rem;
+    height: auto;
+  }
+
+  .heroTitle3 {
+    font-size: 80px;
+    padding: 1rem 1rem;
+    color: white;
+    background-color: #00B7C2;
+    width: 27rem;
     height: auto;
   }
   
