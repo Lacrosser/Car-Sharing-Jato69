@@ -70,7 +70,7 @@ function aggiungiVeicolo(){
 
     var veicolo = document.querySelector('#tipologia').value;
 
-    function Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato){
+    function Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine){
         this.veicolo = veicolo;
         this.modello = modello;
         this.colore = colore;
@@ -79,6 +79,7 @@ function aggiungiVeicolo(){
         this.disponibilita = disponibilita;
         this.posizione = posizione;
         this.prolungato = prolungato;
+        this.immagine=immagine;
     
     };
 
@@ -93,8 +94,31 @@ function aggiungiVeicolo(){
             var prolungatoCheck = document.querySelector('#prolungato');
             var posizione = document.querySelector('#posizione').value;
             var cilindrata = document.querySelector('#cilindrata').value;
+            var immagine;
             // Immagine
 
+
+            if(alimentazione==="ibrida"){
+
+                let randomNumber = Math.floor(Math.random() * 2) + 1;
+
+                if(randomNumber===1){
+                    immagine="/img/imgVeicoli/mercedesHybrida.png";
+
+                }else{
+                    immagine="/img/imgVeicoli/toyotaHybrida.png";
+                }
+
+            }else{
+                let randomNumber = Math.floor(Math.random() * 2) + 1;
+                if(randomNumber===1){
+                    immagine="/img/imgVeicoli/bmwElettrica.png";
+
+                }else{
+                    immagine="/img/imgVeicoli/golfElettrica.png";
+                }
+                
+            }
             
 
             if(prolungatoCheck.checked){
@@ -109,7 +133,7 @@ function aggiungiVeicolo(){
                 disponibilita = false;
             }
 
-            var auto = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato);
+            var auto = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine);
             
             if(modello != ""){
                 if(colore != ""){
@@ -156,7 +180,8 @@ function aggiungiVeicolo(){
             var disponibilitaCheck = document.querySelector('#disponibile');
             var prolungatoCheck = document.querySelector('#prolungato');
             var posizione = document.querySelector('#posizione').value;
-            var cilindrata = "500W"
+            var cilindrata = "500W";
+            var immagine="/img/imgVeicoli/scooter.png";
             // Immagine
             
 
@@ -172,7 +197,7 @@ function aggiungiVeicolo(){
                 disponibilita = false;
             }
 
-            var monopattino = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato);
+            var monopattino = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine);
 
             
 
@@ -203,7 +228,8 @@ function aggiungiVeicolo(){
             var disponibilitaCheck = document.querySelector('#disponibile');
             var prolungatoCheck = document.querySelector('#prolungato');
             var posizione = document.querySelector('#posizione').value;
-            var cilindrata = "0"
+            var cilindrata = "0";
+            var immagine="/img/imgVeicoli/bici.png";
             // Immagine
 
             if(prolungatoCheck.checked){
@@ -218,7 +244,7 @@ function aggiungiVeicolo(){
                 disponibilita = false;
             }
 
-            var bici = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato);
+            var bici = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine);
 
             if(posizione != ""){
 

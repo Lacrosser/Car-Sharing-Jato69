@@ -147,7 +147,20 @@ function creaTabella(listaVeicoli) {
   /*                             costruzione tabella                            */
   /* -------------------------------------------------------------------------- */
 
-  let datatable = new DataTable(table);
+  let datatable = new DataTable(table,{
+
+    "language": {
+      "sSearch": 'Cerca:',
+      "lengthMenu": "Mostra _MENU_ Record per pagina",
+      "zeroRecords": "Veicolo non trovato - Si prega di controllare la ricerca",
+      "info": "Questa è la pagina _PAGE_ di _PAGES_ del catalogo",
+      "infoEmpty": "Non ci sono veicoli in database",
+      "infoFiltered": "(Filtrato da _MAX_ record totali)",
+      'oPaginate': {
+        'sNext': 'Prossimo',
+        'sPrevious': 'Precedente'}
+
+  }});
   /* -------------------------------------------------------------------------- */
   /*                              costruzione reset                             */
   /* -------------------------------------------------------------------------- */
@@ -304,6 +317,34 @@ function Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita
 /*                                    Fetch                                   */
 /* -------------------------------------------------------------------------- */
 
+function fetchVeicoli() {
+  fetch(VEICOLIMAPPING)
+    .then(response => response.json())
+    .then(data => {
+
+
+
+      // while (tableBody.firstChild) {
+      //   deleteVecchio();
+      // }
+
+      // function deleteVecchio() {
+      //   while (tableBody.firstChild) {
+      //     tableBody.removeChild(tableBody.firstChild);
+      //   }
+      // }
+
+      creaTabella(data);
+
+
+      //funzione di creazione elementi
+
+    })
+
+};
+
+
+
 function putVeicoli(id) {
 
 
@@ -326,42 +367,13 @@ function putVeicoli(id) {
       console.log(response);
       console.log("Veicolo modificato");
 
-
-
-
-
-      fetchVeicoli();
+      // fetchVeicoli();
+      location.reload();
 
     });
 
 };
 
-
-function fetchVeicoli() {
-  fetch(VEICOLIMAPPING)
-    .then(response => response.json())
-    .then(data => {
-
-
-
-      while (tableBody.firstChild) {
-        deleteVecchio();
-      }
-
-      function deleteVecchio() {
-        while (tableBody.firstChild) {
-          tableBody.removeChild(tableBody.firstChild);
-        }
-      }
-
-      creaTabella(data);
-
-
-      //funzione di creazione elementi
-
-    })
-
-}
 
 function eliminaveicoli(id) {
   var url = VEICOLIMAPPING + "/" + id;
@@ -382,7 +394,8 @@ function eliminaveicoli(id) {
         console.log("Veicolo Eliminato");
   
   
-        fetchVeicoli();
+        // fetchVeicoli();
+        location.reload();
   
       }).catch(error => {
         console.error(error)

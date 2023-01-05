@@ -61,7 +61,7 @@ function getPrenotazione(prenotazioni) {
         });
     };
 
-    let deleting = document.querySelector("#eliminaModal");
+    let deleting = document.querySelector("#eliminaMod");
 
     deleting.addEventListener("click", function() {
 
@@ -70,7 +70,7 @@ function getPrenotazione(prenotazioni) {
 
         fetchdelete(idBottoneElimina);
 
-        location.reload();
+        // location.reload();
     });
 
 
@@ -108,7 +108,7 @@ function fetchprenotazione() {
 
 
 function fetchdelete(id) {
-
+    console.log("ho cancellato"+id);
 
     fetch(URL + '/' + id, {
             method: 'DELETE',
