@@ -76,8 +76,8 @@ function mostraVeicoli(listaVeicoli) {
       immagineSrc.setAttribute('alt', 'null');
       // immagineSrc.setAttribute('width', '120px');
       // immagineSrc.setAttribute('height', '90px');
-      immagineSrc.setAttribute('width', '200px');
-      immagineSrc.setAttribute('height', 'auto');
+      // immagineSrc.setAttribute('width', '200px');
+      // immagineSrc.setAttribute('height', 'auto');
       immagineSrc.setAttribute('class','image');
 
       immagineDisponibile.appendChild(immagineSrc);
@@ -91,7 +91,7 @@ function mostraVeicoli(listaVeicoli) {
       a.appendChild(descrizioneDisponibile);
 
       var cartaDisponibile = document.createElement('div');
-      cartaDisponibile.setAttribute('class', 'cartaDisponibile col-11 col-lg-6 d-flex flex-column');
+      cartaDisponibile.setAttribute('class', 'cartaDisponibile col-lg-6 d-flex flex-column');
 
       cartaDisponibile.appendChild(a);
 
@@ -150,8 +150,9 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
       var immagineSrc = document.createElement('img');
       immagineSrc.setAttribute('src', mezzo.immagine);
       immagineSrc.setAttribute('alt', 'null');
-      immagineSrc.setAttribute('height', '90px');
-      immagineSrc.setAttribute('width', '120px');
+      // immagineSrc.setAttribute('height', '90px');
+      // immagineSrc.setAttribute('width', '120px');
+      immagineSrc.setAttribute('class','image');
 
       immagineNoDisp.appendChild(immagineSrc);
       // console.log(mezzo.immagine);
@@ -165,7 +166,7 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
       a.appendChild(descrizione);
 
       var cartaNoDisponibile = document.createElement('div');
-      cartaNoDisponibile.setAttribute('class', 'cartaNoDisponibile col-11 col-lg-6 d-flex flex-column');
+      cartaNoDisponibile.setAttribute('class', 'cartaNoDisponibile col-lg-6 d-flex flex-column');
 
       cartaNoDisponibile.appendChild(a);
 
