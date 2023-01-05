@@ -177,7 +177,14 @@
     margin-left: 9rem;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 ABBONAMENTI                                */
+/* -------------------------------------------------------------------------- */
 
+
+.descrizioneAbbonamento{
+    color: white;
+}
 
 
 
@@ -398,11 +405,15 @@
 }
 
 .descrizione {
+    color: #128494;
     padding: .25rem 1rem;
+    text-decoration: none;
     background: #00b8c21a;
 }
 
+
 .descrizioneDisponibile {
+    color: white;
     transition: 0.2s;
     height: 9rem;
     background: linear-gradient(270deg, #128594, #00b7c2);
@@ -415,7 +426,20 @@
     color: #00b7c2;
 }
 
+.cartaDisponibile{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.cartaDisponibile a{
+    text-decoration: none;
+}
+.cartaNoDisponibile a{
+    text-decoration: none;
+}
 .cartaNoDisponibile {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     cursor: not-allowed;
 }
 
