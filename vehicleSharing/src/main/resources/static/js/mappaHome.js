@@ -69,7 +69,7 @@ function creaMappa(veicoli) {
 
 const ctx = document.getElementById('myChart');
 const image = new Image();
-image.src = "";
+image.src = '';
 const plugin = {
   id: 'customCanvasBackgroundImage',
   beforeDraw: (chart) => {
@@ -109,6 +109,7 @@ fetch(VEICOLIMAPPING)
     const chartData = {
       labels: ['Monopattini', 'Biciclette', 'Auto Elettriche', 'Auto Ibride'],
       datasets: [{
+        label: 'kg CO2 risparmiati: ',
         data: [mono, bici, ele, ibrida], // imposta i valori dei dati sulla base della risposta della richiesta
         backgroundColor: [
           'rgba(0, 183, 194, .2)',
@@ -136,6 +137,11 @@ fetch(VEICOLIMAPPING)
       data: chartData,
       options: {
         plugins: {
+          title:{
+            display: true,
+            text: 'Kg CO2 risparmiati',
+            align: 'end'
+          },
           legend: {
             position: 'left',
             align: 'start',
