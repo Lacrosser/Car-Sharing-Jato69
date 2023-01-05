@@ -127,7 +127,7 @@ function checherReg() {
 
     } else
         console.log("le password sono diverse")
-        return false;
+    return false;
 
 }
 

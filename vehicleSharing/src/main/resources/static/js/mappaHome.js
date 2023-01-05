@@ -1,7 +1,20 @@
 const VEICOLIMAPPING = "http://localhost:9069/api/veicoli";
 
 
+
+
+
+
 window.addEventListener("load", function () {
+
+
+  const loadingScreen = document.querySelector('#loading-screen');
+  loadingScreen.style.display = 'none';
+
+  if (sessionStorage.getItem("username") != null || localStorage.getItem("username") != null) {
+      var banner = document.querySelector('#banner');
+      banner.setAttribute('hidden', '');
+  };
 
   stampaMappa();
   var timeoutId = setTimeout(function() {
