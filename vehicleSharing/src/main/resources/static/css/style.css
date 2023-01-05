@@ -75,7 +75,7 @@
     cursor: not-allowed;
 }
 
-.whiteText {
+.text-white {
     color: white;
 }
 
@@ -94,7 +94,8 @@
     color: #094149;
     font-size: 50px !important;
 }
-.bannerPromoText{
+
+.bannerPromoText {
     color: #094148;
 }
 
@@ -221,7 +222,7 @@
     height: 300px;
 }
 
-.h-15{
+.h-15 {
     height: 15rem;
 }
 
@@ -774,14 +775,16 @@ ul li i:after {
 /*                                 Area utente                                */
 /* -------------------------------------------------------------------------- */
 
-.colBg{
-  background: #00b8c241;
+.colBg {
+    background: #00b8c241;
 }
 
 
-.fs-2-5{
-  font-size: 2.5rem;
-};
+.fs-2-5 {
+    font-size: 2.5rem;
+}
+
+;
 
 
 /* -------------------------------------------------------------------------- */
@@ -790,40 +793,41 @@ ul li i:after {
 
 
 
-.offcanvas offcanvas-end bg-dark text-bg-dark{
+.offcanvas offcanvas-end bg-dark text-bg-dark {
     width: 15rem
-    }
-    
-    .table table-striped{
-    color: #128594;
-    }
-    
-    .primaryText mt-5 mb-5{
-        font-size: large;
-    }
-    
-    
-    .primaryText mt-5 mb-5 .m-1{
-        font-size: large;
-    }
-
-.mt-5 mb-5 ps-3 pe-3{
-    background-color: #00B7C2; border: 4px solid #128494;
 }
 
-.pt-4 pb-4 text-center whiteText{
+.table table-striped {
+    color: #128594;
+}
+
+.primaryText mt-5 mb-5 {
+    font-size: large;
+}
+
+
+.primaryText mt-5 mb-5 .m-1 {
+    font-size: large;
+}
+
+.mt-5 mb-5 ps-3 pe-3 {
+    background-color: #00B7C2;
+    border: 4px solid #128494;
+}
+
+.pt-4 pb-4 text-center text-white {
     font-size: 40px;
 }
 
-#registrati .p text-white pe-1{
+#registrati .p text-white pe-1 {
     text-decoration: underline;
 }
 
 
-.cookie d-flex justify-content-center{
+.cookie d-flex justify-content-center {
     background-color: #40424b;
 }
 
-.cookie d-flex justify-content-center{
+.cookie d-flex justify-content-center {
     background-color: #40424b;
 }
