@@ -951,7 +951,7 @@ body {
     z-index: 9999;
 }
 
-.offcanvas offcanvas-end bg-dark text-bg-dark {
+/* .offcanvas offcanvas-end bg-dark text-bg-dark {
     width: 15rem
 }
 
@@ -996,4 +996,4 @@ body {
 
 .formContainer {
     min-height: 20rem;
-}
+} */
