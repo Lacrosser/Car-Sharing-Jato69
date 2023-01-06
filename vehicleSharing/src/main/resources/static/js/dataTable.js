@@ -216,20 +216,6 @@ function creaTabella(listaVeicoli) {
 
 function scriviCampi(data) {
 
-    /* -------------------------------------------------------------------------- */
-    /*                                    campi                                   */
-    /* -------------------------------------------------------------------------- */
-
-    // let id = document.querySelector("#id");
-    // let tipologia = document.querySelector("#tipo");
-    // let alimentazione = document.querySelector("#alimentazione");
-    // let modello = document.querySelector("#modello");
-    // let colore = document.querySelector("#colore");
-    // let cilindrata = document.querySelector("#cilindrata");
-    // let noleggio = document.querySelector("#disponibile");
-    // let noleggioP = document.querySelector("#prolungato");
-    // let posizione = document.querySelector("#posizione");
-    // let foto = document.querySelector("#foto");
 
     /* -------------------------------------------------------------------------- */
     /*                             form per nascondere                            */
@@ -242,20 +228,7 @@ function scriviCampi(data) {
     let cilForm = document.querySelector("#cilindrataForm");
     let fotoForm = document.querySelector("#fotoForm");
 
-    // modello.removeAttribute("value");
-    // colore.removeAttribute("value");
-    // cilindrata.removeAttribute("value");
-    // id.removeAttribute("value");
-    // alimentazione.removeAttribute("value");
-    // posizione.removeAttribute("value");
 
-    //id.setAttribute("value", data.id);
-    // tipologia.setAttribute("value", data.veicolo);
-    //alimentazione.setAttribute("value", data.alimentazione);
-    //modello.setAttribute("value", data.modello);
-    //colore.setAttribute("value", data.colore);
-    //cilindrata.setAttribute("value", data.cilindrata);
-    //posizione.setAttribute("value", data.posizione);
 
     id.value = data.id;
     tipologia.value = data.veicolo;
@@ -328,20 +301,8 @@ function fetchVeicoli() {
 
 
 
-            // while (tableBody.firstChild) {
-            //   deleteVecchio();
-            // }
-
-            // function deleteVecchio() {
-            //   while (tableBody.firstChild) {
-            //     tableBody.removeChild(tableBody.firstChild);
-            //   }
-            // }
 
             creaTabella(data);
-
-
-            //funzione di creazione elementi
 
         })
 
@@ -354,8 +315,8 @@ function fetchVeicoloSingolo(id) {
         .then(response => response.json())
         .then(data => {
 
-          eliminaveicoli(data);
-        
+            eliminaveicoli(data);
+
         })
         .catch(error => console.error(error))
 }
@@ -395,13 +356,13 @@ function putVeicoli(id) {
 function eliminaveicoli(data) {
 
 
-    var url = VEICOLIMAPPING + "/" +data.id;
+    var url = VEICOLIMAPPING + "/" + data.id;
 
-
+    console.log(data.disponibilita);
 
     //eseguire il delete solo se il veicolo è prenotabile
 
-    if (!data.disponibilita) {
+    if (data.disponibilita) {
 
         fetch(url, {
                 method: 'DELETE', // Imposta il metodo su put

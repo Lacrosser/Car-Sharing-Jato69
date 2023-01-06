@@ -816,3 +816,58 @@ function disponibilita() {
 //   });
 
 // }
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  datatable                                 */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+    /*                                    campi                                   */
+    /* -------------------------------------------------------------------------- */
+
+    // let id = document.querySelector("#id");
+    // let tipologia = document.querySelector("#tipo");
+    // let alimentazione = document.querySelector("#alimentazione");
+    // let modello = document.querySelector("#modello");
+    // let colore = document.querySelector("#colore");
+    // let cilindrata = document.querySelector("#cilindrata");
+    // let noleggio = document.querySelector("#disponibile");
+    // let noleggioP = document.querySelector("#prolungato");
+    // let posizione = document.querySelector("#posizione");
+    // let foto = document.querySelector("#foto");
+
+
+    // modello.removeAttribute("value");
+    // colore.removeAttribute("value");
+    // cilindrata.removeAttribute("value");
+    // id.removeAttribute("value");
+    // alimentazione.removeAttribute("value");
+    // posizione.removeAttribute("value");
+
+    //id.setAttribute("value", data.id);
+    // tipologia.setAttribute("value", data.veicolo);
+    //alimentazione.setAttribute("value", data.alimentazione);
+    //modello.setAttribute("value", data.modello);
+    //colore.setAttribute("value", data.colore);
+    //cilindrata.setAttribute("value", data.cilindrata);
+    //posizione.setAttribute("value", data.posizione);
+
+    /* -------------------------------------------------------------------------- */
+    /*                                    fetch                                   */
+    /* -------------------------------------------------------------------------- */
+      // while (tableBody.firstChild) {
+            //   deleteVecchio();
+            // }
+
+            // function deleteVecchio() {
+            //   while (tableBody.firstChild) {
+            //     tableBody.removeChild(tableBody.firstChild);
+            //   }
+            // }
+
+            
+            
+            //funzione di creazione elementi
