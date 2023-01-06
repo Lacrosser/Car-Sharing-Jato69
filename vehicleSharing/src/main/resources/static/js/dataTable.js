@@ -69,7 +69,7 @@ function creaTabella(listaVeicoli) {
 
 
 
-        tdDataInserimento.textContent = veicolo.dataInserimento.substring(0,10)+" "+veicolo.dataInserimento.substring(11,16);
+        tdDataInserimento.textContent = veicolo.dataInserimento.substring(0,10)+"  "+veicolo.dataInserimento.substring(11,16);
 
 
         if(veicolo.disponibilita){
