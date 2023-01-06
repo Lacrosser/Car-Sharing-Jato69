@@ -18,7 +18,8 @@
 }
 
 .colorino {
-    color: #00B7C2;
+    color: #00838a;
+    
 }
 
 /* css */
@@ -138,6 +139,7 @@
     color: white;
     background-color: #00B7C2;
     height: auto;
+    text-shadow: 5px 5px #000000
 }
 
 .heroTitle2 {
@@ -171,6 +173,7 @@
 .heroSubtitle3 {
     font-size: 70px;
     color: white;
+    text-shadow: 4px 4px #000000
 }
 
 
