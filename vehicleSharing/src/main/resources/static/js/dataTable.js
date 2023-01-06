@@ -65,9 +65,27 @@ function creaTabella(listaVeicoli) {
         tdAlimentazione.textContent = veicolo.alimentazione;
         tdCilindrata.textContent = veicolo.cilindrata;
         tdColore.textContent = veicolo.colore;
-        tdDataInserimento.textContent = veicolo.dataInserimento;
-        tdNoleggio.textContent = veicolo.disponibilita;
-        tdNoleggioP.textContent = veicolo.prolungato;
+
+
+
+
+        tdDataInserimento.textContent = veicolo.dataInserimento.substring(0,10)+" "+veicolo.dataInserimento.substring(11,16);
+
+
+        if(veicolo.disponibilita){
+           fino="Si"
+        }else {
+          fino="No"
+        };
+
+
+        tdNoleggio.textContent = fino;
+
+        if(veicolo.prolungato){
+          banana="Si"
+       }else banana="No"
+
+        tdNoleggioP.textContent = banana;
 
 
         btnModifica.setAttribute('id', "bottoneMOD");

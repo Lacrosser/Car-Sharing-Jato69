@@ -46,13 +46,13 @@ function getPrenotazione(prenotazioni) {
     let eliminaModale = document.querySelector("#eliminaModal");
     let btn = document.querySelectorAll("button");
 
+    // Add new event listeners to buttons
     btn.forEach(button => {
         button.addEventListener("click", function() {
             sessionStorage.setItem('idPrenotazione', this.id);
             eliminaModale.style.display = 'block';
         });
     });
-
 
 
     var closeButtons = document.querySelectorAll('.btn-close');
@@ -63,23 +63,25 @@ function getPrenotazione(prenotazioni) {
         });
     };
 
-    let deleting = document.querySelector("#eliminaMod");
-
-    deleting.addEventListener("click", function() {
-
-        let idBottoneElimina = sessionStorage.getItem("idPrenotazione")
-        console.log(idBottoneElimina);
-
-        fetchdelete(idBottoneElimina);
-
-        // location.reload();
-    });
-
-
+    
+    
 };
 
 
 
+let deleting = document.querySelector("#eliminaBottone");
+
+deleting.removeEventListener("click", () => {});
+
+deleting.addEventListener("click", function() {
+
+    let idBottoneElimina = sessionStorage.getItem("idPrenotazione")
+    console.log(idBottoneElimina);
+
+    fetchdelete(idBottoneElimina);
+
+    // location.reload();
+});
 
 
 
@@ -106,37 +108,26 @@ function fetchprenotazione() {
             // console.log(response);
             const prenotazioniFiltrate = response.filter(prenotazione => prenotazione.archivioUtenti.id === Number(id));
 
-
-
-
-            // console.log(prenotazioniFiltrate);
             prenotazione.innerHTML = "";
             getPrenotazione(prenotazioniFiltrate);
-            // var ultimaPren=document.querySelector("#cardina");
-            // var last  = document.querySelector('[#cardina]:last-child');
+
 
 
             /* -------------------------------------------------------------------------- */
             /*              FUNZIONE PER METTERE L'ULTIMO ELEMENTO COME PRIMO             */
             /* -------------------------------------------------------------------------- */
-            let nodeList = document.querySelectorAll("#cardina")
-
-            if (nodeList.length != 0) {
-                var array = Array.prototype.slice.call(nodeList);
-                var last = array.pop();
+            let nodeList = document.querySelectorAll("#cardina");
+            if (nodeList.length !== 0) {
+                let array = Array.prototype.slice.call(nodeList);
+                let last = array.pop();
                 last.classList.add("class", "colPrimaPrenotazione");
                 array.unshift(last);
 
+                let parent = nodeList[0].parentNode;
+                array.forEach(element => {
+                    parent.appendChild(element);
+                });
             }
-
-            let parent = nodeList[0].parentNode;
-            array.forEach(element => {
-                parent.appendChild(element);
-            });
-
-            //cancellazione tabella
-            //funzione di creazione tabella
-
         })
 };
 
