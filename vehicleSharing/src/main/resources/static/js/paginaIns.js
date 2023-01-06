@@ -298,9 +298,11 @@ function fetchVeicolo(veicolo) {
             },
             body: JSON.stringify(veicolo) // Converti i dati in formato JSON e impostali come corpo della richiesta
         })
-        .then(response => response.json()) // Estrai il JSON dalla risposta
-        .then(data => console.log(data)) // Esegui qualcosa con i dati estratti
-        .catch(error => console.error(error)); // Gestisci eventuali errori
+        .then(data => data.json) // Esegui qualcosa con i dati estratti
+        .then(response => {
+            console.log(response);
+        }) // Estrai il JSON dalla risposta
+        // .catch(error => console.error(error)); // Gestisci eventuali errori
 
 }
 

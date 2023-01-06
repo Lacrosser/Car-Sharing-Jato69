@@ -109,6 +109,7 @@
                             <th>Data Inserimento</th>
                             <th>Disponibiltà al Noleggio</th>
                             <th>Disponibiltà al Noleggio Prolungato</th>
+                            <th>Posizione Attuale</th>
                             <th>Modifica</th>
                             <th>Elimina</th>
                         </tr>
@@ -264,7 +265,7 @@
                                     </div>
                                 </div>
 
-                                <<div class="row" id="modelloForm">
+                                <div class="row" id="modelloForm">
                                     <div class="secondaryText col-4 d-flex justify-content-end">
                                         <h3>Modello</h3>
                                     </div>
@@ -276,6 +277,8 @@
                                             <option value="Smart FortTwo EQ 2016" data-alimentazione="elettrica">Smart FortTwo EQ 2016 Elettrica</option>
                                             <option value="Mercedes-Benz GLC Class 2018" data-alimentazione="ibrida">Mercedes-Benz GLC Class 2018 Ibrida</option>
                                             <option value="Toyota C-HR 2021" data-alimentazione="ibrida">Toyota C-HR 2021 Ibrida</option>
+                                            <option value="Segway Ninebot" data-alimentazione="monopattino">Segway Ninebot</option>
+                                            <option value="Flyer Uproc X" data-alimentazione="bicicletta">Flyer Uproc X</option>
                                         </select>
                                     </div>
                                 </div>
@@ -309,12 +312,20 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" id="posizioneForm">
                                     <div class="secondaryText col-4 d-flex justify-content-end">
                                         <h4>Posizione</h4>
                                     </div>
                                     <div class="inputForm col-6">
                                         <input type="text" class="form-control" id="posizione">
+                                    </div>
+                                </div>
+                                <div class="row" hidden id="immagineForm">
+                                    <div class="secondaryText col-4 d-flex justify-content-end">
+                                        <h4>Immagine</h4>
+                                    </div>
+                                    <div class="inputForm col-6">
+                                        <input type="text" class="form-control" id="immagine">
                                     </div>
                                 </div>
                                 <!-- <div class="row mt-4 mb-4 secondaryText" id="fotoForm">

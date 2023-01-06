@@ -1,11 +1,4 @@
 const VEICOLIMAPPING = "http://localhost:9069/api/veicoli";
-const GETVEICOLIBYID = "http://localhost:9069/api/veicoli/"; //inserire id qui per completare la query
-const GETVEICOLIDISPONIBILITA = "http://localhost:9069/api/veicoli/status/" //inserire la disponibiltà per completare la query true/false
-const GETVEICOLOTIPO = "http://localhost:9069/api/veicoli/tipo/" //inserire il tipo tra /AUTO/BICICLETTA/MONOPATTINO
-const GETVEICOLOALIMENTAZIONE = "http://localhost:9069/api/veicoli/alimentazione/" //inserire la stringa di alimentazione
-const PUTVEICOLO = "http://localhost:9069/api/veicoli/" //inserire id per completare la query
-const DELETEVEICOLO = "http://localhost:9069/api/veicoli/" //inserire id per completare la query
-
 
 
 let table = document.querySelector("#tabella");
@@ -13,8 +6,9 @@ let tableBody = document.querySelector("#tabella tbody");
 let error = document.querySelector("#error");
 
 
-// var modal1 = bootstrap.Modal.getOrCreateInstance('#modificaModal');
-// var modal2 = bootstrap.Modal.getOrCreateInstance('#eliminaModal');
+/* -------------------------------------------------------------------------- */
+/*                              Selettori valori                              */
+/* -------------------------------------------------------------------------- */
 
 let id = document.querySelector("#id");
 let tipologia = document.querySelector("#tipo");
@@ -25,7 +19,21 @@ let cilindrata = document.querySelector("#cilindrata");
 let disponibilita = document.querySelector("#disponibile");
 let prolungato = document.querySelector("#prolungato");
 let posizione = document.querySelector("#posizione");
-let foto = document.querySelector("#foto");
+let immagine = document.querySelector("#immagine");
+// let foto = document.querySelector("#foto");
+
+
+/* -------------------------------------------------------------------------- */
+/*                             form                                        */
+/* -------------------------------------------------------------------------- */
+
+let tipform = document.querySelector("#tipoForm");
+let aliform = document.querySelector("#alimentazioneForm");
+let modForm = document.querySelector("#modelloForm");
+let coloreForm = document.querySelector("#coloreForm");
+let cilForm = document.querySelector("#cilindrataForm");
+let posForm = document.querySelector("#posizioneForm");
+
 
 
 
@@ -52,6 +60,9 @@ function creaTabella(listaVeicoli) {
         let tdDataInserimento = document.createElement("td");
         let tdNoleggio = document.createElement("td");
         let tdNoleggioP = document.createElement("td");
+        let tdPosizione = document.createElement("td");
+
+
         let tdModifica = document.createElement('td');
         let tdElimina = document.createElement('td');
         let btnModifica = document.createElement('button');
@@ -69,22 +80,24 @@ function creaTabella(listaVeicoli) {
 
 
 
-        tdDataInserimento.textContent = veicolo.dataInserimento.substring(0,10) + " " + veicolo.dataInserimento.substring(11,19);
+        tdDataInserimento.textContent = veicolo.dataInserimento.substring(0, 10) + " " + veicolo.dataInserimento.substring(11, 19);
 
-        if(veicolo.disponibilita){
-           fino="Si"
-        }else {
-          fino="No"
+        if (veicolo.disponibilita) {
+            fino = "Si"
+        } else {
+            fino = "No"
         };
 
 
         tdNoleggio.textContent = fino;
 
-        if(veicolo.prolungato){
-          banana="Si"
-       }else banana="No"
+        if (veicolo.prolungato) {
+            banana = "Si"
+        } else banana = "No"
 
         tdNoleggioP.textContent = banana;
+
+        tdPosizione.textContent = veicolo.posizione;
 
 
         btnModifica.setAttribute('id', "bottoneMOD");
@@ -115,6 +128,7 @@ function creaTabella(listaVeicoli) {
         tr.appendChild(tdDataInserimento);
         tr.appendChild(tdNoleggio);
         tr.appendChild(tdNoleggioP);
+        tr.appendChild(tdPosizione);
         tr.appendChild(tdModifica);
         tr.appendChild(tdElimina);
 
@@ -234,18 +248,7 @@ function creaTabella(listaVeicoli) {
 function scriviCampi(data) {
 
 
-    /* -------------------------------------------------------------------------- */
-    /*                             form per nascondere                            */
-    /* -------------------------------------------------------------------------- */
-
-    let tipform = document.querySelector("#tipoForm");
-    let aliform = document.querySelector("#alimentazioneForm");
-    let modForm = document.querySelector("#modelloForm");
-    let coloreForm = document.querySelector("#coloreForm");
-    let cilForm = document.querySelector("#cilindrataForm");
-    let fotoForm = document.querySelector("#fotoForm");
-
-
+    // let fotoForm = document.querySelector("#fotoForm");
 
     id.value = data.id;
     tipologia.value = data.veicolo;
@@ -256,33 +259,10 @@ function scriviCampi(data) {
     disponibilita.checked = data.disponibilita;
     prolungato.checked = data.prolungato;
     posizione.value = data.posizione;
+    immagine.value = data.immagine;
 
-
-    if (data.veicolo == "AUTO") {
-
-        tipform.removeAttribute("hidden", "hidden");
-        aliform.removeAttribute("hidden", "hidden");
-        modForm.removeAttribute("hidden", "hidden");
-        coloreForm.removeAttribute("hidden", "hidden");
-        cilForm.removeAttribute("hidden", "hidden");
-        fotoForm.removeAttribute("hidden", "hidden");
-
-
-    } else if (data.veicolo == "MONOPATTINO" || data.veicolo == "BICICLETTA") {
-
-
-
-        tipform.setAttribute("hidden", "hidden");
-        aliform.setAttribute("hidden", "hidden");
-        modForm.setAttribute("hidden", "hidden");
-        coloreForm.setAttribute("hidden", "hidden");
-        cilForm.setAttribute("hidden", "hidden");
-        fotoForm.setAttribute("hidden", "hidden");
-
-
-    }
-
-
+    mostraModelli();
+    impostaDati();
 
 
 
@@ -340,13 +320,16 @@ function fetchVeicoloSingolo(id) {
 
 
 
+
+
+
 function putVeicoli(id) {
 
 
     var url = VEICOLIMAPPING + "/" + id;
 
 
-    let shazam = new Auto(tipologia.value, modello.value, colore.value, cilindrata.value, alimentazione.value, disponibilita.checked, posizione.value, prolungato.checked, foto.value);
+    let shazam = new Auto(tipologia.value, modello.value, colore.value, cilindrata.value, alimentazione.value, disponibilita.checked, posizione.value, prolungato.checked, immagine.value);
 
 
     fetch(url, {
@@ -402,5 +385,113 @@ function eliminaveicoli(data) {
         error.innerHTML = "Non puoi cancellare un veicolo quando è prenotato"
     }
 
-
 };
+
+
+alimentazione.addEventListener('change', mostraModelli);
+
+
+
+
+function mostraModelli() {
+
+    const selectedValue = alimentazione.value;
+    // Set the value of the second select element to the selected value of the first select element
+    // selectMod.value = selectedValue;
+    modello.value = "";
+    // Cicla attraverso tutte le opzioni del secondo select
+    Array.from(modello.options).forEach(option => {
+        // Se il valore dell'opzione corrente corrisponde al valore selezionato del primo select, rimuovi la classe hidden
+        if (option.getAttribute('data-alimentazione') === selectedValue) {
+            option.classList.remove('hidden');
+        } else {
+            // Altrimenti, aggiungi la classe hidden
+            option.classList.add('hidden');
+        }
+    });
+
+}
+
+
+
+tipologia.addEventListener("change", impostaDati);
+
+
+function impostaDati() {
+    if (tipologia.value == "AUTO") {
+        // tipform.removeAttribute("hidden", "hidden");
+        aliform.removeAttribute("hidden", "hidden");
+        modForm.removeAttribute("hidden", "hidden");
+        coloreForm.removeAttribute("hidden", "hidden");
+        cilForm.removeAttribute("hidden", "hidden");
+        switch (modello.value) {
+            case "BMW I3-2007":
+                immagine.value = "/img/imgVeicoli/bmwElettrica.png";
+                immagine.setAttribute("value","/img/imgVeicoli/bmwElettrica.png");
+                break;
+            case "Golf GTE-2019":
+                immagine.value = "/img/imgVeicoli/golfElettrica.png";
+                immagine.setAttribute("value","/img/imgVeicoli/golfElettrica.png");
+                break;
+            case "Smart FortTwo EQ 2016":
+                immagine.value = "/img/imgVeicoli/smartElettrica.png";
+                immagine.setAttribute("value","/img/imgVeicoli/smartElettrica.png");
+                break;
+            case "Mercedes-Benz GLC Class 2018":
+                immagine.value = "/img/imgVeicoli/mercedesHybrida.png";
+                immagine.setAttribute("value","/img/imgVeicoli/mercedesHybrida.png");
+                break;
+            case "Toyota C-HR 2021":
+                immagine.value = "/img/imgVeicoli/toyotaHybrida.png";
+                immagine.setAttribute("value","/img/imgVeicoli/toyotaHybrida.png");
+                break;
+            default:
+                break;
+        }
+        // fotoForm.removeAttribute("hidden", "hidden");
+    } else if (tipologia.value == "MONOPATTINO" || tipologia.value == "BICICLETTA") {
+        // tipform.setAttribute("hidden", "hidden");
+        // fotoForm.setAttribute("hidden", "hidden");
+        aliform.setAttribute("hidden", "hidden");
+        modForm.setAttribute("hidden", "hidden");
+        coloreForm.setAttribute("hidden", "hidden");
+        cilForm.setAttribute("hidden", "hidden");
+
+        if (tipologia.value == "MONOPATTINO") {
+
+            immagine.value = "/img/imgVeicoli/scooter.png";
+            immagine.setAttribute("value","/img/imgVeicoli/scooter.png");
+
+            cilindrata.value = "600 Watt";
+            cilindrata.setAttribute('value', '600 Watt');
+
+            alimentazione.value = "elettrica";
+            alimentazione.setAttribute('value', 'elettrica');
+
+            modello.value = "Segway Ninebot";
+            modello.setAttribute('value', 'Segway Ninebot');
+
+            colore.value = "Bianca";
+            colore.setAttribute('value', 'Bianca');
+
+        } else {
+
+            immagine.value = "/img/imgVeicoli/bici.png";
+            immagine.setAttribute("value","/img/imgVeicoli/bici.png");
+
+            cilindrata.value = "500W";
+            cilindrata.setAttribute('value', '500 Watt');
+
+            alimentazione.value = "elettrica";
+            alimentazione.setAttribute('value', 'elettrica');
+
+            modello.value = "Flyer Uproc X";
+            modello.setAttribute('value', 'Flyer Uproc X');
+            
+
+            colore.value = "Bianco";
+            colore.setAttribute('value', 'Bianca');
+
+        }
+    }
+}
