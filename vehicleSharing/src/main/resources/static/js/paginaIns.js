@@ -1,4 +1,4 @@
-var selectBtn = document.querySelector('#selectBtn');
+// var selectBtn = document.querySelector('#selectBtn');
 var formVeicolo = document.querySelector('#formVeicolo');
 
 var alimentazioneForm = document.querySelector('#alimentazioneForm');
@@ -11,26 +11,36 @@ var contenutoModal = document.querySelector('#contenutoModal');
 var titoloModal = document.querySelector('#titoloModal');
 var img = document.querySelector('#imgForm');
 
-// Aggiungi veicolo
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                              Aggiungi veicolo                              */
+/* -------------------------------------------------------------------------- */
 
 var aggiungiBtn = document.querySelector('#aggiungi');
+var selezionaTipo = document.querySelector('#tipologia');
 
 
 
-function verificaSelect(){
+function verificaSelect() {
 
     var selectTipo = document.querySelector('#tipologia').value;
 
+
     var tipologia = null;
 
-    if(selectTipo == 0){
+    if (selectTipo == 0) {
 
         formVeicolo.setAttribute('hidden','');
         img.classList.remove('d-none');
 
-    } else if (selectTipo == "AUTO"){
+    } else if (selectTipo == "AUTO") {
 
-        //form AUTO
+        /* -------------------------------------------------------------------------- */
+        /*                                  Form AUTO                                 */
+        /* -------------------------------------------------------------------------- */
         tipologia = "AUTO";
         formVeicolo.removeAttribute("hidden");
         alimentazioneForm.removeAttribute('hidden');
@@ -40,27 +50,35 @@ function verificaSelect(){
         cilindrataForm.removeAttribute('hidden');
         img.classList.add('d-none');
 
-    } else if (selectTipo == "MONOPATTINO"){
 
-        //form MONOPATTINO
+
+
+
+    } else if (selectTipo == "MONOPATTINO") {
+
+        /* -------------------------------------------------------------------------- */
+        /*                              Form MONOPATTINO                              */
+        /* -------------------------------------------------------------------------- */
         tipologia = "MONOPATTINO";
         formVeicolo.removeAttribute('hidden');
-        alimentazioneForm.setAttribute('hidden','');
-        modelloForm.setAttribute('hidden','');
-        coloreForm.setAttribute('hidden','');
+        alimentazioneForm.setAttribute('hidden', '');
+        modelloForm.setAttribute('hidden', '');
+        coloreForm.setAttribute('hidden', '');
         // fotoForm.setAttribute('hidden','');
         cilindrataForm.setAttribute('hidden','');
         img.classList.add('d-none');
 
 
-    } else if (selectTipo == "BICICLETTA"){
+    } else if (selectTipo == "BICICLETTA") {
 
-        //form bicicletta
+        /* -------------------------------------------------------------------------- */
+        /*                               form bicicletta                              */
+        /* -------------------------------------------------------------------------- */
         tipologia = "BICICLETTA";
         formVeicolo.removeAttribute('hidden');
-        alimentazioneForm.setAttribute('hidden','');
-        modelloForm.setAttribute('hidden','');
-        coloreForm.setAttribute('hidden','');
+        alimentazioneForm.setAttribute('hidden', '');
+        modelloForm.setAttribute('hidden', '');
+        coloreForm.setAttribute('hidden', '');
         // fotoForm.setAttribute('hidden','');
         cilindrataForm.setAttribute('hidden','');
         img.classList.add('d-none');
@@ -71,11 +89,11 @@ function verificaSelect(){
 
 }
 
-function aggiungiVeicolo(){
+function aggiungiVeicolo() {
 
     var veicolo = document.querySelector('#tipologia').value;
 
-    function Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine){
+    function Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato, immagine) {
         this.veicolo = veicolo;
         this.modello = modello;
         this.colore = colore;
@@ -84,14 +102,14 @@ function aggiungiVeicolo(){
         this.disponibilita = disponibilita;
         this.posizione = posizione;
         this.prolungato = prolungato;
-        this.immagine=immagine;
-    
+        this.immagine = immagine;
+
     };
 
     switch (veicolo) {
         case "AUTO":
-            
-            
+
+
             var alimentazione = document.querySelector('#alimentazione').value;
             var modello = document.querySelector('#modello').value;
             var colore = document.querySelector('#colore').value;
@@ -103,159 +121,149 @@ function aggiungiVeicolo(){
             // Immagine
 
 
-            if(alimentazione==="ibrida"){
 
-                let randomNumber = Math.floor(Math.random() * 2) + 1;
+            switch (modello) {
+                case "BMW I3-2007":
+                    immagine = "/img/imgVeicoli/bmwElettrica.png";
+                    break;
+                case "Golf GTE-2019":
+                    immagine = "/img/imgVeicoli/golfElettrica.png";
+                    break;
+                case "Smart FortTwo EQ 2016":
+                    immagine = "/img/imgVeicoli/smartElettrica.png";
+                    break;
+                case "Mercedes-Benz GLC Class 2018":
+                    immagine = "/img/imgVeicoli/mercedesHybrida.png";
+                    break;
+                case "Toyota C-HR 2021":
+                    immagine = "/img/imgVeicoli/toyotaHybrida.png";
+                    break;
 
-                if(randomNumber===1){
-                    immagine="/img/imgVeicoli/mercedesHybrida.png";
-
-                }else{
-                    immagine="/img/imgVeicoli/toyotaHybrida.png";
-                }
-
-            }else{
-                let randomNumber = Math.floor(Math.random() * 3) + 1;
-                if(randomNumber===1){
-                    immagine="/img/imgVeicoli/bmwElettrica.png";
-
-                }else if(randomNumber===2)
-                {
-                    immagine="/img/imgVeicoli/smartElettrica.png";
-                }
-                else{
-                    immagine="/img/imgVeicoli/golfElettrica.png";
-                }
-                
+                default:
+                    break;
             }
-            
 
-            if(prolungatoCheck.checked){
+
+            if (prolungatoCheck.checked) {
                 prolungato = true;
             } else {
                 prolungato = false;
             }
 
-            if(disponibilitaCheck.checked){
+            if (disponibilitaCheck.checked) {
                 disponibilita = true;
             } else {
                 disponibilita = false;
             }
 
-            var auto = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine);
-            
-            if(modello != ""){
-                if(colore != ""){
-                    if(cilindrata != ""){
-                        if(posizione != ""){
+            var auto = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato, immagine);
 
-                            titoloModal.textContent = "Fatto"
 
-                            contenutoModal.textContent = "Veicolo inserito con successo!"
-                            console.log(modello + colore + cilindrata);
+            if (colore != "") {
+                if (cilindrata != "") {
+                    if (posizione != "") {
 
-                            fetchVeicolo(auto);
+                        titoloModal.textContent = "Fatto"
 
-                        } else {
-                            titoloModal.textContent = "Errore"
+                        contenutoModal.textContent = "Veicolo inserito con successo!"
+                        console.log(modello + colore + cilindrata);
 
-                            contenutoModal.textContent = "Posizione auto mancante"
-                        }
+                        fetchVeicolo(auto);
+
                     } else {
                         titoloModal.textContent = "Errore"
 
-                        contenutoModal.textContent = "Cilindrata auto mancante"
+                        contenutoModal.textContent = "Posizione auto mancante"
                     }
                 } else {
                     titoloModal.textContent = "Errore"
 
-                    contenutoModal.textContent = "Colore auto mancante"
+                    contenutoModal.textContent = "Cilindrata auto mancante"
                 }
             } else {
                 titoloModal.textContent = "Errore"
 
-                contenutoModal.textContent = "Modello auto mancante"
+                contenutoModal.textContent = "Colore auto mancante"
             }
 
-            
 
             break;
         case "MONOPATTINO":
-            
-            
+
+
             var alimentazione = "elettrica";
-            var modello = "e-scooter";
-            var colore = "Nero";
+            var modello = "Segway Ninebot";
+            var colore = "Bianco";
             var disponibilitaCheck = document.querySelector('#disponibile');
             var prolungatoCheck = document.querySelector('#prolungato');
             var posizione = document.querySelector('#posizione').value;
             var cilindrata = "500W";
-            var immagine="/img/imgVeicoli/scooter.png";
+            var immagine = "/img/imgVeicoli/scooter.png";
             // Immagine
-            
 
-            if(prolungatoCheck.checked){
+
+            if (prolungatoCheck.checked) {
                 prolungato = true;
             } else {
                 prolungato = false;
             }
 
-            if(disponibilitaCheck.checked){
+            if (disponibilitaCheck.checked) {
                 disponibilita = true;
             } else {
                 disponibilita = false;
             }
 
-            var monopattino = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine);
+            var monopattino = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato, immagine);
 
-            
 
-                if(posizione != ""){
 
-                    titoloModal.textContent = "Fatto"
+            if (posizione != "") {
 
-                    contenutoModal.textContent = "Veicolo inserito con successo!"
-                    fetchVeicolo(monopattino);
+                titoloModal.textContent = "Fatto"
 
-                } else {
-                    titoloModal.textContent = "Errore"
+                contenutoModal.textContent = "Veicolo inserito con successo!"
+                fetchVeicolo(monopattino);
 
-                    contenutoModal.textContent = "Posizione monopattino mancante"
-                }
+            } else {
+                titoloModal.textContent = "Errore"
 
-        
+                contenutoModal.textContent = "Posizione monopattino mancante"
+            }
 
-           
+
+
+
 
             break;
         case "BICICLETTA":
-            
-            
+
+
             var alimentazione = "elettrica";
-            var modello = "E-bike";
-            var colore = "Nero";
+            var modello = "Flyer Uproc X";
+            var colore = "Bianca";
             var disponibilitaCheck = document.querySelector('#disponibile');
             var prolungatoCheck = document.querySelector('#prolungato');
             var posizione = document.querySelector('#posizione').value;
-            var cilindrata = "0";
-            var immagine="/img/imgVeicoli/bici.png";
+            var cilindrata = "600 Watt";
+            var immagine = "/img/imgVeicoli/bici.png";
             // Immagine
 
-            if(prolungatoCheck.checked){
+            if (prolungatoCheck.checked) {
                 prolungato = true;
             } else {
                 prolungato = false;
             }
 
-            if(disponibilitaCheck.checked){
+            if (disponibilitaCheck.checked) {
                 disponibilita = true;
             } else {
                 disponibilita = false;
             }
 
-            var bici = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato,immagine);
+            var bici = new Auto(veicolo, modello, colore, cilindrata, alimentazione, disponibilita, posizione, prolungato, immagine);
 
-            if(posizione != ""){
+            if (posizione != "") {
 
                 titoloModal.textContent = "Fatto"
 
@@ -268,31 +276,31 @@ function aggiungiVeicolo(){
                 contenutoModal.textContent = "Posizione monopattino mancante"
             }
 
-            
+
 
             break;
-    
+
         default:
             break;
     }
 
 }
 
-function fetchVeicolo(veicolo){
+function fetchVeicolo(veicolo) {
 
     const URL = "http://localhost:9069/api/veicoli";
 
     fetch(URL, {
-        method: 'POST', // Imposta il metodo su POST
-        headers: {
-          // Imposta l'intestazione Content-Type su application/json
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(veicolo) // Converti i dati in formato JSON e impostali come corpo della richiesta
-      })
-      .then(response => response.json()) // Estrai il JSON dalla risposta
-      .then(data => console.log(data)) // Esegui qualcosa con i dati estratti
-      .catch(error => console.error(error)); // Gestisci eventuali errori
+            method: 'POST', // Imposta il metodo su POST
+            headers: {
+                // Imposta l'intestazione Content-Type su application/json
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(veicolo) // Converti i dati in formato JSON e impostali come corpo della richiesta
+        })
+        .then(response => response.json()) // Estrai il JSON dalla risposta
+        .then(data => console.log(data)) // Esegui qualcosa con i dati estratti
+        .catch(error => console.error(error)); // Gestisci eventuali errori
 
 }
 
@@ -300,5 +308,41 @@ function fetchVeicolo(veicolo){
 
 
 
-selectBtn.addEventListener('click',verificaSelect);
-aggiungiBtn.addEventListener('click', aggiungiVeicolo)
+selezionaTipo.addEventListener('change',function(){
+    verificaSelect();
+    mostraModelli();
+
+});
+aggiungiBtn.addEventListener('click', aggiungiVeicolo);
+
+
+
+var selectAli = document.querySelector('#alimentazione');
+
+var selectMod = document.querySelector('#modello');
+
+
+selectAli.addEventListener('change',mostraModelli);
+
+
+
+
+function mostraModelli(){
+
+    const selectedValue = selectAli.value;
+    // Set the value of the second select element to the selected value of the first select element
+    // selectMod.value = selectedValue;
+    selectMod.value = ""; 
+    // Cicla attraverso tutte le opzioni del secondo select
+    Array.from(selectMod.options).forEach(option => {
+        // Se il valore dell'opzione corrente corrisponde al valore selezionato del primo select, rimuovi la classe hidden
+        if (option.getAttribute('data-alimentazione') === selectedValue) {
+            option.classList.remove('hidden');
+        } else {
+            // Altrimenti, aggiungi la classe hidden
+            option.classList.add('hidden');
+        }
+    });
+
+}
+

@@ -38,30 +38,30 @@ function mostraVeicoli(listaVeicoli) {
         let modello = veicolo.modello;
         let veicolo = veicolo.veicolo;
         let alimentazione = veicolo.alimentazione;
-        let id=veicolo.id;
+        let id = veicolo.id;
 
 
-        var modelloVeicolo=document.createElement("div");
-        modelloVeicolo.setAttribute("class","text-white");
+        var modelloVeicolo = document.createElement("div");
+        modelloVeicolo.setAttribute("class", "text-white");
 
         var mezzoVeicolo = document.createElement('div');
-        mezzoVeicolo.setAttribute('class','veicolo');
-        
-        var coloreVeicolo = document.createElement('div');
-        coloreVeicolo.setAttribute('class','alimentazione');
-        
-        
+        mezzoVeicolo.setAttribute('class', 'veicolo');
 
-       
+        var coloreVeicolo = document.createElement('div');
+        coloreVeicolo.setAttribute('class', 'alimentazione');
+
+
+
+
         var aWrap = document.createElement('div');
         var a = document.createElement('a');
         var newDiv = document.createElement('div');
-        aWrap.setAttribute('class','noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
+        aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
         newDiv.setAttribute('class', '');
         var disponibilitaMezzo = document.createElement('div');
-        
-        if(disponibilita == true){
-            disponibilitaMezzo.setAttribute('class','disponibile');
+
+        if (disponibilita == true) {
+            disponibilitaMezzo.setAttribute('class', 'disponibile');
             disponibilitaMezzo.textContent = "Disponibile";
             var link = "/paginaVeicolo?id=" + id;
             a.setAttribute('href', link);
@@ -71,8 +71,8 @@ function mostraVeicoli(listaVeicoli) {
             a.appendChild(newDiv);
             aWrap.appendChild(a);
             contenitore.appendChild(aWrap);
-        } else if (disponibilita == false){
-            disponibilitaMezzo.setAttribute('class','noDisponibile');
+        } else if (disponibilita == false) {
+            disponibilitaMezzo.setAttribute('class', 'noDisponibile');
             disponibilitaMezzo.textContent = "Non disponibile";
         }
 
@@ -694,5 +694,125 @@ function disponibilita() {
 
 //         fetchdelete(idBottoneElimina);
 //     })
+
+// }
+
+
+/* -------------------------------------------------------------------------- */
+/*                Script funzione selettore immagini non usate                */
+/* -------------------------------------------------------------------------- */
+// if (alimentazione === "ibrida") {
+
+//     let randomNumber = Math.floor(Math.random() * 2) + 1;
+
+//     if (randomNumber === 1) {
+//         immagine = "/img/imgVeicoli/mercedesHybrida.png";
+
+//     } else {
+//         immagine = "/img/imgVeicoli/toyotaHybrida.png";
+//     }
+
+// } else {
+//     let randomNumber = Math.floor(Math.random() * 3) + 1;
+//     if (randomNumber === 1) {
+//         immagine = "/img/imgVeicoli/bmwElettrica.png";
+
+//     } else if (randomNumber === 2) {
+//         immagine = "/img/imgVeicoli/smartElettrica.png";
+//     } else {
+//         immagine = "/img/imgVeicoli/golfElettrica.png";
+//     }
+
+// }
+
+// if (modello != "") {
+// } else {
+//     titoloModal.textContent = "Errore"
+
+//     contenutoModal.textContent = "Modello auto mancante"
+// }
+
+
+
+// function nascondiOpzioni() {
+//     const selectedValue = this.value;
+
+
+//     if (selectedValue === "elettrica") {
+//         Array.from(selectMod.options).forEach(option => {
+
+//             switch (option.value) {
+//                 case "BMW I3-2007":
+//                     option.classList.add('hidden');
+//                     break;
+//                 case "Golf GTE-2019":
+//                     option.classList.add('hidden');
+
+//                     break;
+//                 case "Smart FortTwo EQ 2016":
+//                     option.classList.add('hidden');
+//                     break;
+//                 case "Mercedes-Benz GLC Class 2018":
+//                     option.classList.remove('hidden');
+//                     break;
+//                 case "Toyota C-HR 2021":
+//                     option.classList.remove('hidden');
+//                     break;
+
+
+//             }
+//         });
+
+
+//     } else {
+//         Array.from(selectMod.options).forEach(option => {
+
+//             switch (option.value) {
+//                 case "BMW I3-2007":
+//                     option.classList.remove('hidden');
+//                     break;
+//                 case "Golf GTE-2019":
+//                     option.classList.remove('hidden');
+//                     break;
+//                 case "Smart FortTwo EQ 2016":
+//                     option.classList.remove('hidden');
+//                     break;
+//                 case "Mercedes-Benz GLC Class 2018":
+//                     option.classList.add('hidden');
+//                     break;
+//                 case "Toyota C-HR 2021":
+//                     option.classList.add('hidden');
+//                     break;
+
+
+
+//             }
+//         });
+//     }
+// }
+
+
+// Prova Modifica
+
+
+
+// function creaMappa(veicoli) {
+//   var map = L.map('map').setView([41.90249395052403, 12.495037617783234], 10);
+//   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
+//   }).addTo(map);
+
+//   veicoli.forEach(element => {
+//     let posizione = element.posizione;
+//     let numPos = posizione.split(",");
+
+//     let num1 = parseFloat(numPos[0]);
+//     let num2 = parseFloat(numPos[1]);
+
+//     L.marker([num1, num2]).addTo(map)
+//       .bindPopup('Il posto migliore di sempre')
+//       .openPopup();
+
+//   });
 
 // }

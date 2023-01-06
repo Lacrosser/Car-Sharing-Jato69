@@ -10,7 +10,7 @@ var contenitore = document.querySelector('#contenitoreDisponibile');
 var contenitoreNoDisp = document.querySelector('#contenitoreNoDisponibili');
 
 
-var btn = document.querySelector('#btn');
+// var btn = document.querySelector('#btn');
 
 //start ad inizio pagina
 window.addEventListener("load", charmenderStarter);
@@ -388,7 +388,10 @@ function caricaDati() {
 
 }
 
-btn.addEventListener('click', caricaDati);
+
+var selectorTipo = document.querySelector('#selectTipo');
+selectorTipo.addEventListener("change",caricaDati);
+// btn.addEventListener('click', caricaDati);
 
 
 
@@ -422,27 +425,3 @@ function startMostraNonDisponibili() {
       mostraVeicoliNoDisponibile(response)
     });
 }
-// Prova Modifica
-
-
-
-// function creaMappa(veicoli) {
-//   var map = L.map('map').setView([41.90249395052403, 12.495037617783234], 10);
-//   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">SharE</a> contributors'
-//   }).addTo(map);
-
-//   veicoli.forEach(element => {
-//     let posizione = element.posizione;
-//     let numPos = posizione.split(",");
-
-//     let num1 = parseFloat(numPos[0]);
-//     let num2 = parseFloat(numPos[1]);
-
-//     L.marker([num1, num2]).addTo(map)
-//       .bindPopup('Il posto migliore di sempre')
-//       .openPopup();
-
-//   });
-
-// }
