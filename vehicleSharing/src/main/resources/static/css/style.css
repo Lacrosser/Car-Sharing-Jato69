@@ -96,6 +96,7 @@ body{
 .bannerColor {
     color: #094149;
     font-size: 50px !important;
+    text-align: center;
 
 }
 
@@ -993,4 +994,8 @@ h2 {
 
 .fontino {
     font-size: larger;
+}
+
+.ombra{
+    text-shadow: 2px 2px #000000;
 }

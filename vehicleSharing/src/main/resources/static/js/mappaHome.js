@@ -8,8 +8,8 @@ const VEICOLIMAPPING = "http://localhost:9069/api/veicoli";
 window.addEventListener("load", function() {
 
 
-    const loadingScreen = document.querySelector('#loading-screen');
-    loadingScreen.style.display = 'none';
+    // const loadingScreen = document.querySelector('#loading-screen');
+    // loadingScreen.style.display = 'none';
 
     if (sessionStorage.getItem("username") != null || localStorage.getItem("username") != null) {
         var banner = document.querySelector('#banner');
@@ -17,9 +17,11 @@ window.addEventListener("load", function() {
     };
 
     stampaMappa();
-    var timeoutId = setTimeout(function() {
-        const loadingScreen = document.querySelector('#loading-screen');
-        loadingScreen.style.display = 'none';
+    const loadingScreen = document.querySelector('#loading-screen');
+   
+    setTimeout(function() {
+        // loadingScreen.style.display = 'none';
+        loadingScreen.setAttribute("class","animate__animated animate__fadeOutRight");
     }, 500);
 
 
