@@ -91,6 +91,7 @@
 .bannerColor {
     color: #094149;
     font-size: 50px !important;
+    
 }
 
 .bannerPromoText {
@@ -110,8 +111,9 @@
 
 }
 .bannerAdmin {
-    background: url("/img");
-
+    background: url("https://cdn.motor1.com/images/mgl/y2gEAY/415:460:3925:2937/volvo-recharge-lineup.webp");
+    background-position: center;
+    height: 14rem;
     padding: 3.2rem;
 }
 

@@ -227,7 +227,7 @@ function aggiungiVeicolo(){
             
             
             var alimentazione = "elettrica";
-            var modello = "e-bike";
+            var modello = "E-bike";
             var colore = "Nero";
             var disponibilitaCheck = document.querySelector('#disponibile');
             var prolungatoCheck = document.querySelector('#prolungato');
