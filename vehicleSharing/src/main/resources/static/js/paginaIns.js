@@ -9,6 +9,7 @@ var cilindrataForm = document.querySelector('#cilindrataForm');
 
 var contenutoModal = document.querySelector('#contenutoModal');
 var titoloModal = document.querySelector('#titoloModal');
+var img = document.querySelector('#imgForm');
 
 // Aggiungi veicolo
 
@@ -25,6 +26,7 @@ function verificaSelect(){
     if(selectTipo == 0){
 
         formVeicolo.setAttribute('hidden','');
+        img.classList.remove('d-none');
 
     } else if (selectTipo == "AUTO"){
 
@@ -36,6 +38,7 @@ function verificaSelect(){
         coloreForm.removeAttribute('hidden');
         // fotoForm.removeAttribute('hidden');
         cilindrataForm.removeAttribute('hidden');
+        img.classList.add('d-none');
 
     } else if (selectTipo == "MONOPATTINO"){
 
@@ -47,6 +50,7 @@ function verificaSelect(){
         coloreForm.setAttribute('hidden','');
         // fotoForm.setAttribute('hidden','');
         cilindrataForm.setAttribute('hidden','');
+        img.classList.add('d-none');
 
 
     } else if (selectTipo == "BICICLETTA"){
@@ -59,6 +63,7 @@ function verificaSelect(){
         coloreForm.setAttribute('hidden','');
         // fotoForm.setAttribute('hidden','');
         cilindrataForm.setAttribute('hidden','');
+        img.classList.add('d-none');
 
     }
 

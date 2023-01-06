@@ -91,7 +91,7 @@
 .bannerColor {
     color: #094149;
     font-size: 50px !important;
-    
+
 }
 
 .bannerPromoText {
@@ -115,6 +115,13 @@
     background-position: center;
     height: 14rem;
     padding: 3.2rem;
+}
+
+.imgAdmin{
+    opacity: 0.3;
+    width: 20rem;
+    height: auto;
+
 }
 
 /* -------------------------------------------------------------------------- */
