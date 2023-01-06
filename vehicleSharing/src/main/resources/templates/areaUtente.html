@@ -22,7 +22,7 @@
 
 
     <header class="">
-        <nav class="navbar navbar-expand-lg navbar-dark borderNav third-color">
+        <nav class="navbar navbar-expand-lg navbar-dark borderNav third-color fixed-top">
             <!-- inizio navbar -->
 
             <div class="container-lg">
@@ -80,17 +80,22 @@
         <!-- <div class="bannerAdmin d-flex flex-column justify-content-center align-items-center" style="height: 6rem; background: #00B7C2;">
             <h1 class="secondaryText mt-4 d-flex align-items-center" style="font-size: 30px;">Benvenuto nella tua area personale!</h1>
 		</div> -->
-        <div class="container mt-0 py-5 mb-1">
-            <div class="utentegen row d-flex justify-content-center mb-lg-3">
-                <div class="col-lg-4 col-12 d-flex justify-content-center">
-                    <div class="imgcontainer" style="width: 10rem; height: 10rem; border-radius: 50%; background: #00b8c249;">
-                        <img src="/img/utente.png" alt="utentebanner" style="width: 10rem; height: 10rem; border-radius: 50%;">
+        
+            <div class="bg-light">
+                <div class="container utentegen d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-lg-4 col-12 d-flex justify-content-center pt-4 pb-4">
+                        <div class="imgcontainer" style="width: 10rem; height: 10rem; border-radius: 50%; background: #00b8c249;">
+                            <img src="/img/utente.png" alt="utentebanner" style="width: 10rem; height: 10rem; border-radius: 50%;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 d-flex align-items-center justify-content-start text-center">
+                        <h1 class="primaryText fs-2-5">Benvenuto <span id="utente"></span></h1>
                     </div>
                 </div>
-                <div class="col-lg-6 col-12 d-flex align-items-center justify-content-start text-center">
-                    <h1 class="primaryText fs-2-5">Benvenuto <span id="utente"></span></h1>
-                </div>
             </div>
+            </div>
+            <div class="container mt-0 py-5 mb-1">
             <div class="row">
                 <div class="col-lg-6 col-12 p-2 colBg">
                     <div>
@@ -229,10 +234,10 @@
                             <hr>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="/aboutUs.html" class=" text-center">About Us</a>
+                                    <a href="/aboutUs" class=" text-center">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="/tariffe.html" class=" text-center">Tariffe</a>
+                                    <a href="/tariffe" class=" text-center">Tariffe</a>
                                 </li>
                                 <li>
                                     <a href="#" class=" text-center">Privacy Policy</a>
