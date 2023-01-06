@@ -17,6 +17,10 @@
     font-family: 'Outfit', sans-serif;
 }
 
+body{
+    margin-top: 76px;
+}
+
 .colorino {
     color: #00838a;
     
