@@ -28,7 +28,7 @@
                 <!-- inizio container navbar -->
 
                 <a class="navbar-brand" href="#">
-                    <img src="/img/bigLogo.png" alt="logo" width="50" height="50">
+                    <img src="/img/logoGiusto.svg" alt="logo" width="50" height="50">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon">
@@ -264,12 +264,19 @@
                                     </div>
                                 </div>
 
-                                <div class="row" id="modelloForm">
+                                <<div class="row" id="modelloForm">
                                     <div class="secondaryText col-4 d-flex justify-content-end">
                                         <h3>Modello</h3>
                                     </div>
                                     <div class="inputForm col-6">
-                                        <input type="text" class="form-control" id="modello">
+                                        <!-- <input type="text" class="form-control" id="modello"> -->
+                                        <select name="modelloAuto" class="form-select" id="modello">
+                                            <option value="BMW I3-2007" data-alimentazione="elettrica">BMW I3-2007 Elettrica</option>
+                                            <option value="Golf GTE-2019" data-alimentazione="elettrica">Golf GTE 2019 Elettrica</option>
+                                            <option value="Smart FortTwo EQ 2016" data-alimentazione="elettrica">Smart FortTwo EQ 2016 Elettrica</option>
+                                            <option value="Mercedes-Benz GLC Class 2018" data-alimentazione="ibrida">Mercedes-Benz GLC Class 2018 Ibrida</option>
+                                            <option value="Toyota C-HR 2021" data-alimentazione="ibrida">Toyota C-HR 2021 Ibrida</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row" id="coloreForm">
@@ -310,14 +317,14 @@
                                         <input type="text" class="form-control" id="posizione">
                                     </div>
                                 </div>
-                                <div class="row mt-4 mb-4 secondaryText" id="fotoForm">
+                                <!-- <div class="row mt-4 mb-4 secondaryText" id="fotoForm">
                                     <div class="secondaryText col-4 d-flex justify-content-end col-4">
                                         <h4>Foto auto</h4>
                                     </div>
                                     <div class="mb-3 col-6">
                                         <input class="form-control" type="file" id="foto">
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>
