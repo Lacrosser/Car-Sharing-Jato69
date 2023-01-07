@@ -999,3 +999,17 @@ h2 {
 .ombra{
     text-shadow: 2px 2px #000000;
 }
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                       Correzione a in tutte le pagine                      */
+/* -------------------------------------------------------------------------- */
+
+.aFake{
+    color: #98baeb !important;
+    text-decoration: underline;
+}
+.aFake :hover{
+    cursor: pointer;
+}

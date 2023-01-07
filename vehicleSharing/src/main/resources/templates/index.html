@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Main page of the Share Vehicle sharing company">
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- ----------------------------------------------------------------------- -->
     <!--                                FOGLI CSS                                -->
     <!-- ----------------------------------------------------------------------- -->
-    <!-- <link rel="stylesheet" href="css/abbonamenti.css" type="text/css"> -->
     <link rel="stylesheet" href="css/swiperHero.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mediaQueryStyle.css">
@@ -40,10 +40,10 @@
             <div class="container-lg">
                 <!-- inizio container navbar -->
 
-                <a class="navbar-brand" id="eg">
+                <div class="navbar-brand" id="eg">
                     <img src="/img/logoGiusto.svg" alt="logo" width="50" height="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Menu">
                     <span class="navbar-toggler-icon">
 
                     </span>
@@ -289,7 +289,7 @@
                     <div class="secondaryText ">Prendi un monopattino o bicicletta e raggiungi la tua destinazione!</div>
                 </div>
                 <div class="col-12 col-lg-6 d-lg-flex d-none justify-content-center">
-                    <img src="/img/e-bike.png" alt="e-bike" width="300px">
+                    <img src="/img/e-bike.png" alt="e-bike" class="img-fluid">
                 </div>
                 <div class="secondaryText ps-4 mt-5 mt-lg-5 mb-md-2 mb-4 fs-2-5">Ecco i nostri veicoli in strada!</div>
 
@@ -332,7 +332,7 @@
                     <div class="secondaryText ">Per ogni veicolo è segnata la posizione in tempo reale in mappa, apri la scheda del singolo veicolo o vedi qua sotto per trovarlo nella tua città!</div>
                 </div>
                 <div class="immagineSezioneBassa col-12 col-lg-6">
-                    <img src="/img/imgVeicoli/bmwElettrica.png" alt="BmwImage" class="img-fluid">
+                    <img src="/img/imgVeicoli/bmwElettrica.png" alt="BmwImage" class="img-fluid w-100">
                 </div>
             </div>
             <div class="secondaryText  mt-5 mb-3 fs-2-5">Ecco la nostra mappa con tutti i veicoli in strada
@@ -378,10 +378,9 @@
                     <h3 class="mb-3">Scarica la nostra app</h3>
                     <hr>
                     <div class="row mb-3">
-                        <div class="col-6 "><img src="/img/Download_on_the_App_Store_Badge.svg" class="appleImg img-fluid " alt="storeIphoneLogo"></div>
-                        <div class="col-6"><img src="/img/Google_Play_Store_badge_EN.svg" class="googleImg img-fluid " alt="storeAndroidLogo"></div>
+                        <div class="col-6 "><img src="/img/Download_on_the_App_Store_Badge.svg" class="appleImg img-fluid w-75" alt="storeIphoneLogo"></div>
+                        <div class="col-6"><img src="/img/Google_Play_Store_badge_EN.svg" class="googleImg img-fluid w-75" alt="storeAndroidLogo"></div>
                     </div>
-
                 </div>
                 <div class="col-lg-6 text-white">
                     <div class="row ">
@@ -390,16 +389,16 @@
                             <hr>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="/aboutUs.html" class=" text-center">About Us</a>
+                                    <a href="/aboutUs.html" class="aFake text-center">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="/tariffe.html" class=" text-center">Tariffe</a>
+                                    <a href="/tariffe.html" class="aFake text-center">Tariffe</a>
                                 </li>
                                 <li>
-                                    <a href="#" class=" text-center">Privacy Policy</a>
+                                    <a href="/faq" class="aFake text-center">Privacy Policy</a>
                                 </li>
                                 <li>
-                                    <a href="#" class=" text-center">Condizioni d'uso</a>
+                                    <a href="/abbonamenti" class="aFake text-center">Condizioni d'uso</a>
                                 </li>
                             </ul>
                         </div>
@@ -408,22 +407,22 @@
                             <hr>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a class="" href="https://www.instagram.com">
+                                    <a href="https://www.instagram.com" class="aFake">
                                         <i class="bi bi-instagram">Instagram</i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="" href="https://www.twitter.com">
+                                    <a href="https://www.twitter.com" class="aFake">
                                         <i class="bi bi-twitter">Twitter</i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="" href="https://www.facebook.com">
+                                    <a href="https://www.facebook.com" class="aFake">
                                         <i class="bi bi-meta">Meta</i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="" href="https://www.telegram.com">
+                                    <a href="https://www.telegram.com" class="aFake">
                                         <i class="bi bi-telegram">Telegram</i>
                                     </a>
                                 </li>
@@ -441,70 +440,73 @@
                     <hr>
                     <div class=" mb-4">
                         <p>Numeri Utili</p>
-                        <p>Numero sede italiana: <a href="">0114562378</a></p>
-                        <p>Numero verde: <a href=""> 800 400 736</a></p>
-                        <p>Numero sede: <a href=""> +420-607860660</a></p>
+                        <p>Numero sede italiana: <span class="aFake">0114562378</span>
+                        </p>
+                        <p>Numero verde: <span class="aFake"> 800 400 736</span>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <h3>Dove Trovarci</h3>
                     <hr>
-                    <div class="">
+                    <div>
                         <p>Sedi e indirizzi</p>
-                        <p>Sede Italiana: <a href="">Corso Vittorio Emanuele II 157/d Torino (TO)</a></p>
-                        <p>Sede Centrale: <a href="">Thàmova 116 Karlin, Cechia</a></p>
+                        <p>Sede Italiana: <span class="aFake">Corso Vittorio Emanuele II 157/d Torino (TO)</span>
+                        </p>
+                        <p>Sede Centrale: <span class="aFake">Thàmova 116 Karlin, Cechia</span>
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
     </footer>
     <div class="cookie d-flex justify-content-center fCol">
         <div class="text-white">
-            <p><a href="">Cookie</a> | <a href="">Privacy Policy</a> | <a href="">Condizioni d'uso</a></p>
+            <p><span class="aFake">Cookie</span> | <a href="/faq" class="aFake">Privacy Policy</a> | <a href="/abbonamenti" class="aFake">Condizioni d'uso</a></p>
         </div>
 
+    </div>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-        <!-- SCRIPT BANNER ABBONAMENTI -->
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                loop: true,
-                scrollbar: {
-                    el: ".swiper-scrollbar",
-                    hide: true,
-                },
-            });
-        </script>
-        <script>
-            var swiper = new Swiper(".heroSwipe", {
-                loop: true,
-                spaceBetween: 0,
-                centeredSlides: true,
-                autoplay: {
-                    delay: 8000,
-                    disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                }
-            });
-        </script>
 
-        <script src="/js/session.js"></script>
-        <script src="js/mappaHome.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".heroSwipe", {
+            loop: true,
+            spaceBetween: 0,
+            centeredSlides: true,
+            autoplay: {
+                delay: 8000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            }
+        });
+    </script>
 
-        <script src="/js/indexEg.js"></script>
+    <script src="/js/session.js"></script>
+    <script src="js/mappaHome.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+    <script src="/js/indexEg.js"></script>
 
 </body>
 
