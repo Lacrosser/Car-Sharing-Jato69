@@ -192,8 +192,7 @@ function charmenderStarter() {
   const PIPPO = new URLSearchParams(window.location.search)
   let tipologia = PIPPO.get("tipo");
   let alimentazione = PIPPO.get("alimentazione");
-  // console.log(tipologia);
-  // console.log(alimentazione);
+  
 
   if (tipologia != null || alimentazione != null) {
 
@@ -223,8 +222,8 @@ function stampaTipo(tipologia) {
         })
         .then(response => {
 
-          mostraVeicoli(response)
-          mostraVeicoliNoDisponibile(response)
+          mostraVeicoli(response);
+          mostraVeicoliNoDisponibile(response);
         });
       break;
     case "MONOPATTINI":
@@ -236,8 +235,8 @@ function stampaTipo(tipologia) {
         })
         .then(response => {
 
-          mostraVeicoli(response)
-          mostraVeicoliNoDisponibile(response)
+          mostraVeicoli(response);
+          mostraVeicoliNoDisponibile(response);
         });
       break;
 
