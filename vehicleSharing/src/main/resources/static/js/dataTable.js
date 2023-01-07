@@ -230,15 +230,10 @@ function creaTabella(listaVeicoli) {
         fetchVeicoloSingolo(idBottoneElimina)
 
         // eliminaveicoli(idBottoneElimina);
-    })
+    });
 
 
-
-
-
-
-
-}
+};
 
 
 /* -------------------------------------------------------------------------- */
@@ -388,6 +383,12 @@ function eliminaveicoli(data) {
 };
 
 
+
+/* -------------------------------------------------------------------------- */
+/*      funzioni cambiamento dei dati in tempo reale e la loro scrittura      */
+/* -------------------------------------------------------------------------- */
+
+
 alimentazione.addEventListener('change', mostraModelli);
 
 
@@ -418,6 +419,7 @@ tipologia.addEventListener("change", impostaDati);
 
 
 function impostaDati() {
+
     if (tipologia.value == "AUTO") {
         // tipform.removeAttribute("hidden", "hidden");
         aliform.removeAttribute("hidden", "hidden");
@@ -450,6 +452,7 @@ function impostaDati() {
         }
         // fotoForm.removeAttribute("hidden", "hidden");
     } else if (tipologia.value == "MONOPATTINO" || tipologia.value == "BICICLETTA") {
+
         // tipform.setAttribute("hidden", "hidden");
         // fotoForm.setAttribute("hidden", "hidden");
         aliform.setAttribute("hidden", "hidden");

@@ -60,7 +60,7 @@ function log2() {
 
                 console.log("utente C")
                 sessionStorage.setItem("tipo", tipo);
-                errorMsg.textContent="Utente o password sbagliati, prego riprovare"
+                errorMsg.textContent="Utente o password sbagliati, prego riprovare";
 
                 return false;
             }

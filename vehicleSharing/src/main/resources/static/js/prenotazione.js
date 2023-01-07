@@ -1,22 +1,16 @@
-window.addEventListener('load', fetchprenotazione);
-
-
-
 const URL = "http://localhost:9069/api/prenotazione";
 
 let prenotazione = document.querySelector("#prenotazione");
 
+
+window.addEventListener('load', fetchprenotazione);
 
 
 
 function getPrenotazione(prenotazioni) {
     let htmlCode = '';
     prenotazioni.forEach(singlePrenotaObjects => {
-        // console.log("Sono qui");
-        // console.log(singlePrenotaObjects);
-
-        // console.log(singlePrenotaObjects.veicoli.modello);
-
+        
         htmlCode +=
             `
         <div id="cardina" class="col-md-6 py-3 d-flex flex-column">

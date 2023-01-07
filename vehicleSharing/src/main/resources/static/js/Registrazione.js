@@ -113,20 +113,20 @@ function checkLogin() {
 function checherReg() {
 
     ripristinoCampi();
-    console.log("campi ripristinati")
+    // console.log("campi ripristinati")
 
     if (checkPassword()) {
-        console.log("le password sono giuste?")
+        // console.log("le password sono giuste?")
         if (controllaUser() && controllaPassword()) {
-            console.log("user e pass accettate");
+            // console.log("user e pass accettate");
             return true;
         } else {
-            console.log("user e pass non accettate");
+            // console.log("user e pass non accettate");
             return false
         }
 
     } else
-        console.log("le password sono diverse")
+        // console.log("le password sono diverse");
     return false;
 
 }

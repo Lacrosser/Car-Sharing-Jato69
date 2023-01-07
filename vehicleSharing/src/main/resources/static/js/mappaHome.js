@@ -18,10 +18,10 @@ window.addEventListener("load", function() {
 
     stampaMappa();
     const loadingScreen = document.querySelector('#loading-screen');
-   
+
     setTimeout(function() {
         // loadingScreen.style.display = 'none';
-        loadingScreen.setAttribute("class","animate__animated animate__fadeOutRight");
+        loadingScreen.setAttribute("class", "animate__animated animate__fadeOutRight");
     }, 500);
 
 

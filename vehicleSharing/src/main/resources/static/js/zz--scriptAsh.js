@@ -33,180 +33,180 @@ const DELETEPRENOTAZIONE = "http://localhost:9069/api/prenotazione/" //inserire 
 
 
 
-function mostraVeicoli(listaVeicoli) {
-    listaVeicoli.forEach(veicolo => {
-        let modello = veicolo.modello;
-        let veicolo = veicolo.veicolo;
-        let alimentazione = veicolo.alimentazione;
-        let id = veicolo.id;
+// function mostraVeicoli(listaVeicoli) {
+//     listaVeicoli.forEach(veicolo => {
+//         let modello = veicolo.modello;
+//         let veicolo = veicolo.veicolo;
+//         let alimentazione = veicolo.alimentazione;
+//         let id = veicolo.id;
 
 
-        var modelloVeicolo = document.createElement("div");
-        modelloVeicolo.setAttribute("class", "text-white");
+//         var modelloVeicolo = document.createElement("div");
+//         modelloVeicolo.setAttribute("class", "text-white");
 
-        var mezzoVeicolo = document.createElement('div');
-        mezzoVeicolo.setAttribute('class', 'veicolo');
+//         var mezzoVeicolo = document.createElement('div');
+//         mezzoVeicolo.setAttribute('class', 'veicolo');
 
-        var coloreVeicolo = document.createElement('div');
-        coloreVeicolo.setAttribute('class', 'alimentazione');
-
-
-
-
-        var aWrap = document.createElement('div');
-        var a = document.createElement('a');
-        var newDiv = document.createElement('div');
-        aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
-        newDiv.setAttribute('class', '');
-        var disponibilitaMezzo = document.createElement('div');
-
-        if (disponibilita == true) {
-            disponibilitaMezzo.setAttribute('class', 'disponibile');
-            disponibilitaMezzo.textContent = "Disponibile";
-            var link = "/paginaVeicolo?id=" + id;
-            a.setAttribute('href', link);
-            newDiv.appendChild(mezzoVeicolo);
-            newDiv.appendChild(coloreVeicolo);
-            newDiv.appendChild(disponibilitaMezzo);
-            a.appendChild(newDiv);
-            aWrap.appendChild(a);
-            contenitore.appendChild(aWrap);
-        } else if (disponibilita == false) {
-            disponibilitaMezzo.setAttribute('class', 'noDisponibile');
-            disponibilitaMezzo.textContent = "Non disponibile";
-        }
+//         var coloreVeicolo = document.createElement('div');
+//         coloreVeicolo.setAttribute('class', 'alimentazione');
 
 
 
 
+//         var aWrap = document.createElement('div');
+//         var a = document.createElement('a');
+//         var newDiv = document.createElement('div');
+//         aWrap.setAttribute('class', 'noLink veicoloCard col-12 col-md-5 col-lg-3 m-1');
+//         newDiv.setAttribute('class', '');
+//         var disponibilitaMezzo = document.createElement('div');
 
-    })
-
-
-}
+//         if (disponibilita == true) {
+//             disponibilitaMezzo.setAttribute('class', 'disponibile');
+//             disponibilitaMezzo.textContent = "Disponibile";
+//             var link = "/paginaVeicolo?id=" + id;
+//             a.setAttribute('href', link);
+//             newDiv.appendChild(mezzoVeicolo);
+//             newDiv.appendChild(coloreVeicolo);
+//             newDiv.appendChild(disponibilitaMezzo);
+//             a.appendChild(newDiv);
+//             aWrap.appendChild(a);
+//             contenitore.appendChild(aWrap);
+//         } else if (disponibilita == false) {
+//             disponibilitaMezzo.setAttribute('class', 'noDisponibile');
+//             disponibilitaMezzo.textContent = "Non disponibile";
+//         }
 
 
 
 
 
-
-function mostraVeicoliNoDisponibile(listaVeicoli) {
-    listaVeicoli.forEach(mezzo => {
-        var modello = mezzo.modello;
-        var veicolo = mezzo.veicolo;
-        var alimentazione = mezzo.alimentazione;
-        // var id = veicolo.id;
-
-        var mezzoVeicolo = document.createElement('div');
-        mezzoVeicolo.setAttribute('class', 'veicolo');
-        var coloreVeicolo = document.createElement('div');
-        coloreVeicolo.setAttribute('class', 'alimentazione');
-        var mezzoModello = document.createElement("div");
-        mezzoModello.setAttribute("class", "modello");
-
-        mezzoModello.textContent = modello;
-        mezzoVeicolo.textContent = veicolo;
-        coloreVeicolo.textContent = alimentazione;
-
-        var newDiv = document.createElement('div');
-        newDiv.setAttribute('class', 'veicoloCardNoDisp col-12 col-md-5 col-lg-3 m-1 whiteText');
-        var disponibilitaMezzo = document.createElement('div');
-        disponibilitaMezzo.setAttribute('class', 'noDisponibile');
-        disponibilitaMezzo.textContent = "Non disponibile";
+//     })
 
 
-        newDiv.appendChild(mezzo.modello);
-        newDiv.appendChild(mezzoVeicolo);
-        newDiv.appendChild(coloreVeicolo);
-        newDiv.appendChild(disponibilitaMezzo);
-
-        contenitoreNoDisp.appendChild(newDiv);
-
-    });
-}
+// }
 
 
 
-function selettoreFetch() {
-    var form = document.querySelector('#selectTipo').value;
 
 
-    switch (form) {
-        case "AUTO":
-            contenitore.textContent = "";
-            fetch(GETVEICOLOTIPO + "AUTO")
-                .then(data => {
-                    return data.json()
-                })
-                .then(response => {
-                    console.log(response)
-                    //mostraVeicoli(response)
-                });
 
-            break;
-        case "MONOPATTINO":
-            contenitore.textContent = "";
-            fetch(GETVEICOLOTIPO + "MONOPATTINO")
-                .then(data => {
-                    return data.json()
-                })
-                .then(response => {
-                    console.log(response)
-                    //mostraVeicoli(response)
-                });
+// function mostraVeicoliNoDisponibile(listaVeicoli) {
+//     listaVeicoli.forEach(mezzo => {
+//         var modello = mezzo.modello;
+//         var veicolo = mezzo.veicolo;
+//         var alimentazione = mezzo.alimentazione;
+//         // var id = veicolo.id;
 
-            break;
-        case "BICICLETTA":
-            contenitore.textContent = "";
-            fetch(GETVEICOLOTIPO + "BICICLETTA")
-                .then(data => {
-                    return data.json()
-                })
-                .then(response => {
-                    console.log(response)
-                    //mostraVeicoli(response)
-                });
+//         var mezzoVeicolo = document.createElement('div');
+//         mezzoVeicolo.setAttribute('class', 'veicolo');
+//         var coloreVeicolo = document.createElement('div');
+//         coloreVeicolo.setAttribute('class', 'alimentazione');
+//         var mezzoModello = document.createElement("div");
+//         mezzoModello.setAttribute("class", "modello");
 
-            break;
-        case "elettrica":
-            contenitore.textContent = "";
-            fetch(GETVEICOLOALIMENTAZIONE + "elettrica")
-                .then(data => {
-                    return data.json()
-                })
-                .then(response => {
-                    console.log(response)
-                    //mostraVeicoli(response)
-                });
+//         mezzoModello.textContent = modello;
+//         mezzoVeicolo.textContent = veicolo;
+//         coloreVeicolo.textContent = alimentazione;
 
-            break;
-        case "ibrida":
-            contenitore.textContent = "";
-            fetch(GETVEICOLOALIMENTAZIONE + "ibrida")
-                .then(data => {
-                    return data.json()
-                })
-                .then(response => {
-                    console.log(response)
-                    //mostraVeicoli(response)
-                });
+//         var newDiv = document.createElement('div');
+//         newDiv.setAttribute('class', 'veicoloCardNoDisp col-12 col-md-5 col-lg-3 m-1 whiteText');
+//         var disponibilitaMezzo = document.createElement('div');
+//         disponibilitaMezzo.setAttribute('class', 'noDisponibile');
+//         disponibilitaMezzo.textContent = "Non disponibile";
 
-            break;
-        case "TUTTO":
-            contenitore.textContent = "";
-            fetch(VEICOLIMAPPING)
-                .then(data => {
-                    return data.json()
-                })
-                .then(response => {
-                    console.log(response)
-                    //mostraVeicoli(response)
-                });
 
-            break;
-    }
+//         newDiv.appendChild(mezzo.modello);
+//         newDiv.appendChild(mezzoVeicolo);
+//         newDiv.appendChild(coloreVeicolo);
+//         newDiv.appendChild(disponibilitaMezzo);
 
-}
+//         contenitoreNoDisp.appendChild(newDiv);
+
+//     });
+// }
+
+
+
+// function selettoreFetch() {
+//     var form = document.querySelector('#selectTipo').value;
+
+
+//     switch (form) {
+//         case "AUTO":
+//             contenitore.textContent = "";
+//             fetch(GETVEICOLOTIPO + "AUTO")
+//                 .then(data => {
+//                     return data.json()
+//                 })
+//                 .then(response => {
+//                     console.log(response)
+//                     //mostraVeicoli(response)
+//                 });
+
+//             break;
+//         case "MONOPATTINO":
+//             contenitore.textContent = "";
+//             fetch(GETVEICOLOTIPO + "MONOPATTINO")
+//                 .then(data => {
+//                     return data.json()
+//                 })
+//                 .then(response => {
+//                     console.log(response)
+//                     //mostraVeicoli(response)
+//                 });
+
+//             break;
+//         case "BICICLETTA":
+//             contenitore.textContent = "";
+//             fetch(GETVEICOLOTIPO + "BICICLETTA")
+//                 .then(data => {
+//                     return data.json()
+//                 })
+//                 .then(response => {
+//                     console.log(response)
+//                     //mostraVeicoli(response)
+//                 });
+
+//             break;
+//         case "elettrica":
+//             contenitore.textContent = "";
+//             fetch(GETVEICOLOALIMENTAZIONE + "elettrica")
+//                 .then(data => {
+//                     return data.json()
+//                 })
+//                 .then(response => {
+//                     console.log(response)
+//                     //mostraVeicoli(response)
+//                 });
+
+//             break;
+//         case "ibrida":
+//             contenitore.textContent = "";
+//             fetch(GETVEICOLOALIMENTAZIONE + "ibrida")
+//                 .then(data => {
+//                     return data.json()
+//                 })
+//                 .then(response => {
+//                     console.log(response)
+//                     //mostraVeicoli(response)
+//                 });
+
+//             break;
+//         case "TUTTO":
+//             contenitore.textContent = "";
+//             fetch(VEICOLIMAPPING)
+//                 .then(data => {
+//                     return data.json()
+//                 })
+//                 .then(response => {
+//                     console.log(response)
+//                     //mostraVeicoli(response)
+//                 });
+
+//             break;
+//     }
+
+// }
 
 
 
@@ -216,39 +216,39 @@ function selettoreFetch() {
 /* -------------------------------------------------------------------------- */
 /*                                    fetch                                   */
 /* -------------------------------------------------------------------------- */
-function fetchAll() {
-    fetch(UTENTIMAPPING)
-        .then(data => {
-            return data.json()
-        })
-        .then(response => {
-            console.log(response)
-            // mostraVeicoli(response)
-        });
-}
+// function fetchAll() {
+//     fetch(UTENTIMAPPING)
+//         .then(data => {
+//             return data.json()
+//         })
+//         .then(response => {
+//             console.log(response)
+//             // mostraVeicoli(response)
+//         });
+// }
 
 
-function getdisponibili() {
-    fetch(GETVEICOLIDISPONIBILITA)
-        .then(data => {
-            return data.json()
-        })
-        .then(response => {
-            console.log(response)
-            // mostraVeicoliNoDisponibile(response)
-        });
-}
+// function getdisponibili() {
+//     fetch(GETVEICOLIDISPONIBILITA)
+//         .then(data => {
+//             return data.json()
+//         })
+//         .then(response => {
+//             console.log(response)
+//             // mostraVeicoliNoDisponibile(response)
+//         });
+// }
 
-function disponibilita() {
-    fetch(GETVEICOLIDISPONIBILITA + "false")
-        .then(data => {
-            return data.json()
-        })
-        .then(response => {
-            console.log(response)
-            //mostraVeicoliNoDisponibile(response)
-        });
-}
+// function disponibilita() {
+//     fetch(GETVEICOLIDISPONIBILITA + "false")
+//         .then(data => {
+//             return data.json()
+//         })
+//         .then(response => {
+//             console.log(response)
+//             //mostraVeicoliNoDisponibile(response)
+//         });
+// }
 
 
 
@@ -871,3 +871,20 @@ function disponibilita() {
             
             
             //funzione di creazione elementi
+
+
+/* -------------------------------------------------------------------------- */
+/*                           codice trovato a buffo                           */
+/* -------------------------------------------------------------------------- */
+
+// const UTENTIMAPPING="http://localhost:9069/api/utenti";
+// const VEICOLIMAPPING="http://localhost:9069/api/veicoli";
+// const GETVEICOLIBYID="http://localhost:9069/api/veicoli/";//inserire id qui per completare la query
+// const GETVEICOLIDISPONIBILITA="http://localhost:9069/api/veicoli/status/";//inserire la disponibiltà per completare la query true/false
+// const GETVEICOLOTIPO="http://localhost:9069/api/veicoli/tipo/";//inserire il tipo tra /AUTO/BICICLETTA/MONOPATTINO
+// const GETVEICOLOALIMENTAZIONE="http://localhost:9069/api/veicoli/alimentazione/";//inserire la stringa di alimentazione
+// const PUTVEICOLO="http://localhost:9069/api/veicoli/";//inserire id per completare la query
+
+
+
+

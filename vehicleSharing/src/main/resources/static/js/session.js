@@ -1,8 +1,3 @@
-//bottone logout
-//logOutButton();
-
-
-
 nascondiroba();
 
 function nascondiroba() {
@@ -22,8 +17,6 @@ function nascondiroba() {
     loginBuilder();
 
   }
-
-  
 
 }
 
@@ -56,8 +49,6 @@ function logOutButton() {
   li.addEventListener('click', logOut);
 
 }
-
-
 
 
 function areaUtenteBuilder() {

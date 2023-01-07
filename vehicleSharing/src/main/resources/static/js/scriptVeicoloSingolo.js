@@ -24,8 +24,7 @@ btnPren.addEventListener("click", function() {
 
 
 function initPagina() {
-    const PIPPO = new URLSearchParams(window.location.search)
-    // console.log(typeof (PIPPO.get("id")));
+    const PIPPO = new URLSearchParams(window.location.search);
     PIPPO.get("id")
     fetch(GETVEICOLIBYID + PIPPO.get("id"))
         .then(data => {
@@ -42,7 +41,7 @@ function initPagina() {
 
 
 function prenota() {
-    const VEICOLO = new URLSearchParams(window.location.search)
+    const VEICOLO = new URLSearchParams(window.location.search);
     let vId = VEICOLO.get("id")
     if (localStorage.getItem("id")) {
         let id = localStorage.getItem("id");
@@ -103,12 +102,8 @@ function stampaVeicolo(veicolo) {
 }
 
 
-
-
 function postpren(id, vId) {
-    // console.log(id);
-    // console.log(vId);
-    // console.log(POSTPRENOTAZIONE + id + "/veicolo/" + vId);
+    
 
     fetch(POSTPRENOTAZIONE + id + "/veicolo/" + vId, {
             method: "POST",

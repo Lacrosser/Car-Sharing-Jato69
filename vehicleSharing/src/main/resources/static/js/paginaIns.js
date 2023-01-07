@@ -333,15 +333,19 @@ function mostraModelli(){
 
     const selectedValue = selectAli.value;
     // Set the value of the second select element to the selected value of the first select element
-    // selectMod.value = selectedValue;
+    // imposta o il valore a vuoto, resettandolo
     selectMod.value = ""; 
     // Cicla attraverso tutte le opzioni del secondo select
     Array.from(selectMod.options).forEach(option => {
+
         // Se il valore dell'opzione corrente corrisponde al valore selezionato del primo select, rimuovi la classe hidden
         if (option.getAttribute('data-alimentazione') === selectedValue) {
+
             option.classList.remove('hidden');
+
         } else {
             // Altrimenti, aggiungi la classe hidden
+            
             option.classList.add('hidden');
         }
     });
