@@ -138,7 +138,7 @@
         <!-- ----------------------------------------------------------------------- -->
         <div class="container">
             <div class="row mt-5">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <div class="primaryText"></div>
                     <h2 class="primaryText mt-4 d-flex align-items-center font25">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -162,13 +162,11 @@
                     </h2> -->
 
                 </div>
-                <div class="col-lg-6 d-none d-lg-flex monopattinoImg d-flex justify-content-center align-content-center">
-                    <div class="immagineScooter">
-                        <img class="" src="/img/Monopattino.png" alt="e-scooter">
-                    </div>
+                <div class="col-md-6 d-md-flex monopattinoImg d-flex justify-content-center align-content-center mt-5 mt-md-0">         
+                    <img class="" src="/img/Monopattino.png" alt="e-scooter">          
                 </div>
             </div>
-            <div class="secondaryText  mt-5 mb-lg-0 mb-md-2 mb-4 fs-2-5">Ecco i nostri abbonamenti</div>
+            <div class="secondaryText mt-5 mb-md-5 fs-2-5 text-center">Ecco i nostri abbonamenti</div>
             <!-- ----------------------------------------------------------------------- -->
             <!--                           ABBONAMENTI STATICI                           -->
             <!-- ----------------------------------------------------------------------- -->
@@ -275,9 +273,9 @@
         <!-- SPACER -->
         <section id="spacer"></section>
         <div class="container">
-            <div class="row mb-3 mt-5">
+            <div class="row mb-3 mt-5 d-flex align-items-center">
 
-                <div class=" col-12 col-lg-6">
+                <div class="col-12 col-md-6">
                     <h2 class="primaryText mt-4 d-flex align-items-center font25"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                             <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                         </svg>Devi fare pochi km di strada?</h2>
@@ -288,15 +286,15 @@
                         </svg>Paura delle ZTL?</h2>
                     <div class="secondaryText ">Prendi un monopattino o bicicletta e raggiungi la tua destinazione!</div>
                 </div>
-                <div class="col-12 col-lg-6 d-lg-flex d-none justify-content-center">
+                <div class="col-12 col-md-6 d-flex justify-content-center mt-5 mt-md-0">
                     <img src="/img/e-bike.png" alt="e-bike" class="img-fluid">
                 </div>
-                <div class="secondaryText ps-4 mt-5 mt-lg-5 mb-md-2 mb-4 fs-2-5">Ecco i nostri veicoli in strada!</div>
-
+                
             </div>
             <!-- ----------------------------------------------------------------------- -->
             <!--                         SEZIONE ELENCHI VEICOLI                         -->
             <!-- ----------------------------------------------------------------------- -->
+            <div class="secondaryText mt-5 mt-lg-5 mb-md-5 mb-5 fs-2-5 text-center">Ecco i nostri veicoli in strada!</div>
             <div class="row d-flex justify-content-evenly mt-4">
                 <a href="/listaVeicoli?alimentazione=elettrica" class="sezioneLista col-11 col-md-5 m-1 mb-5 d-flex justify-content-center align-items-center text-decoration-none">
                     Auto Elettriche
@@ -304,8 +302,8 @@
                 <a href="/listaVeicoli?alimentazione=ibride" class="sezioneLista col-11 col-md-5 m-1 mb-5 d-flex justify-content-center align-items-center text-decoration-none">
                     Auto Ibride
                 </a>
-                <a href="/listaVeicoli?tipo=MONOPATTINI" class="sezioneLista col-11 col-md-5 m-1 mb-5 d-flex justify-content-center align-items-center text-decoration-none">
-                    Monopattini Elettriche
+                <a href="/listaVeicoli?tipo=MONOPATTINI" class="sezioneLista col-11 col-md-5 m-1 mb-5 d-flex justify-content-center align-items-center text-decoration-none text-center">
+                    Monopattini Elettrici
                 </a>
                 <a href="/listaVeicoli?tipo=BICICLETTE" class="sezioneLista col-11 col-md-5 m-1 mb-5 d-flex justify-content-center align-items-center text-decoration-none">
                     Bici Elettriche
@@ -331,12 +329,11 @@
                         </svg>Posso vedere dove sono i veicoli in città?</h2>
                     <div class="secondaryText ">Per ogni veicolo è segnata la posizione in tempo reale in mappa, apri la scheda del singolo veicolo o vedi qua sotto per trovarlo nella tua città!</div>
                 </div>
-                <div class="immagineSezioneBassa col-12 col-lg-6">
-                    <img src="/img/imgVeicoli/bmwElettrica.png" alt="BmwImage" class="img-fluid w-100">
+                <div class="immagineSezioneBassa col-12 col-lg-6 ps-5 ps-lg-0">
+                    <img src="/img/imgVeicoli/bmwElettrica.png" alt="BmwImage" class="img-fluid w-100 ms-md-5">
                 </div>
             </div>
-            <div class="secondaryText  mt-5 mb-3 fs-2-5">Ecco la nostra mappa con tutti i veicoli in strada
-                disponibili!</div>
+            <div class="secondaryText  mt-5 mb-3 fs-2-5 text-center">Ecco le posizioni dei veicoli!</div>
 
         </div>
 
@@ -360,7 +357,7 @@
                         </svg>Il car sharing per chi vuole fare la differenza</h2>
                     <p class="secondaryText ">Il nostro grafico mostra come l'utilizzo dei veicoli elettrici del nostro servizio di Vehicle sharing riduce significativamente <span class="paragrafoTx">le emissioni di anidride carbonica</span>. I dati sono chiari: quanto più i nostri veicoli vengono utilizzati, tanto meno CO2 viene rilasciata nell'atmosfera. Scegliere i nostri veicoli elettrici per i tuoi spostamenti è quindi una <span class="paragrafoTx">scelta sostenibile</span>, che contribuisce a proteggere l'ambiente e a ridurre l'impatto delle attività umane sull'ecosistema. Con il nostro servizio di Vehicle sharing, puoi <span class="paragrafoTx">muoversi in modo responsabile</span> senza rinunciare alla comodità e alla praticità dei mezzi di trasporto privati.</p>
                 </div>
-                <div class="col-lg-6 py-5">
+                <div class="col-lg-6">
                     <canvas id="myChart"></canvas>
                 </div>
             </div>
@@ -389,10 +386,10 @@
                             <hr>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="/aboutUs.html" class="aFake text-center">About Us</a>
+                                    <a href="/aboutUs" class="aFake text-center">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="/tariffe.html" class="aFake text-center">Tariffe</a>
+                                    <a href="/tariffe" class="aFake text-center">Tariffe</a>
                                 </li>
                                 <li>
                                     <a href="/faq" class="aFake text-center">Privacy Policy</a>

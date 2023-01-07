@@ -47,7 +47,7 @@
                             <!-- inizio elementi navbar -->
 
                             <li class="nav-item ms-auto ms-lg-0">
-                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                <a class="nav-link" href="/">Home</a>
                                 <!-- possiamo togliere mettendo il logo diretto alla home -->
                             </li>
                             <li class="nav-item ms-auto ms-lg-0">
@@ -83,17 +83,24 @@
 
     <main>
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 class="primaryText fs-4">
-                        Impossibile visualizzare la pagina
-                    </h1>
-                    <div class="pulsante w-25">
-                        <a type="button" class="btn primaryBtn" href="/">Torna alla Home</a>
+            <div class="row d-flex align-items-center">
+                <div class="col-12 col-md-6 justify-content-center d-flex d-md-none">
+                    <img src="/img/error.png" alt="errorImage" class="imgError" width="100%">
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-center">
+                        <h1 class="primaryText fs-2 text-center">
+                            Impossibile visualizzare la pagina
+                        </h1>
+                    </div>
+                    <div class="pulsante d-flex justify-content-center mt-3 mb-5 mb-md-0">
+                        <div class="pulsante">
+                            <a type="button" class="btn primaryBtn" href="/">Torna alla Home</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 d-flex justify-content-center">
-                    <img src="/img/error.png" alt="errorImage" class="imgError">
+                <div class="col-12 col-md-6 justify-content-center d-none d-md-flex">
+                    <img src="/img/error.png" alt="errorImage" class="imgError" width="100%">
                 </div>
             </div>
         </div>
@@ -118,10 +125,10 @@
                             <hr>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="/aboutUs.html" class="aFake text-center">About Us</a>
+                                    <a href="/aboutUs" class="aFake text-center">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="/tariffe.html" class="aFake text-center">Tariffe</a>
+                                    <a href="/tariffe" class="aFake text-center">Tariffe</a>
                                 </li>
                                 <li>
                                     <a href="/faq" class="aFake text-center">Privacy Policy</a>

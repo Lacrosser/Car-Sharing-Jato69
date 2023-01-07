@@ -89,8 +89,8 @@
                             <img src="/img/utente.png" alt="utentebanner" style="width: 10rem; height: 10rem; border-radius: 50%;">
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12 d-flex align-items-center justify-content-start text-center">
-                        <h1 class="primaryText fs-2-5">Benvenuto <span id="utente"></span></h1>
+                    <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
+                        <h1 class="primaryText fs-2-5 text-center">Benvenuto <span id="utente"></span></h1>
                     </div>
                 </div>
             </div>
@@ -104,13 +104,13 @@
                             </svg>Dati personali</h2>
                         <div class="d-flex ms-4">
                             <div class="zonaPersonale">
-                                <div class="secondaryText">Nome: <span class="tertiaryText" id="nome"></span></div>
-                                <div class="secondaryText">Cognome: <span class="tertiaryText" id="cognome"></span></div>
-                                <div class="secondaryText">Data di Nascita: <span class="tertiaryText" id="nascita"></span></div>
-                                <div class="secondaryText">Email: <span class="tertiaryText" id="email"></span></div>
-                                <div class="secondaryText">Data iscrizione:<span class="tertiaryText" id="dataIscrizione"></span></div>
-                                <div class="secondaryText">Privilegi: <span class="tertiaryText" id="tipo"></span></div>
-                                <div class="secondaryText">Firma digitale: <span class="tertiaryText" id="firma"></span></div>
+                                <div class="secondaryText">Nome: <span class="primaryText fs-5" id="nome"></span></div>
+                                <div class="secondaryText">Cognome: <span class="primaryText fs-5" id="cognome"></span></div>
+                                <div class="secondaryText">Data di Nascita: <span class="primaryText fs-5" id="nascita"></span></div>
+                                <div class="secondaryText">Email: <span class="primaryText fs-5" id="email"></span></div>
+                                <div class="secondaryText">Data iscrizione:<span class="primaryText fs-5" id="dataIscrizione"></span></div>
+                                <div class="secondaryText">Privilegi: <span class="primaryText fs-5" id="tipo"></span></div>
+                                <div class="secondaryText">Firma digitale: <span class="primaryText fs-5" id="firma"></span></div>
                             </div>
                         </div>
                     </div>
@@ -233,10 +233,10 @@
                             <hr>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="/aboutUs.html" class="aFake text-center">About Us</a>
+                                    <a href="/aboutUs" class="aFake text-center">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="/tariffe.html" class="aFake text-center">Tariffe</a>
+                                    <a href="/tariffe" class="aFake text-center">Tariffe</a>
                                 </li>
                                 <li>
                                     <a href="/faq" class="aFake text-center">Privacy Policy</a>
@@ -313,16 +313,16 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-danger">
-                    <h2 class="h1 modal-title fs-5 text-white text-bg-danger" id="titoloModale">ATTENZIONE! Stai per eliminare questa prenotazione!</h2>
+                    <h2 class="h1 modal-title fs-5 text-white text-bg-danger" id="titoloModale">Elimina prenotazione</h2>
                     <button type="button" class="btn-close text-bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="contenutoModale">
-                    <p class="lead">Sei sicuro di voler eliminare dal database questo prenotazione?</p>
+                    <p class="lead">Sei sicuro di voler eliminare la tua prenotazione?</p>
 
                     <p id="error" class="lead text-danger"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Scusami non volevo</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
                     <input id="eliminaBottone" type="button" class="btn btn-danger" data-bs-dismiss="modal" value="Elimina">
                 </div>
             </div>

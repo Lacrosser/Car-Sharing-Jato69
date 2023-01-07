@@ -446,7 +446,7 @@ body{
     height: 4rem;
     /* right: 0; */
     content: "";
-    clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
+    clip-path: polygon(0 0, 52% 0, 70% 100%, 0% 100%);
     background: #00b8c255;
     z-index: -1;
 }
@@ -474,7 +474,7 @@ body{
     height: 4rem;
     /* right: 0; */
     content: "";
-    clip-path: polygon(0 0, 74% 0, 89% 100%, 0 100%);
+    clip-path: polygon(0 0, 52% 0, 70% 100%, 0% 100%);
     background: #00b8c255;
     z-index: -1;
 }

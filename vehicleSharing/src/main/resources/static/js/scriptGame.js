@@ -11,7 +11,12 @@ var divPulsante = document.querySelector('#pulsante');
 
 var record = document.querySelector('#record');
 
-record.textContent ="Record: " + localStorage.getItem('puntiGioco') + " s";
+if(localStorage.getItem('puntiGioco') == null){
+    record.textContent ="Record: " + 0 + " s";
+} else {
+    record.textContent ="Record: " + localStorage.getItem('puntiGioco') + " s";
+}
+
 
 var punteggio = document.querySelector('#punti');
 
