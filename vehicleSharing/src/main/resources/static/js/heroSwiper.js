@@ -1,6 +1,14 @@
 /* -------------------------------------------------------------------------- */
 /*                                   SWIPER                                   */
 /* -------------------------------------------------------------------------- */
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  scrollbar: {
+      el: ".swiper-scrollbar",
+      hide: true,
+  },
+});
+
 
 var swiper = new Swiper(".heroSwipe", {
     loop: true,
