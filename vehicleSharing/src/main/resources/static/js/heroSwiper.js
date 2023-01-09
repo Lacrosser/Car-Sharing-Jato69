@@ -26,4 +26,8 @@ var swiper = new Swiper(".heroSwipe", {
         el: ".swiper-scrollbar",
         hide: true,
     },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
 });

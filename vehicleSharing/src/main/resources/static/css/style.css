@@ -92,6 +92,10 @@ body {
     color: #128494;
 }
 
+.greyText{
+    color: #535353;
+}
+
 
 .bannerColor {
     color: #094149;
@@ -121,7 +125,7 @@ body {
 }
 
 .bannerPromo h4 {
-    text-shadow: 0px 0px .5px #000000;
+    /* text-shadow: 0px 0px .5px #000000; */
 
 }
 
@@ -162,7 +166,7 @@ body {
     color: white;
     background-color: #00B7C2;
     height: auto;
-    text-shadow: 5px 5px #000000
+    /* text-shadow: 5px 5px #000000 */
 }
 
 .heroTitle2 {
@@ -190,14 +194,20 @@ body {
 }
 
 .heroSubtitle2 {
+    text-align: center;
     font-size: 70px;
+    padding: 1rem 1rem;
     color: white;
+    height: auto;
 }
 
 .heroSubtitle3 {
+    text-align: center;
     font-size: 70px;
+    padding: 1rem 1rem;
     color: white;
-    text-shadow: 4px 4px #000000
+    height: auto;
+    /* text-shadow: 4px 4px #000000 */
 }
 
 
@@ -270,7 +280,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .5);
 
 
 
@@ -596,6 +606,10 @@ body {
     padding: 1.5rem 0;
 }
 
+.boldTitle{
+    font-weight: 800;
+}
+
 
 .fCol {
     background-color: #40424b;
@@ -643,7 +657,6 @@ body {
 /* -------------------------------------------------------------------------- */
 
 .paragrafo {
-    color: #128494;
     font-size: 25px;
     margin-top: 3rem;
     margin: 2rem 0;
@@ -1014,7 +1027,7 @@ h2 {
     font-size: larger;
 }
 
-.ombra {
+.ombra{
     text-shadow: 2px 2px #000000;
 }
 
