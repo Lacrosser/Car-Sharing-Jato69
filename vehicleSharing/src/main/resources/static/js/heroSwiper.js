@@ -19,3 +19,11 @@ var swiper = new Swiper(".heroSwipe", {
       prevEl: ".swiper-button-prev"
     }
   });
+
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+    },
+});
