@@ -5,9 +5,12 @@ let prenotazione = document.querySelector("#prenotazione");
 
 window.addEventListener('load', fetchprenotazione);
 
+const toastLiveExample = document.querySelector('.toast');
+
 
 
 function getPrenotazione(prenotazioni) {
+
     let htmlCode = '';
     prenotazioni.forEach(singlePrenotaObjects => {
 
@@ -75,6 +78,8 @@ deleting.addEventListener("click", function() {
 
     fetchdelete(idBottoneElimina);
 
+    const bernardo = new bootstrap.Toast(toastLiveExample);
+    bernardo.show();
     // location.reload();
 });
 
@@ -88,9 +93,10 @@ function fetchprenotazione() {
 
         id = sessionStorage.getItem('id');
 
-
     } else {
+
         id = localStorage.getItem('id');
+
     }
 
 
@@ -103,8 +109,18 @@ function fetchprenotazione() {
             // console.log(response);
             const prenotazioniFiltrate = response.filter(prenotazione => prenotazione.archivioUtenti.id === Number(id));
 
-            prenotazione.innerHTML = "";
-            getPrenotazione(prenotazioniFiltrate);
+            
+
+            if(prenotazioniFiltrate == ""){
+
+                nessunVeicolo();
+
+            } else {
+                prenotazione.innerHTML = "";
+                getPrenotazione(prenotazioniFiltrate);
+            }
+
+            
 
 
 
@@ -125,6 +141,18 @@ function fetchprenotazione() {
             }
         })
 };
+
+function nessunVeicolo(){
+
+    let htmlCode = ` <div class="noData">
+                        <div class="text-center greyText fs-1">
+                            <i class="bi bi-car-front-fill">
+                            </i>Nessun veicolo prenotato.
+                        </div>
+                    </div>`
+    prenotazione.innerHTML = htmlCode;
+
+}
 
 
 function fetchdelete(id) {
@@ -155,3 +183,5 @@ alternate con bg light
 le altre meno evideziata, usate
 
 */
+
+

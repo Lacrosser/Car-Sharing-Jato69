@@ -44,7 +44,7 @@ function logOutButton() {
 
     let navbarElement = document.querySelector("#navbar");
 
-    li.appendChild(span)
+    li.appendChild(span);
     navbarElement.appendChild(li);
 
     let logoutModale = document.querySelector("#logoutModal");
