@@ -29,6 +29,11 @@
     align-items: center;
 }
 
+.swiper-slide .overlay {
+    min-height: 30vh;
+
+}
+
 .heroSwipe .swiper-slide {
 
 
@@ -51,7 +56,7 @@
 
     .heroSwipe,
     .heroSwipe .swiper-wrapper,
-    .heroSwipe .swiper-slide {
+    .heroSwipe .swiper-slide, .swiper-slide .overlay {
         min-height: 70vh;
     }
 

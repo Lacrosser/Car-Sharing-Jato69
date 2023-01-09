@@ -3,13 +3,13 @@
     align-items: flex-start;
   }
 
-  .heroTitle {
+  /* .heroTitle {
     font-size: 50px;
     padding: 0.5rem 0.5rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-  }
+  } */
  
   .heroSubtitle {
     font-size: 30px;

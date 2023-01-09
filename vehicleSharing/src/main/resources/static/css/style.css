@@ -182,6 +182,7 @@ body{
 }
 
 .heroSubtitle {
+    text-align: center;
     font-size: 70px;
     padding: 1rem 1rem;
     color: white;
@@ -239,6 +240,7 @@ body{
 }
 
 .swiper-slide {
+    position: relative;
     text-align: center;
     font-size: 18px;
     /* background: #fff; */
@@ -256,6 +258,22 @@ body{
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+}
+
+.swiper-slide .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 300px; */
+    /* min-height: 30vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+
+
+
 }
 
 .swiper-slide img {
@@ -680,7 +698,7 @@ h2 {
     left: 50%;
     margin: 90px 0;
     transform: translate(-50%, 0);
-    box-shadow: 0 10px 0 0 #128494 inset;
+    /* box-shadow: 0 10px 0 0 #128494 inset; */
 
 
     padding: 30px;

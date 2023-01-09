@@ -110,9 +110,17 @@
             <div class="swiper heroSwipe">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" style="background-image: url(/img/teslaRossa.jpg);">
-                        <div class="heroText">
-                            <h3 class="d-flex justify-content-start"><span class="heroTitle">SharE!</span></h3>
-                            <h3 class="heroSubtitle">La flotta di <span class="colorino">veicoli</span> a impatto 0 è qui!</h3>
+                        <div class="overlay">
+                            <div class="container-fluid">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10 col-11 d-flex justify-content-center">
+                                        <div class="heroText">
+                                            <h3 class="d-flex"><span class="heroTitle">SharE!</span></h3>
+                                            <h3 class="heroSubtitle">La flotta di <span class="colorino">veicoli</span> a impatto 0 è qui!</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="swiper-slide swiper-lazy" style="background-image: url(/img/vwElettrica.jpg);">
@@ -483,10 +491,11 @@
             loop: true,
             spaceBetween: 0,
             centeredSlides: true,
-            autoplay: {
-                delay: 8000,
-                disableOnInteraction: false
-            },
+            autoplay: false,
+            //  {
+            //     delay: 8000,
+            //     disableOnInteraction: false
+            // },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true
