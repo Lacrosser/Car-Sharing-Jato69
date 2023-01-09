@@ -17,13 +17,13 @@
     font-family: 'Outfit', sans-serif;
 }
 
-body{
+body {
     margin-top: 76px;
 }
 
 .colorino {
     color: #00838a;
-    
+
 }
 
 /* css */
@@ -105,11 +105,11 @@ body{
 }
 
 .primaryTextNS {
-    
+
     color: #00B7C2;
 }
 
-.secondaryTextNS{
+.secondaryTextNS {
     color: #128494;
 }
 
@@ -132,7 +132,7 @@ body{
     padding: 3.2rem;
 }
 
-.imgAdmin{
+.imgAdmin {
     opacity: 0.3;
     width: 20rem;
     height: auto;
@@ -144,7 +144,7 @@ body{
 /* -------------------------------------------------------------------------- */
 
 
-.navbar-custom{
+.navbar-custom {
     background-color: #128594;
 }
 
@@ -988,7 +988,7 @@ h2 {
     display: none;
 }
 
-.nohidden{
+.nohidden {
     display: block;
 }
 
@@ -1014,22 +1014,25 @@ h2 {
     font-size: larger;
 }
 
-.ombra{
+.ombra {
     text-shadow: 2px 2px #000000;
 }
 
-.rossetto{
-    color:#ac0000;
+.rossetto {
+    color: #ac0000;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                       Correzione a in tutte le pagine                      */
 /* -------------------------------------------------------------------------- */
 
-.aFake{
+.aFake {
     color: #98baeb !important;
     text-decoration: underline;
+    cursor: pointer;
 }
-.aFake :hover{
+
+
+.logout  {
     cursor: pointer;
 }
