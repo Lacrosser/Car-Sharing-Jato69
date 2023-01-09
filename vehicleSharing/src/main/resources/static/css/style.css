@@ -166,13 +166,14 @@ body {
     top: 2rem;
     right: 50%;
     transform: translateX(-50%);
+    position: fixed;
+    top: 5rem;
 }
 
 .toast{
     background-color: rgb(58, 150, 58);
     text-align: center;
     --bs-toast-max-width: 170px;
-    
 }
 
 
@@ -1060,3 +1061,4 @@ h2 {
     border:18px solid #535353;
     padding: 7rem 7rem;
 }
+
