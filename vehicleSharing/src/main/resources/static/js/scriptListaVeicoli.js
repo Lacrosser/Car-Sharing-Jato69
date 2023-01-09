@@ -47,7 +47,7 @@ function mostraVeicoli(listaVeicoli) {
 
 
     var mezzoVeicolo = document.createElement('div');
-    mezzoVeicolo.setAttribute('class', 'tipo');
+    mezzoVeicolo.setAttribute('class', 'tipo bi bi-lightning-charge');
     mezzoVeicolo.classList.add("ps-2");
     mezzoVeicolo.textContent = alimentazione;
 
@@ -122,7 +122,7 @@ function mostraVeicoliNoDisponibile(listaVeicoli) {
 
 
     var mezzoVeicolo = document.createElement('div');
-    mezzoVeicolo.setAttribute('class', 'tipo');
+    mezzoVeicolo.setAttribute('class', 'tipo bi bi-lightning-charge');
     mezzoVeicolo.classList.add("ps-2");
     mezzoVeicolo.textContent = alimentazione;
 
