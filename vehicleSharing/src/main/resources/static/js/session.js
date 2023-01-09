@@ -136,7 +136,7 @@ function modalBuilder(){
               <button type="button" class="btn-close text-bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="contenutoModale">
-              <p class="lead">Sei sicuro di voler sloggare?</p>
+              <p class="lead">Sei sicuro di voler uscire?</p>
 
               <p id="error" class="lead text-danger"></p>
           </div>
