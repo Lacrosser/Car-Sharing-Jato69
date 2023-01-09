@@ -17,7 +17,7 @@ btnPren.addEventListener("click", function() {
     } else {
         console.log("nope");
         
-        const toastLiveExample = document.querySelector('.toast');
+        const toastLiveExample = document.querySelector('#tosti');
         const bernardo = new bootstrap.Toast(toastLiveExample)
         bernardo.show();
         
