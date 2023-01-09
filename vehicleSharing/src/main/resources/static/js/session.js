@@ -37,10 +37,10 @@ function logOutButton() {
     li.setAttribute("id", "logOut");
 
     let span = document.createElement("span");
-    span.setAttribute("class", "nav-link logout");
+    span.setAttribute("class", "nav-link logout bi bi-person-circle");
 
     // span.setAttribute("href", "/");
-    span.textContent = "LogOut";
+    span.textContent = " Esci";
 
     let navbarElement = document.querySelector("#navbar");
 
@@ -176,7 +176,7 @@ function modalBuilder() {
     // remove.addEventListener("click", function() {
     //     logoutModale.style.display = "none";
     // });
-    // btnLogout.addEventListener("click", logOut)
+    btnLogout.addEventListener("click", logOut);
 
 
 
