@@ -92,6 +92,10 @@ body {
     color: #128494;
 }
 
+.greyText{
+    color: #535353;
+}
+
 
 .bannerColor {
     color: #094149;
@@ -602,6 +606,10 @@ body {
     padding: 1.5rem 0;
 }
 
+.boldTitle{
+    font-weight: 800;
+}
+
 
 .fCol {
     background-color: #40424b;
@@ -649,7 +657,6 @@ body {
 /* -------------------------------------------------------------------------- */
 
 .paragrafo {
-    color: #128494;
     font-size: 25px;
     margin-top: 3rem;
     margin: 2rem 0;

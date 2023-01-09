@@ -182,11 +182,14 @@
                 <div class="sezioneDomande mb-5">
                     <div class="secondaryText mb-5 fs-2-5">Hai altre domande? Scrivici!</div>
                     <div class="form-group">
+                        <input class="form-control" name="mail" id="mail" placeholder="Scrivi la tua email" style="resize: none;"></textarea>
+                    </div>
+                    <div class="form-group mt-3">
                         <label for="exampleFormControlTextarea1">Scrivi qui la tua domanda</label>
-                        <textarea class="form-control" id="faq" readonly placeholder="Accedi per scrivere una domanda" rows="3" style="resize: none;"></textarea>
+                        <textarea class="form-control" id="faq" rows="3" style="resize: none;"></textarea>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button class="btn primaryBtn mt-2" id="faqBtn" disabled data-bs-toggle="modal" data-bs-target="#exampleModal">Invia!</button>
+                        <button class="btn primaryBtn mt-2" id="faqBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Invia!</button>
                     </div>
                 </div>
 
@@ -195,11 +198,11 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="titoloModal">Fatto</h1>
+                            <h1 class="modal-title fs-5" id="titoloModal"></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" id="contenutoModal">
-                            Domanda inviata con successo! Ti risponderemo alla tua email.
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
@@ -279,7 +282,7 @@
                         <h3>Contattaci</h3>
                         <hr>
                         <div class=" mb-4">
-                            <p>Numeri Utili</p>
+                            <p class="boldTitle">Numeri Utili</p>
                             <p>Numero sede italiana: <span class="aFake">0114562378</span>
                             </p>
                             <p>Numero verde: <span class="aFake"> 800 400 736</span>
@@ -289,7 +292,7 @@
                         <h3>Dove Trovarci</h3>
                         <hr>
                         <div>
-                            <p>Sedi e indirizzi</p>
+                            <p class="boldTitle">Sedi e indirizzi</p>
                             <p>Sede Italiana: <span class="aFake">Corso Vittorio Emanuele II 157/d Torino (TO)</span>
                             </p>
                             <p>Sede Centrale: <span class="aFake">Thàmova 116 Karlin, Cechia</span>

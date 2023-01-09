@@ -204,6 +204,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
             <div class="d-flex d-lg-none col-lg-6 col-12 d-flex justify-content-center justify-content-md-around">
                 <img src="/img/Monopattino.png" alt="Monopattino" height="200px" width="auto">
@@ -214,7 +215,7 @@
                 </svg>Vantaggi</h2>
             <div class="sezione row d-flex justify-content-between align-items-center">
 
-                <div class="paragrafo col-lg-6 col-12">Nonostante il nostro servizio di car sharing offra già ottime tariffe per
+                <div class="paragrafo col-lg-6 col-12 greyText">Nonostante il nostro servizio di car sharing offra già ottime tariffe per
                     il noleggio di monopattini, biciclette e auto, con gli abbonamenti è possibile ottenere prezzi ancora
                     migliori. Gli abbonamenti offrono la comodità di poter utilizzare il nostro servizio a un prezzo inferiore
                     rispetto al noleggio orario. Se hai bisogno di utilizzare il nostro servizio con regolarità, un abbonamento
@@ -322,14 +323,14 @@
                 </svg>Risparmia con i nostri vantaggi</h2>
             <div class="sezione row d-flex justify-content-between align-items-center">
                 <div class="paragrafo col-lg-6 col-12">
-                    <div>
+                    <div class="greyText">
                         Offriamo questi abbonamenti perché crediamo che il nostro servizio di car sharing possa essere utilizzato in modo ancora più conveniente e senza pensieri dai nostri clienti. Sappiamo che molti di voi utilizzano il nostro servizio per spostamenti quotidiani o settimanali, e vogliamo offrire loro la possibilità di sottoscrivere un abbonamento che li faccia risparmiare <span class="paragrafoTx">tempo</span> e <span class="paragrafoTx">denaro</span>.
                     </div>
                     <div class="fotoSezione col-12 d-flex d-lg-none d-md-none justify-content-center d-lg-flex">
                         <img src="https://media.istockphoto.com/id/1444502981/vector/coin-and-watch.jpg?b=1&s=170667a&w=0&k=20&c=s8Kubhpsza41VjEw-HQ6A2vOVLLYdH9HKll3r8sNIi4=" alt="imgTimeMoney" width="100%" height="auto">
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-12">
+                        <div class="col-12 col-md-6 col-lg-12 greyText">
                             Inoltre, vogliamo premiare la fedeltà dei nostri clienti offrendo loro vantaggi esclusivi che aumentano con l'aumentare della durata dell'abbonamento. Speriamo che questi abbonamenti possano soddisfare le esigenze dei nostri clienti e li invitiamo a scegliere quello che fa al caso loro.
                         </div>
                         <div class="fotoSezione col-12 col-md-6 col-lg-12 d-none d-lg-none d-md-flex justify-content-center p-5 d-none d-lg-flex">
@@ -417,7 +418,7 @@
                     <h3>Contattaci</h3>
                     <hr>
                     <div class=" mb-4">
-                        <p>Numeri Utili</p>
+                        <p class="boldTitle">Numeri Utili</p>
                         <p>Numero sede italiana: <span class="aFake">0114562378</span>
                         </p>
                         <p>Numero verde: <span class="aFake"> 800 400 736</span>
@@ -427,7 +428,7 @@
                     <h3>Dove Trovarci</h3>
                     <hr>
                     <div>
-                        <p>Sedi e indirizzi</p>
+                        <p class="boldTitle">Sedi e indirizzi</p>
                         <p>Sede Italiana: <span class="aFake">Corso Vittorio Emanuele II 157/d Torino (TO)</span>
                         </p>
                         <p>Sede Centrale: <span class="aFake">Thàmova 116 Karlin, Cechia</span>
@@ -455,6 +456,10 @@
                 el: ".swiper-scrollbar",
                 hide: true,
             },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            }
         });
     </script>
     <script>
