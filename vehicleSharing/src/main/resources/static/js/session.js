@@ -176,7 +176,7 @@ function modalBuilder() {
     // remove.addEventListener("click", function() {
     //     logoutModale.style.display = "none";
     // });
-    btnLogout.addEventListener("click", logOut);
+    // btnLogout.addEventListener("click", logOut);
 
 
 
