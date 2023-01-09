@@ -157,6 +157,13 @@ body {
 /*                                    HERO                                    */
 /* -------------------------------------------------------------------------- */
 
+
+.toast-container {
+    top: 2rem;
+    right: 50%;
+    transform: translateX(50%);
+}
+
 .heroText {
     align-items: flex-start;
 }

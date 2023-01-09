@@ -29,6 +29,9 @@
 
 <body>
 
+
+
+
     <div id="loading-screen">
         <img src="/img/logoGiusto.svg" alt="logo" height="200rem" width="200rem">
     </div>
@@ -102,10 +105,23 @@
     </section>
 
 
-    <main>
+    <main class="position-relative">
         <!-- ----------------------------------------------------------------------- -->
         <!--                                  HERO                                   -->
         <!-- ----------------------------------------------------------------------- -->
+
+        <div class="toast-container p-3">
+            <div class="toast">
+              <div class="toast-header">
+                <strong class="me-auto">Arrivederci!</strong>
+                <small>just now</small>
+              </div>
+              <div class="toast-body">
+                Sei stato disconnesso.
+              </div>
+            </div>
+          </div>
+
         <div id="hero">
             <div class="swiper heroSwipe">
                 <div class="swiper-wrapper">
@@ -486,6 +502,7 @@
         </div>
 
     </div>
+
 
 
     <div id="modLogout"></div>

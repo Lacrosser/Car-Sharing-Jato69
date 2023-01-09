@@ -176,7 +176,19 @@ function modalBuilder() {
     // remove.addEventListener("click", function() {
     //     logoutModale.style.display = "none";
     // });
-    btnLogout.addEventListener("click", logOut)
+    // btnLogout.addEventListener("click", logOut)
+
+
+
+const toastLiveExample = document.querySelector('.toast');
+
+  btnLogout.addEventListener('click', () => {
+    const bernardo = new bootstrap.Toast(toastLiveExample)
+
+    bernardo.show()
+  })
+
+
 
 
 }
