@@ -15,7 +15,14 @@ btnPren.addEventListener("click", function() {
         prenota();
         window.location.replace("/areaUtente");
     } else {
-        console.log("nope")
+        console.log("nope");
+        
+        const toastLiveExample = document.querySelector('.toast');
+        const bernardo = new bootstrap.Toast(toastLiveExample)
+        bernardo.show();
+        
+       
+      
         event.preventDefault();
     }
 });
