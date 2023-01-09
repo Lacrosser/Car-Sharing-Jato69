@@ -183,42 +183,42 @@ function controllaPassword() {
         //almeno una minuscola
         //almeno un carattere speciale @$!%*?&
         //lunghezza minima 8 caratteri
-        error.textContent = "Per favore controlla la tua Password: ";
+        error.textContent = "Per favore controlla la tua Password ed inserire: ";
         for (let i = 0; i < 6; i++) {
 
             switch (i) {
                 case 0:
                     var span = document.createElement("span")
-                    span.textContent = " Deve avere almeno una maiuscola, ";
+                    span.textContent = " almeno una maiuscola, ";
                     error.appendChild(span);
 
                     break;
                 case 1:
                     var span = document.createElement("span")
-                    span.textContent = " Deve avere almeno una minuscola,";
+                    span.textContent = " almeno una minuscola,";
                     error.appendChild(span);
                     break;
                 case 2:
                     var span = document.createElement("span")
-                    span.textContent = " Deve avere almeno un carattere speciale @$!%*?&, ";
+                    span.textContent = " almeno un carattere speciale (@$!%*?&), ";
                     error.appendChild(span);
 
                     break;
                 case 3:
                     var span = document.createElement("span")
-                    span.textContent = " Deve contenere almeno un numero, ";
+                    span.textContent = " almeno un numero, ";
                     error.appendChild(span);
 
                     break;
                 case 4:
                     var span = document.createElement("span")
-                    span.textContent = " Lunghezza minima 8 caratteri, ";
+                    span.textContent = " almeno 8 caratteri, ";
                     error.appendChild(span);
 
                     break;
                 case 5:
                     var span = document.createElement("span")
-                    span.textContent = " Deve contenere almeno un numero, ";
+                    span.textContent = " almeno un numero, ";
                     error.appendChild(span);
 
                     break;
