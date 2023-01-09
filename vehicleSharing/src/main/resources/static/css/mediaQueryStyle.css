@@ -1,54 +1,30 @@
- @media (max-width: 414px) {
+ @media (max-width: 415px) {
   .heroText {
+    width: 100%;
     align-items: flex-start;
   }
 
+  
   .heroTitle {
-    font-size: 50px;
-    padding: 0.5rem 0.5rem;
-    color: white;
-    background-color: #00B7C2;
-    height: auto;
-  }
- 
-  .heroSubtitle {
     font-size: 30px;
-    color: white;
-    
-  }
-  .game{
-    width: 100%;
-  }
-  .dimPagamento {
-    width: 100%;
-}
-  
-}
- 
- 
- 
- 
- 
- @media (max-width: 575px) {
-  .heroText {
-    width: 100%;
-    align-items: flex-start;
-  }
-
-  .heroTitle {
-    font-size: 50px;
+    margin-left: 1rem;
     padding: 0.5rem 0.5rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-/*text-shadow: 2px 2px #000000 */
+
+  }
+
+  .heroSubtitle {
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    margin-left: 1rem;
+    
+
   }
  
-  .heroSubtitle {
-    font-size: 35px;
-    color: white;
-/*text-shadow: 2px 2px #000000*/
-  }
+  
   .game{
     width: 100%;
   }
@@ -56,27 +32,37 @@
     width: 100%;
 }
   
-} 
+}
+ 
+ 
+ 
+ 
+ 
 
- @media (min-width: 576px) and (max-width: 767.98px) {
+
+ @media (min-width: 416px) and (max-width: 767.98px) {
   .heroText {
     width: 100%;
     align-items: flex-start;
   }
   .heroTitle {
     font-size: 50px;
+    margin-left: 2rem;
     padding: 0.75rem 0.75rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-/*text-shadow: 2px 2px #000000 */
+
   }
   
   
   .heroSubtitle {
     font-size: 35px;
     color: white;
-/*text-shadow: 2px 2px #000000*/
+    text-align: left;
+    margin-left: 2rem;
+    
+
   }
   .game{
     width: 100%;
@@ -93,7 +79,8 @@
     align-items: flex-start;
   }
   .heroTitle {
-    font-size: 70px;
+    font-size: 60px;
+    margin-left: 3rem;
     padding: 0.875rem 0.875rem;
     color: white;
     background-color: #00B7C2;
@@ -104,7 +91,9 @@
   .heroSubtitle {
     font-size: 45px;
     color: white;
-    /* text-shadow: 3px 3px #000000 */
+    text-align: left;
+    margin-left: 3rem;
+   
   }
 
   .game{
@@ -122,19 +111,53 @@
     align-items: flex-start;
   }
   .heroTitle {
+    font-size: 70px;
+    padding: 1rem 1rem;
+    color: white;
+    background-color: #00B7C2;
+    height: auto;
+    
+  }
+
+  /* .heroTitle2 {
     font-size: 80px;
     padding: 1rem 1rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-    /* text-shadow: 4px 4px #000000  */
-  }
+} */
+
+/* .heroTitle3 {
+  font-size: 80px;
+  padding: 1rem 1rem;
+  color: white;
+  background-color: #00B7C2;
+  height: auto;
+} */
   
   .heroSubtitle {
     font-size: 70px;
     color: white;
-    /* text-shadow: 4px 4px #000000 */
+    align-items: flex-start;
+   text-align: left;
   }
+
+  /* .heroSubtitle2 {
+    text-align: center;
+    font-size: 70px;
+    padding: 1rem 1rem;
+    color: white;
+    height: auto;
+}
+
+.heroSubtitle3 {
+    text-align: center;
+    font-size: 70px;
+    padding: 1rem 1rem;
+    color: white;
+    height: auto;
+    
+} */
 
 
   
@@ -168,6 +191,13 @@
         margin-top: 4rem;
         margin-bottom: 4rem;
         background-image: url('../img/autoElettrica2.jpg');
+        height: 10rem;  
+    }
+    #spacer3{
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        background-image: url('../img/vwElettrica.jpg');
         height: 10rem;  
     }
 
