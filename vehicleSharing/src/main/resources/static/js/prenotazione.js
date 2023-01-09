@@ -26,7 +26,7 @@ function getPrenotazione(prenotazioni) {
                     <div>Colore: ${singlePrenotaObjects.veicoli.colore}</div>
                     <div>Data prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(0,10)}</div>
                     <div>Ora prenotazione: ${singlePrenotaObjects.oraPrenotazione.substring(11,16)}</div>
-                    <button class="mt-3 btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn btn-close">Elimina</button>
+                    <button class="cena mt-3 btn primaryBtn" data-bs-toggle="modal" data-bs-target="#eliminaModal" id="${singlePrenotaObjects.id}" class="btn redBtn btn-close">Elimina</button>
                 </div>
             </div>         
         </div>
@@ -38,7 +38,7 @@ function getPrenotazione(prenotazioni) {
     prenotazione.innerHTML = htmlCode;
 
     let eliminaModale = document.querySelector("#eliminaModal");
-    let btn = document.querySelectorAll("button");
+    let btn = document.querySelectorAll(".cena");
 
     // Add new event listeners to buttons
     btn.forEach(button => {
