@@ -10,7 +10,7 @@ window.addEventListener('load', fetchprenotazione);
 function getPrenotazione(prenotazioni) {
     let htmlCode = '';
     prenotazioni.forEach(singlePrenotaObjects => {
-        
+
         htmlCode +=
             `
         <div id="cardina" class="col-md-6 py-3 d-flex flex-column">
@@ -57,9 +57,10 @@ function getPrenotazione(prenotazioni) {
         });
     };
 
-    
-    
+
+
 };
+
 
 
 
