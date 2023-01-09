@@ -24,9 +24,11 @@ let email = document.querySelector("#email");
 let dataNascita = document.querySelector("#dataNascita");
 
 
-let btnReg = document.querySelector("#registrati")
-let errorUser = document.querySelector("#errorUser");
-let errorPass = document.querySelector("#errorPass");
+let btnReg = document.querySelector("#registrati");
+
+let error = document.querySelector("#error");
+
+// let errorPass = document.querySelector("#errorPass");
 
 /* -------------------------------------------------------------------------- */
 /*                         AVVIO PAGINA/EVENT LISTENER                        */
@@ -50,7 +52,7 @@ function checkPassword() {
         return true;
     } else {
 
-        errorPass.textContent = "Le due password non coincidono"
+        error.textContent = "Le due password non coincidono"
         return false;
     }
 
@@ -138,24 +140,24 @@ function controllaUser() {
 
     let us = username.value;
 
-    console.log(us);
+    // console.log(us);
     if (!us.match(REGUSER)) {
 
-        errorUser.textContent = "Per favore controlla il tuo Username:";
+        error.textContent = "Per favore controlla il tuo Username: ";
 
         for (let i = 0; i < 2; i++) {
 
             switch (i) {
                 case 0:
-                    var li = document.createElement("li")
-                    li.textContent = "Username: massimo 16 caratteri";
-                    errorUser.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " massimo 16 caratteri, ";
+                    error.appendChild(span);
 
                     break;
                 case 1:
-                    var li = document.createElement("li")
-                    li.textContent = "Username: Non sono accettati spazi o caratteri speciali";
-                    errorUser.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " Non sono accettati spazi o caratteri speciali.";
+                    error.appendChild(span);
                     break;
 
                 default:
@@ -175,49 +177,49 @@ function controllaUser() {
 
 function controllaPassword() {
     let password = pass1.value;
-    console.log(password);
+    // console.log(password);
     if (!password.match(REGPASS)) {
         //almeno una maiuscola
         //almeno una minuscola
         //almeno un carattere speciale @$!%*?&
         //lunghezza minima 8 caratteri
-        errorPass.textContent = "Per favore controlla la tua Password:";
+        error.textContent = "Per favore controlla la tua Password: ";
         for (let i = 0; i < 6; i++) {
 
             switch (i) {
                 case 0:
-                    var li = document.createElement("li")
-                    li.textContent = "Password: deve avere almeno una maiuscola";
-                    errorPass.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " Deve avere almeno una maiuscola, ";
+                    error.appendChild(span);
 
                     break;
                 case 1:
-                    var li = document.createElement("li")
-                    li.textContent = "Password:Deve avere almeno una minuscola";
-                    errorPass.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " Deve avere almeno una minuscola,";
+                    error.appendChild(span);
                     break;
                 case 2:
-                    var li = document.createElement("li")
-                    li.textContent = "Password:Deve avere almeno un carattere speciale @$!%*?&";
-                    errorPass.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " Deve avere almeno un carattere speciale @$!%*?&, ";
+                    error.appendChild(span);
 
                     break;
                 case 3:
-                    var li = document.createElement("li")
-                    li.textContent = "Password: Deve contenere almeno un numero";
-                    errorPass.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " Deve contenere almeno un numero, ";
+                    error.appendChild(span);
 
                     break;
                 case 4:
-                    var li = document.createElement("li")
-                    li.textContent = "Password: Lunghezza minima 8 caratteri";
-                    errorPass.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " Lunghezza minima 8 caratteri, ";
+                    error.appendChild(span);
 
                     break;
                 case 5:
-                    var li = document.createElement("li")
-                    li.textContent = "Password: Deve contenere almeno un numero";
-                    errorPass.appendChild(li);
+                    var span = document.createElement("span")
+                    span.textContent = " Deve contenere almeno un numero, ";
+                    error.appendChild(span);
 
                     break;
 
@@ -237,16 +239,14 @@ function controllaPassword() {
 }
 
 function ripristinoCampi() {
-    var li = document.querySelectorAll("ul#errorPass li");
-    var lu = document.querySelectorAll("ul#errorUser li");
-    errorPass.textContent = "";
-    errorUser.textContent = "";
+    var li = document.querySelectorAll("#error span");
+    error.textContent = "";
     li.forEach(element => {
 
         element.remove();
 
     });
-    lu.forEach(luele => {
-        luele.remove();
-    });
+    // lu.forEach(luele => {
+    //     luele.remove();
+    // });
 }
