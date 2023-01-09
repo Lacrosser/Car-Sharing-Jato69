@@ -20,6 +20,9 @@ function nascondiroba() {
 
 }
 
+
+
+
 function logOut() {
     localStorage.clear();
     sessionStorage.clear();
@@ -151,7 +154,7 @@ function modalBuilder() {
   </div>`
 
 
-  // <button id="remove" type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
+    // <button id="remove" type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
 
     let divLog = document.querySelector("#modLogout");
 
@@ -172,21 +175,41 @@ function modalBuilder() {
     };
 
     // let remove = document.querySelector("#remove");
-    
+
     // remove.addEventListener("click", function() {
     //     logoutModale.style.display = "none";
     // });
+
+
     // btnLogout.addEventListener("click", logOut);
+    
+    btnLogout.addEventListener("click", 
+
+      async function logiOut() {
+        const toastLiveExample = document.querySelector('.toast');
+        const bernardo = new bootstrap.Toast(toastLiveExample)
+        bernardo.show();
+        await new Promise(resolve => setTimeout(resolve, 1000)); // wait 3 seconds
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.assign('/');
+      }
 
 
 
-const toastLiveExample = document.querySelector('.toast');
+    );
 
-  btnLogout.addEventListener('click', () => {
-    const bernardo = new bootstrap.Toast(toastLiveExample)
 
-    bernardo.show()
-  })
+
+
+    
+
+    // btnLogout.addEventListener('click', () => {
+    //     const bernardo = new bootstrap.Toast(toastLiveExample)
+
+    //     bernardo.onShown = logOut;
+    //     bernardo.show();
+    // })
 
 
 
