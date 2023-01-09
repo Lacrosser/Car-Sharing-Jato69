@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/mediaQueryStyle.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 
@@ -103,13 +104,15 @@
                             <input type="text" class="form-control" id="password" placeholder="Password">
                             <label for="floatingPassword">Intestatario</label>
                         </div>
-                        <div class="form-floating pb-3">
-                            <input type="date" class="form-control" id="password" placeholder="Password">
-                            <label for="floatingPassword">Data di scadenza</label>
-                        </div>
-                        <div class="form-floating pb-3">
-                            <input type="number" class="form-control" id="password" placeholder="Password" max="3">
-                            <label for="floatingPassword">CVV</label>
+                        <div class="row">
+                            <div class="col-6 form-floating pb-3">
+                                <input type="date" class="form-control" id="password" placeholder="Password">
+                                <label class="ms-2" for="floatingPassword">Data di scadenza</label>
+                            </div>
+                            <div class="col-6 form-floating pb-3">
+                                <input type="number" class="form-control" id="password" placeholder="Password" max="3">
+                                <label class="ms-2" for="floatingPassword">CVV</label>
+                            </div>
                         </div>
                         <div id="errorIns" class="text-danger"></div>
                         <div class="button d-flex justify-content-start pb-3">
