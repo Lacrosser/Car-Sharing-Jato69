@@ -275,6 +275,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     /* height: 300px; */
     /* min-height: 30vh; */
     display: flex;
@@ -975,7 +976,7 @@ h2 {
 
 
 .dimPagamento {
-    height: 50rem;
+    width: 33%;
 }
 
 

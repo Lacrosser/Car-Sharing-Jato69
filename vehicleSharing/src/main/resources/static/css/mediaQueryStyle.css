@@ -1,15 +1,15 @@
- @media (min-width: 414px) {
+ @media (max-width: 414px) {
   .heroText {
     align-items: flex-start;
   }
 
-  /* .heroTitle {
+  .heroTitle {
     font-size: 50px;
     padding: 0.5rem 0.5rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-  } */
+  }
  
   .heroSubtitle {
     font-size: 30px;
@@ -19,6 +19,10 @@
   .game{
     width: 100%;
   }
+  .dimPagamento {
+    width: 100%;
+}
+  
 }
  
  
@@ -31,14 +35,14 @@
     align-items: flex-start;
   }
 
-  /* .heroTitle {
+  .heroTitle {
     font-size: 50px;
     padding: 0.5rem 0.5rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-/*text-shadow: 2px 2px #000000
-  } */
+/*text-shadow: 2px 2px #000000 */
+  }
  
   .heroSubtitle {
     font-size: 35px;
@@ -48,6 +52,9 @@
   .game{
     width: 100%;
   }
+  .dimPagamento {
+    width: 100%;
+}
   
 } 
 
@@ -56,14 +63,14 @@
     width: 100%;
     align-items: flex-start;
   }
-  /* .heroTitle {
+  .heroTitle {
     font-size: 50px;
     padding: 0.75rem 0.75rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-/*text-shadow: 2px 2px #000000
-  } */
+/*text-shadow: 2px 2px #000000 */
+  }
   
   
   .heroSubtitle {
@@ -74,6 +81,9 @@
   .game{
     width: 100%;
   }
+  .dimPagamento {
+    width: 100%;
+}
   
 } 
 
@@ -82,14 +92,14 @@
     width: 100%;
     align-items: flex-start;
   }
-  /* .heroTitle {
+  .heroTitle {
     font-size: 70px;
     padding: 0.875rem 0.875rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-    /* text-shadow: 3px 3px #000000 
-  } */
+    /* text-shadow: 3px 3px #000000 */
+  }
   
   .heroSubtitle {
     font-size: 45px;
@@ -100,6 +110,9 @@
   .game{
     width: 100%;
   }
+  .dimPagamento {
+    width: 100%;
+}
  
 }
 
@@ -108,20 +121,22 @@
     width: 72%;
     align-items: flex-start;
   }
-  /* .heroTitle {
+  .heroTitle {
     font-size: 80px;
     padding: 1rem 1rem;
     color: white;
     background-color: #00B7C2;
     height: auto;
-    /* text-shadow: 4px 4px #000000 
-  } */
+    /* text-shadow: 4px 4px #000000  */
+  }
   
   .heroSubtitle {
     font-size: 70px;
     color: white;
     /* text-shadow: 4px 4px #000000 */
   }
+
+
   
 }
 
@@ -130,6 +145,7 @@
   .heroText{
     width: 66%;
   }
+ 
 
 }
  
