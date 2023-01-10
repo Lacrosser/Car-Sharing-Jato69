@@ -210,7 +210,7 @@ function creaTabella(listaVeicoli) {
 
     let salva = document.querySelector("#salvaMod");
     salva.addEventListener("click", function() {
-        //sta();
+        
         let idBottoneModifica = sessionStorage.getItem('idBottoneModifica');
 
 
