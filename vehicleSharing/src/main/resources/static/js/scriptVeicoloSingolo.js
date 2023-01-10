@@ -13,7 +13,7 @@ btnPren.addEventListener("click", function() {
     if (checkLogin() === true) {
 
         prenota();
-        window.location.replace("/areaUtente");
+        window.location.replace("/areaUtente#prenotazionee");
     } else {
         console.log("nope");
         

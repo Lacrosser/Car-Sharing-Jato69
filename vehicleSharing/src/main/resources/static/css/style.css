@@ -1061,3 +1061,6 @@ h2 {
     padding: 7rem 7rem;
 }
 
+.navbar{
+    z-index: 1091;
+}
