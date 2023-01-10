@@ -31,6 +31,10 @@
   .dimPagamento {
     width: 100%;
 }
+
+.fotoCarta {
+  display: none;
+}
   
 }
  
@@ -40,7 +44,7 @@
  
 
 
- @media (min-width: 414px) and (max-width: 767.98px) {
+ @media (min-width: 416px) and (max-width: 767.98px) {
   .heroText {
     width: 100%;
     align-items: flex-start;
