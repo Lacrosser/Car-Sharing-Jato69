@@ -1064,3 +1064,7 @@ h2 {
 .navbar{
     z-index: 1091;
 }
+
+.modalePaginaIns{
+    top: 5rem;
+}
