@@ -31,6 +31,10 @@
   .dimPagamento {
     width: 100%;
 }
+
+.fotoCarta {
+  display: none;
+}
   
 }
  
