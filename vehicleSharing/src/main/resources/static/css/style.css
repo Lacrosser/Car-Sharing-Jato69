@@ -163,17 +163,16 @@ body {
 
 
 .toast-container {
-    top: 2rem;
+    top: 5rem;
     right: 50%;
     transform: translateX(-50%);
-    position: fixed;
-    top: 5rem;
+
 }
 
 .toast{
     background-color: rgb(58, 150, 58);
     text-align: center;
-    --bs-toast-max-width: 170px;
+    --bs-toast-max-width: 190px;
 }
 
 
