@@ -192,7 +192,7 @@ function modalBuilder() {
         await new Promise(resolve => setTimeout(resolve, 1000)); // wait 3 seconds
         localStorage.clear();
         sessionStorage.clear();
-        // window.location.assign('/');
+        window.location.assign('/');
       }
 
 
