@@ -218,7 +218,7 @@ function controllaPassword() {
                     break;
                 case 5:
                     var span = document.createElement("span")
-                    span.textContent = " almeno un numero, ";
+                    span.textContent = " almeno un numero. ";
                     error.appendChild(span);
 
                     break;
