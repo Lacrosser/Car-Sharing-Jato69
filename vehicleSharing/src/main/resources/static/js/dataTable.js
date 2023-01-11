@@ -465,8 +465,8 @@ function impostaDati() {
             immagine.value = "/img/imgVeicoli/scooter.png";
             immagine.setAttribute("value","/img/imgVeicoli/scooter.png");
 
-            cilindrata.value = "600 Watt";
-            cilindrata.setAttribute('value', '600 Watt');
+            cilindrata.value = "500 Watt";
+            cilindrata.setAttribute('value', '500 Watt');
 
             alimentazione.value = "elettrica";
             alimentazione.setAttribute('value', 'elettrica');
@@ -482,8 +482,8 @@ function impostaDati() {
             immagine.value = "/img/imgVeicoli/bici.png";
             immagine.setAttribute("value","/img/imgVeicoli/bici.png");
 
-            cilindrata.value = "500W";
-            cilindrata.setAttribute('value', '500 Watt');
+            cilindrata.value = "600W";
+            cilindrata.setAttribute('value', '600 Watt');
 
             alimentazione.value = "elettrica";
             alimentazione.setAttribute('value', 'elettrica');

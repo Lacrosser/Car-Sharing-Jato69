@@ -156,7 +156,7 @@ function controllaUser() {
                     break;
                 case 1:
                     var span = document.createElement("span")
-                    span.textContent = " Non sono accettati spazi o caratteri speciali.";
+                    span.textContent = " non sono accettati spazi o caratteri speciali.";
                     error.appendChild(span);
                     break;
 
