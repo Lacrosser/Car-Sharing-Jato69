@@ -13,7 +13,7 @@ import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
 public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	@Autowired
-	private PrenotazioneDao repo;
+	private PrenotazioneDao dao;
 
 	@Autowired
 	private VeicoliServiceImpl veirepo;
@@ -23,44 +23,61 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	@Override
 	public List<Prenotazione> getAll() {
-		return repo.findAll();
+		return dao.findAll();
 	}
 
 	@Override
 	public Prenotazione getPrenotazioneById(int id) {
-		return repo.findById(id).get();
+		return dao.findById(id).get();
 	}
 
 	@Override
 	public void addPrenotazione(Prenotazione u) {
-		repo.save(u);
+		dao.save(u);
 	}
 
 	@Override
 	public void deletePrenotazioneById(int id) {
-		repo.deleteById(id);
+
+		Prenotazione p = getPrenotazioneById(id);
+		p.getVeicoli().setDisponibilita(true);
+		dao.delete(p);
 	}
 
 	@Override
 	public void updatePrenotazione(Prenotazione u) {
 
-		repo.save(u);
+		dao.save(u);
 	}
 
 	@Override
 	public boolean addPrenotazione(int idUtente, int idVeicolo) {
-
-		Veicoli veicoloId = veirepo.getVeicoliById(idVeicolo);
+		System.out.println(idUtente);
+		System.out.println(idVeicolo);
+		
 		ArchivioUtenti archivioId = archivioprepo.getUtenteById(idUtente);
+		Veicoli veicoloId = veirepo.getVeicoliById(idVeicolo);
+		
 
 		if (idUtente != 0 && idVeicolo != 0) {
 			Prenotazione p = new Prenotazione();
 			p.setArchivioUtenti(archivioId);
-			p.setVeicoli(veicoloId);
-			repo.save(p);
-			System.out.println("salvie");
-			return true;
+
+			if (veicoloId.getDisponibilita()) {
+				veicoloId.setDisponibilita(false);
+				p.setVeicoli(veicoloId);
+				
+				System.out.println(p);
+				dao.save(p);
+				System.out.println("salvie");
+				return true;
+			} else {
+				System.out.println("Già prenotata");
+				return false;
+			}
+
 		}
+
 		// autowired per le 2 repository
 		// cambiare in boolean
 		// find by id
@@ -70,30 +87,26 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		return false;
 
 	}
-	
 
 	@Override
 	public boolean putPrenotazione(int idUtente, int veicolo, int id) {
-		
-		
 
 		ArchivioUtenti archivioUtenti = archivioprepo.getUtenteById(idUtente);
 		Veicoli veicolizzati = veirepo.getVeicoliById(veicolo);
 		Prenotazione a = getPrenotazioneById(id);
-		
 
 		a.setArchivioUtenti(archivioUtenti);
 		a.setVeicoli(veicolizzati);
-		
-			repo.save(a);
-			return true;
-		
+
+		dao.save(a);
+		return true;
+
 	}
 
 	@Override
 	public List<ArchivioUtenti> getUtentiById(int idUtente) {
 		// ArchivioUtenti a=archivioprepo.getUtenteById(idUtente);
-		List<Prenotazione> gino = repo.findByArchivioutenti(idUtente);
+		List<Prenotazione> gino = dao.findByArchivioutenti(idUtente);
 
 		List<ArchivioUtenti> franca = gino.stream().map(g -> g.getArchivioUtenti()).toList();
 
@@ -103,7 +116,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	@Override
 	public List<Veicoli> getVeicoliById(int idVeicolo) {
 
-		List<Prenotazione> gino = repo.findByVeicoli(idVeicolo);
+		List<Prenotazione> gino = dao.findByVeicoli(idVeicolo);
 
 		List<Veicoli> franca = gino.stream().map(g -> g.getVeicoli()).toList();
 
@@ -112,6 +125,5 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 		// TODO Auto-generated method stub
 
 	}
-
 
 }

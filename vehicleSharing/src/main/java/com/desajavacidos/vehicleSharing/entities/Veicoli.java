@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 import org.hibernate.annotations.CreationTimestamp;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -31,6 +31,12 @@ public class Veicoli {
 	public enum Veicolo{
 		AUTO,MONOPATTINO,BICICLETTA;
 	}
+	@Column(name="modello",nullable=false,unique = false)
+	private String modello;
+	@Column(name="colore",nullable=false,unique = false)
+	private String colore;
+	@Column(name="cilindrata",nullable=false,unique = false)
+	private String cilindrata;
 	
 	@Column(name="alimentazione",length = 40, nullable = false,unique = false)
 	private String alimentazione;
@@ -42,9 +48,9 @@ public class Veicoli {
 	private Boolean disponibilita;
 	
 	
-	@Column(name="data_prenotazione")
+	@Column(name="data_inserimento")
 	@CreationTimestamp
-	private Timestamp dataPrenotazione;
+	private Timestamp dataInserimento;
 	
 	@Column(name="posizione",nullable = true,unique = false)
 	private String posizione;
@@ -53,11 +59,13 @@ public class Veicoli {
 	@Column(name="immagine",nullable = true,unique = false)
 	private String immagine;
 	
-	@Column(name="descrizione",nullable=false,unique = false)
-    private String descrizione;
+	
+	
+	
+	
 	//User Id dell'utente che ha inserito l'informazione
 	
-	@JsonManagedReference
+	@JsonIgnore
 	@OneToMany(mappedBy = "veicoliId")
 	private Set<Prenotazione> prenotazione= new HashSet<Prenotazione>();
 	
@@ -81,6 +89,30 @@ public class Veicoli {
 		this.veicolo = veicolo;
 	}
 
+	public String getModello() {
+		return modello;
+	}
+
+	public void setModello(String modello) {
+		this.modello = modello;
+	}
+
+	public String getColore() {
+		return colore;
+	}
+
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+
+	public String getCilindrata() {
+		return cilindrata;
+	}
+
+	public void setCilindrata(String cilindrata) {
+		this.cilindrata = cilindrata;
+	}
+
 	public String getAlimentazione() {
 		return alimentazione;
 	}
@@ -97,12 +129,12 @@ public class Veicoli {
 		this.disponibilita = disponibilita;
 	}
 
-	public Timestamp getDataPrenotazione() {
-		return dataPrenotazione;
+	public Timestamp getDataInserimento() {
+		return dataInserimento;
 	}
 
-	public void setDataPrenotazione(Timestamp dataPrenotazione) {
-		this.dataPrenotazione = dataPrenotazione;
+	public void setDataInserimento(Timestamp dataInserimento) {
+		this.dataInserimento = dataInserimento;
 	}
 
 	public String getPosizione() {
@@ -129,14 +161,6 @@ public class Veicoli {
 		this.immagine = immagine;
 	}
 
-	public String getDescrizione() {
-		return descrizione;
-	}
-
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-
 	public Set<Prenotazione> getPrenotazione() {
 		return prenotazione;
 	}
@@ -145,5 +169,6 @@ public class Veicoli {
 		this.prenotazione = prenotazione;
 	}
 
+	
 	
 }

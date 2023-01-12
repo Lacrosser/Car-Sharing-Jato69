@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,7 +28,7 @@ public class ArchivioUtenti {
 	@UpdateTimestamp
 	private Timestamp ultimaModifica;
 	
-	@Column(name="user_id", length = 16,nullable = false,unique = false)
+	@Column(name="user_id", length = 16,nullable = false,unique = true)
 	private String userId;
 	
 	@Column(name="password",length = 50,nullable = false,unique = false)
@@ -59,12 +59,19 @@ public class ArchivioUtenti {
 	
 	//relazione con l'altra tabella
 	
-	 @JsonManagedReference
+	@JsonIgnore
 	 @OneToMany(mappedBy = "archivioutentiId")
 	    Set<Prenotazione> prenotazione = new HashSet<Prenotazione>();
 	
 	
 	
+	public ArchivioUtenti(String userId, String password, String tipo) {
+		super();
+		this.userId = userId;
+		this.password = password;
+		this.tipo = tipo;
+	}
+
 	public ArchivioUtenti() {
 		// TODO Auto-generated constructor stub
 	}

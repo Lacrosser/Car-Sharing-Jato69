@@ -31,14 +31,8 @@ public class PrenotazioneREST {
 	@GetMapping("/{id}")
 	public Prenotazione getPrenotazione(@PathVariable("id") int id) {
 
-		if (id <= service.getAll().size()) {
-
 			return service.getPrenotazioneById(id);
 
-		} else {
-			return null;
-
-		}
 	}
 
 	@GetMapping("/utenti/{id}")
@@ -49,26 +43,18 @@ public class PrenotazioneREST {
 
 	@GetMapping("/veicoli/{id}")
 	public List<Veicoli> getVeicoli(@PathVariable("id") int id) {
-
-		if (id <= service.getAll().size()) {
-
 			return service.getVeicoliById(id);
-		} else {
-			return null;
-		}
+		
 	}
 
 	@PostMapping("/utente/{idUtente}/veicolo/{idVeicolo}")
 	public void addprenotazione(@PathVariable int idUtente, @PathVariable int idVeicolo) {
 
-		if (idUtente <= service.getAll().size())
-			if (idUtente <= service.getAll().size()) {
-		
 		service.addPrenotazione(idUtente, idVeicolo);
-	}
+	
 	}
 
-	///// da finire
+	
 
 	@PutMapping("/{id}")
 	public void modificaPrenotazione(@PathVariable int id, @RequestBody Prenotazione p) {
@@ -76,13 +62,10 @@ public class PrenotazioneREST {
 
 		prenotazioneById.setVeicoli(p.getVeicoli());
 		prenotazioneById.setArchivioUtenti(p.getArchivioUtenti());
-		prenotazioneById.setTimestamp(p.getTimestamp());
-
-		if (id <= service.getAll().size()) {
+		prenotazioneById.setOraPrenotazione(p.getOraPrenotazione());
 
 			service.updatePrenotazione(prenotazioneById);
-		}
-
+		
 	}
 
 	@PostMapping
@@ -95,15 +78,13 @@ public class PrenotazioneREST {
 		service.updatePrenotazione(u);
 	}
 
-	// da controllare
+	
 
 	@DeleteMapping("/{id}")
 	public void deletePrenotazioen(@PathVariable("id") int id) {
 
-		if (id <= service.getAll().size()) {
 
 			service.deletePrenotazioneById(id);
-		}
 	}
 
 }

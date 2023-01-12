@@ -14,22 +14,22 @@ import com.desajavacidos.vehicleSharing.services.iServices.VeicoliService;
 public class VeicoliServiceImpl implements VeicoliService {
     
     @Autowired
-    private VeicoliDao repo;
+    private VeicoliDao dao;
     
     @Override
     public List<Veicoli> getAll() {
-        return repo.findAll();
+        return dao.findAll();
     }
 
     @Override
     public Veicoli getVeicoliById(int id) {
-        return repo.findById(id).get();
+        return dao.findById(id).get();
     }
 
     @Override
     public void addVeicoli(Veicoli v) {
     	
-        repo.save(v);
+        dao.save(v);
         
     }
 
@@ -37,25 +37,31 @@ public class VeicoliServiceImpl implements VeicoliService {
 
     @Override
     public void updateVeicoli(Veicoli v) {
-        repo.save(v);
+        dao.save(v);
     }
 
     @Override
     public void deleteVeicoliByID(int id) {
-        repo.deleteById(id);
+        dao.deleteById(id);
     }
 
     @Override
     public List<Veicoli> getVeicoliByDisp(boolean disponibilita) {
         
-        return repo.findByDisponibilita(disponibilita);
+        return dao.findByDisponibilita(disponibilita);
         //return repo.findAll();
     }
 
 	@Override
 	public List<Veicoli> getByTipologia(Veicolo veicolo) {
 		// TODO Auto-generated method stub
-		return repo.findByVeicolo(veicolo);
+		return dao.findByVeicolo(veicolo);
+	}
+
+	@Override
+	public List<Veicoli> getByAlimentazione(String alimentazione) {
+		
+		return dao.findByAlimentazione(alimentazione);
 	}
 
 }

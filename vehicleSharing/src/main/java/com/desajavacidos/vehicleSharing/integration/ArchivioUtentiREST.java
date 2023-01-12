@@ -4,16 +4,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
 import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService;
-import com.desajavacidos.vehicleSharing.services.iServices.PrenotazioneService;
-
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -26,9 +23,12 @@ public class ArchivioUtentiREST {
 
 	@Autowired
 	private ArchivioUtentiService service;
+	
+//	public ArchivioUtentiREST(ArchivioUtentiService service) {
+//		this.service=service;
+//	}
 
-//	@Autowired
-//	private PrenotazioneService pserv;
+
 
 	// restituzione studenti
 	@GetMapping
@@ -55,6 +55,28 @@ public class ArchivioUtentiREST {
 		}
 
 	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<ArchivioUtenti>getLogin(@RequestBody ObjectNode objectNode){
+		
+		ArchivioUtenti u=this.service.findByUser(objectNode.get("userId").asText());
+		//ArchivioUtenti p=this.service.findByPassword(objectNode.get("password").asText());
+		
+		if(u != null) {
+			
+			if(u.getPassword().equals(objectNode.get("password").asText()))  {
+				
+				return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.OK);
+			}else {
+				return new ResponseEntity<ArchivioUtenti>(new ArchivioUtenti("","","C"),HttpStatus.BAD_REQUEST);
+			}
+		}
+		else {
+			System.out.println("user o password errata");
+			return new ResponseEntity<ArchivioUtenti>(new ArchivioUtenti("","","C"),HttpStatus.BAD_REQUEST);
+		}
+		
+	}
 
 	@PostMapping
 	public ResponseEntity<ArchivioUtenti> addUtente(@RequestBody ArchivioUtenti u) {
@@ -73,7 +95,7 @@ public class ArchivioUtentiREST {
 		}
 	}
 
-	@PostMapping("/prenotazioni/{id}")
+	//@PostMapping("/prenotazioni/{id}")
 
 //	@PatchMapping("{id}/prenotazioni")
 //	public Utente post
@@ -85,8 +107,7 @@ public class ArchivioUtentiREST {
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
 		ArchivioUtenti archivioUser = this.service.findByUser(u.getUserId());
 		ArchivioUtenti archivioPassword = this.service.findByPassword(u.getPassword());
-		if (archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId()
-				&& archivioUser != null) {
+		if (archivioUser != null && archivioPassword != null && archivioUser.getId() != u.getId() && archivioPassword.getId() != u.getId()) {
 			return new ResponseEntity<ArchivioUtenti>(u, HttpStatus.BAD_REQUEST);
 		} else {
 			service.updateUtente(u);

@@ -5,8 +5,6 @@ package com.desajavacidos.vehicleSharing;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.desajavacidos.vehicleSharing.entities.ArchivioUtenti;
-import com.desajavacidos.vehicleSharing.entities.Prenotazione;
 import com.desajavacidos.vehicleSharing.entities.Veicoli;
 import com.desajavacidos.vehicleSharing.services.iServices.ArchivioUtentiService;
 

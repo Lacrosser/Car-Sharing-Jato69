@@ -29,6 +29,11 @@
     align-items: center;
 }
 
+.swiper-slide .overlay {
+    min-height: 30vh;
+
+}
+
 .heroSwipe .swiper-slide {
 
 
@@ -38,24 +43,32 @@
     background-repeat: no-repeat;
 }
 
-.divisore{
+/* .divisore{
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/teslaRossa.jpg);
     min-height: 500px;
-}
+} */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
 
     .heroSwipe,
     .heroSwipe .swiper-wrapper,
-    .heroSwipe .swiper-slide {
-        min-height: 70vh;
+    .heroSwipe .swiper-slide, .swiper-slide .overlay {
+        min-height: 50vh;
     }
 
 }
 
+@media screen and (min-width: 992px) {
 
+    .heroSwipe,
+    .heroSwipe .swiper-wrapper,
+    .heroSwipe .swiper-slide, .swiper-slide .overlay {
+        min-height: 70vh;
+    }
+
+}
 
